@@ -27,6 +27,9 @@
 		<acme:menu-option code="4596*****: García, Miguel Yan" access="isAnonymous()">
     		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://www.ryrteen.com/"/>
 		</acme:menu-option>
+		<acme:menu-option code="8022*****: Cegrí, José Luis" access="isAnonymous()">
+    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://ev.us.es/"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
