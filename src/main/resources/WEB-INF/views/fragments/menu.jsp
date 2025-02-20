@@ -21,6 +21,9 @@
 		<acme:menu-option code="7787*****: Martos, Francisco Javier" access="isAnonymous()">
     		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://as.com/"/>
 		</acme:menu-option>
+		<acme:menu-option code="4596*****: Galea, Carlos" access="isAnonymous()">
+    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://www.wolframalpha.com/"/>
+		</acme:menu-option>
 
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
