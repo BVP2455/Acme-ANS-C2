@@ -20,18 +20,7 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
     		<acme:menu-suboption code="4596*****: Galea, Carlos" action="https://www.wolframalpha.com/"/>
-		</acme:menu-option>
-		<acme:menu-option code="4596*****: Galea, Carlos" access="isAnonymous()">
-    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://www.wolframalpha.com/"/>
-		</acme:menu-option>
-		<acme:menu-option code="4596*****: García, Miguel Yan" access="isAnonymous()">
-    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://www.ryrteen.com/"/>
-		</acme:menu-option>
-		<acme:menu-option code="8022*****: Cegrí, José Luis" access="isAnonymous()">
-    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://ev.us.es/"/>
-		</acme:menu-option>
-		<acme:menu-option code="4734*****: Gago, Francisco" access="isAnonymous()">
-    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://amazon.es/"/>
+    		<acme:menu-suboption code="7787*****: Martos, Francisco Javier" action="https://as.com/"/>
 		</acme:menu-option>
 		
 
