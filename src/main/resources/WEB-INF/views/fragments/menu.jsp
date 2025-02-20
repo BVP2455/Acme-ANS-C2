@@ -30,6 +30,10 @@
 		<acme:menu-option code="8022*****: Cegrí, José Luis" access="isAnonymous()">
     		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://ev.us.es/"/>
 		</acme:menu-option>
+		<acme:menu-option code="4734*****: Gago, Francisco" access="isAnonymous()">
+    		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://amazon.es/"/>
+		</acme:menu-option>
+		
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
