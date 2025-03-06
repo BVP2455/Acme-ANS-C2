@@ -1,0 +1,57 @@
+
+package acme.entities.activitylog;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+import acme.client.components.mappings.Automapped;
+import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidString;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class ActivityLog {
+
+	private static final long	serialVersionUID	= 1L;
+
+	// Relationships
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private FlightCrewMember	flightCrewMember;
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private Leg					leg;
+
+	// Attributes
+
+	@Mandatory
+	@ValidMoment(past = true)
+	@Automapped
+	private Date				registrattionMoment;
+
+	@Mandatory
+	@ValidString(max = 50)
+	@Automapped
+	private String				typeOfIncident;
+
+	@Mandatory
+	@ValidString(max = 255)
+	@Automapped
+	private String				description;
+
+	@Mandatory
+	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0)
+	@Automapped
+	private Integer				severityLevel;
+
+}
