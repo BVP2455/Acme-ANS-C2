@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -45,7 +46,7 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	@ValidMoney()
 	@Automapped
-	private String				price;
+	private Money				price;
 
 	@Optional
 	@ValidString(min = 4, max = 4, pattern = "\\d{4}$")
