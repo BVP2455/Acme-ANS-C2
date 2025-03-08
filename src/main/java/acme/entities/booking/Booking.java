@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -51,4 +52,9 @@ public class Booking extends AbstractEntity {
 	@ValidString(min = 4, max = 4, pattern = "\\d{4}$")
 	@Automapped
 	String						lastCardNibble;
+
+	// Relationships ----------------------------------------------------------
+
+	@OneToOne
+	Flight						flight;
 }
