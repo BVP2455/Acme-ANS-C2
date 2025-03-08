@@ -9,7 +9,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import lombok.Getter;
 import lombok.Setter;
-import acme.entities.Passsenger
+import acme.entities.Passenger
 
 @Getter
 @Setter
