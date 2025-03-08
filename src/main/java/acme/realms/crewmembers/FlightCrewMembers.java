@@ -25,27 +25,8 @@ public class FlightCrewMembers extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
-	@Column(unique = true)
-	private String				employee_code;
-
-	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$\")private")
-	@Automapped
-	String						phone_number;
-
-	@Mandatory
-	@ValidString(max = 255)
-	@Automapped
-	private String				language_skills;
-
-	@Mandatory
-	@Valid
-	@Enumerated(EnumType.STRING)
-	@Automapped
-	private AvaiabilityStatus	avaiability_status;
-
+	//Relationships
+	//
 	/*
 	 * @Mandatory
 	 * 
@@ -56,13 +37,37 @@ public class FlightCrewMembers extends AbstractEntity {
 	 * @ManyToOne
 	 * private Airline airline;
 	 */
+
+	//Atributes
+
 	@Mandatory
-	@ValidMoney
+	@ValidString(min = 8, max = 9, pattern = "^[A-Z]{2-3}\\d{6}$")
+	@Column(unique = true)
+	private String				employee_code;
+
+	@Mandatory
+	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$\")private")
+	@Automapped
+	String						phone_number;
+
+	@Mandatory
+	@ValidString(min = 1, max = 255)
+	@Automapped
+	private String				language_skills;
+
+	@Mandatory
+	@Valid
+	@Enumerated(EnumType.STRING)
+	@Automapped
+	private AvaiabilityStatus	avaiability_status;
+
+	@Mandatory
+	@ValidMoney(min = 0, max = 1000000)
 	@Automapped
 	private Money				salary;
 
 	@Optional
-	@ValidNumber(fraction = 0)
+	@ValidNumber(min = 0, max = 120, fraction = 0)
 	@Automapped
 	private Integer				years_experience;
 
