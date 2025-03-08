@@ -35,17 +35,17 @@ public class ActivityLog {
 	// Attributes
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment(max = "2201/01/01  00:00:00", past = true)
 	@Automapped
-	private Date				registrattionMoment;
+	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				typeOfIncident;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				description;
 
