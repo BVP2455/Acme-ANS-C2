@@ -31,30 +31,32 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
 	@Column(unique = true)
-	String						locatorCode;
+	private String				locatorCode;
 
 	@Mandatory
 	@ValidMoment(past = true)
 	@Automapped
-	Date						purchaseMoment;
+	private Date				purchaseMoment;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	TravelClass					travelClass;
+	private TravelClass			travelClass;
 
 	@Mandatory
 	@ValidMoney()
 	@Automapped
-	String						price;
+	private String				price;
 
 	@Optional
 	@ValidString(min = 4, max = 4, pattern = "\\d{4}$")
 	@Automapped
-	String						lastCardNibble;
+	private String				lastCardNibble;
 
 	// Relationships ----------------------------------------------------------
 
-	@OneToOne
-	Flight						flight;
+	@Mandatory
+	@Valid
+	@OneToOne(optional = false)
+	private Flight				flight;
 }
