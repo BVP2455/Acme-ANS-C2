@@ -29,27 +29,27 @@ public class Passenger extends AbstractEntity {
 	@Mandatory
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	String						name;
+	private String				name;
 
 	@Mandatory
 	@ValidEmail()
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	String						email;
+	private String				email;
 
 	@Mandatory
 	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
 	@Automapped
-	String						passportNumber;
+	private String				passportNumber;
 
 	@Mandatory
 	@ValidMoment(past = true)
 	@Automapped
-	Date						dateOfBirth;
+	private Date				dateOfBirth;
 
 	@Optional
 	@ValidString(max = 50)
 	@Automapped
-	String						specialNeeds;
+	private String				specialNeeds;
 
 }
