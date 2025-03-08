@@ -18,21 +18,11 @@ import lombok.Setter;
 @Setter
 public class ActivityLog {
 
+	// Serialisation version --------------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
 
-	// Relationships
-
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private FlightCrewMember	flightCrewMember;
-
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private Leg					leg;
-
-	// Attributes
+	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
 	@ValidMoment(max = "2201/01/01  00:00:00", past = true)
@@ -53,5 +43,17 @@ public class ActivityLog {
 	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0)
 	@Automapped
 	private Integer				severityLevel;
+
+	// Relationships ----------------------------------------------------------
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private FlightCrewMember	flightCrewMember;
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private Leg					leg;
 
 }
