@@ -20,21 +20,11 @@ import lombok.Setter;
 @Setter
 public class FlightAssignment extends AbstractEntity {
 
+	// Serialisation version --------------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
 
-	//Relationships
-
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private FlightCrewMember	flightCrewMember;
-
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private Leg leg;
-
-	//Attributes
+	// Mandatory Attributes -------------------------------------------------------
 
 	@Mandatory
 	@Valid
@@ -51,8 +41,22 @@ public class FlightAssignment extends AbstractEntity {
 	@Automapped
 	private CurrentStatus		currentStatus;
 
+	// Optional Attributes -------------------------------------------------------------
+
 	@Optional
 	@ValidString
 	private String				remarks;
+
+	// Relationships ----------------------------------------------------------
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private FlightCrewMember	flightCrewMember;
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private Leg leg;
 
 }
