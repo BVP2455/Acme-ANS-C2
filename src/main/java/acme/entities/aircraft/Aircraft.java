@@ -25,19 +25,21 @@ public class Aircraft extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
+	//Atributes
+
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Max(50)
 	@Automapped
 	private String				model;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Column(unique = true)
 	private String				registration_number;
 
 	@Mandatory
-	@ValidNumber(min = 1, fraction = 0)
+	@ValidNumber(min = 1, max = 255, fraction = 0)
 	@Min(1)
 	@Automapped
 	private Integer				capacity;
@@ -54,7 +56,7 @@ public class Aircraft extends AbstractEntity {
 	private Status				status;
 
 	@Optional
-	@ValidString(max = 250)
+	@ValidString()
 	@Automapped
 	String						details;
 }
