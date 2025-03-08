@@ -27,30 +27,30 @@ public class Customer extends AbstractRole {
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
-	String						identifier;
+	private String				identifier;
 
 	@Mandatory
 	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
 	@Automapped
-	String						phoneNumber;
+	private String				phoneNumber;
 
 	@Mandatory
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	String						physicalAddress;
+	private String				physicalAddress;
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
 	@Automapped
-	String						city;
+	private String				city;
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
 	@Automapped
-	String						country;
+	private String				country;
 
 	@Optional
 	@ValidNumber(min = 0, max = 500000)
 	@Automapped
-	Integer						earnedPoints;
+	private Integer				earnedPoints;
 }
