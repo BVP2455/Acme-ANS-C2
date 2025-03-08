@@ -31,31 +31,31 @@ public class Review extends AbstractEntity {
 	@Mandatory
 	@ValidString(min = 1, max = 50)
 	@Automapped
-	String						name;
+	private String				name;
 
 	@Mandatory
 	@ValidMoment(past = true)
 	@Automapped
-	Date						moment;
+	private Date				moment;
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
 	@Automapped
-	String						subject;
+	private String				subject;
 
 	@Mandatory
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	String						text;
+	private String				text;
 
 	@Optional
 	@ValidScore()
 	@ValidNumber(min = 0, max = 10)
 	@Automapped
-	Double						score;
+	private Double				score;
 
 	@Optional
 	@Valid
 	@Automapped
-	Boolean						recommended;
+	private Boolean				recommended;
 }
