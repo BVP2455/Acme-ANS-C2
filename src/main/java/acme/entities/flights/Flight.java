@@ -1,8 +1,6 @@
 
 package acme.entities.flights;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 
 import acme.client.components.basis.AbstractEntity;
@@ -47,9 +45,9 @@ public class Flight extends AbstractEntity {
 
 	// Derivated atributes ------------------------------
 
-
-	private Date getScheduledDeparture() {
-
-	}
+	//TODO: atributos derivados
+	//	private Date getScheduledDeparture() {
+	//
+	//	}
 
 }
