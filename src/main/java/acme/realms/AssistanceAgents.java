@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -62,8 +61,8 @@ public class AssistanceAgents extends AbstractRole {
 
 	//Relaciones
 
-	@Mandatory
-	@ManyToOne(optional = false)
-	private Airline				airline;
+	//	@Mandatory
+	//	@ManyToOne(optional = false)
+	//	private Airline				airline;
 
 }
