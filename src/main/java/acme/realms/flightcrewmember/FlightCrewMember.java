@@ -65,6 +65,8 @@ public class FlightCrewMember extends AbstractRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	//No está aún implementada
 	/*
 	 * @Mandatory
 	 * 
