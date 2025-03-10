@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
@@ -16,6 +17,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidFlightCrewMember;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -67,15 +69,11 @@ public class FlightCrewMember extends AbstractRole {
 	// Relationships ----------------------------------------------------------
 
 	//No está aún implementada
-	/*
-	 * @Mandatory
-	 * 
-	 * @Valid
-	 * 
-	 * @Automapped
-	 * 
-	 * @ManyToOne
-	 * private Airline airline;
-	 */
+
+	@Mandatory
+	@Valid
+	@Automapped
+	@ManyToOne
+	private Airline				airline;
 
 }
