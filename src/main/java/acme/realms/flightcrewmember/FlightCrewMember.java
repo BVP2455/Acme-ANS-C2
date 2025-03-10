@@ -39,9 +39,9 @@ public class FlightCrewMember extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$\")private")
+	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	String						phoneNumber;
+	private String				phoneNumber;
 
 	@Mandatory
 	@ValidString(min = 1, max = 255)
