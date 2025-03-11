@@ -1,0 +1,6 @@
+#validation-en.i18n
+
+acme.validation.flightcrewmember.identifier.message = Invalid identifier
+acme.validation.activitylog.message = Invalid activity log
+acme.validation.activitylog.registrationmoment.message = Invalid registration moment
+acme.validation.customer.identifier.message = Invalid identifier
