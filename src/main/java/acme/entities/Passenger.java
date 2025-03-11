@@ -4,15 +4,13 @@ package acme.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Review extends AbstractEntity {
+public class Passenger extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -29,33 +27,29 @@ public class Review extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				name;
 
 	@Mandatory
-	@ValidMoment(past = true)
-	@Automapped
-	private Date				moment;
-
-	@Mandatory
-	@ValidString(min = 1, max = 50)
-	@Automapped
-	private String				subject;
-
-	@Mandatory
+	@ValidEmail()
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	private String				text;
+	private String				email;
+
+	@Mandatory
+	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
+	@Automapped
+	private String				passportNumber;
+
+	@Mandatory
+	@ValidMoment(past = true)
+	@Automapped
+	private Date				dateOfBirth;
 
 	@Optional
-	@ValidScore()
-	@ValidNumber(min = 0, max = 10)
+	@ValidString(max = 50)
 	@Automapped
-	private Double				score;
+	private String				specialNeeds;
 
-	@Optional
-	@Valid
-	@Automapped
-	private Boolean				recommended;
 }
