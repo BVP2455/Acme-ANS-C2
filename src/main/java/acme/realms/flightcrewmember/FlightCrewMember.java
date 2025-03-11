@@ -52,7 +52,7 @@ public class FlightCrewMember extends AbstractRole {
 	@Valid
 	@Enumerated(EnumType.STRING)
 	@Automapped
-	private AvaiabilityStatus	avaiabilityStatus;
+	private AvaiabilityStatus	availabilityStatus;
 
 	@Mandatory
 	@ValidMoney(min = 0, max = 1000000)
