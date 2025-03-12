@@ -1,0 +1,56 @@
+key,duty,lastUpdateMoment,currentStatus,remarks,key:flightMember,key:Leg
+assignment-01,PILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+assignment-02,COPILOT,2021/02/16 19:35,CONFIRMED,"",member-02,leg-02
+assignment-03,LEAD_ATTENDANT,2022/02/10 10:00:00,PENDING,"",member-03,leg-03
+assignment-04,CABIN_ATTENDANT,2023/01/06 17:15,CANCELLED,"",member-04,leg-04
+
+# duty
+assignment-05,PILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+assignment-06,COPILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+assignment-07,LEAD_ATTENDANT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+assignment-08,CABIN_ATTENDANT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+
+# lastUpdateMoment
+# base
+assignment-09,PILOT,2012/07/02 00:00,CONFIRMED,"",member-01,leg-01
+# empty
+assignment-10,PILOT,,CONFIRMED,"",member-01,leg-01
+# min
+assignment-11,PILOT,2000/01/01 00:00,CONFIRMED,"",member-01,leg-01
+# min + delta
+assignment-12,PILOT,2000/01/01 00:01,CONFIRMED,"",member-01,leg-01
+# max - delta
+assignment-13,PILOT,2024/12/31 23:59,CONFIRMED,"",member-01,leg-01
+# max
+assignment-14,PILOT,2025/01/01 00:00,CONFIRMED,"",member-01,leg-01
+# max + delta
+assignment-15,PILOT,2025/01/01 00:01,CONFIRMED,"",member-01,leg-01
+
+# currentStatus
+assignment-16,PILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+assignment-17,PILOT,2022/03/03 00:30,PENDING,"",member-01,leg-01
+assignment-18,PILOT,2022/03/03 00:30,CANCELLED,"",member-01,leg-01
+
+# remarks
+# base
+assignment-19,PILOT,2022/03/03 00:30,CONFIRMED,"Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi.",member-01,leg-01
+# empty
+assignment-20,PILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+# min - delta
+assignment-21,PILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+# min
+assignment-22,PILOT,2022/03/03 00:30,CONFIRMED,"",member-01,leg-01
+# min + delta
+assignment-23,PILOT,2022/03/03 00:30,CONFIRMED,"L",member-01,leg-01
+# max - delta
+assignment-24,PILOT,2022/03/03 00:30,CONFIRMED,"Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",member-01,leg-01
+# max
+assignment-25,PILOT,2022/03/03 00:30,CONFIRMED,"Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiates.",member-01,leg-01
+# no-latin
+assignment-26,PILOT,2022/03/03 00:30,CONFIRMED,"โลเร็ม อิปซัม",member-01,leg-01
+assignment-27,PILOT,2022/03/03 00:30,CONFIRMED,"при",member-01,leg-01
+assignment-28,PILOT,2022/03/03 00:30,CONFIRMED,"洛伦·伊普森",member-01,leg-01
+# injections
+assignment-29,PILOT,2022/03/03 00:30,CONFIRMED,"<marquee>Hacked</marquee>",member-01,leg-01
+assignment-30,PILOT,2022/03/03 00:30,CONFIRMED,"<script>alert(‘Hacked!’);</script>",member-01,leg-01
+assignment-31,PILOT,2022/03/03 00:30,CONFIRMED,"'' or 'A' = 'A ",member-01,leg-01
