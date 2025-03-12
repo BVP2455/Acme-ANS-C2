@@ -2,6 +2,7 @@
 package acme.entities.flights;
 
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -29,6 +30,7 @@ public class Flight extends AbstractEntity {
 	private String				tag;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private Boolean				selfTransfer;
 
