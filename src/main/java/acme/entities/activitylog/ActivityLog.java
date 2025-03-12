@@ -16,6 +16,8 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidActivityLog;
+import acme.entities.legs.Leg;
+import acme.realms.flightcrewmember.FlightCrewMember;
 import acme.entities.flightassignment.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
