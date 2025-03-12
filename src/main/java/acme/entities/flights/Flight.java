@@ -1,6 +1,8 @@
 
 package acme.entities.flights;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.validation.Valid;
 
@@ -11,6 +13,9 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.client.helpers.SpringHelper;
+import acme.entities.legs.Leg;
+import acme.entities.legs.LegRepository;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,9 +52,65 @@ public class Flight extends AbstractEntity {
 
 	// Derivated atributes ------------------------------
 
-	//TODO: atributos derivados
-	//	private Date getScheduledDeparture() {
-	//
-	//	}
+
+	public Date getScheduledDeparture() {
+		Date result;
+		Leg wrapper;
+		LegRepository repository;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		wrapper = repository.findFirstLegByFlight(this.getId());
+		result = wrapper.getScheduledDeparture();
+
+		return result;
+	}
+
+	public Date getScheduledArrival() {
+		Date result;
+		Leg wrapper;
+		LegRepository repository;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		wrapper = repository.findLastLegByFlight(this.getId());
+		result = wrapper.getScheduledArrival();
+
+		return result;
+	}
+
+	public String getOriginCity() {
+		String result;
+		Leg wrapper;
+		LegRepository repository;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		wrapper = repository.findFirstLegByFlight(this.getId());
+		result = wrapper.getDepartureAirport().getCity();
+
+		return result;
+	}
+
+	public String getDestinationCity() {
+		String result;
+		Leg wrapper;
+		LegRepository repository;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		wrapper = repository.findLastLegByFlight(this.getId());
+		result = wrapper.getArrivalAirport().getCity();
+
+		return result;
+	}
+
+	public Integer getNumberLayovers() {
+		Integer result;
+		Leg wrapper;
+		LegRepository repository;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.countNumberOfLegsOfFlight(this.getId()) - 1;
+
+		return result;
+
+	}
 
 }
