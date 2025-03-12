@@ -45,7 +45,7 @@ public class Aircraft extends AbstractEntity {
 	@Mandatory
 	@ValidNumber(min = 2000, max = 50000)
 	@Automapped
-	private Double				cargoWeight;
+	private Integer				cargoWeight;
 
 	@Mandatory
 	@Valid
