@@ -55,4 +55,5 @@ public class Customer extends AbstractRole {
 	@ValidNumber(min = 0, max = 500000)
 	@Automapped
 	private Integer				earnedPoints;
+
 }
