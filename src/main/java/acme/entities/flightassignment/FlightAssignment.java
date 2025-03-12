@@ -38,7 +38,6 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(min = "2000/01/01  00:00:00", past = true)
-	@Automapped
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				lastUpdateMoment;
 
@@ -51,6 +50,7 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Optional
 	@ValidString
+	@Automapped
 	private String				remarks;
 
 	// Relationships ----------------------------------------------------------

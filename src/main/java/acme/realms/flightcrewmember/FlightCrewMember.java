@@ -3,8 +3,7 @@ package acme.realms.flightcrewmember;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
@@ -16,6 +15,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidFlightCrewMember;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,9 +37,9 @@ public class FlightCrewMember extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$\")private")
+	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	String						phoneNumber;
+	private String				phoneNumber;
 
 	@Mandatory
 	@ValidString(min = 1, max = 255)
@@ -48,14 +48,15 @@ public class FlightCrewMember extends AbstractRole {
 
 	@Mandatory
 	@Valid
-	@Enumerated(EnumType.STRING)
 	@Automapped
-	private AvaiabilityStatus	avaiabilityStatus;
+	private AvaiabilityStatus	availabilityStatus;
 
 	@Mandatory
 	@ValidMoney(min = 0, max = 1000000)
 	@Automapped
 	private Money				salary;
+
+	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
 	@ValidNumber(min = 0, max = 120, fraction = 0)
@@ -67,15 +68,10 @@ public class FlightCrewMember extends AbstractRole {
 	// Relationships ----------------------------------------------------------
 
 	//No está aún implementada
-	/*
-	 * @Mandatory
-	 * 
-	 * @Valid
-	 * 
-	 * @Automapped
-	 * 
-	 * @ManyToOne
-	 * private Airline airline;
-	 */
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 }

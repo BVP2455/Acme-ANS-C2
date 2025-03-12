@@ -23,11 +23,11 @@ public class ActivityLogValidator extends AbstractValidator<ValidActivityLog, Ac
 
 		boolean result;
 
-		if (activityLog == null || activityLog.getLeg() == null || activityLog.getLeg().getScheduledArrival() == null)
+		if (activityLog == null || activityLog.getActivityLogAssignment() == null || activityLog.getActivityLogAssignment().getLeg() == null || activityLog.getActivityLogAssignment().getLeg().getScheduledArrival() == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			boolean registrationMomentIsAfterArrivalLeg;
-			Date minRegistrationMoment = new Date(activityLog.getLeg().getScheduledArrival().getTime());
+			Date minRegistrationMoment = new Date(activityLog.getActivityLogAssignment().getLeg().getScheduledArrival().getTime());
 			registrationMomentIsAfterArrivalLeg = MomentHelper.isAfterOrEqual(activityLog.getRegistrationMoment(), minRegistrationMoment);
 			super.state(context, registrationMomentIsAfterArrivalLeg, "registrationMoment", "acme.validation.activitylog.registrationmoment.message");
 		}

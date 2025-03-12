@@ -10,12 +10,14 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidCustomer;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@ValidCustomer
 public class Customer extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -30,22 +32,22 @@ public class Customer extends AbstractRole {
 	private String				identifier;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString(min = 1, max = 255)
+	@ValidString(max = 255)
 	@Automapped
 	private String				physicalAddress;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(max = 50)
 	@Automapped
 	private String				city;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(max = 50)
 	@Automapped
 	private String				country;
 
@@ -53,4 +55,5 @@ public class Customer extends AbstractRole {
 	@ValidNumber(min = 0, max = 500000)
 	@Automapped
 	private Integer				earnedPoints;
+
 }
