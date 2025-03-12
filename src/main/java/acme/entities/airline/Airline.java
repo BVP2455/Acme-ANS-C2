@@ -1,20 +1,19 @@
 
-package acme.realms;
+package acme.entities.airline;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractRole;
-import acme.client.components.datatypes.Money;
+import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
@@ -23,46 +22,47 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class AssistanceAgents extends AbstractRole {
+public class Airline extends AbstractEntity {
 
+	// Serialisation version -----------------------
 	private static final long	serialVersionUID	= 1L;
 
-	//Atributos
-
+	//Mandatory atributes
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", max = 9)
-	@Column(unique = true)
-	private String				employeeCode;
-
-	@Mandatory
-	@ValidString(min = 1, max = 255)
+	@ValidString(max = 50)
 	@Automapped
-	private String				spokenLanguages;
+	private String				name;
+
+	@Mandatory
+	@ValidString(pattern = "^[A-Z]{2}X$")
+	@Automapped
+	private String				code;
+
+	@Mandatory
+	@ValidUrl
+	@Automapped
+	private String				website;
+
+	@Mandatory
+	@Valid
+	@Automapped
+	private AirlineType			type;
 
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				moment;
+	@Automapped
+	private Date				foundationMoment;
+
+	// Optional atributes ------------------
+	@Optional
+	@ValidEmail
+	@Automapped
+	private String				email;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private String				briefBio;
-
-	@Optional
-	@ValidMoney
-	@Automapped
-	private Money				salary;
-
-	@Optional
-	@ValidUrl
-	@Automapped
-	private String				picture;
-
-	//Relaciones
-
-	//	@Mandatory
-	//	@ManyToOne(optional = false)
-	//	private Airline				airline;
+	private String				phoneNumber;
 
 }
