@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,6 +19,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidAssistanceAgent;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -63,8 +65,8 @@ public class AssistanceAgent extends AbstractRole {
 
 	//Relaciones
 
-	//	@Mandatory
-	//	@ManyToOne(optional = false)
-	//	private Airline				airline;
+	@Mandatory
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 }
