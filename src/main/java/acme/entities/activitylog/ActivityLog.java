@@ -36,7 +36,6 @@ public class ActivityLog extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(max = "2201/01/01  00:00:00", past = true)
-	@Automapped
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
