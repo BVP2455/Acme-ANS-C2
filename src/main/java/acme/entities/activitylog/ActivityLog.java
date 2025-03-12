@@ -1,68 +1,63 @@
 
-package acme.entities.aircraft;
+package acme.entities.activitylog;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.airline.Airline;
+import acme.constraints.ValidActivityLog;
+import acme.entities.flightassignment.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Aircraft extends AbstractEntity {
+@ValidActivityLog
+public class ActivityLog extends AbstractEntity {
 
-	// Serialisation version --------------------------------------------------
+	// Serialisation version --------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidMoment(max = "2201/01/01  00:00:00", past = true)
 	@Automapped
-	private String				model;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				registrationMoment;
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
-	@Column(unique = true)
-	private String				registrationNumber;
+	@Automapped
+	private String				typeOfIncident;
 
 	@Mandatory
-	@ValidNumber(min = 1, max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	private Integer				capacity;
+	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 2000, max = 50000)
+	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0)
 	@Automapped
-	private Double				cargoWeight;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private Status				status;
-
-	// Optional Attributes -------------------------------------------------------------
-
-	@Optional
-	@ValidString
-	@Automapped
-	String						details;
+	private Integer				severityLevel;
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
-	@ManyToOne(optional = false)
-	private Airline				airline;
+	@ManyToOne
+	private FlightAssignment	activityLogAssignment;
+
 }

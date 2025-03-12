@@ -1,26 +1,23 @@
 
-package acme.entities;
-
-import java.util.Date;
+package acme.entities.task;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
+import acme.entities.technician.Technician;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-public class Review extends AbstractEntity {
+public class Task extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -29,33 +26,27 @@ public class Review extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@Valid
 	@Automapped
-	private String				name;
-
-	@Mandatory
-	@ValidMoment(past = true)
-	@Automapped
-	private Date				moment;
-
-	@Mandatory
-	@ValidString(min = 1, max = 50)
-	@Automapped
-	private String				subject;
+	private TaskType			type;
 
 	@Mandatory
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	private String				text;
+	private String				description;
 
-	@Optional
-	@ValidScore()
+	@Mandatory
 	@ValidNumber(min = 0, max = 10)
 	@Automapped
-	private Double				score;
+	private int					priority;
 
-	@Optional
-	@Valid
+	@Mandatory
+	@ValidNumber(min = 0, max = 1000)
 	@Automapped
-	private Boolean				recommended;
+	private Integer				estimatedDuration;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Technician			technician;
 }
