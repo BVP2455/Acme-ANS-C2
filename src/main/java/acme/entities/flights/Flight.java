@@ -40,7 +40,7 @@ public class Flight extends AbstractEntity {
 	private Boolean				selfTransfer;
 
 	@Mandatory
-	@ValidMoney(min = 0.0)
+	@ValidMoney(min = 0.0, max = 1000000.00)
 	@Automapped
 	private Money				cost;
 
@@ -103,7 +103,6 @@ public class Flight extends AbstractEntity {
 
 	public Integer getNumberLayovers() {
 		Integer result;
-		Leg wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
