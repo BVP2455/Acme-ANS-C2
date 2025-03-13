@@ -38,5 +38,5 @@ leg-19,FRX0016,2025/01/01 0:00,2025/01/01 00:00,ON_TIME,airline-00,flight-11,air
 leg-20,FRX0017,2025/01/01 0:00,2025/01/01 00:00,ON_TIME,airline-00,flight-12,airport-00,airport-11,aircraft-01
 # arrival-airport - no singular values
 # aircraft - standard variations
-leg-21,FRX0018,2025/01/01 0:00,2025/01/01 00:00,ON_TIME,airline-00,flight-29,airport-00,airport-01,aircraft-11
+leg-21,FRX0018,2025/01/01 0:00,2025/01/01 00:00,ON_TIME,airline-00,flight-28,airport-00,airport-01,aircraft-11
 # aircraft - no singular values
