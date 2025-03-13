@@ -1,0 +1,37 @@
+﻿key,locatorCode,purchaseMoment,travelClass,price,lastCardNibble,key:customer,key:flight
+# base entity
+booking-00,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+# locatorCode - standard variations
+booking-01,ABCDEF,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-02,12345678,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-03,123ABCD,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+# locatorCode - no singular values
+# purchaseMoment - standard variations
+booking-04,ABC1234,2025/03/12 00:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-05,ABC1234,2025/03/11 23:59,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-06,ABC1234,2000/01/01 00:01,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-07,ABC1234,2000/01/01 00:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+# purchaseMoment - no singular values
+# travelClass - standard variations
+booking-08,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-09,ABC1234,2024/09/01 10:00,BUSSINESS,EUR 5.00,1234,customer-01,flight-01
+# travelClass - no singular values
+# price - standard variations
+booking-10,ABC1234,2024/09/01 10:00,ECONOMY,EUR 0.00,1234,customer-01,flight-01
+booking-11,ABC1234,2024/09/01 10:00,ECONOMY,EUR 0.01,1234,customer-01,flight-01
+booking-12,ABC1234,2024/09/01 10:00,ECONOMY,EUR 1000000.00,1234,customer-01,flight-01
+booking-13,ABC1234,2024/09/01 10:00,ECONOMY,EUR 1000.00,1234,customer-01,flight-01
+# price - no singular values
+# lastCardNibble - standard variations
+booking-14,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,6789,customer-01,flight-01
+booking-15,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,0123,customer-01,flight-01
+booking-16,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,,customer-01,flight-01
+# lastCardNibble - no singular values
+# key:customer - standard variations
+booking-17,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-04,flight-01
+booking-18,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-08,flight-01
+# key:customer - no singular values
+# key:flight - standard variations
+booking-19,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-04
+booking-20,ABC1234,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-08
+# key:flight - no singular values

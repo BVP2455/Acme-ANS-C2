@@ -1,0 +1,49 @@
+﻿key,name,email,passportNumber,dateOfBirth,specialNeeds
+# base entity
+passenger-00,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+# name - standard variations
+passenger-01,L,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-02,Lo,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-03,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-05,โลเร็ม อิปซัม,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-06,لوريم إيبسوم,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-07,洛伦·伊普森,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-08,<marquee>Hacked</marquee>,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-09,<script>alert(‘Hacked!’);</script>,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-10,' or 'A' = 'A,acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+# name - no singular values
+# email - standard variations
+passenger-11,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme:password@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-12,"Lorem ipsum dolor sit amet, consectetur adipiscing",a@b.e,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-13,"Lorem ipsum dolor sit amet, consectetur adipiscing",a@b.es,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-14,"Lorem ipsum dolor sit amet, consectetur adipiscing",a@b.esx,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-15,"Lorem ipsum dolor sit amet, consectetur adipiscing",lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-16,"Lorem ipsum dolor sit amet, consectetur adipiscing",lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+# email - no singular values
+# passportNumber - standard variations
+passenger-17,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABCDEFGHI,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-18,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,123456,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-19,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC1234,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-20,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,WXYZ7890,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+# passportNumber - no singular values
+# dateOfBirth - standard variations
+passenger-21,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2025/03/12 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-22,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2025/03/11 23:59,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-23,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2000/01/01 00:01,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-24,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+# dateOfBirth - no singular values
+# specialNeeds - standard variations
+passenger-25,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,L
+passenger-26,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,Lo
+passenger-27,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*"
+passenger-28,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor"
+passenger-29,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,โลเร็ม อิปซัม
+passenger-30,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,لوريم إيبسوم
+passenger-31,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,洛伦·伊普森
+passenger-32,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,<marquee>Hacked</marquee>
+passenger-33,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,<script>alert(‘Hacked!’);</script>
+passenger-34,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,' or 'A' = 'A
+passenger-35,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,
+
+# specialNeeds - no singular values
