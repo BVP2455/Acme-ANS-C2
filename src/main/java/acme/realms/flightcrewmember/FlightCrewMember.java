@@ -59,15 +59,13 @@ public class FlightCrewMember extends AbstractRole {
 	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidNumber(min = 0, max = 120, fraction = 0)
+	@ValidNumber(min = 0, max = 120)
 	@Automapped
 	private Integer				yearsExperience;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	//No está aún implementada
 
 	@Mandatory
 	@Valid
