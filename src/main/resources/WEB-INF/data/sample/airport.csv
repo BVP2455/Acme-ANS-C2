@@ -1,50 +1,50 @@
-key;name;iataCode;operationalScoope;country;city
-#base entity;;;;;
-airport-00;"""Lorem ipsum dolor sit""";FGV;REGIONAL;"""Lorem ipsum dolor sit""";"""Lorem ipsum dolor sit"""
-# name - standard variations;;;;;
-airport-01;L;ESP;REGIONAL;Spain;Seville
-airport-02;Lo;CAR;REGIONAL;Spain;Seville
-airport-03;Lorem ipsum dolor sit amet, consectetur adipiscing;RBB;REGIONAL;Spain;Seville
-airport-04;Lorem ipsum dolor sit amet, consectetur adipiscin;GXY;REGIONAL;Spain;Seville
-airport-05;?????? ??????;FZK;REGIONAL;Spain;Seville
-airport-06;????? ??????;ABC;REGIONAL;Spain;Seville
-airport-07;??�???;BCA;REGIONAL;Spain;Seville
-airport-08;<marquee>Hacked</marquee>;PPP;REGIONAL;Spain;Seville
-airport-09;"<script>alert(�Hacked!�);</script>";ATM;REGIONAL;Spain;Seville
-airport-10;' or 'A' = 'A;BRR;REGIONAL;Spain;Seville
-# name - no singular values;;;;;
-#iataCode-standard variations;;;;;
-airport-11;Malaga Aiport;AA;REGIONAL;Spain;Malaga
-airport-12;Malaga Aiport;BBBB;REGIONAL;Spain;Malaga
-airport-13;Malaga Aiport;CCC;REGIONAL;Spain;Malaga
-airport-14;Malaga Aiport;D99;REGIONAL;Spain;Malaga
-#iataCode- no singular values;;;;;
-#internacionalScoope - standard variations;;;;;
-airport-11;Barcelona Airport;BAR;REGIONAL;Spain;Barcelona
-airport-12;Madrid Airport;MAD;DOMESTIC;Spain;Madrid
-airport-13;Milan Airport;MIL;INTERNATIONAL;Spain;Milan
-#internacionalScoope - no singular values;;;;;
-#country - standard variations;;;;;
-airport-14;Valencia Airport;VAA;REGIONAL;L;Valencia
-airport-15;Valencia Airport;VAB;REGIONAL;Lo;Valencia
-airport-16;Valencia Airport;VAC;REGIONAL;Lorem ipsum dolor sit amet, consectetur adipiscing;Valencia
-airport-17;Valencia Airport;VAD;REGIONAL;Lorem ipsum dolor sit amet, consectetur adipiscin;Valencia
-airport-18;Valencia Airport;VAE;REGIONAL;?????? ??????;Valencia
-airport-19;Valencia Airport;VAF;REGIONAL;????? ??????;Valencia
-airport-20;Valencia Airport;VAG;REGIONAL;??�???;Valencia
-airport-21;Valencia Airport;VAH;REGIONAL;<marquee>Hacked</marquee>;Valencia
-airport-22;Valencia Airport;VAI;REGIONAL;"<script>alert(�Hacked!�);</script>";Valencia
-airport-23;Valencia Airport;VAJ;REGIONAL;' or 'A' = 'A;Valencia
-#country - no singular values;;;;;
-#city - standard variations;;;;;
-airport-24;Zaragoza Airport;ZAA;REGIONAL;Spain;L
-airport-25;Zaragoza Airport;ZAB;REGIONAL;Spain;Lo
-airport-26;Zaragoza Airport;ZAC;REGIONAL;Spain;Lorem ipsum dolor sit amet, consectetur adipiscing
-airport-27;Zaragoza Airport;ZAD;REGIONAL;Spain;Lorem ipsum dolor sit amet, consectetur adipiscin
-airport-28;Zaragoza Airport;ZAE;REGIONAL;Spain;?????? ??????
-airport-29;Zaragoza Airport;ZAF;REGIONAL;Spain;????? ??????
-airport-30;Zaragoza Airport;ZAG;REGIONAL;Spain;??�???
-airport-31;Zaragoza Airport;ZAH;REGIONAL;Spain;<marquee>Hacked</marquee>
-airport-32;Zaragoza Airport;ZAI;REGIONAL;Spain;"<script>alert(�Hacked!�);</script>"
-airport-33;Zaragoza Airport;ZAJ;REGIONAL;Spain;' or 'A' = 'A
-# city - no singular variations;;;;;
+key,name,iataCode,operationalScope,country,city
+#base entity
+airport-00,Lorem ipsum dolor sit,FGV,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+# name - standard variations
+airport-01,L,ESP,REGIONAL,Spain,Seville
+airport-02,Lo,CAR,REGIONAL,Spain,Seville
+airport-03,Lorem ipsum dolor sit amet consectetur adipiscing,RBB,REGIONAL,Spain,Seville
+airport-04,Lorem ipsum dolor sit amet consectetur adipiscin,GXY,REGIONAL,Spain,Seville
+airport-05,โลเร็ม อิปซัม,FZK,REGIONAL,Spain,Seville
+airport-06,لوريم إيبسوم,ABC,REGIONAL,Spain,Seville
+airport-07,洛伦·伊普森,BCA,REGIONAL,Spain,Seville
+airport-08,<marquee>Hacked</marquee>,PPP,REGIONAL,Spain,Seville
+airport-09,<script>alert(‘Hacked!’);</script>,ATM,REGIONAL,Spain,Seville
+airport-10,' or 'A' = 'A,BRR,REGIONAL,Spain,Seville
+# name - no singular values
+# iataCode - standard variations
+airport-11,Malaga Aiport,AA,REGIONAL,Spain,Malaga
+airport-12,Malaga Aiport,BBBB,REGIONAL,Spain,Malaga
+airport-13,Malaga Aiport,CCC,REGIONAL,Spain,Malaga
+airport-14,Malaga Aiport,D99,REGIONAL,Spain,Malaga
+# iataCode - no singular values
+# internationalScope - standard variations
+airport-15,Barcelona Airport,BAR,REGIONAL,Spain,Barcelona
+airport-16,Madrid Airport,MAD,DOMESTIC,Spain,Madrid
+airport-17,Milan Airport,MIL,INTERNATIONAL,Spain,Milan
+# internationalScope - no singular values,"","","",""
+# country - standard variations
+airport-18,Valencia Airport,VAA,REGIONAL,L,Valencia
+airport-19,Valencia Airport,VAB,REGIONAL,Lo,Valencia
+airport-20,Valencia Airport,VAC,REGIONAL,Lorem ipsum dolor sit amet consectetur adipiscing,Valencia
+airport-21,Valencia Airport,VAD,REGIONAL,Lorem ipsum dolor sit amet consectetur adipiscin,Valencia
+airport-22,Valencia Airport,VAE,REGIONAL,โลเร็ม อิปซัม,Valencia
+airport-23,Valencia Airport,VAF,REGIONAL,لوريم إيبسوم,Valencia
+airport-24,Valencia Airport,VAG,REGIONAL,洛伦·伊普森,Valencia
+airport-25,Valencia Airport,VAH,REGIONAL,<marquee>Hacked</marquee>,Valencia
+airport-26,Valencia Airport,VAI,REGIONAL,<script>alert(‘Hacked!’);</script>,Valencia
+airport-27,Valencia Airport,VAJ,REGIONAL,' or 'A' = 'A,Valencia
+# country - no singular values
+# city - standard variations
+airport-28,Zaragoza Airport,ZAA,REGIONAL,Spain,L
+airport-29,Zaragoza Airport,ZAB,REGIONAL,Spain,Lo
+airport-30,Zaragoza Airport,ZAC,REGIONAL,Spain,Lorem ipsum dolor sit amet consectetur adipiscing
+airport-31,Zaragoza Airport,ZAD,REGIONAL,Spain,Lorem ipsum dolor sit amet consectetur adipiscin
+airport-32,Zaragoza Airport,ZAE,REGIONAL,Spain,โลเร็ม อิปซัม
+airport-33,Zaragoza Airport,ZAF,REGIONAL,Spain,لوريم إيبسوم
+airport-34,Zaragoza Airport,ZAG,REGIONAL,Spain,洛伦·伊普森
+airport-35,Zaragoza Airport,ZAH,REGIONAL,Spain,<marquee>Hacked</marquee>
+airport-34,Zaragoza Airport,ZAI,REGIONAL,Spain,<script>alert(‘Hacked!’);</script>
+airport-35,Zaragoza Airport,ZAJ,REGIONAL,Spain,' or 'A' = 'A
+# city - no singular values
