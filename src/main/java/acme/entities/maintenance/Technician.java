@@ -1,5 +1,5 @@
 
-package acme.entities.technician;
+package acme.entities.maintenance;
 
 import javax.persistence.Entity;
 import javax.persistence.Index;

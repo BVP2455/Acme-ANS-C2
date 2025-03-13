@@ -1,14 +1,14 @@
 
-package acme.entities.task;
+package acme.entities.airline;
 
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
-import acme.entities.maintenanceRecord.MaintenanceRecord;
+import acme.entities.airport.Airport;
 
-public class Involves extends AbstractEntity {
+public class AirlineOperation extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -19,11 +19,11 @@ public class Involves extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Task				task;
+	private Airline				airline;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private MaintenanceRecord	maintenanceRecord;
+	private Airport				airport;
 
 }

@@ -8,3 +8,9 @@ user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטי�
 user-account-customer-01,true,"UserIdentity{name: 'Javier', surname: 'Marquez', email: 'javier@acme.com'}",customer1,customer1
 user-account-customer-02,true,"UserIdentity{name: 'Marcos', surname: 'Rosa', email: 'marcos@acme.com'}",customer2,customer2
 user-account-customer-03,true,"UserIdentity{name: 'Jaime', surname: 'Zapata', email: 'jaime@acme.com'}",customer3,customer3
+user-account-assistanceAgent-01,true,"UserIdentity{name: 'Javier', surname: 'Leua', email: 'javi@acme.com'}",agent1,agent1
+user-account-assistanceAgent-02,true,"UserIdentity{name: 'Keia', surname: 'Laodsfhuai', email: 'keia@acme.com'}",agent2,agent2
+user-account-assistanceAgent-03,true,"UserIdentity{name: 'Otavio', surname: 'López', email: 'otaavio@acme.com'}",manager3,manager3
+user-account-administrator-02,true,"UserIdentity{name: 'Patricio', surname: 'Yarek', email: 'patricio@acme.com'}",administrator1,administrator1
+user-account-administrator-03,true,"UserIdentity{name: 'Kevin', surname: 'Laporta', email: 'kevin@acme.com'}",administrator2,administrator2
+
