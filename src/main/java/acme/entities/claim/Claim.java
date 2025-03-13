@@ -52,14 +52,14 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				indicator;
+	private ClaimIndicator		indicator;
 
 	// Relaciones
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private AssistanceAgents	registeredBy;
+	private AssistanceAgent		registeredBy;
 
 	@Mandatory
 	@Valid
