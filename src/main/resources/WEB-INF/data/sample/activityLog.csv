@@ -5,9 +5,9 @@ log-03,2022/09/11 20:20,"Zona de turbulencias","El avión entró en zona de turb
 log-04,2022/09/12 06:35,"Pequeña fisura","La ventana del avión recibió daño.",9,assignment-04
 
 # base entity
-log-01,2022/09/09 00:30,"Fallo de un motor","Uno de los motores del avión dejó de funcionar.",10,assignment-01
+log-05,2022/09/09 00:30,"Fallo de un motor","Uno de los motores del avión dejó de funcionar.",10,assignment-01
 # registrationMoment - standard variations
-log-05,2023/11/01 17:01,"Lorem ipsum","Lorem ipsum",0,assignment-01
+log-06,2023/11/01 17:01,"Lorem ipsum","Lorem ipsum",0,assignment-01
 log-07,2022/09/01 10:02,"Lorem ipsum","Lorem ipsum",0,assignment-01
 log-08,2022/09/01 10:03,"Lorem ipsum","Lorem ipsum",0,assignment-01
 log-09,2024/12/31 23:59,"Lorem ipsum","Lorem ipsum",0,assignment-01
