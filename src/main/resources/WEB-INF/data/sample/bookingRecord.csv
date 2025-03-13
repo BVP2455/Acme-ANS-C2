@@ -2,11 +2,11 @@
 # base entity
 bookingRecord-00,booking-01,passenger-01
 # key:booking - standard variations
-bookingRecord-00,booking-05,passenger-01
-bookingRecord-00,booking-09,passenger-01
+bookingRecord-01,booking-05,passenger-01
+bookingRecord-02,booking-09,passenger-01
 # key:booking - no singular values
 # key:passenger - standard variations
-bookingRecord-00,booking-01,passenger-05
-bookingRecord-00,booking-01,passenger-09
+bookingRecord-03,booking-01,passenger-05
+bookingRecord-04,booking-01,passenger-09
 # key:passenger - no singular values
 
