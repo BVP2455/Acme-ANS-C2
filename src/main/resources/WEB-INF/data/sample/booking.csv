@@ -7,8 +7,8 @@ booking-02,12345678,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
 booking-03,123ABCD,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
 # locatorCode - no singular values
 # purchaseMoment - standard variations
-booking-04,ABC1234,2025/03/12 00:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
-booking-05,ABC1234,2025/03/11 23:59,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-04,ABC1234,2025/01/01 00:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
+booking-05,ABC1234,2024/12/31 23:59,ECONOMY,EUR 5.00,1234,customer-01,flight-01
 booking-06,ABC1234,2000/01/01 00:01,ECONOMY,EUR 5.00,1234,customer-01,flight-01
 booking-07,ABC1234,2000/01/01 00:00,ECONOMY,EUR 5.00,1234,customer-01,flight-01
 # purchaseMoment - no singular values
