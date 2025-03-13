@@ -1,14 +1,13 @@
 
-package acme.entities.task;
+package acme.entities.maintenance;
 
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
-import acme.entities.maintenanceRecord.MaintenanceRecord;
 
-public class Involves extends AbstractEntity {
+public class MaintenanceTask extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
