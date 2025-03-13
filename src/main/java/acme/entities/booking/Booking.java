@@ -57,7 +57,7 @@ public class Booking extends AbstractEntity {
 	@Optional
 	@ValidNumber(integer = 4)
 	@Automapped
-	private String				lastCardNibble;
+	private Integer				lastCardNibble;
 
 	// Relationships ----------------------------------------------------------
 
