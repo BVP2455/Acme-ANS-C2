@@ -52,7 +52,7 @@ aircraft-37,"Airbus A123","ABC123",150,20000,MAINTENANCE,"Used for short-haul in
 
 # details - standard variations
 # base
-aircraft-38,"Airbus A123","ABC123",150,20000,ACTIVE,"aircraft-05,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01",airline-01
+aircraft-38,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
 aircraft-39,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
 aircraft-40,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
 aircraft-41,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
