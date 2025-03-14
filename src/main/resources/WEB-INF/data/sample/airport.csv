@@ -14,10 +14,10 @@ airport-09,<script>alert(‘Hacked!’);</script>,ATM,REGIONAL,Spain,Seville
 airport-10,' or 'A' = 'A,BRR,REGIONAL,Spain,Seville
 # name - no singular values
 # iataCode - standard variations
-airport-11,Malaga Aiport,AA,REGIONAL,Spain,Malaga
-airport-12,Malaga Aiport,BBBB,REGIONAL,Spain,Malaga
+airport-11,Malaga Aiport,AAA,REGIONAL,Spain,Malaga
+airport-12,Malaga Aiport,ABA,REGIONAL,Spain,Malaga
 airport-13,Malaga Aiport,CCC,REGIONAL,Spain,Malaga
-airport-14,Malaga Aiport,D99,REGIONAL,Spain,Malaga
+airport-14,Malaga Aiport,ZZZ,REGIONAL,Spain,Malaga
 # iataCode - no singular values
 # internationalScope - standard variations
 airport-15,Barcelona Airport,BAR,REGIONAL,Spain,Barcelona
