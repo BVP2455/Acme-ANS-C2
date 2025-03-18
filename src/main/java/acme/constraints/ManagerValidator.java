@@ -35,7 +35,11 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 			String[] nombreCompleto = identity.getFullName().trim().split(" ");
 			for (int i = 0; i < nombreCompleto.length; i++)
 				iniciales.append(nombreCompleto[i].charAt(0));
-			Boolean identificadorCorrecto = StringHelper.startsWith(manager.getIdentifier(), iniciales.toString().substring(0, 2), true) || StringHelper.startsWith(manager.getIdentifier(), iniciales.toString().substring(0, 3), true);
+			Boolean identificadorCorrecto = null;
+			if (iniciales.length() == 2)
+				identificadorCorrecto = StringHelper.startsWith(manager.getIdentifier(), iniciales.toString().substring(0, 2), true);
+			if (iniciales.length() == 3)
+				identificadorCorrecto = StringHelper.startsWith(manager.getIdentifier(), iniciales.toString().substring(0, 3), true);
 
 			super.state(context, identificadorCorrecto, "*", "javax.validation.manager.wrong-identifier-number.message");
 
