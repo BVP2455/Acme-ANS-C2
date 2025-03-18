@@ -8,4 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the first version of Acme ANS
+
+**D01 
+1.0.0 Starter project.
+1.0.1 Customized project and added reports.
+
+**D02 
+2.0.0 Updated project and framework.
+2.1.0 Created new entities.
+2.1.1 Created new profiles and roles.
+2.1.2 Added sample data for the previously created entities.

@@ -1,47 +1,47 @@
 ﻿key,name,moment,subject,text,score,recommended
 # base entity
-review-00,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
+review-00,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
 # name - standard variations
-review-01,L,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-02,Lo,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-03,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-05,โลเร็ม อิปซัม,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-06,لوريم إيبسوم,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-07,洛伦·伊普森,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-08,<marquee>Hacked</marquee>,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-09,<script>alert(‘Hacked!’);</script>,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-10,' or 'A' = 'A,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
+review-01,L,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-02,Lo,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-03,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-05,โลเร็ม อิปซัม,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-06,لوريم إيبسوم,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-07,洛伦·伊普森,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-08,<marquee>Hacked</marquee>,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-09,<script>alert(‘Hacked!’);</script>,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-10,' or 'A' = 'A,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
 # name - no singular values
 # moment - standard variations
-review-11,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/03/12 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-12,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/03/11 23:59,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-13,"Lorem ipsum dolor sit amet, consectetur adipiscing",2000/01/01 00:01,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-14,"Lorem ipsum dolor sit amet, consectetur adipiscing",2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
+review-11,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-12,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/12/31 23:59,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-13,"Lorem ipsum dolor sit amet, consectetur adipiscing",2000/01/01 00:01,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-14,"Lorem ipsum dolor sit amet, consectetur adipiscing",2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
 # moment - no singular values
 # subject - standard variations
-review-15,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,L,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-16,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,Lo,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-17,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-18,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscin","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-19,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,โลเร็ม อิปซัม,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-20,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,لوريم إيبسوم,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-21,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,洛伦·伊普森,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-22,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,<marquee>Hacked</marquee>,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-23,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,<script>alert(‘Hacked!’);</script>,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-24,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,' or 'A' = 'A,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
+review-15,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,L,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-16,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,Lo,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-17,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-18,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscin","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-19,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,โลเร็ม อิปซัม,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-20,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,لوريم إيبسوم,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-21,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,洛伦·伊普森,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-22,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,<marquee>Hacked</marquee>,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-23,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,<script>alert(‘Hacked!’);</script>,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-24,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,' or 'A' = 'A,"Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
 # subject - no singular values
 # text - standard variations
-review-25,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",L,50.00,false
-review-26,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lo,50.00,false
-review-27,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",50.00,false
-review-28,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",50.00,false
-review-29,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",โลเร็ม อิปซัม,50.00,false
-review-30,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",لوريم إيبسوم,50.00,false
-review-31,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",洛伦·伊普森,50.00,false
-review-32,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",<marquee>Hacked</marquee>,50.00,false
-review-33,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",<script>alert(‘Hacked!’);</script>,50.00,false
-review-34,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",' or 'A' = 'A,50.00,false
+review-25,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",L,8.00,false
+review-26,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lo,8.00,false
+review-27,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",8.00,false
+review-28,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",8.00,false
+review-29,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",โลเร็ม อิปซัม,8.00,false
+review-30,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",لوريم إيبسوم,8.00,false
+review-31,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",洛伦·伊普森,8.00,false
+review-32,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",<marquee>Hacked</marquee>,8.00,false
+review-33,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",<script>alert(‘Hacked!’);</script>,8.00,false
+review-34,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing",' or 'A' = 'A,8.00,false
 # text - no singular values
 # score - standard variations
 review-35,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",0.00,false
@@ -51,7 +51,7 @@ review-38,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,
 review-39,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",,false
 # score - no singular values
 # recommended - standard variations
-review-40,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,false
-review-41,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,true
-review-42,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,
+review-40,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
+review-41,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,true
+review-42,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,
 # recommended - no singular values
