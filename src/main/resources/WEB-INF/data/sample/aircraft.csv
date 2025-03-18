@@ -5,64 +5,62 @@ aircraft-03,"Embraer A320","ABC125",100,35555,ACTIVE,"Preferred for regional fli
 aircraft-04,"Biter B200","ABC126",250,10000,ACTIVE,"Used for short-haul international routes",airline-01
 
 # base entity 
-aircraft-05,"Airbus A123","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-05,"Airbus A123","ABC127",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 # model - standard variations
-aircraft-06,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-07,"L","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-08,"Lo","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-09,"Lorem ipsum dolor sit amet, consectetur adipiscin","ABC123",150,20000,ACTIVE,Used for short-haul international routes,airline-01
-aircraft-10,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC123",150,20000,ACTIVE,Used for short-haul international routes,airline-01
+aircraft-06,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC128",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-07,"L","ABC129",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-08,"Lo","ABC120",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-09,"Lorem ipsum dolor sit amet, consectetur adipiscin","ABC110",150,20000,ACTIVE,Used for short-haul international routes,airline-01
+aircraft-10,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC111",150,20000,ACTIVE,Used for short-haul international routes,airline-01
 # model - no singular values
-aircraft-11,"โลเร็ม อิปซัม","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-12,"لوريم إيبسوم","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-13,洛伦·伊普森,"ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-14,"<marquee>Hacked</marquee>","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-15,"<script>alert(‘Hacked!’);</script>","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-16,"' or 'A' = 'A","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-11,"โลเร็ม อิปซัม","ABC112",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-12,"لوريم إيبسوم","ABC113",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-13,洛伦·伊普森,"ABC114",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-14,"<marquee>Hacked</marquee>","ABC115",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-15,"<script>alert(‘Hacked!’);</script>","ABC116",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-16,"' or 'A' = 'A","ABC117",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 
 # registrationNumber - standard variations
 aircraft-17,"Airbus A123","Lorem ipsum dolor sit amet, consectetur adipiscing",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-18,"Airbus A123","L",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-19,"Airbus A123","Lo",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-20,"Airbus A123","Lorem ipsum dolor sit amet, consectetur adipiscin",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-21,"Airbus A123","Lorem ipsum dolor sit amet, consectetur adipiscing",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-21,"Airbus A123","Lorem ipsum dolor sit amet, consectetur adipisci",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 # registrationNumber - no singular values
-aircraft-22,"Airbus A123","โลเร็ม อิปซัม",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-22,"Airbus A123","โลเร็ม อิปซั",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-23,"Airbus A123","โลเร็ม อิปซัม",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-24,Airbus A123,"洛伦·伊普森",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-25,"Airbus A123","<marquee>Hacked</marquee>",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 aircraft-26,"Airbus A123","<script>alert(‘Hacked!’);</script>",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-27,"Airbus A123","<script>alert(‘Hacked!’);</script>",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
 
 #capacity - standard variations
-aircraft-28,"Airbus A123","ABC123",128,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-29,"Airbus A123","ABC123",1,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-30,"Airbus A123","ABC123",2,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-31,"Airbus A123","ABC123",255,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-27,"Airbus A123","ABC118",128,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-28,"Airbus A123","ABC119",1,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-29,"Airbus A123","ABC130",2,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-30,"Airbus A123","ABC131",255,20000,ACTIVE,"Used for short-haul international routes",airline-01
 
 # cargoWeight - standard variations
-aircraft-32,"Airbus A123","ABC123",150,26000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-33,"Airbus A123","ABC123",150,2000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-34,"Airbus A123","ABC123",150,2001,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-35,"Airbus A123","ABC123",150,50000,ACTIVE,"Used for short-haul international routes",airline-01
-
+aircraft-31,"Airbus A123","ABC132",150,26000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-32,"Airbus A123","ABC133",150,2000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-33,"Airbus A123","ABC134",150,2001,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-34,"Airbus A123","ABC135",150,50000,ACTIVE,"Used for short-haul international routes",airline-01
 # status - standrad variations
-aircraft-36,"Airbus A123","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
-aircraft-37,"Airbus A123","ABC123",150,20000,MAINTENANCE,"Used for short-haul international routes",airline-01
+aircraft-35,"Airbus A123","ABC136",150,20000,ACTIVE,"Used for short-haul international routes",airline-01
+aircraft-36,"Airbus A123","ABC137",150,20000,MAINTENANCE,"Used for short-haul international routes",airline-01
 
 # details - standard variations
 # base
-aircraft-38,"Airbus A123","ABC123",150,20000,ACTIVE,"aircraft-05,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC123",150,20000,ACTIVE,"Used for short-haul international routes",airline-01",airline-01
-aircraft-39,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
-aircraft-40,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
-aircraft-41,"Airbus A123","ABC123",150,20000,ACTIVE,"",airline-01
-aircraft-42,"Airbus A123","ABC123",150,20000,ACTIVE,"L",airline-01
-aircraft-43,"Airbus A123","ABC123",150,20000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-01
-aircraft-44,"Airbus A123","ABC123",150,20000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-01
+aircraft-37,"Airbus A123","ABC138",150,20000,ACTIVE,"",airline-01
+aircraft-38,"Airbus A123","ABC139",150,20000,ACTIVE,"",airline-01
+aircraft-39,"Airbus A123","ABC140",150,20000,ACTIVE,"",airline-01
+aircraft-40,"Airbus A123","ABC141",150,20000,ACTIVE,"",airline-01
+aircraft-41,"Airbus A123","ABC142",150,20000,ACTIVE,"L",airline-01
+aircraft-42,"Airbus A123","ABC143",150,20000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-01
+aircraft-43,"Airbus A123","ABC144",150,20000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-01
 # details - no singular values
-aircraft-45,"Airbus A123","ABC123",150,20000,ACTIVE,"โลเร็ม อิปซัม",airline-01
-aircraft-46,"Airbus A123","ABC123",150,20000,ACTIVE,"لوريم إيبسوم",airline-01
-aircraft-47,"Airbus A123","ABC123",150,20000,ACTIVE,"洛伦·伊普森",airline-01
-aircraft-48,"Airbus A123","ABC123",150,20000,ACTIVE,"<marquee>Hacked</marquee>",airline-01
-aircraft-49,"Airbus A123","ABC123",150,20000,ACTIVE,"<script>alert(‘Hacked!’);</script>",airline-01
-aircraft-50,"Airbus A123","ABC123",150,20000,ACTIVE,"' or 'A' = 'A ",airline-01
+aircraft-44,"Airbus A123","ABC145",150,20000,ACTIVE,"โลเร็ม อิปซัม",airline-01
+aircraft-45,"Airbus A123","ABC146",150,20000,ACTIVE,"لوريم إيبسوم",airline-01
+aircraft-46,"Airbus A123","ABC147",150,20000,ACTIVE,"洛伦·伊普森",airline-01
+aircraft-47,"Airbus A123","ABC148",150,20000,ACTIVE,"<marquee>Hacked</marquee>",airline-01
+aircraft-48,"Airbus A123","ABC149",150,20000,ACTIVE,"<script>alert(‘Hacked!’);</script>",airline-01
+aircraft-49,"Airbus A123","ABC150",150,20000,ACTIVE,"' or 'A' = 'A ",airline-01

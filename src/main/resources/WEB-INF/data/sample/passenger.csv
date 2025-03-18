@@ -28,8 +28,8 @@ passenger-19,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ips
 passenger-20,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,WXYZ7890,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
 # passportNumber - no singular values
 # dateOfBirth - standard variations
-passenger-21,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2025/03/12 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
-passenger-22,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2025/03/11 23:59,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-21,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2025/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
+passenger-22,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/12/31 23:59,"Lorem ipsum dolor sit amet, consectetur adipiscing"
 passenger-23,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2000/01/01 00:01,"Lorem ipsum dolor sit amet, consectetur adipiscing"
 passenger-24,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2000/01/01 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing"
 # dateOfBirth - no singular values
@@ -45,5 +45,4 @@ passenger-32,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ips
 passenger-33,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,<script>alert(‘Hacked!’);</script>
 passenger-34,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,' or 'A' = 'A
 passenger-35,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,
-
 # specialNeeds - no singular values

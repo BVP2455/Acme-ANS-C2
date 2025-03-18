@@ -36,7 +36,7 @@ public class Manager extends AbstractRole {
 	// Mandatory atributes ------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$", message = "Invalid identifier number, please follow pattern")
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", message = "Invalid identifier number, please follow pattern")
 	@Column(unique = true)
 	private String				identifier;
 

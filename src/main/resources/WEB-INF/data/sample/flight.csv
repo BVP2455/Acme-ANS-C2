@@ -1,44 +1,39 @@
-key,tag,requires-self-transfer,cost,description,draft-mode
+key,tag,selfTransfer,cost,description
 # base entity
-flight-01,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-# tag - standard variations
-flight-02,L,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-03,Lo,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-04,"Lorem ipsum dolor sit amet consectetur adipiscin",FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-05,"Lorem ipsum",FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-06,โลเร็ม อิปซัม,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-07,لوريم إيبسوم,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-08,洛伦·伊普森,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-09,<marquee>Hacked</marquee>,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-10,<script>alert(‘Hacked!’);</script>,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-flight-11,' or 'A' = 'A,FALSE,EUR 500.00,"Lorem ipsum",TRUE
+flight-01,"Lorem ipsum dolor sit ame",FALSE,EUR 500.00,"Lorem ipsum"
+# tag - standard variationS
+flight-02,L,FALSE,EUR 500.00,Lorem ipsum
+flight-03,Lo,FALSE,EUR 500.00,Lorem ipsum
+flight-04,Lorem ipsum dolor sit amet consectetur adipiscin,FALSE,EUR 500.00,Lorem ipsum
+flight-05,Lorem ipsum,FALSE,EUR 500.00,Lorem ipsum
+flight-06,โลเร็ม อิปซัม,FALSE,EUR 500.00,Lorem ipsum
+flight-07,لوريم إيبسوم,FALSE,EUR 500.00,Lorem ipsum
+flight-08,洛伦·伊普森,FALSE,EUR 500.00,Lorem ipsum
+flight-09,<marquee>Hacked</marquee>,FALSE,EUR 500.00,Lorem ipsum
+flight-10,<script>alert(‘Hacked!’);</script>,FALSE,EUR 500.00,Lorem ipsum
+flight-11,' or 'A' = 'A,FALSE,EUR 500.00,Lorem ipsum
 # tag - no singular values
 # requires-self-transfer - standard variations
-flight-12,Lorem ipsum dolor sit ame,TRUE,EUR 500.00,"Lorem ipsum",TRUE
+flight-12,Lorem ipsum dolor sit ame,TRUE,EUR 500.00,Lorem ipsum
 # requires-self-transfer - no singular values
 # cost - standard variations
-flight-13,Lorem ipsum dolor sit ame,FALSE,EUR 0.00,"Lorem ipsum",TRUE
-flight-14,Lorem ipsum dolor sit ame,FALSE,EUR 0.01,"Lorem ipsum",TRUE
-flight-15,Lorem ipsum dolor sit ame,FALSE,EUR 999999.99,"Lorem ipsum",TRUE
-flight-16,Lorem ipsum dolor sit ame,FALSE,EUR 1000000.00,"Lorem ipsum",TRUE
+flight-13,Lorem ipsum dolor sit ame,FALSE,EUR 0.00,Lorem ipsum
+flight-14,Lorem ipsum dolor sit ame,FALSE,EUR 0.01,Lorem ipsum
+flight-15,Lorem ipsum dolor sit ame,FALSE,EUR 999999.99,Lorem ipsum
+flight-16,Lorem ipsum dolor sit ame,FALSE,EUR 1000000.00,Lorem ipsum
 # cost - singular values
-flight-17,Lorem ipsum dolor sit ame,FALSE,USD 9.99,"Lorem ipsum",TRUE
+flight-17,Lorem ipsum dolor sit ame,FALSE,USD 9.99,Lorem ipsum
 # description - standard variations
-flight-18,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,,TRUE
-flight-19,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,L,TRUE
-flight-20,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,Lo,TRUE
-flight-21,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,El vuelo comenzó puntualmente. el avión despegó suavemente y pronto se alzó entre las nubes. Durante el trayecto. el servicio fue excelente y la vista desde la ventana fue espectacular. La experiencia fue muy cómoda. y el aterrizaje fue suave. sin contratiempos.,TRUE
-flight-22,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,El vuelo comenzó puntualmente. el avión despegó suavemente y pronto se alzó entre las nubes. Durante el trayecto. el servicio fue excelente y la vista desde la ventana fue espectacular. La experiencia fue muy cómoda. y el aterrizaje fue suave. sin contratiempos,TRUE
-flight-23,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,โลเร็ม อิปซัม,TRUE
-flight-24,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,لوريم إيبسوم,TRUE
-flight-25,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,洛伦·伊普森,TRUE
-flight-26,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,<marquee>Hacked</marquee>,TRUE
-flight-27,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,<script>alert(‘Hacked!’);</script>,TRUE
-flight-28,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,' or 'A' = 'A,TRUE
+flight-18,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,
+flight-19,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,L
+flight-20,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,Lo
+flight-21,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,El vuelo comenzó puntualmente. el avión despegó suavemente y pronto se alzó entre las nubes. 
+flight-22,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,El vuelo comenzó puntualmente. el avión despegó suavemente y pronto se alzó entre las nubes. 
+flight-23,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,โลเร็ม อิปซัม
+flight-24,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,لوريم إيبسوم
+flight-25,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,洛伦·伊普森
+flight-26,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,<marquee>Hacked</marquee>
+flight-27,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,<script>alert(‘Hacked!’);</script>
+flight-28,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,' or 'A' = 'A
 # description - no singular values
-# draft-mode - standard variations
-flight-29,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,"Lorem ipsum",FALSE
-# draft-mode - no singular values
-# manager - standard variations
-flight-30,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,"Lorem ipsum",TRUE
-# manager - no singular values
+
