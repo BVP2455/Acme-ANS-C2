@@ -24,21 +24,25 @@ public class ServiceValidator extends AbstractValidator<ValidService, Service> {
 	public boolean isValid(final Service service, final ConstraintValidatorContext context) {
 		assert context != null;
 
-		boolean result;
-		if (service == null)
+		if (service == null) {
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-		else {
-			boolean containsYear;
-			Date currentMoment = MomentHelper.getCurrentMoment();
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(currentMoment);
-			Integer currentYear = calendar.get(Calendar.YEAR);
-			String year = String.valueOf(currentYear).substring(2);
-			containsYear = StringHelper.endsWith(service.getPromotionCode(), year, false); //Comprueba que termine con los 2 dígitos del año
-			super.state(context, containsYear, "identifier", "acme.validation.service.promotioncode.year.message");
+			return false;
 		}
-		result = !super.hasErrors(context);
-		return result;
-	}
 
+		String promotionCode = service.getPromotionCode();
+		if (promotionCode == null || promotionCode.isBlank())
+			return true;
+
+		boolean containsYear;
+		Date currentMoment = MomentHelper.getCurrentMoment();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(currentMoment);
+		Integer currentYear = calendar.get(Calendar.YEAR);
+		String year = String.valueOf(currentYear).substring(2);
+		containsYear = StringHelper.endsWith(promotionCode, year, false); // Comprueba que termine con los 2 dígitos del año
+
+		super.state(context, containsYear, "identifier", "acme.validation.service.promotioncode.year.message");
+
+		return !super.hasErrors(context);
+	}
 }
