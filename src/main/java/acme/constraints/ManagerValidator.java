@@ -21,33 +21,30 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 
 	@Override
 	public boolean isValid(final Manager manager, final ConstraintValidatorContext context) {
+		// HINT: value can be null
 		assert context != null;
 
 		boolean result;
 
-		if (manager == null)
+		if (manager == null || manager.getIdentifier() == null || manager.getIdentity() == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+		else if (StringHelper.isBlank(manager.getIdentifier()))
+			super.state(context, false, "identifier", "javax.validation.constraints.NotBlank.message");
 		else {
-
-			//R1: the first two or three letters of the identifier number must correspond to their initials
-			StringBuilder iniciales = new StringBuilder();
+			boolean containsInitials;
 			DefaultUserIdentity identity = manager.getIdentity();
-			String[] nombreCompleto = identity.getFullName().trim().split(" ");
-			for (int i = 0; i < nombreCompleto.length; i++)
-				iniciales.append(nombreCompleto[i].charAt(0));
-			Boolean identificadorCorrecto = null;
-			if (iniciales.length() == 2)
-				identificadorCorrecto = StringHelper.startsWith(manager.getIdentifier(), iniciales.toString().substring(0, 2), true);
-			if (iniciales.length() == 3)
-				identificadorCorrecto = StringHelper.startsWith(manager.getIdentifier(), iniciales.toString().substring(0, 3), true);
+			String[] nombreCompleto = (identity.getName() + " " + identity.getSurname()).trim().split("\\s+");
+			StringBuilder initials = new StringBuilder();
 
-			super.state(context, identificadorCorrecto, "*", "javax.validation.manager.wrong-identifier-number.message");
+			for (String palabra : nombreCompleto)
+				if (!palabra.isEmpty())
+					initials.append(palabra.charAt(0));
 
+			containsInitials = StringHelper.startsWith(manager.getIdentifier(), initials.toString(), false);
+			super.state(context, containsInitials, "identifier", "acme.validation.customer.identifier.message");
 		}
 
 		result = !super.hasErrors(context);
-
 		return result;
 	}
-
 }
