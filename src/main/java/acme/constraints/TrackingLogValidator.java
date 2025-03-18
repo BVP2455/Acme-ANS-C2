@@ -33,7 +33,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		if (trackingLog.getClaim() == null)
 			super.state(context, false, "*", "javax.validation.trackinglog.null-claim.message");
 		else {
-			Double lastResolutionPercentage = this.repository.getLatestTrackingLog(trackingLog.getClaim().getId()).getResolutionPercentage();
+			Double lastResolutionPercentage = this.repository.findTrackingLogsByClaimId(trackingLog.getClaim().getId()).getLast().getResolutionPercentage();
 			if ((trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() < 100)
 				super.state(context, false, "*", "javax.validation.trackinglog.incorrect-status.message");
 			else if (!(trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() == 100)
