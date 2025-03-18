@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.trackingLog;
 
 import java.util.Date;
 
@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -14,6 +15,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidTrackingLog;
 import acme.entities.claim.Claim;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +23,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidTrackingLog
 public class TrackingLog extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -43,8 +46,9 @@ public class TrackingLog extends AbstractEntity {
 	private Double				resolutionPercentage;
 
 	@Mandatory
+	@Valid
 	@Automapped
-	private Boolean				accepted;
+	private TrackingLogStatus	status;
 
 	@Mandatory
 	@ValidString(max = 255)
@@ -54,7 +58,8 @@ public class TrackingLog extends AbstractEntity {
 	// Relaciones
 
 	@Mandatory
-	@ManyToOne
+	@Valid
+	@ManyToOne(optional = false)
 	private Claim				claim;
 
 }
