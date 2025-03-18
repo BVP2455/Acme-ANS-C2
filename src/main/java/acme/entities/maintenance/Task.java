@@ -1,5 +1,5 @@
 
-package acme.entities.task;
+package acme.entities.maintenance;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -10,7 +10,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.technician.Technician;
+import acme.realms.Technician;
 import lombok.Getter;
 import lombok.Setter;
 
