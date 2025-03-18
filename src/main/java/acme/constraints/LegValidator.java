@@ -39,12 +39,12 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		else {
 			{
 				// R1: hay que hacer una validacion custom para que el momento de llegada sea posterior al momento de salida sin usar el reloj real
-				Boolean correctDepatureArrivalDate = MomentHelper.isAfter(leg.getScheduledDeparture(), leg.getScheduledArrival());
+				Boolean correctDepatureArrivalDate = MomentHelper.isAfter(leg.getScheduledArrival(), leg.getScheduledDeparture());
 
 				super.state(context, correctDepatureArrivalDate, "scheduledArrival", "acme.validation.leg.wrong-scheduled-arrival.message");
 			}
 			{
-				// R1: a unique flight number composed of the airline's IATA code followed by four digits, unique
+				// R2: a unique flight number composed of the airline's IATA code followed by four digits, unique
 				String airlineCode = leg.getAirline().getCode();
 				Boolean correctFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineCode, false);
 
