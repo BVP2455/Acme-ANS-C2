@@ -36,10 +36,16 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 		else {
 			boolean containsInitials;
 			DefaultUserIdentity identity = customer.getIdentity();
-			char nameFirstLetter = identity.getName().charAt(0);
-			char surnameFirstLetter = identity.getSurname().charAt(0);
-			String initials = "" + nameFirstLetter + surnameFirstLetter;
-			containsInitials = StringHelper.startsWith(customer.getIdentifier(), initials, false);
+
+			// Obtener las iniciales de todas las palabras del nombre completo
+			String[] nombreCompleto = (identity.getName() + " " + identity.getSurname()).trim().split("\\s+");
+			StringBuilder initials = new StringBuilder();
+
+			for (String palabra : nombreCompleto)
+				if (!palabra.isEmpty())
+					initials.append(palabra.charAt(0));
+
+			containsInitials = StringHelper.startsWith(customer.getIdentifier(), initials.toString(), false);
 			super.state(context, containsInitials, "identifier", "acme.validation.customer.identifier.message");
 		}
 
