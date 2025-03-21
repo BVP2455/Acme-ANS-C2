@@ -57,7 +57,7 @@ public class Aircraft extends AbstractEntity {
 	@Optional
 	@ValidString
 	@Automapped
-	String						details;
+	private String				details;
 
 	// Relationships ----------------------------------------------------------
 
