@@ -63,5 +63,5 @@ customer-46,user-account-customer-01,JM101111,123456789,"Lorem ipsum dolor sit a
 customer-47,user-account-customer-01,JM211111,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",1
 customer-48,user-account-customer-01,JM311111,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",500000
 customer-49,user-account-customer-01,JM411111,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",499999
-customer-50,user-account-customer-01,JM511111,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",
+customer-50,user-account-customer-01,JM511111,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",null
 # earnedPoints - no singular values
