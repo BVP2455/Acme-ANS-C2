@@ -16,6 +16,8 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidActivityLog;
+import acme.entities.legs.Leg;
+import acme.realms.flightcrewmember.FlightCrewMember;
 import acme.entities.flightassignment.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,8 +35,7 @@ public class ActivityLog extends AbstractEntity {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(max = "2201/01/01  00:00:00", past = true)
-	@Automapped
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
@@ -49,7 +50,7 @@ public class ActivityLog extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 0)
+	@ValidNumber(min = 0, max = 10, integer = 2)
 	@Automapped
 	private Integer				severityLevel;
 
@@ -57,7 +58,7 @@ public class ActivityLog extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private FlightAssignment	activityLogAssignment;
 
 }

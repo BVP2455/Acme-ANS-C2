@@ -1,15 +1,15 @@
 
-package acme.entities.maintenanceRecord;
+package acme.realms;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
@@ -17,50 +17,56 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
-import acme.entities.technician.Technician;
+import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidAssistanceAgent;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
-public class MaintenanceRecord extends AbstractEntity {
-
-	// Serialisation version --------------------------------------------------
+@ValidAssistanceAgent
+public class AssistanceAgent extends AbstractRole {
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	//Atributos
 
 	@Mandatory
-	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				maintenanceMoment;
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", max = 9)
+	@Column(unique = true)
+	private String				employeeCode;
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	private MaintenanceStatus	status;
+	private String				spokenLanguages;
 
 	@Mandatory
-	@ValidMoment
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				nextInspectionDue;
-
-	@Mandatory
-	@ValidMoney
-	@Automapped
-	private Money				estimatedCost;
+	private Date				moment;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidString(max = 255)
 	@Automapped
-	private String				notes;
+	private String				briefBio;
 
-	// Relationships -------------------------------------------------------------
+	@Optional
+	@ValidMoney
+	@Automapped
+	private Money				salary;
+
+	@Optional
+	@ValidUrl
+	@Automapped
+	private String				picture;
+
+	//Relaciones
 
 	@Mandatory
-	@Valid
 	@ManyToOne(optional = false)
-	private Technician			technician;
+	private Airline				airline;
+
 }

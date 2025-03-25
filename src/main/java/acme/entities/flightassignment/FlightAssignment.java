@@ -15,7 +15,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.flights.Leg;
+import acme.entities.legs.Leg;
 import acme.realms.flightcrewmember.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,8 +37,7 @@ public class FlightAssignment extends AbstractEntity {
 	private FlightCrewDuty		duty;
 
 	@Mandatory
-	@ValidMoment(min = "2000/01/01  00:00:00", past = true)
-	@Automapped
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				lastUpdateMoment;
 
@@ -51,18 +50,19 @@ public class FlightAssignment extends AbstractEntity {
 
 	@Optional
 	@ValidString
+	@Automapped
 	private String				remarks;
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private FlightCrewMember	flightCrewMember;
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Leg					leg;
 
 }
