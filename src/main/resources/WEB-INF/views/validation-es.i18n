@@ -16,3 +16,4 @@ acme.validation.assistanceAgent.identifier.message = Identificador incorrecto
 acme.validation.technician.licenseNumber.message = Número de licencia inválido. Debe comenzar con 2 o 3 letras mayúsculas seguidas de 6 dígitos.
 acme.validation.technician.duplicated-licenseNumber.message = Número de licencia inválido, ya está en uso.
 
+acme.validation.booking.duplicated-locatorCode.message = Codigo de localización incorrecto, ya esta en uso
