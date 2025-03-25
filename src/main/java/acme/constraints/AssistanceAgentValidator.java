@@ -3,15 +3,22 @@ package acme.constraints;
 
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.StringHelper;
-import acme.realms.AssistanceAgent;
+import acme.realms.assistanceAgents.AssistanceAgent;
+import acme.realms.assistanceAgents.AssistanceAgentRepository;
 
 public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceAgent, AssistanceAgent> {
 	// Internal state ---------------------------------------------------------
 
+	@Autowired
+	private AssistanceAgentRepository repository;
+
 	// Initialiser ------------------------------------------------------------
+
 
 	@Override
 	public void initialise(final ValidAssistanceAgent annotation) {
@@ -39,6 +46,14 @@ public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceA
 			String initials = "" + nameFirstLetter + surnameFirstLetter;
 			containsInitials = StringHelper.startsWith(assistanceAgent.getEmployeeCode(), initials, false); //Comprueba que empiece por las 2 iniciales
 			super.state(context, containsInitials, "identifier", "acme.validation.assistanceAgent.identifier.message");
+		}
+
+		if (this.repository != null) {
+			String employeeCode = assistanceAgent.getEmployeeCode();
+			AssistanceAgent existingAgent = this.repository.findByEmployeeCode(employeeCode);
+			boolean uniqueEmployeeCode = existingAgent == null || existingAgent.equals(assistanceAgent);
+
+			super.state(context, uniqueEmployeeCode, "employeeCode", "acme.validation.assistanceAgent.duplicated-employeeCode.message");
 		}
 
 		result = !super.hasErrors(context);
