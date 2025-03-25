@@ -22,7 +22,7 @@ import acme.entities.legs.Leg;
 import acme.entities.trackingLog.TrackingLog;
 import acme.entities.trackingLog.TrackingLogRepository;
 import acme.entities.trackingLog.TrackingLogStatus;
-import acme.realms.AssistanceAgent;
+import acme.realms.assistanceAgents.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
 
