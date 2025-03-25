@@ -9,8 +9,10 @@ acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
 
 acme.validation.customer.identifier.message = Invalid identifier
+acme.validation.customer.duplicated-identifier.message = Invalid identifier, it is already used
 
 acme.validation.assistanceAgent.identifier.message = Invalid identifier
 
 acme.validation.technician.licenseNumber.message = Invalid license number. It must start with 2 or 3 uppercase letters followed by 6 digits.
 acme.validation.technician.duplicated-licenseNumber.message = Invalid license number, it is already used.
+
