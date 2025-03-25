@@ -53,5 +53,5 @@ review-39,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,
 # recommended - standard variations
 review-40,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,false
 review-41,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,true
-review-42,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,
+review-42,"Lorem ipsum dolor sit amet, consectetur adipiscing",2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",8.00,null
 # recommended - no singular values
