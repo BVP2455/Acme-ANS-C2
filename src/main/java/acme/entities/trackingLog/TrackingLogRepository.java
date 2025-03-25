@@ -12,7 +12,7 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface TrackingLogRepository extends AbstractRepository {
 
-	@Query("SELECT t FROM TrackingLog t WHERE t.claim.id = :claimId")
+	@Query("SELECT t FROM TrackingLog t WHERE t.claim.id = :claimId ORDER BY t.lastUpdateMoment DESC")
 	List<TrackingLog> findTrackingLogsByClaimId(@Param("claimId") int claimId);
 
 }
