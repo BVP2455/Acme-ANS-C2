@@ -1,6 +1,8 @@
 
 package acme.constraints;
 
+import java.util.List;
+
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +33,23 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		if (trackingLog == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		if (trackingLog.getClaim() == null)
-			super.state(context, false, "*", "javax.validation.trackinglog.null-claim.message");
+			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			Double lastResolutionPercentage = this.repository.findTrackingLogsByClaimId(trackingLog.getClaim().getId()).getLast().getResolutionPercentage();
-			if ((trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() < 100)
-				super.state(context, false, "*", "javax.validation.trackinglog.incorrect-status.message");
-			else if (!(trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() == 100)
-				super.state(context, false, "*", "javax.validation.trackinglog.incorrect-status-pending.message");
-			else if (lastResolutionPercentage > trackingLog.getResolutionPercentage())
-				super.state(context, false, "*", "javax.validation.trackinglog.incorrect-resolutionpercentage.message");
+			List<TrackingLog> trackingLogs = this.repository.findTrackingLogsByClaimId(trackingLog.getClaim().getId());
+
+			if (trackingLogs.isEmpty())
+				super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+			else {
+				TrackingLog lastTrackingLog = trackingLogs.get(0);
+				Double lastResolutionPercentage = lastTrackingLog.getResolutionPercentage();
+
+				if ((trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() < 100)
+					super.state(context, false, "*", "acme.validation.trackinglog.incorrect-status.message");
+				else if (!(trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() == 100)
+					super.state(context, false, "*", "acme.validation.trackinglog.incorrect-status-pending.message");
+				else if (lastResolutionPercentage > trackingLog.getResolutionPercentage())
+					super.state(context, false, "*", "acme.validation.trackinglog.incorrect-resolutionpercentage.message");
+			}
 		}
 		result = !super.hasErrors(context);
 		return result;
