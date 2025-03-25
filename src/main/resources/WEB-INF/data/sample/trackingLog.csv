@@ -18,8 +18,8 @@ trackingLog-13,2012/07/02 0:08,<marquee>Hacked</marquee>,50.00,PENDING,Lorem ips
 trackingLog-14,2012/07/02 0:09,<script>alert(‘Hacked!’);</script>,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
 trackingLog-15,2012/07/02 0:10,' or 'A' = 'A ,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
 #resolutionPercentage,,,,,,
-trackingLog-16,2012/07/02 0:11,Lorem ipsum dolor sit ame,00.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
-trackingLog-17,2012/07/02 0:12,Lorem ipsum dolor sit ame,00.01,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
+trackingLog-16,2012/07/02 0:11,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
+trackingLog-17,2012/07/02 0:12,Lorem ipsum dolor sit ame,51.01,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
 trackingLog-18,2012/07/02 0:13,Lorem ipsum dolor sit ame,99.99,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
 trackingLog-19,2012/07/02 0:14,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
 #status,,,,,,

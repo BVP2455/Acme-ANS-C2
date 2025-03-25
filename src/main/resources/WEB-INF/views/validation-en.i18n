@@ -23,3 +23,7 @@ acme.validation.technician.duplicated-licenseNumber.message = Invalid license nu
 acme.validation.booking.duplicated-locatorCode.message = Invalid locatorCode, already used
 
 acme.validation.flightcrewmember.duplicated-employeeCode.message = Invalid employeeCode, alredy used
+
+acme.validation.trackinglog.incorrect-resolutionpercentage.message = Incorrect resolution percentage, it is lower than the last percentage.
+acme.validation.trackinglog.incorrect-status-pending.message = Incorrect status. If the resolution percentage is 100, the status must be either 'ACCEPTED' or 'REJECTED'.
+acme.validation.trackinglog.incorrect-status.message = Incorrect status. If the status is 'ACCEPTED' or 'REJECTED', the resolution percentage must be 100.
