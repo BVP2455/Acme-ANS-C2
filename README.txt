@@ -14,9 +14,9 @@ The goal of this project is to develop a WIS to assist airports in managing logi
 This includes flight scheduling, booking management, crew management, incident reporting and resolution, 
 as well as aircraft maintenance.
 
-To get this project up and running, please follow the guideline in the theory/lab materials,
-taking into account that you must link the appropriate version of the Acme-Framework excluding 
-the following resources:
-
-- **/fragments/**
- 
+Contributors:
+Student#1: José Luis 
+Student#2: Miguel 
+Student#3: Carlos 
+Student#4: Francisco Javier 
+Student#5: Francisco

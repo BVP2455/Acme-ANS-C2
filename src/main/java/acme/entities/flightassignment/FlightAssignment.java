@@ -1,5 +1,5 @@
 
-package acme.entities.maintenanceRecord;
+package acme.entities.flightassignment;
 
 import java.util.Date;
 
@@ -10,55 +10,59 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
-import acme.entities.technician.Technician;
+import acme.entities.legs.Leg;
+import acme.realms.flightcrewmember.FlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
-public class MaintenanceRecord extends AbstractEntity {
+public class FlightAssignment extends AbstractEntity {
 
-	// Serialisation version --------------------------------------------------
+	// Serialisation version --------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
-
-	@Mandatory
-	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				maintenanceMoment;
+	// Mandatory Attributes -------------------------------------------------------
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private MaintenanceStatus	status;
+	private FlightCrewDuty		duty;
 
 	@Mandatory
-	@ValidMoment
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				nextInspectionDue;
+	private Date				lastUpdateMoment;
 
 	@Mandatory
-	@ValidMoney
+	@Valid
 	@Automapped
-	private Money				estimatedCost;
+	private CurrentStatus		currentStatus;
+
+	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidString
 	@Automapped
-	private String				notes;
+	private String				remarks;
+
+	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Technician			technician;
+	private FlightCrewMember	flightCrewMember;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg					leg;
+
 }

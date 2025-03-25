@@ -1,3 +1,19 @@
-#validation-en.i18n
+#validation-es.i18n
+
+acme.validation.phoneNumber.message = Número de teléfono incorrecto. Debe tener un "+" opcional seguido de entre 6 y 15 dígitos.
+acme.validation.shortText.message = Debe contener entre 1 y 50 caracteres
+
+acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
+
+acme.validation.activitylog.message = Registro de actividades inválido
+acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
+
+acme.validation.customer.identifier.message = Identificador incorrecto
+acme.validation.customer.duplicated-identifier.message = Identificador incorrecto, ya está en uso
+
+acme.validation.assistanceAgent.identifier.message = Identificador incorrecto
+
+acme.validation.technician.licenseNumber.message = Número de licencia inválido. Debe comenzar con 2 o 3 letras mayúsculas seguidas de 6 dígitos.
+acme.validation.technician.duplicated-licenseNumber.message = Número de licencia inválido, ya está en uso.
 
 acme.validation.booking.duplicated-locatorCode.message = Codigo de localización incorrecto, ya esta en uso
