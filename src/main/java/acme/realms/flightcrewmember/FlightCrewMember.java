@@ -15,6 +15,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidFlightCrewMember;
+import acme.constraints.ValidPhoneNumber;
 import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,6 +40,7 @@ public class FlightCrewMember extends AbstractRole {
 	@Mandatory
 	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$")
 	@Automapped
+	@ValidPhoneNumber
 	private String				phoneNumber;
 
 	@Mandatory

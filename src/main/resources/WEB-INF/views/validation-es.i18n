@@ -17,3 +17,5 @@ acme.validation.technician.licenseNumber.message = Número de licencia inválido
 acme.validation.technician.duplicated-licenseNumber.message = Número de licencia inválido, ya está en uso.
 
 acme.validation.booking.duplicated-locatorCode.message = Codigo de localización incorrecto, ya esta en uso
+
+acme.validation.flightcrewmember.duplicated-employeeCode.message = Codigo de empleado incorrecto, ya esta en uso

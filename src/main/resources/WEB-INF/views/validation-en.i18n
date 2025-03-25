@@ -17,3 +17,5 @@ acme.validation.technician.licenseNumber.message = Invalid license number. It mu
 acme.validation.technician.duplicated-licenseNumber.message = Invalid license number, it is already used.
 
 acme.validation.booking.duplicated-locatorCode.message = Invalid locatorCode, already used
+
+acme.validation.flightcrewmember.duplicated-employeeCode.message = Invalid employeeCode, alredy used
