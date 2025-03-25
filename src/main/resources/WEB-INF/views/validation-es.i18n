@@ -4,3 +4,4 @@ acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
 acme.validation.activitylog.message = Registro de actividades inválido
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
 acme.validation.customer.identifier.message = Identificador incorrecto
+acme.validation.customer.duplicated-identifier.message = Identificador incorrecto, ya está en uso
