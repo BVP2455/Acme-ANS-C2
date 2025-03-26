@@ -25,7 +25,7 @@ booking-13,ABC2534,2024/09/01 10:00,ECONOMY,EUR 1000.00,1234,customer-01,flight-
 # lastCardNibble - standard variations
 booking-14,ABC2634,2024/09/01 10:00,ECONOMY,EUR 5.00,6789,customer-01,flight-01
 booking-15,ABC2734,2024/09/01 10:00,ECONOMY,EUR 5.00,0123,customer-01,flight-01
-booking-16,ABC2834,2024/09/01 10:00,ECONOMY,EUR 5.00,,customer-01,flight-01
+booking-16,ABC2834,2024/09/01 10:00,ECONOMY,EUR 5.00,null,customer-01,flight-01
 # lastCardNibble - no singular values
 # key:customer - standard variations
 booking-17,ABC2934,2024/09/01 10:00,ECONOMY,EUR 5.00,1234,customer-04,flight-01
