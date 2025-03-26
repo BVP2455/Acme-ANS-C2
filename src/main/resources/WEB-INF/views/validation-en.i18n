@@ -1,5 +1,7 @@
 #validation-en.i18n
 
+acme.validation.airline.duplicated-code.message = Invalid IATA code, it is already in use.
+
 acme.validation.phoneNumber.message = Invalid phone number. It must optionally start with a "+" followed by between 6 and 15 digits.
 acme.validation.shortText.message = Must have from 1 to 50 characters
 
