@@ -1,5 +1,7 @@
 #validation-es.i18n
 
+acme.validation.airline.duplicated-code.message = Código IATA incorrecto, ya está en uso.
+
 acme.validation.phoneNumber.message = Número de teléfono incorrecto. Debe tener un "+" opcional seguido de entre 6 y 15 dígitos.
 acme.validation.shortText.message = Debe contener entre 1 y 50 caracteres
 
