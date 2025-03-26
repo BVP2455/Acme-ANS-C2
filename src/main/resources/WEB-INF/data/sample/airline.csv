@@ -32,11 +32,11 @@ airline-21,Ryanair,FRX,https://www.ryanair.com/es/es,LUXURY,2010/01/01 10:00,acm
 airline-22,Ryanair,FSX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 airline-23,Ryanair,FTX,https://www.ryanair.com/es/es,LOW_COST,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 # type - no singular values
-# foundationMoment - standard variations
-airline-24,Ryanair,FUX,https://www.ryanair.com/es/es,STANDARD,2010/05/28  00:00,acme@lorem-ipsum.org,872552447
+# foundationMoment - standard variations,"","",""
+airline-24,Ryanair,FUX,https://www.ryanair.com/es/es,STANDARD,2004/01/01  12:00,acme@lorem-ipsum.org,872552447
 airline-25,Ryanair,FVX,https://www.ryanair.com/es/es,STANDARD,2024/12/31  23:59,acme@lorem-ipsum.org,872552447
-airline-26,Ryanair,FWX,https://www.ryanair.com/es/es,STANDARD,2025/01/01  00:00,acme@lorem-ipsum.org,872552447
-airline-27,Ryanair,FXX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:01,acme@lorem-ipsum.org,872552447
+airline-26,Ryanair,FWX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:01,acme@lorem-ipsum.org,872552447
+airline-27,Ryanair,FXX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:00,acme@lorem-ipsum.org,872552447
 # foundationMoment - no singular values
 # email - standard variations
 airline-28,Ryanair,FYX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
