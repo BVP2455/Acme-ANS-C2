@@ -18,3 +18,6 @@
 2.1.0 Created new entities.
 2.1.1 Created new profiles and roles.
 2.1.2 Added sample data for the previously created entities.
+
+**D03
+3.0.0 Updated Project and framework.
