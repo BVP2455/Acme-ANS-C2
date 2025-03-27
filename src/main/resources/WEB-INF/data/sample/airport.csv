@@ -1,50 +1,50 @@
 key,name,iataCode,operationalScope,country,city
 #base entity
 airport-00,Lorem ipsum dolor sit,FGV,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
-# name - standard variations
-airport-01,L,ESP,REGIONAL,Spain,Seville
-airport-02,Lo,CAR,REGIONAL,Spain,Seville
-airport-03,Lorem ipsum dolor sit amet consectetur adipiscing,RBB,REGIONAL,Spain,Seville
-airport-04,Lorem ipsum dolor sit amet consectetur adipiscin,GXY,REGIONAL,Spain,Seville
-airport-05,โลเร็ม อิปซัม,FZK,REGIONAL,Spain,Seville
-airport-06,لوريم إيبسوم,ABC,REGIONAL,Spain,Seville
-airport-07,洛伦·伊普森,BCA,REGIONAL,Spain,Seville
-airport-08,<marquee>Hacked</marquee>,PPP,REGIONAL,Spain,Seville
-airport-09,<script>alert(‘Hacked!’);</script>,ATM,REGIONAL,Spain,Seville
-airport-10,' or 'A' = 'A,BRR,REGIONAL,Spain,Seville
-# name - no singular values
+# name - standard variations,""
+airport-01,L,AAA,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-02,Lo,AAB,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-03,Lorem ipsum dolor sit amet consectetur adipiscing,AAC,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-04,Lorem ipsum dolor sit amet consectetur adipiscin,AAD,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-05,โลเร็ม อิปซัม,AAE,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-06,لوريم إيبسوم,AAF,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-07,洛伦·伊普森,AAG,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-08,<marquee>Hacked</marquee>,AAH,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-09,<script>alert(‘Hacked!’);</script>,AAI,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-10,' or 'A' = 'A,AAJ,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+# name - no singular values,"",""
 # iataCode - standard variations
-airport-11,Malaga Aiport,AAA,REGIONAL,Spain,Malaga
-airport-12,Malaga Aiport,ABA,REGIONAL,Spain,Malaga
-airport-13,Malaga Aiport,CCC,REGIONAL,Spain,Malaga
-airport-14,Malaga Aiport,ZZZ,REGIONAL,Spain,Malaga
-# iataCode - no singular values
+airport-11,Lorem ipsum dolor sit,ABA,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-12,Lorem ipsum dolor sit,ABB,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-13,Lorem ipsum dolor sit,XXX,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-14,Lorem ipsum dolor sit,ZZZ,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+# iataCode - no singular values,"",""
 # internationalScope - standard variations
-airport-15,Barcelona Airport,BAR,REGIONAL,Spain,Barcelona
-airport-16,Madrid Airport,MAD,DOMESTIC,Spain,Madrid
-airport-17,Milan Airport,MIL,INTERNATIONAL,Spain,Milan
+airport-15,Lorem ipsum dolor sit,ACA,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-16,Lorem ipsum dolor sit,ACB,DOMESTIC,Lorem ipsum dolor sit,Lorem ipsum dolor sit
+airport-17,Lorem ipsum dolor sit,ACC,INTERNATIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit
 # internationalScope - no singular values,"","","",""
 # country - standard variations
-airport-18,Valencia Airport,VAA,REGIONAL,L,Valencia
-airport-19,Valencia Airport,VAB,REGIONAL,Lo,Valencia
-airport-20,Valencia Airport,VAC,REGIONAL,Lorem ipsum dolor sit amet consectetur adipiscing,Valencia
-airport-21,Valencia Airport,VAD,REGIONAL,Lorem ipsum dolor sit amet consectetur adipiscin,Valencia
-airport-22,Valencia Airport,VAE,REGIONAL,โลเร็ม อิปซัม,Valencia
-airport-23,Valencia Airport,VAF,REGIONAL,لوريم إيبسوم,Valencia
-airport-24,Valencia Airport,VAG,REGIONAL,洛伦·伊普森,Valencia
-airport-25,Valencia Airport,VAH,REGIONAL,<marquee>Hacked</marquee>,Valencia
-airport-26,Valencia Airport,VAI,REGIONAL,<script>alert(‘Hacked!’);</script>,Valencia
-airport-27,Valencia Airport,VAJ,REGIONAL,' or 'A' = 'A,Valencia
+airport-18,Lorem ipsum dolor sit,ADA,REGIONAL,L,Lorem ipsum dolor sit
+airport-19,Lorem ipsum dolor sit,ADB,REGIONAL,Lo,Lorem ipsum dolor sit
+airport-20,Lorem ipsum dolor sit,ADC,REGIONAL,Lorem ipsum dolor sit amet consectetur adipiscing,Lorem ipsum dolor sit
+airport-21,Lorem ipsum dolor sit,ADD,REGIONAL,Lorem ipsum dolor sit amet consectetur adipiscin,Lorem ipsum dolor sit
+airport-22,Lorem ipsum dolor sit,ADE,REGIONAL,โลเร็ม อิปซัม,Lorem ipsum dolor sit
+airport-23,Lorem ipsum dolor sit,ADF,REGIONAL,لوريم إيبسوم,Lorem ipsum dolor sit
+airport-24,Lorem ipsum dolor sitLorem ipsum dolor sit,ADG,REGIONAL,洛伦·伊普森,Lorem ipsum dolor sit
+airport-25,Lorem ipsum dolor sit,ADH,REGIONAL,<marquee>Hacked</marquee>,Lorem ipsum dolor sit
+airport-26,Lorem ipsum dolor sit,ADI,REGIONAL,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit
+airport-27,Lorem ipsum dolor sit,ADJ,REGIONAL,' or 'A' = 'A,Lorem ipsum dolor sit
 # country - no singular values
 # city - standard variations
-airport-28,Zaragoza Airport,ZAA,REGIONAL,Spain,L
-airport-29,Zaragoza Airport,ZAB,REGIONAL,Spain,Lo
-airport-30,Zaragoza Airport,ZAC,REGIONAL,Spain,Lorem ipsum dolor sit amet consectetur adipiscing
-airport-31,Zaragoza Airport,ZAD,REGIONAL,Spain,Lorem ipsum dolor sit amet consectetur adipiscin
-airport-32,Zaragoza Airport,ZAE,REGIONAL,Spain,โลเร็ม อิปซัม
-airport-33,Zaragoza Airport,ZAF,REGIONAL,Spain,لوريم إيبسوم
-airport-34,Zaragoza Airport,ZAG,REGIONAL,Spain,洛伦·伊普森
-airport-35,Zaragoza Airport,ZAH,REGIONAL,Spain,<marquee>Hacked</marquee>
-airport-36,Zaragoza Airport,ZAI,REGIONAL,Spain,<script>alert(‘Hacked!’);</script>
-airport-37,Zaragoza Airport,ZAJ,REGIONAL,Spain,' or 'A' = 'A
+airport-28,Lorem ipsum dolor sit,AEA,REGIONAL,Lorem ipsum dolor sit,L
+airport-29,Lorem ipsum dolor sit,AEB,REGIONAL,Lorem ipsum dolor sit,Lo
+airport-30,Lorem ipsum dolor sit,AEC,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit amet consectetur adipiscing
+airport-31,Lorem ipsum dolor sit,AED,REGIONAL,Lorem ipsum dolor sit,Lorem ipsum dolor sit amet consectetur adipiscin
+airport-32,Lorem ipsum dolor sit,AEE,REGIONAL,Lorem ipsum dolor sit,โลเร็ม อิปซัม
+airport-33,Lorem ipsum dolor sit,AEF,REGIONAL,Lorem ipsum dolor sit,لوريم إيبسوم
+airport-34,Lorem ipsum dolor sit,AEG,REGIONAL,Lorem ipsum dolor sit,洛伦·伊普森
+airport-35,Lorem ipsum dolor sit,AEH,REGIONAL,Lorem ipsum dolor sit,<marquee>Hacked</marquee>
+airport-36,Lorem ipsum dolor sit,AEI,REGIONAL,Lorem ipsum dolor sit,<script>alert(‘Hacked!’);</script>
+airport-37,Lorem ipsum dolor sit,AEJ,REGIONAL,Lorem ipsum dolor sit,' or 'A' = 'A
 # city - no singular values
