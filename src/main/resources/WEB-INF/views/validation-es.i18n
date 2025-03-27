@@ -29,3 +29,7 @@ acme.validation.flightcrewmember.duplicated-employeeCode.message = Codigo de emp
 acme.validation.trackinglog.incorrect-resolutionpercentage.message = Porcentaje de resolución incorrecto, es menor que el último porcentaje.
 acme.validation.trackinglog.incorrect-status-pending.message = Estado incorrecto. Si el porcentaje de resolución es 100, el estado debe ser 'ACCEPTED' o 'REJECTED'.
 acme.validation.trackinglog.incorrect-status.message = Estado incorrecto. Si el estado es 'ACCEPTED' o 'REJECTED', el porcentaje de resolución debe ser 100.
+
+acme.validation.airport.duplicated-iataCode.message = Código IATA incorrecto, ya está en uso por otro aeropuerto.
+
+acme.validation.iataCode.message = Código IATA incorrecto, debe estar compuesto por 3 letras mayúsculas.
