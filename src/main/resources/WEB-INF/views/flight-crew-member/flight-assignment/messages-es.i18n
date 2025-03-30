@@ -1,0 +1,6 @@
+flight-crew-member.flight-assignment.list.title = Lista de asignaciones de vuelos completados
+flight-crew-member.flight-assignment.form.title = Detalles de las asignaciones de vuelo
+
+flight-crew-member.flight-assignment.list.label.duty = Servicio
+flight-crew-member.flight-assignment.list.label.lastUpdateMoment = Momento de la última actualización
+flight-crew-member.flight-assignment.list.label.currentStatus = Estado actual
