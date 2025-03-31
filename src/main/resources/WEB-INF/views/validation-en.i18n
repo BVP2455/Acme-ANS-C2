@@ -2,6 +2,7 @@
 
 acme.validation.phoneNumber.message = Invalid phone number. It must optionally start with a "+" followed by between 6 and 15 digits.
 acme.validation.shortText.message = Must have from 1 to 50 characters
+acme.validation.identifier.message = Invalid identifier. Must start with between 2 and 3 letters followed by 6 digits.
 
 acme.validation.flightcrewmember.identifier.message = Invalid identifier
 
