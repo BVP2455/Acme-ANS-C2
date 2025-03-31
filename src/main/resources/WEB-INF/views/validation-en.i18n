@@ -26,7 +26,9 @@ acme.validation.booking.duplicated-locatorCode.message = Invalid locatorCode, al
 
 acme.validation.flightcrewmember.duplicated-employeeCode.message = Invalid employeeCode, alredy used
 
-acme.validation.trackinglog.incorrect-resolutionpercentage.message = Incorrect resolution percentage, it is lower than the last percentage.
+acme.validation.claim.resolutionPercentage.message = Incorrect resolution percentage. The resolution percentage must be greater than or equal to the previous one.
+
+acme.validation.trackinglog.incorrect-lastUpdateMoment.message = Incorrect last update moment. The last update moment must not be before the registration moment.
 acme.validation.trackinglog.incorrect-status-pending.message = Incorrect status. If the resolution percentage is 100, the status must be either 'ACCEPTED' or 'REJECTED'.
 acme.validation.trackinglog.incorrect-status.message = Incorrect status. If the status is 'ACCEPTED' or 'REJECTED', the resolution percentage must be 100.
 
