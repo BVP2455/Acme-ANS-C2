@@ -9,7 +9,7 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface AirlineRepository extends AbstractRepository {
 
-	@Query("select a from Airline a where m.code = :code")
+	@Query("select a from Airline a where a.code = :code")
 	Airline findAirlineByCode(String code);
 
 }
