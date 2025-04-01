@@ -8,6 +8,8 @@ acme.validation.identifier.message = Invalid identifier. Must start with between
 
 acme.validation.flightcrewmember.identifier.message = Invalid identifier
 
+acme.validation.leg.wrong-scheduled-arrival.message = The scheduled arrival is earlier than the scheduled departure
+
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
 
