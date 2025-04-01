@@ -9,8 +9,8 @@ leg-04,FRX9999,2010/01/01 00:01,2010/01/01 03:30,ON_TIME,airline-00,flight-01,ai
 # flight-number - no singular values
 # scheduled-departure - standard variations
 leg-05,FRX0002,2010/01/01 00:01,2010/01/01 03:30,ON_TIME,airline-00,flight-01,airport-00,airport-01,aircraft-01
-leg-06,FRX0003,2024/12/31 23:59,2010/01/01 03:30,ON_TIME,airline-00,flight-02,airport-00,airport-01,aircraft-01
-leg-07,FRX0004,2023/12/31 23:57,2010/01/01 03:30,ON_TIME,airline-00,flight-03,airport-00,airport-01,aircraft-01
+leg-06,FRX0003,2024/12/31 23:59,2025/01/01 00:01,ON_TIME,airline-00,flight-02,airport-00,airport-01,aircraft-01
+leg-07,FRX0004,2023/12/31 23:57,2025/01/01 00:01,ON_TIME,airline-00,flight-03,airport-00,airport-01,aircraft-01
 leg-08,FRX0005,2000/12/31 23:58,2010/01/01 03:30,ON_TIME,airline-00,flight-04,airport-00,airport-01,aircraft-01
 # scheduled-departure - no singular values
 # scheduled-arrival - standard variations
