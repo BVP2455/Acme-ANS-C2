@@ -34,4 +34,6 @@ acme.validation.airport.duplicated-iataCode.message = Invalid IATA code. This co
 
 acme.validation.iataCode.message = Invalid IATA code. It must be made up of 3 uppercase letters.
 
+acme.validation.maintenanceRecord.incorrect-dates.message = Date error. The next inspection due date must be later than the current maintenance date.
+
 

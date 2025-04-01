@@ -33,3 +33,5 @@ acme.validation.trackinglog.incorrect-status.message = Estado incorrecto. Si el 
 acme.validation.airport.duplicated-iataCode.message = Código IATA incorrecto, ya está en uso por otro aeropuerto.
 
 acme.validation.iataCode.message = Código IATA incorrecto, debe estar compuesto por 3 letras mayúsculas.
+
+acme.validation.maintenanceRecord.incorrect-dates.message = Error en las fechas. La fecha de la próxima inspección debe ser posterior a la fecha del mantenimiento actual.
