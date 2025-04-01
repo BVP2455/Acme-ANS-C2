@@ -28,38 +28,38 @@ airline-19,Ryanair,FPX,http://www.lorem-ipsum.org/dolor/sit.html,STANDARD,2010/0
 airline-20,Ryanair,FQX,http://example.org/a/b?,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 # website - no singular values
 # type - standard variations
-airline-21,Ryanair,FRX,https://www.ryanair.com/es/es,LUXURY,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
-airline-22,Ryanair,FSX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
-airline-23,Ryanair,FTX,https://www.ryanair.com/es/es,LOW_COST,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
+airline-21,Ryanair,FSX,https://www.ryanair.com/es/es,LUXURY,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
+airline-22,Ryanair,FTX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
+airline-23,Ryanair,FUX,https://www.ryanair.com/es/es,LOW_COST,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 # type - no singular values
 # foundationMoment - standard variations,"","",""
-airline-24,Ryanair,FUX,https://www.ryanair.com/es/es,STANDARD,2004/01/01  12:00,acme@lorem-ipsum.org,872552447
-airline-25,Ryanair,FVX,https://www.ryanair.com/es/es,STANDARD,2024/12/31  23:59,acme@lorem-ipsum.org,872552447
-airline-26,Ryanair,FWX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:01,acme@lorem-ipsum.org,872552447
-airline-27,Ryanair,FXX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:00,acme@lorem-ipsum.org,872552447
+airline-24,Ryanair,FVX,https://www.ryanair.com/es/es,STANDARD,2004/01/01  12:00,acme@lorem-ipsum.org,872552447
+airline-25,Ryanair,FWX,https://www.ryanair.com/es/es,STANDARD,2024/12/31  23:59,acme@lorem-ipsum.org,872552447
+airline-26,Ryanair,FXX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:01,acme@lorem-ipsum.org,872552447
+airline-27,Ryanair,FYX,https://www.ryanair.com/es/es,STANDARD,2000/01/01  00:00,acme@lorem-ipsum.org,872552447
 # foundationMoment - no singular values
 # email - standard variations
-airline-28,Ryanair,FYX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
-airline-29,Ryanair,FZX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme-password@lorem-ipsum.org,872552447
-airline-30,Ryanair,AXX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a@b.e,872552447
-airline-31,Ryanair,ABX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a@b.es,872552447
-airline-32,Ryanair,ACX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a@b.esx,872552447
-airline-33,Ryanair,ADX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,872552447
-airline-34,Ryanair,AEX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,872552447
+airline-28,Ryanair,FZX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
+airline-29,Ryanair,AXX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme-password@lorem-ipsum.org,872552447
+airline-30,Ryanair,ABX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a@b.e,872552447
+airline-31,Ryanair,ACX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a@b.es,872552447
+airline-32,Ryanair,ADX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a@b.esx,872552447
+airline-33,Ryanair,AEX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,872552447
+airline-34,Ryanair,AFX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,872552447
 # foundationMoment - no singular values
 # phoneNumber - standard variations
-airline-35,Ryanair,AFX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,123456
-airline-36,Ryanair,AGX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,2345678
-airline-37,Ryanair,AHX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,123456789123456
-airline-38,Ryanair,AIX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,12345678912345
-airline-39,Ryanair,AJX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,9987654321
-airline-40,Ryanair,AKX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,111111111
-airline-41,Ryanair,ALX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+000000
-airline-42,Ryanair,AMX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+123456789123456
-airline-43,Ryanair,ANX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+1234567890
-airline-44,Ryanair,AOX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+12345678909876
-airline-45,Ryanair,APX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+9785326549
+airline-35,Ryanair,AGX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,123456
+airline-36,Ryanair,AHX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,2345678
+airline-37,Ryanair,AIX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,123456789123456
+airline-38,Ryanair,AJX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,12345678912345
+airline-39,Ryanair,AKX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,9987654321
+airline-40,Ryanair,ALX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,111111111
+airline-41,Ryanair,AMX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+000000
+airline-42,Ryanair,ANX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+123456789123456
+airline-43,Ryanair,AOX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+1234567890
+airline-44,Ryanair,APX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+12345678909876
+airline-45,Ryanair,AQX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,+9785326549
 # phoneNumber - no singular values
 # null values for optional atributes
-airline-46,Ryanair,AQX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,null
-airline-47,Ryanair,ARX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,null,872552447
+airline-46,Ryanair,ARX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,null
+airline-47,Ryanair,ASX,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,null,872552447
