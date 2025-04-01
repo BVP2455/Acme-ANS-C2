@@ -45,7 +45,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void bind(final Booking booking) {
-		super.bindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastNibble");
+		super.bindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastCardNibble");
 	}
 
 	@Override
@@ -73,7 +73,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		Collection<acme.entities.flights.Flight> flights = this.repository.findAllFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
-		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastNibble", "draftMode", "id");
+		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastNibble", "id");
 		dataset.put("travelClasses", travelClasses);
 		dataset.put("flights", flightChoices);
 		super.getResponse().addData(dataset);
