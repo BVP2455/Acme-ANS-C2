@@ -16,8 +16,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIdentifier;
 import acme.constraints.ValidManager;
 import acme.entities.airline.Airline;
 import lombok.Getter;
@@ -36,12 +36,12 @@ public class Manager extends AbstractRole {
 	// Mandatory atributes ------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", message = "Invalid identifier number, please follow pattern")
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				identifier;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0.0, max = 120.0)
 	@Automapped
 	private Integer				yearsExperience;
 

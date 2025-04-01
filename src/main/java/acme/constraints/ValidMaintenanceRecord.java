@@ -11,10 +11,9 @@ import javax.validation.Payload;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = AirportValidator.class)
+@Constraint(validatedBy = MaintenanceRecordValidator.class)
 
-public @interface ValidAirport {
-
+public @interface ValidMaintenanceRecord {
 	// Standard validation properties -----------------------------------------
 
 	String message() default "";

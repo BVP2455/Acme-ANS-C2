@@ -17,6 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidMaintenanceRecord;
 import acme.entities.aircraft.Aircraft;
 import acme.realms.technician.Technician;
 import lombok.Getter;
@@ -25,6 +26,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@ValidMaintenanceRecord
 public class MaintenanceRecord extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -54,7 +56,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	private Money				estimatedCost;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidString
 	@Automapped
 	private String				notes;
 

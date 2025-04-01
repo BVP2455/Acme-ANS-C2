@@ -33,28 +33,29 @@ public class ManagerValidator extends AbstractValidator<ValidManager, Manager> {
 
 		boolean result;
 
-		if (manager == null || manager.getIdentifier() == null || manager.getIdentity() == null)
+		if (manager == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else if (StringHelper.isBlank(manager.getIdentifier()))
 			super.state(context, false, "identifier", "javax.validation.constraints.NotBlank.message");
 		else {
 
-			{
-				boolean uniqueManager;
-				Manager existingManager;
+			//R1: el identificador no puede ser repetido
+			boolean uniqueManager;
+			Manager existingManager;
 
-				existingManager = this.repository.findManagerByIdentifier(manager.getIdentifier());
-				uniqueManager = existingManager == null || existingManager.equals(manager);
+			existingManager = this.repository.findManagerByIdentifier(manager.getIdentifier());
+			uniqueManager = existingManager == null || existingManager.equals(manager);
+			super.state(context, uniqueManager, "ticker", "acme.validation.manager.duplicated-identifier.message");
 
-				super.state(context, uniqueManager, "ticker", "acme.validation.manager.duplicated-identifier.message");
-			}
-
-			boolean containsInitials;
+			//R2: el comienzo del identificador debe contener la primera inicial de su nombre seguida de la de su apellido
+			boolean containsInitials = false;
 			DefaultUserIdentity identity = manager.getIdentity();
-			char nameFirstLetter = identity.getName().charAt(0);
-			char surnameFirstLetter = identity.getSurname().charAt(0);
-			String initials = "" + nameFirstLetter + surnameFirstLetter;
-			containsInitials = StringHelper.startsWith(manager.getIdentifier(), initials, false);
+			if (identity != null) {
+				char nameFirstLetter = identity.getName().charAt(0);
+				char surnameFirstLetter = identity.getSurname().charAt(0);
+				String initials = "" + nameFirstLetter + surnameFirstLetter;
+				containsInitials = StringHelper.startsWith(manager.getIdentifier(), initials, false);
+			}
 			super.state(context, containsInitials, "identifier", "acme.validation.manager.identifier.message");
 		}
 

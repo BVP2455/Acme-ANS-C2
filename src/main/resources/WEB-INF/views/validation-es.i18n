@@ -4,6 +4,8 @@ acme.validation.airline.duplicated-code.message = Código IATA incorrecto, ya es
 
 acme.validation.phoneNumber.message = Número de teléfono incorrecto. Debe tener un "+" opcional seguido de entre 6 y 15 dígitos.
 acme.validation.shortText.message = Debe contener entre 1 y 50 caracteres
+acme.validation.identifier.message = Identificador incorrecto. Debe comenzar con entre 2 y 3 letras seguido de 6 dígitos.
+
 
 acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
 
@@ -33,3 +35,5 @@ acme.validation.trackinglog.incorrect-status.message = Estado incorrecto. Si el 
 acme.validation.airport.duplicated-iataCode.message = Código IATA incorrecto, ya está en uso por otro aeropuerto.
 
 acme.validation.iataCode.message = Código IATA incorrecto, debe estar compuesto por 3 letras mayúsculas.
+
+acme.validation.maintenanceRecord.incorrect-dates.message = Error en las fechas. La fecha de la próxima inspección debe ser posterior a la fecha del mantenimiento actual.
