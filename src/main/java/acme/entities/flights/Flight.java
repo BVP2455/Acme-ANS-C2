@@ -2,6 +2,7 @@
 package acme.entities.flights;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
@@ -55,48 +56,48 @@ public class Flight extends AbstractEntity {
 
 	public Date getScheduledDeparture() {
 		Date result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findFirstLegByFlight(this.getId());
-		result = wrapper.getScheduledDeparture();
+		result = wrapper.get(0).getScheduledDeparture();
 
 		return result;
 	}
 
 	public Date getScheduledArrival() {
 		Date result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findLastLegByFlight(this.getId());
-		result = wrapper.getScheduledArrival();
+		result = wrapper.get(0).getScheduledArrival();
 
 		return result;
 	}
 
 	public String getOriginCity() {
 		String result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findFirstLegByFlight(this.getId());
-		result = wrapper.getDepartureAirport().getCity();
+		result = wrapper.get(0).getDepartureAirport().getCity();
 
 		return result;
 	}
 
 	public String getDestinationCity() {
 		String result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findLastLegByFlight(this.getId());
-		result = wrapper.getArrivalAirport().getCity();
+		result = wrapper.get(0).getArrivalAirport().getCity();
 
 		return result;
 	}
