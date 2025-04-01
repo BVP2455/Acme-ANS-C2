@@ -43,7 +43,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 				super.state(context, false, "*", "acme.validation.trackinglog.incorrect-status.message");
 			else if (!(trackingLog.getStatus() == TrackingLogStatus.ACCEPTED || trackingLog.getStatus() == TrackingLogStatus.REJECTED) && trackingLog.getResolutionPercentage() == 100)
 				super.state(context, false, "*", "acme.validation.trackinglog.incorrect-status-pending.message");
-			else if (trackingLog.getRegistrationMoment().before(trackingLog.getLastUpdateMoment()))
+			else if (trackingLog.getRegistrationMoment().after(trackingLog.getLastUpdateMoment()))
 				super.state(context, false, "*", "acme.validation.trackinglog.incorrect-lastUpdateMoment.message");
 		}
 		result = !super.hasErrors(context);
