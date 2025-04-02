@@ -46,6 +46,10 @@ public class FlightAssignment extends AbstractEntity {
 	@Automapped
 	private CurrentStatus		currentStatus;
 
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
+
 	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
