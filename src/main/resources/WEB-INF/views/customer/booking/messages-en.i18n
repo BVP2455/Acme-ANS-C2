@@ -11,13 +11,13 @@
 customer.booking.list.title = List of bookings
 customer.booking.form.title = Details of booking
 
-customer.booking.form.button.create = Create 
-customer.booking.form.button.update = Update
-customer.booking.form.button.publish= Publish
-customer.booking.form.button.return = Return
+customer.booking.form.button.create = Create booking
+customer.booking.form.button.update = Update booking 	
+customer.booking.form.button.publish= Publish booking
+customer.booking.form.button.return = Return 
 customer.booking.form.show.passengers = Show passengers
 customer.booking.form.add.passenger = Add Passenger
-customer.booking.list.button.create = Create
+customer.booking.list.button.create = Create booking
 
 customer.booking.list.label.flight=Flight
 customer.booking.list.label.purchaseMoment=Purchase Moment

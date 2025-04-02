@@ -12,13 +12,13 @@
 customer.booking.list.title = Listado de reservas
 customer.booking.form.title = Detalles de la reserva
 
-customer.booking.form.button.create = Crear
-customer.booking.form.button.update = Actualizar
-customer.booking.form.button.publish= Publicar
+customer.booking.form.button.create = Crear reserva
+customer.booking.form.button.update = Actualizar reserva
+customer.booking.form.button.publish= Publicar reserva
 customer.booking.form.button.return = Volver
 customer.booking.form.show.passengers = Mostrar pasajeros
 customer.booking.form.add.passenger = Añadir Pasajero
-customer.booking.list.button.create = Crear
+customer.booking.list.button.create = Crear reserva
 
 customer.booking.list.label.flight=Vuelo
 customer.booking.list.label.purchaseMoment=Momento de compra
