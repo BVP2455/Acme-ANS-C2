@@ -44,8 +44,9 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="Customer bookings" access="hasRealm('Customer')">
+		<acme:menu-option code="Customer Lists" access="hasRealm('Customer')">
 			<acme:menu-suboption code="Booking List" action="/customer/booking/list"/>
+			<acme:menu-suboption code="Passenger List" action="/customer/passenger/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
