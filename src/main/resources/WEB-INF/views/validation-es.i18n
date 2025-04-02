@@ -6,6 +6,7 @@ acme.validation.phoneNumber.message = Número de teléfono incorrecto. Debe tene
 acme.validation.shortText.message = Debe contener entre 1 y 50 caracteres
 acme.validation.identifier.message = Identificador incorrecto. Debe comenzar con entre 2 y 3 letras seguido de 6 dígitos.
 
+acme.validation.leg.wrong-scheduled-arrival.message = La hora de llegada es anterior a la hora de salida
 
 acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
 
@@ -28,7 +29,9 @@ acme.validation.booking.duplicated-locatorCode.message = Codigo de localización
 
 acme.validation.flightcrewmember.duplicated-employeeCode.message = Codigo de empleado incorrecto, ya esta en uso
 
-acme.validation.trackinglog.incorrect-resolutionpercentage.message = Porcentaje de resolución incorrecto, es menor que el último porcentaje.
+acme.validation.claim.resolutionPercentage.message = Porcentaje de resolución incorrecto. El porcentaje de resolución debe ser mayor o igual que el anterior.
+
+acme.validation.trackinglog.incorrect-lastUpdateMoment.message = Última actualización incorrecta. La última actualización no puede ser anterior al momento de registro.
 acme.validation.trackinglog.incorrect-status-pending.message = Estado incorrecto. Si el porcentaje de resolución es 100, el estado debe ser 'ACCEPTED' o 'REJECTED'.
 acme.validation.trackinglog.incorrect-status.message = Estado incorrecto. Si el estado es 'ACCEPTED' o 'REJECTED', el porcentaje de resolución debe ser 100.
 
