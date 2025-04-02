@@ -51,7 +51,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	@Override
 	public void validate(final Booking booking) {
 		if (booking.getLastCardNibble() == null || booking.getLastCardNibble().toString().isBlank())
-			super.state(false, "lastNibble", "acme.validation.lastNibble.message");
+			super.state(false, "lastCardNibble", "acme.validation.lastCardNibble.message");
 		Booking existing = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
 		boolean valid = existing == null || existing.getId() == booking.getId();
 		super.state(valid, "locatorCode", "customer.booking.form.error.duplicateLocatorCode");
@@ -60,6 +60,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	@Override
 	public void perform(final Booking booking) {
 		booking.setPurchaseMoment(MomentHelper.getCurrentMoment());
+		booking.setDraftMode(false);
 		this.repository.save(booking);
 	}
 
@@ -73,7 +74,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		Collection<acme.entities.flights.Flight> flights = this.repository.findAllFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
-		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastNibble", "id");
+		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastCardNibble", "draftMode", "id");
 		dataset.put("travelClasses", travelClasses);
 		dataset.put("flights", flightChoices);
 		super.getResponse().addData(dataset);

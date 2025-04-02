@@ -36,6 +36,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 		booking = new Booking();
 		booking.setPurchaseMoment(MomentHelper.getCurrentMoment());
+		booking.setDraftMode(true);
 		booking.setCustomer(customer);
 
 		super.getBuffer().addData(booking);
@@ -55,6 +56,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void perform(final Booking booking) {
+		booking.setDraftMode(true);
 		this.repository.save(booking);
 	}
 
@@ -67,7 +69,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		Collection<Flight> flights = this.repository.findAllFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
-		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "lastCardNibble", "id");
+		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "lastCardNibble", "draftMode", "id");
 		dataset.put("travelClasses", travelClasses);
 		dataset.put("flights", flightChoices);
 

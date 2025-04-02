@@ -25,8 +25,8 @@ customer.booking.list.label.price=Price
 customer.booking.list.label.draftmode=Draft Mode
 customer.booking.list.label.locatorCode= Locator Code
 
-customer.booking.list.label.lastNibble= Last 4 digits of payment card
+customer.booking.list.label.lastCardNibble= Last 4 digits of payment card
 customer.booking.list.label.travelClass= Travel Class
 
-acme.validation.lastNibble.message = You must complete the last digits of your card to publish
+acme.validation.lastCardNibble.message = You must complete the last digits of your card to publish
 customer.booking.form.error.duplicateLocatorCode = The locatorCode is already used
