@@ -11,6 +11,7 @@ acme.validation.flightcrewmember.identifier.message = Invalid identifier
 acme.validation.leg.wrong-scheduled-arrival.message = The scheduled arrival is earlier than the scheduled departure
 acme.validation.leg.NotNull.message = Leg or airline may not be null
 acme.validation.leg.wrong-flight-number.message = The flight number must begin with the airline's IATA code
+acme.validation.flight.legs.negative-layovers = There has to be at least one leg
 
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
