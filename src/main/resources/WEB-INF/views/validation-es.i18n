@@ -7,6 +7,8 @@ acme.validation.shortText.message = Debe contener entre 1 y 50 caracteres
 acme.validation.identifier.message = Identificador incorrecto. Debe comenzar con entre 2 y 3 letras seguido de 6 dígitos.
 
 acme.validation.leg.wrong-scheduled-arrival.message = La hora de llegada es anterior a la hora de salida
+acme.validation.leg.NotNull.message = El tramo o la aerolinea no pueden ser nulos
+acme.validation.leg.wrong-flight-number.message = El número de vuelo debe comenzar con el código IATA de la aerolinea
 
 acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
 
