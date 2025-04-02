@@ -21,8 +21,7 @@ flight-13,Lorem ipsum dolor sit ame,FALSE,EUR 0.00,Lorem ipsum
 flight-14,Lorem ipsum dolor sit ame,FALSE,EUR 0.01,Lorem ipsum
 flight-15,Lorem ipsum dolor sit ame,FALSE,EUR 999999.99,Lorem ipsum
 flight-16,Lorem ipsum dolor sit ame,FALSE,EUR 1000000.00,Lorem ipsum
-# cost - singular values
-flight-17,Lorem ipsum dolor sit ame,FALSE,USD 9.99,Lorem ipsum
+# cost - no singular values
 # description - standard variations
 flight-18,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,
 flight-19,Lorem ipsum dolor sit ame,FALSE,EUR 500.00,L
