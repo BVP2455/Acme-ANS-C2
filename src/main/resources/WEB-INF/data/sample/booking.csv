@@ -22,7 +22,7 @@ booking-11,ABC2734,2024/09/01 10:00,ECONOMY,0123,false,customer-01,flight-01
 booking-12,ABC2834,2024/09/01 10:00,ECONOMY,null,false,customer-01,flight-01
 # lastCardNibble - no singular values
 # draftMode - standard variations
-booking-13,ABC2034,2024/09/01 10:00,ECONOMY,6789,true,customer-01,flight-01
+booking-13,ABC1234,2024/09/01 10:00,ECONOMY,1234,true,customer-01,flight-01
 # draftMode - no singular values
 # key:customer - standard variations
 booking-14,ABC2934,2024/09/01 10:00,ECONOMY,1234,false,customer-04,flight-01
