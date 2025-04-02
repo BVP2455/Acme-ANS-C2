@@ -31,7 +31,7 @@ Service-25,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,00.01,BABD-25,40.00
 Service-26,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,99.99,BABE-25,40.00
 Service-27,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,100.00,BABF-25,40.00
 #promotionCode,"","","","",""
-Service-28,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,30.00,,40.00
+Service-28,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,30.00,null,40.00
 #money,"","","","",""
 Service-29,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,30.00,BABG-25,0.00
 Service-30,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,30.00,BABH-25,0.01

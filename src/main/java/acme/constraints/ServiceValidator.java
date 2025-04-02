@@ -34,19 +34,18 @@ public class ServiceValidator extends AbstractValidator<ValidService, Service> {
 		}
 
 		String promotionCode = service.getPromotionCode();
-		if (promotionCode == null || promotionCode.isBlank())
-			return true;
 
-		boolean containsYear;
-		Integer currentYear = MomentHelper.getCurrentMoment().getYear();
-		String year = String.valueOf(currentYear).substring(2);
-		containsYear = StringHelper.endsWith(promotionCode, year, false); // Comprueba que termine con los 2 dígitos del año
+		if (promotionCode != null) {
+			if (promotionCode.isBlank()) {
+				super.state(context, false, "promotionCode", "javax.validation.constraints.NotBlank.message");
+				return false;
+			}
+			boolean containsYear;
+			String currentYear = String.valueOf(MomentHelper.getCurrentMoment().getYear());
+			String year = currentYear.substring(currentYear.length() - 2);
+			containsYear = StringHelper.endsWith(promotionCode, year, false); // Comprueba que termine con los 2 dígitos del año
+			super.state(context, containsYear, "promotionCode", "acme.validation.service.promotioncode.year.message");
 
-		super.state(context, containsYear, "identifier", "acme.validation.service.promotioncode.year.message");
-
-		if (promotionCode == null)
-			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-		else {
 			boolean uniquePromotionCode;
 			Service existingService;
 
