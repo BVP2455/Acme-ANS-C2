@@ -1,5 +1,5 @@
 ﻿key,key:userAccount,identifier,phoneNumber,physicalAddress,city,country,earnedPoints
 customer-01,user-account-customer-01,JM111112,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",1000
-customer-02,user-account-customer-02,MR111113,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",1000
+customer-02,user-account-customer-02,MR111112,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",1000
 customer-03,user-account-customer-03,JZ111114,123456789,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing",1000
 
