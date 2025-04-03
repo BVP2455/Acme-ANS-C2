@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.flightcrewmember.flightassignment;
+package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
 
@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightassignment.CurrentStatus;
@@ -17,37 +16,43 @@ import acme.entities.legs.Leg;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
-public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrewMember, FlightAssignment> {
+public class FlightAssignmentDeleteService extends AbstractGuiService<FlightCrewMember, FlightAssignment> {
 
 	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private FlightAssignmentRepository repository;
 
+
 	// AbstractGuiService interface -------------------------------------------
-
-
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		FlightAssignment flightAssignment;
+		boolean status;
+		int flightAssignmentId;
+		int flightCrewMemberId;
+
+		flightAssignmentId = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = flightAssignment != null && flightAssignment.getFlightCrewMember().getId() == flightCrewMemberId && flightAssignment.isDraftMode();
+
+		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
 	public void load() {
 		FlightAssignment flightAssignment;
-		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+		int id;
 
-		flightAssignment = new FlightAssignment();
-		flightAssignment.setFlightCrewMember(flightCrewMember);
-		flightAssignment.setLastUpdateMoment(MomentHelper.getCurrentMoment());
-		flightAssignment.setDraftMode(true);
+		id = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(id);
+
 		super.getBuffer().addData(flightAssignment);
 	}
 
-	//transfiere los datos
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
-
 		super.bindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightCrewMember", "leg");
 	}
 
@@ -58,24 +63,19 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void perform(final FlightAssignment flightAssignment) {
-		assert flightAssignment != null;
-
-		this.repository.save(flightAssignment);
+		this.repository.delete(flightAssignment);
 	}
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset;
-
-		Collection<Leg> legs;
-		Collection<FlightCrewMember> flightCrewMembers;
-
 		SelectChoices dutyChoice;
 		SelectChoices currentStatusChoice;
 
 		SelectChoices legChoice;
+		Collection<Leg> legs;
 
-		SelectChoices flightCrewMemberChoice;
+		Collection<FlightCrewMember> flightCrewMembers;
 
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
@@ -93,5 +93,4 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 		super.getResponse().addData(dataset);
 	}
-
 }

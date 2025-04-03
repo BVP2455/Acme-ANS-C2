@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.flightcrewmember.flightassignment;
+package acme.features.flightcrewmember.flightassignment;
 
 import javax.annotation.PostConstruct;
 

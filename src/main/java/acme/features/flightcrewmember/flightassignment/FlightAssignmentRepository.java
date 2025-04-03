@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.flightcrewmember.flightassignment;
+package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
 import java.util.List;
