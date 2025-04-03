@@ -80,11 +80,13 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 		leg = flightAssignment.getLeg();
 		legId = leg.getId();
 
+		//el leg ya ha ocurrido
 		completedLeg = MomentHelper.isBefore(flightAssignment.getLeg().getScheduledArrival(), MomentHelper.getCurrentMoment());
 
 		//member available
 		availableMember = this.repository.findFlightCrewMemberById(flightCrewMemberId).getAvailabilityStatus().equals(AvaiabilityStatus.AVAILABLE);
 
+		//legs simultaneos
 		hasSimultaneousLegs = false;
 		departure = flightAssignment.getLeg().getScheduledDeparture();
 		arrival = flightAssignment.getLeg().getScheduledArrival();
@@ -106,9 +108,9 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 			hasCopilot = false;
 
 		if (!this.getBuffer().getErrors().hasErrors("publish")) {
-			super.state(!completedLeg, "flightAssignmentLeg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
-			super.state(availableMember, "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
-			super.state(hasSimultaneousLegs, "flightAssignmentLeg", "acme.validation.flightassignment.leg.overlap.message", flightAssignment);
+			super.state(!completedLeg, "leg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
+			super.state(availableMember, "flightCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
+			super.state(hasSimultaneousLegs, "leg", "acme.validation.flightassignment.leg.overlap.message", flightAssignment);
 			super.state(hasPilot, "duty", "acme.validation.flightassignment.duty.pilot.message", flightAssignment);
 			super.state(hasCopilot, "duty", "acme.validation.flightassignment.duty.copilot.message", flightAssignment);
 		}
