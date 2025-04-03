@@ -25,6 +25,7 @@ public class ActivityLogListService extends AbstractGuiService<FlightCrewMember,
 
 	@Override
 	public void authorise() {
+
 		int masterId;
 		int flightCrewMemberId;
 		FlightAssignment flightAssignment;
@@ -41,6 +42,7 @@ public class ActivityLogListService extends AbstractGuiService<FlightCrewMember,
 
 	@Override
 	public void load() {
+
 		Collection<ActivityLog> activityLogs;
 		int masterId;
 
@@ -64,6 +66,7 @@ public class ActivityLogListService extends AbstractGuiService<FlightCrewMember,
 
 	@Override
 	public void unbind(final Collection<ActivityLog> activityLog) {
+
 		int masterId;
 		masterId = super.getRequest().getData("masterId", int.class);
 		super.getResponse().addGlobal("masterId", masterId);
