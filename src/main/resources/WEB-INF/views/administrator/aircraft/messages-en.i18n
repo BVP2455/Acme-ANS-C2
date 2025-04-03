@@ -1,0 +1,6 @@
+administrator.aircraft.list.title = List of Aircrafts
+
+administrator.aircraft.list.label.model = Model
+administrator.aircraft.list.label.registrationNumber = Registration number
+administrator.aircraft.list.label.capacity = Capacity
+administrator.aircraft.list.label.status = Status
