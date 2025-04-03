@@ -32,3 +32,4 @@ acme.validation.lastCardNibble.message = Debe completar los dígitos de su tarje
 customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
 customer.booking.form.error.flightNotPublished = El vuelo no ha sido publicado aún
 customer.booking.form.error.passengersNotPublished = El pasajero no ha sido publicado
+customer.booking.form.error.emptyPassengers = No hay pasajeros asociados

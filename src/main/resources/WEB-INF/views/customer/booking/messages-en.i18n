@@ -31,3 +31,4 @@ acme.validation.lastCardNibble.message = You must complete the last digits of yo
 customer.booking.form.error.duplicateLocatorCode = The locatorCode is already used
 customer.booking.form.error.flightNotPublished = The flight is not published yet
 customer.booking.form.error.passengersNotPublished = The passenger is not published
+customer.booking.form.error.emptyPassengers = There are no passengers associated
