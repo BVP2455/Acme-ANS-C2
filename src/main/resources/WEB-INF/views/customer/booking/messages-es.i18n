@@ -29,7 +29,7 @@ customer.booking.form.add.passenger = Añadir Pasajero
 customer.booking.list.button.create = Crear reserva
 
 acme.validation.lastCardNibble.message = Debe completar los dígitos de su tarjeta para confirmar
-customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
 customer.booking.form.error.flightNotPublished = El vuelo no ha sido publicado aún
 customer.booking.form.error.passengersNotPublished = El pasajero no ha sido publicado
 customer.booking.form.error.emptyPassengers = No hay pasajeros asociados
+customer.booking.form.error.flightBeforeBooking = El vuelo debe ser posterior al momento de la reserva

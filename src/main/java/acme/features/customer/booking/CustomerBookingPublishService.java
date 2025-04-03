@@ -52,15 +52,15 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	public void validate(final Booking booking) {
 		if (booking.getLastCardNibble() == null || booking.getLastCardNibble().toString().isBlank())
 			super.state(false, "lastCardNibble", "acme.validation.lastCardNibble.message");
-		Booking existing = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
-		boolean valid = existing == null || existing.getId() == booking.getId();
-		super.state(valid, "locatorCode", "customer.booking.form.error.duplicateLocatorCode");
 
 		boolean flightPublished = booking.getFlight().getDraftMode() == false;
 		super.state(flightPublished, "flight", "customer.booking.form.error.flightNotPublished");
 
 		boolean emptyPassengers = !this.repository.findPassengersByBookingId(booking.getId()).isEmpty();
 		super.state(emptyPassengers, "price", "customer.booking.form.error.emptyPassengers");
+
+		boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
+		super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
 	}
 
 	@Override

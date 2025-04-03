@@ -49,9 +49,8 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void validate(final Booking booking) {
-		Booking existing = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
-		boolean valid = existing == null || existing.getId() == booking.getId();
-		super.state(valid, "locatorCode", "customer.booking.form.error.duplicateLocatorCode");
+		boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
+		super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
 	}
 
 	@Override

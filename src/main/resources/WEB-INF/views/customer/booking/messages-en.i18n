@@ -28,7 +28,7 @@ customer.booking.form.add.passenger = Add Passenger
 customer.booking.list.button.create = Create booking
 
 acme.validation.lastCardNibble.message = You must complete the last digits of your card to publish
-customer.booking.form.error.duplicateLocatorCode = The locatorCode is already used
 customer.booking.form.error.flightNotPublished = The flight is not published yet
 customer.booking.form.error.passengersNotPublished = The passenger is not published
 customer.booking.form.error.emptyPassengers = There are no passengers associated
+customer.booking.form.error.flightBeforeBooking = The flight must be after the booking time
