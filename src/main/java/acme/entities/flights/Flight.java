@@ -64,6 +64,7 @@ public class Flight extends AbstractEntity {
 		Date result;
 		Leg wrapper;
 		LegRepository repository;
+
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getFirst();
 		result = wrapper.getScheduledDeparture();
@@ -119,6 +120,17 @@ public class Flight extends AbstractEntity {
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		result = repository.countNumberOfLegsOfFlight(this.getId()) - 1;
+
+		return result;
+
+	}
+
+	public Integer getNumberLegs() {
+		Integer result;
+		LegRepository repository;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.countNumberOfLegsOfFlight(this.getId());
 
 		return result;
 
