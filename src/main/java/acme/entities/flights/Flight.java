@@ -1,6 +1,7 @@
 
 package acme.entities.flights;
 
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -82,27 +83,33 @@ public class Flight extends AbstractEntity {
 	}
 
 	public String getOriginCity() {
-		String result;
-		Leg wrapper;
-		LegRepository repository;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		List<Leg> legs = repository.findLegsByFlightOrderedByDeparture(this.getId());
 
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getFirst();
-		result = wrapper.getDepartureAirport().getCity();
+		if (legs.isEmpty())
+			return "Desconocido";
 
-		return result;
+		Leg lastLeg = legs.getLast();
+
+		if (lastLeg == null)
+			return "Desconocido";
+
+		return lastLeg.getArrivalAirport().getCity();
 	}
 
 	public String getDestinationCity() {
-		String result;
-		Leg wrapper;
-		LegRepository repository;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		List<Leg> legs = repository.findLegsByFlightOrderedByDeparture(this.getId());
 
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getLast();
-		result = wrapper.getArrivalAirport().getCity();
+		if (legs.isEmpty())
+			return "Desconocido";
 
-		return result;
+		Leg firstLeg = legs.getFirst();
+
+		if (firstLeg == null)
+			return "Desconocido";
+
+		return firstLeg.getArrivalAirport().getCity();
 	}
 
 	public Integer getNumberLayovers() {
@@ -114,6 +121,13 @@ public class Flight extends AbstractEntity {
 
 		return result;
 
+	}
+
+	@Transient()
+	public String getLabel() {
+		String origin = this.getOriginCity();
+		String destination = this.getDestinationCity();
+		return origin + "-" + destination;
 	}
 
 }

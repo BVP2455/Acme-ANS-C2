@@ -25,8 +25,8 @@ booking-12,ABC2834,2024/09/01 10:00,ECONOMY,null,false,customer-01,flight-01
 booking-13,ABC2034,2024/09/01 10:00,ECONOMY,1234,true,customer-01,flight-01
 # draftMode - no singular values
 # key:customer - standard variations
-booking-14,ABC2934,2024/09/01 10:00,ECONOMY,1234,false,customer-04,flight-01
-booking-15,ABC3034,2024/09/01 10:00,ECONOMY,1234,false,customer-08,flight-01
+booking-14,ABC2934,2024/09/01 10:00,ECONOMY,1234,false,customer-02,flight-01
+booking-15,ABC3034,2024/09/01 10:00,ECONOMY,1234,false,customer-03,flight-01
 # key:customer - no singular values
 # key:flight - standard variations
 booking-16,ABC3134,2024/09/01 10:00,ECONOMY,1234,false,customer-01,flight-04

@@ -52,3 +52,7 @@ master.menu.flightcrewmember.flightassignments = Member
 master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed = Completed Flight Assignment List
 master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = Planned Flight Assignment List
 
+# master.menu.customer ########################################################
+master.menu.customer = Customer
+master.menu.customer.list-bookings = Booking List
+master.menu.customer.list-passengers = Passenger List

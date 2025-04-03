@@ -10,6 +10,14 @@
 # they accept any liabilities with respect to them.
 
 customer.booking.list.title = Listado de reservas
+customer.booking.list.label.flight=Vuelo
+customer.booking.list.label.purchaseMoment=Momento de compra
+customer.booking.list.label.price=Precio
+customer.booking.list.label.draftmode=Modo borrador
+customer.booking.list.label.locatorCode= Código de localización
+customer.booking.list.label.lastCardNibble= Últimos 4 dígitos de la tarjeta
+customer.booking.list.label.travelClass= Clase de viaje
+
 customer.booking.form.title = Detalles de la reserva
 
 customer.booking.form.button.create = Crear reserva
@@ -20,14 +28,8 @@ customer.booking.form.show.passengers = Mostrar pasajeros
 customer.booking.form.add.passenger = Añadir Pasajero
 customer.booking.list.button.create = Crear reserva
 
-customer.booking.list.label.flight=Vuelo
-customer.booking.list.label.purchaseMoment=Momento de compra
-customer.booking.list.label.price=Precio
-customer.booking.list.label.draftmode=Modo borrador
-
-customer.booking.list.label.locatorCode= Código de localización
-customer.booking.list.label.lastCardNibble= Últimos 4 dígitos de la tarjeta
-customer.booking.list.label.travelClass= Clase de viaje
-
 acme.validation.lastCardNibble.message = Debe completar los dígitos de su tarjeta para confirmar
-customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
+customer.booking.form.error.flightNotPublished = El vuelo no ha sido publicado aún
+customer.booking.form.error.passengersNotPublished = El pasajero no ha sido publicado
+customer.booking.form.error.emptyPassengers = No hay pasajeros asociados
+customer.booking.form.error.flightBeforeBooking = El vuelo debe ser posterior al momento de la reserva

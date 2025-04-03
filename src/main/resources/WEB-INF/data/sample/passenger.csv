@@ -50,6 +50,6 @@ passenger-35,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ips
 passenger-36,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing", true,customer-01
 # draftMode - no singular values
 # key:customer - standard variations
-passenger-37,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing", false,customer-04
-passenger-38,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing", false,customer-07
+passenger-37,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing", false,customer-02
+passenger-38,"Lorem ipsum dolor sit amet, consectetur adipiscing",acme@lorem-ipsum.org,ABC12345,2024/09/01 10:00,"Lorem ipsum dolor sit amet, consectetur adipiscing", false,customer-03
 # key:customer - no singular values

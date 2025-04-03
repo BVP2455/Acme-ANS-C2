@@ -47,7 +47,7 @@ public class BookingValidator extends AbstractValidator<ValidBooking, Booking> {
 			existingBooking = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
 			uniqueBooking = existingBooking == null || existingBooking.equals(booking);
 
-			super.state(context, uniqueBooking, "ticker", "acme.validation.booking.duplicated-locatorCode.message");
+			super.state(context, uniqueBooking, "locatorCode", "acme.validation.booking.duplicated-locatorCode.message");
 		}
 
 		result = !super.hasErrors(context);

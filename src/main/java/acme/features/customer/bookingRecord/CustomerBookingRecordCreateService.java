@@ -47,7 +47,8 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void validate(final BookingRecord bookingRecord) {
-
+		boolean passengerPublished = bookingRecord.getPassenger().isDraftMode() == false;
+		super.state(passengerPublished, "passenger", "customer.booking.form.error.passengersNotPublished");
 	}
 
 	@Override
