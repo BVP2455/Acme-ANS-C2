@@ -16,10 +16,13 @@ public class ActivityLogController extends AbstractGuiController<FlightCrewMembe
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	private ActivityLogListService	listService;
+	private ActivityLogListService		listService;
 
 	@Autowired
-	private ActivityLogShowService	showService;
+	private ActivityLogShowService		showService;
+
+	@Autowired
+	private ActivityLogCreateService	createService;
 
 	//Constructors ----------------------------------------------------------------
 
@@ -29,6 +32,7 @@ public class ActivityLogController extends AbstractGuiController<FlightCrewMembe
 
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
 
 	}
 

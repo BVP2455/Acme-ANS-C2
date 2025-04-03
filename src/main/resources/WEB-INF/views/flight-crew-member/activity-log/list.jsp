@@ -10,3 +10,5 @@
 	<acme:list-column code ="flight-crew-member.activity-log.list.label.draftMode" path ="draftMode" width ="20%"/>
 	<acme:list-payload path="payload"/>	
 </acme:list>
+
+<acme:button code="flight-crew-member.activity-log.list.button.create" action ="/flight-crew-member/activity-log/create?masterId=${masterId }"/>
