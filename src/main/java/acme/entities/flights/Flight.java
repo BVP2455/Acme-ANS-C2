@@ -3,6 +3,7 @@ package acme.entities.flights;
 
 import java.beans.Transient;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
