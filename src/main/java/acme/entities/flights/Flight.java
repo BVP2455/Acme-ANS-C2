@@ -45,6 +45,11 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private Money				cost;
 
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean				draftMode;
+
 	// Optional atributes -------------------------------
 	@Optional
 	@ValidString(max = 255)
@@ -60,8 +65,8 @@ public class Flight extends AbstractEntity {
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findFirstLegByFlight(this.getId());
-		result = wrapper.get(0).getScheduledDeparture();
+		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getFirst();
+		result = wrapper.getScheduledDeparture();
 
 		return result;
 	}
@@ -72,8 +77,8 @@ public class Flight extends AbstractEntity {
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLastLegByFlight(this.getId());
-		result = wrapper.get(0).getScheduledArrival();
+		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getLast();
+		result = wrapper.getScheduledArrival();
 
 		return result;
 	}
@@ -84,8 +89,8 @@ public class Flight extends AbstractEntity {
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findFirstLegByFlight(this.getId());
-		result = wrapper.get(0).getDepartureAirport().getCity();
+		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getFirst();
+		result = wrapper.getDepartureAirport().getCity();
 
 		return result;
 	}
@@ -96,8 +101,8 @@ public class Flight extends AbstractEntity {
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLastLegByFlight(this.getId());
-		result = wrapper.get(0).getArrivalAirport().getCity();
+		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getLast();
+		result = wrapper.getArrivalAirport().getCity();
 
 		return result;
 	}

@@ -10,15 +10,8 @@ import acme.client.repositories.AbstractRepository;
 public interface LegRepository extends AbstractRepository {
 
 	@Query("select l from Leg l where l.flight.id = :flightId order by l.scheduledDeparture")
-	List<Leg> findFirstLegByFlight(Integer flightId);
-
-	@Query("select l from Leg l where l.flight.id = :flightId order by l.scheduledDeparture desc")
-	List<Leg> findLastLegByFlight(Integer flightId);
+	List<Leg> findLegsByFlightOrderedByDeparture(Integer flightId);
 
 	@Query("select count(l) from Leg l where l.flight.id = :flightId")
 	Integer countNumberOfLegsOfFlight(Integer flightId);
-
-	@Query("select l from Leg l where l.flight.id = :flightId order by l.scheduledDeparture")
-	List<Leg> findLegsByFlight(Integer flightId);
-
 }
