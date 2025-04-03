@@ -1,0 +1,13 @@
+flight-crew-member.activity-log.list.title = Activity Log list
+flight-crew-member.activity-log.form.title = Activity Log details
+
+flight-crew-member.activity-log.list.label.registrationMoment = Registration Moment
+flight-crew-member.activity-log.list.label.typeOfIncident = Type Of Incident
+flight-crew-member.activity-log.list.label.severityLevel = Severity Level
+flight-crew-member.activity-log.list.label.draftMode = Draft Mode
+
+flight-crew-member.activity-log.form.label.registrationMoment = Registration Moment
+flight-crew-member.activity-log.form.label.incidentType = Incident Type
+flight-crew-member.activity-log.form.label.description = Description
+flight-crew-member.activity-log.form.label.severityLevel = Severity Level
+flight-crew-member.activity-log.form.label.activityLogAssignment = Flight Assignment
