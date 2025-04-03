@@ -1,6 +1,7 @@
 
 package acme.entities.claim;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -57,6 +58,10 @@ public class Claim extends AbstractEntity {
 	@Automapped
 	private ClaimType			type;
 
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
+
 	// Derivada
 
 
@@ -66,7 +71,7 @@ public class Claim extends AbstractEntity {
 		List<TrackingLog> trackingLogs = repository.findTrackingLogsByClaimId(this.getId());
 		if (trackingLogs.isEmpty())
 			return null;
-		return trackingLogs.get(0).getStatus();
+		return trackingLogs.stream().sorted(Comparator.comparing(TrackingLog::getLastUpdateMoment).reversed()).findFirst().map(TrackingLog::getStatus).orElse(null);
 	}
 
 	// Relaciones
