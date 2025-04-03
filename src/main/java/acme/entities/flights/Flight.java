@@ -63,7 +63,7 @@ public class Flight extends AbstractEntity {
 		Date result;
 		List<Leg> wrapper;
 		LegRepository repository;
-
+		//Changed
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getFirst();
 		result = wrapper.getScheduledDeparture();
