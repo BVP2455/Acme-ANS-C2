@@ -55,6 +55,9 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		Booking existing = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
 		boolean valid = existing == null || existing.getId() == booking.getId();
 		super.state(valid, "locatorCode", "customer.booking.form.error.duplicateLocatorCode");
+
+		boolean flightPublished = booking.getFlight().getDraftMode() == false;
+		super.state(flightPublished, "flight", "customer.booking.form.error.flightNotPublished");
 	}
 
 	@Override
