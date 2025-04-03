@@ -1,6 +1,7 @@
 
 package acme.entities.flights;
 
+import java.beans.Transient;
 import java.util.Date;
 import java.util.List;
 
@@ -61,7 +62,7 @@ public class Flight extends AbstractEntity {
 
 	public Date getScheduledDeparture() {
 		Date result;
-		List<Leg> wrapper;
+		Leg wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
@@ -73,7 +74,7 @@ public class Flight extends AbstractEntity {
 
 	public Date getScheduledArrival() {
 		Date result;
-		List<Leg> wrapper;
+		Leg wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
@@ -84,27 +85,25 @@ public class Flight extends AbstractEntity {
 	}
 
 	public String getOriginCity() {
-		String result;
-		List<Leg> wrapper;
-		LegRepository repository;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		List<Leg> legs = repository.findLegsByFlightOrderedByDeparture(this.getId());
 
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getFirst();
-		result = wrapper.getDepartureAirport().getCity();
+		if (legs.isEmpty())
+			return "Desconocido";
 
-		return result;
+		return legs.getFirst().getDepartureAirport().getCity();
 	}
 
 	public String getDestinationCity() {
-		String result;
-		List<Leg> wrapper;
-		LegRepository repository;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		List<Leg> legs = repository.findLegsByFlightOrderedByDeparture(this.getId());
 
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLegsByFlightOrderedByDeparture(this.getId()).getLast();
-		result = wrapper.getArrivalAirport().getCity();
+		if (legs.isEmpty())
+			return "Desconocido";
 
-		return result;
+		Leg lastLeg = legs.getLast();
+
+		return lastLeg.getArrivalAirport().getCity();
 	}
 
 	public Integer getNumberLayovers() {
@@ -116,6 +115,13 @@ public class Flight extends AbstractEntity {
 
 		return result;
 
+	}
+
+	@Transient()
+	public String getLabel() {
+		String origin = this.getOriginCity();
+		String destination = this.getDestinationCity();
+		return origin + "-" + destination;
 	}
 
 }
