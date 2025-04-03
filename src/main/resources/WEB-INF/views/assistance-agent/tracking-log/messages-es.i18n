@@ -1,0 +1,39 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+assistance-agent.tracking-log.form.title = Detalles de Registros
+assistance-agent.tracking-log.list.title = Listar Registros
+
+assistanceAgent.trackingLog.form.label.lastUpdateMoment = Última modificación
+assistanceAgent.trackingLog.form.label.step = Paso
+assistanceAgent.trackingLog.form.label.resolutionPercentage = Porcentaje de resolución
+assistanceAgent.trackingLog.form.label.status = Estado
+assistanceAgent.trackingLog.form.label.resolution = Resolucion
+assistanceAgent.trackingLog.form.label.claim = Reclamación
+assistanceAgent.trackingLog.form.label.confirmation = ¿Desea confirmar?
+
+assistanceAgent.trackingLog.form.button.publish = Publicar
+assistanceAgent.trackingLog.form.button.create = Crear
+assistanceAgent.trackingLog.form.button.update = Actualizar
+assistanceAgent.trackingLog.form.button.delete = Borrar
+ 
+assistanceAgent.trackingLog.list.label.registrationMoment = Momento de registro
+assistanceAgent.trackingLog.list.label.lastUpdateMoment = Última modificación
+assistanceAgent.trackingLog.list.label.step = Paso
+assistanceAgent.trackingLog.list.label.resolutionPercentage = Porcentaje de resolución
+assistanceAgent.trackingLog.list.label.status = Estado
+assistanceAgent.trackingLog.list.label.resolution = Resolucion
+
+assistanceAgent.trackingLog.list.button.create = Crear
+
+assistanceAgent.trackingLog.form.error.incorrect-status-pending = El estado pendiente debe estar por debajo del 100% de resolución
+assistanceAgent.trackingLog.form.error.incorrect-status = El estado debe ser ACCEPTED o REJECTED cuando el porcentaje sea 100
+assistanceAgent.trackingLog.form.error.incorrect-number-logs = Cuando el porcentaje sea 100, no puede haber más de un registro de seguimiento
+assistanceAgent.trackingLog.form.error.incorrect-percentage = El porcentaje de resolución debe ser mayor que el porcentaje de resolución del registro de seguimiento anterior
