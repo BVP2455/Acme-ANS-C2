@@ -2,6 +2,7 @@
 package acme.features.customer.booking;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -65,7 +66,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		Dataset dataset;
 		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
-		Collection<Flight> flights = this.repository.findAllFlights();
+		Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
 		SelectChoices flightChoices = SelectChoices.from(flights, "label", booking.getFlight());
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "lastCardNibble", "draftMode", "id");
