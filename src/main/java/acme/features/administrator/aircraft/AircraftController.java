@@ -16,7 +16,10 @@ public class AircraftController extends AbstractGuiController<Administrator, Air
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	private AircraftListService listService;
+	private AircraftListService	listService;
+
+	@Autowired
+	private AircraftShowService	showService;
 
 	//Constructors ----------------------------------------------------------------
 
@@ -25,6 +28,7 @@ public class AircraftController extends AbstractGuiController<Administrator, Air
 	protected void initialise() {
 
 		super.addBasicCommand("list", this.listService);
+		super.addBasicCommand("show", this.showService);
 
 	}
 
