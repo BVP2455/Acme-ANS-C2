@@ -2,6 +2,7 @@
 package acme.entities.flights;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
@@ -60,7 +61,7 @@ public class Flight extends AbstractEntity {
 
 	public Date getScheduledDeparture() {
 		Date result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
@@ -72,7 +73,7 @@ public class Flight extends AbstractEntity {
 
 	public Date getScheduledArrival() {
 		Date result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
@@ -84,7 +85,7 @@ public class Flight extends AbstractEntity {
 
 	public String getOriginCity() {
 		String result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
@@ -96,7 +97,7 @@ public class Flight extends AbstractEntity {
 
 	public String getDestinationCity() {
 		String result;
-		Leg wrapper;
+		List<Leg> wrapper;
 		LegRepository repository;
 
 		repository = SpringHelper.getBean(LegRepository.class);
