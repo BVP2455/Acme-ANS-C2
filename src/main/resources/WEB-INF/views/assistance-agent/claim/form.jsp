@@ -16,29 +16,29 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form readonly="${false}">
-	<acme:input-moment code="RegistrationMoment" path="registrationMoment" readonly="true"/>	
-	<acme:input-textbox code="PassengerEmail" path="passengerEmail"/>	
-	<acme:input-textarea code="Description" path="description"/>	
-	<acme:input-select code="Type" path="type" choices="${types}"/>
-	<acme:input-select code="Leg" path="leg" choices="${legs}"/>
-	<acme:input-textbox code="Indicator" path="indicator" readonly="true"/>
+	<acme:input-moment code="assistanceAgent.claim.form.label.registrationMoment" path="registrationMoment" readonly="true"/>	
+	<acme:input-textbox code="assistanceAgent.claim.form.label.passengerEmail" path="passengerEmail"/>	
+	<acme:input-textarea code="assistanceAgent.claim.form.label.description" path="description"/>	
+	<acme:input-select code="assistanceAgent.claim.form.label.type" path="type" choices="${types}"/>
+	<acme:input-select code="assistanceAgent.claim.form.label.leg" path="leg" choices="${legs}"/>
+	<acme:input-textbox code="assistanceAgent.claim.form.label.status" path="status" readonly="true"/>
 		
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
 		<jstl:if test="${draftMode}">
-			<acme:submit code="Update" action="/assistance-agent/claim/update"/>
-			<acme:submit code="Publish" action="/assistance-agent/claim/publish"/>
-			<acme:submit code="Delete" action="/assistance-agent/claim/delete"/>
+			<acme:submit code="assistanceAgent.claim.form.button.update" action="/assistance-agent/claim/update"/>
+			<acme:submit code="assistanceAgent.claim.form.button.publish" action="/assistance-agent/claim/publish"/>
+			<acme:submit code="assistanceAgent.claim.form.button.delete" action="/assistance-agent/claim/delete"/>
 			
 		</jstl:if>
 
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="Create" action="/assistance-agent/claim/create"/>
+			<acme:submit code="assistanceAgent.claim.form.button.create" action="/assistance-agent/claim/create"/>
 		</jstl:when>		
 	</jstl:choose>	
 		<jstl:if test="${_command != 'create'}">
-		<acme:button code="Show trackingLogs" action="/assistance-agent/tracking-log/list?claimId=${id}"/>
+		<acme:button code="assistanceAgent.claim.form.show.trackingLogs" action="/assistance-agent/tracking-log/list?claimId=${id}"/>
 	</jstl:if>
 </acme:form>

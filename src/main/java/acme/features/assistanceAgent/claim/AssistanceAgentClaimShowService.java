@@ -49,9 +49,9 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
-		TrackingLogStatus indicator;
+		TrackingLogStatus status;
 
-		indicator = claim.getStatus();
+		status = claim.getStatus();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
 		legs = this.repository.findAllLeg();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
@@ -60,7 +60,7 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		dataset.put("types", choices);
 		dataset.put("leg", choices2.getSelected().getKey());
 		dataset.put("legs", choices2);
-		dataset.put("indicator", indicator);
+		dataset.put("status", status);
 
 		super.getResponse().addData(dataset);
 	}

@@ -11,21 +11,23 @@
 assistance-agent.claim.form.title = claim form
 assistance-agent.claim.list.title = Listing of claims
 
-assistanceAgent.claim.form.label.registrationMoment = Registration moment:
-assistanceAgent.claim.form.label.passengerEmail = Passenger email:
-assistanceAgent.claim.form.label.description = Description:
-assistanceAgent.claim.form.label.type = Type:
-assistanceAgent.claim.form.label.leg = Leg:
-assistanceAgent.claim.form.label.indicator = Indicator:
-assistanceAgent.claim.form.button.publish = Publish
+assistanceAgent.claim.form.label.registrationMoment = Registration moment
+assistanceAgent.claim.form.label.passengerEmail = Passenger email
+assistanceAgent.claim.form.label.description = Description
+assistanceAgent.claim.form.label.type = Type
+assistanceAgent.claim.form.label.leg = Leg
+assistanceAgent.claim.form.label.status = Status
 
+assistanceAgent.claim.form.button.publish = Publish
 assistanceAgent.claim.form.button.create = Create
 assistanceAgent.claim.form.button.update = Update
 assistanceAgent.claim.form.button.delete = Delete
  
+assistanceAgent.claim.list.label.registrationMoment = RegistrationMoment 
 assistanceAgent.claim.list.label.passengerEmail = Passenger Email
-assistanceAgent.claim.list.label.type = Type:
-assistanceAgent.claim.list.label.indicator = Indicator:
+assistanceAgent.claim.list.label.description = Description
+assistanceAgent.claim.list.label.type = Type
+assistanceAgent.claim.list.label.status = Status
 
 assistanceAgent.claim.list.button.create = Create
-assistanceAgent.claim.form.show.trackingLogs = View Associated Tracking Logs
+assistanceAgent.claim.form.show.trackingLogs = Show Tracking Logs

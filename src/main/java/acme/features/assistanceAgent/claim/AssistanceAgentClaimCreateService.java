@@ -57,6 +57,7 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 	public void perform(final Claim claim) {
 		claim.setRegistrationMoment(MomentHelper.getCurrentMoment());
 		claim.setDraftMode(true);
+
 		this.repository.save(claim);
 	}
 

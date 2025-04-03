@@ -32,7 +32,7 @@ public class AssistanceAgentClaimResolvedListService extends AbstractGuiService<
 		int assistanceAgentId;
 
 		assistanceAgentId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		claims = this.repository.findClaimsByAssistanceAgent(assistanceAgentId).stream().filter(x -> x.getStatus() != TrackingLogStatus.PENDING).toList();
+		claims = this.repository.findClaimsByAssistanceAgent(assistanceAgentId).stream().filter(x -> x.getStatus() == TrackingLogStatus.ACCEPTED || x.getStatus() == TrackingLogStatus.REJECTED).toList();
 
 		super.getBuffer().addData(claims);
 	}
@@ -41,10 +41,10 @@ public class AssistanceAgentClaimResolvedListService extends AbstractGuiService<
 	public void unbind(final Claim claim) {
 
 		Dataset dataset;
-		TrackingLogStatus indicator = claim.getStatus();
+		TrackingLogStatus status = claim.getStatus();
 
-		dataset = super.unbindObject(claim, "passengerEmail", "type");
-		dataset.put("indicator", indicator);
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");
+		dataset.put("status", status);
 		super.addPayload(dataset, claim, "registrationMoment", "description", "leg.flightNumber");
 
 		super.getResponse().addData(dataset);

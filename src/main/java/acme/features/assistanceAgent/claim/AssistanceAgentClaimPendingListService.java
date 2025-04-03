@@ -32,8 +32,7 @@ public class AssistanceAgentClaimPendingListService extends AbstractGuiService<A
 		int assistanceAgentId;
 
 		assistanceAgentId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		System.out.println(assistanceAgentId);
-		claims = this.repository.findClaimsByAssistanceAgent(assistanceAgentId).stream().filter(x -> TrackingLogStatus.PENDING.equals(x.getStatus())).toList();
+		claims = this.repository.findClaimsByAssistanceAgent(assistanceAgentId).stream().filter(x -> x.getStatus() == TrackingLogStatus.PENDING || x.getStatus() == null).toList();
 
 		super.getBuffer().addData(claims);
 	}
@@ -41,11 +40,11 @@ public class AssistanceAgentClaimPendingListService extends AbstractGuiService<A
 	@Override
 	public void unbind(final Claim claim) {
 		Dataset dataset;
-		TrackingLogStatus indicator;
+		TrackingLogStatus status;
 
-		indicator = claim.getStatus();
-		dataset = super.unbindObject(claim, "passengerEmail", "type");
-		dataset.put("indicator", indicator);
+		status = claim.getStatus();
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "status");
+		dataset.put("status", status);
 		super.addPayload(dataset, claim, "registrationMoment", "description", "leg.flightNumber");
 
 		super.getResponse().addData(dataset);

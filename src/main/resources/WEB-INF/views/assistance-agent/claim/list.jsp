@@ -16,14 +16,14 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="RegistrationMoment" path="registrationMoment" width="20%"/>
-	<acme:list-column code="PassengerEmail" path="passengerEmail" width="20%"/>
-	<acme:list-column code="Description" path="description" width="20%"/>
-	<acme:list-column code="Type" path="type" width="20%"/>
-	<acme:list-column code="Indicator" path="indicator" width="20%"/>
+	<acme:list-column code="assistanceAgent.claim.list.label.registrationMoment" path="registrationMoment"/>
+	<acme:list-column code="assistanceAgent.claim.list.label.passengerEmail" path="passengerEmail"/>
+	<acme:list-column code="assistanceAgent.claim.list.label.description" path="description"/>
+	<acme:list-column code="assistanceAgent.claim.list.label.type" path="type"/>
+	<acme:list-column code="assistanceAgent.claim.list.label.status" path="status"/>
 	
 	<acme:list-payload path="payload"/>
 </acme:list>
 
-<acme:button code="Create" action="/assistance-agent/claim/create"/>
+<acme:button code="assistanceAgent.claim.list.button.create" action="/assistance-agent/claim/create"/>
 
