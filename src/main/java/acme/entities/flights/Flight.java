@@ -91,7 +91,12 @@ public class Flight extends AbstractEntity {
 		if (legs.isEmpty())
 			return "Desconocido";
 
-		return legs.getFirst().getDepartureAirport().getCity();
+		Leg lastLeg = legs.getLast();
+
+		if (lastLeg == null)
+			return "Desconocido";
+
+		return lastLeg.getArrivalAirport().getCity();
 	}
 
 	public String getDestinationCity() {
@@ -101,9 +106,12 @@ public class Flight extends AbstractEntity {
 		if (legs.isEmpty())
 			return "Desconocido";
 
-		Leg lastLeg = legs.getLast();
+		Leg firstLeg = legs.getFirst();
 
-		return lastLeg.getArrivalAirport().getCity();
+		if (firstLeg == null)
+			return "Desconocido";
+
+		return firstLeg.getArrivalAirport().getCity();
 	}
 
 	public Integer getNumberLayovers() {
