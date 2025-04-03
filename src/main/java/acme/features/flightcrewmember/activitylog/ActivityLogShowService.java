@@ -1,15 +1,12 @@
 
 package acme.features.flightcrewmember.activitylog;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activitylog.ActivityLog;
-import acme.entities.flightassignment.FlightAssignment;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
@@ -56,12 +53,8 @@ public class ActivityLogShowService extends AbstractGuiService<FlightCrewMember,
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
 
-		Collection<FlightAssignment> flightAssignments;
-
-		flightAssignments = this.repository.findAllFlightAssignments();
-
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode", "activityLogAssignment");
-		dataset.put("flightAssignmentChoice", activityLog.getActivityLogAssignment());
+		dataset.put("flightAssignment", activityLog.getActivityLogAssignment());
 
 		super.getResponse().addData(dataset);
 	}
