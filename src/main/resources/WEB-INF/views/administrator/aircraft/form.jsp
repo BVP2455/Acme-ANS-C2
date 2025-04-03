@@ -11,5 +11,19 @@
 	<acme:input-select code="administrator.aircraft.form.label.status" path="status" choices="${statusChoice}"/>
 	<acme:input-textarea code="administrator.aircraft.form.label.details" path="details"/>
 	<acme:input-select code="administrator.aircraft.form.label.airline" path="airline" choices="${airlineChoice}"/>
+	
+<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmation"/>
+	<jstl:choose>	 
+		<jstl:when test="${acme:anyOf(_command, 'show|update|disable')}">
+			<acme:submit code="administrator.aircraft.form.button.update" action="/administrator/aircraft/update"/>
+	<jstl:choose>
+		<jstl:when test="${(status == 'ACTIVE') && !(acme:anyOf(_command, 'update') && !confirmation)}">
+			<acme:submit code="administrator.aircraft.form.button.disable" action="/administrator/aircraft/disable"/>
+		</jstl:when>
+	</jstl:choose>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>
-

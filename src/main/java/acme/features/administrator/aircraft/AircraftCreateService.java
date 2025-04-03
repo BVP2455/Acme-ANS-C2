@@ -15,7 +15,7 @@ import acme.entities.aircraft.Status;
 import acme.entities.airline.Airline;
 
 @GuiService
-public class AircraftShowService extends AbstractGuiService<Administrator, Aircraft> {
+public class AircraftCreateService extends AbstractGuiService<Administrator, Aircraft> {
 
 	// Internal state -------------------------------------------------------------------
 
@@ -34,36 +34,50 @@ public class AircraftShowService extends AbstractGuiService<Administrator, Aircr
 	public void load() {
 
 		Aircraft aircraft;
-
-		int aircraftId;
-
-		aircraftId = super.getRequest().getData("id", int.class);
-
-		aircraft = this.repository.findAircraftById(aircraftId);
+		aircraft = new Aircraft();
 
 		super.getBuffer().addData(aircraft);
 	}
 
 	@Override
+	public void bind(final Aircraft aircraft) {
+		super.bindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details", "airline");
+	}
+
+	@Override
+	public void validate(final Aircraft aircraft) {
+
+		boolean confirmation;
+
+		confirmation = super.getRequest().getData("confirmation", boolean.class);
+
+		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
+	}
+
+	@Override
+	public void perform(final Aircraft aircraft) {
+		this.repository.save(aircraft);
+	}
+
+	@Override
 	public void unbind(final Aircraft aircraft) {
 
-		SelectChoices choiceStatus;
-		SelectChoices choicesAirline;
+		SelectChoices choicesStatuses;
+		SelectChoices choicesAirlines;
 		Collection<Airline> airlines;
 
 		Dataset dataset;
 
+		choicesStatuses = SelectChoices.from(Status.class, aircraft.getStatus());
 		airlines = this.repository.findAllAirlines();
-		choicesAirline = SelectChoices.from(airlines, "code", aircraft.getAirline());
-
-		choiceStatus = SelectChoices.from(Status.class, aircraft.getStatus());
+		choicesAirlines = SelectChoices.from(airlines, "name", aircraft.getAirline());
 
 		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details");
-		dataset.put("airlineChoice", choicesAirline);
-		dataset.put("statusChoice", choiceStatus);
+		dataset.put("statusChoice", choicesStatuses);
+		dataset.put("airlineChoice", choicesAirlines);
 		dataset.put("confirmation", false);
 
 		super.getResponse().addData(dataset);
-
 	}
+
 }

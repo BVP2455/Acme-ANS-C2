@@ -14,3 +14,8 @@ administrator.aircraft.form.label.cargoWeight = Peso de la carga
 administrator.aircraft.form.label.status = Estado
 administrator.aircraft.form.label.details = Detalles
 administrator.aircraft.form.label.airline = Aerolínea
+
+administrator.aircraft.list.button.create = Crear
+administrator.aircraft.form.button.create = Crear
+
+administrator.aircraft.form.label.confirmation = Confirmar
