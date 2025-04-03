@@ -24,6 +24,12 @@ public class AircraftController extends AbstractGuiController<Administrator, Air
 	@Autowired
 	private AircraftCreateService	createService;
 
+	@Autowired
+	private AircraftUpdateService	updateService;
+
+	@Autowired
+	private AircraftDisableService	disableService;
+
 	//Constructors ----------------------------------------------------------------
 
 
@@ -33,6 +39,8 @@ public class AircraftController extends AbstractGuiController<Administrator, Air
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
+		super.addCustomCommand("disable", "update", this.disableService);
 
 	}
 

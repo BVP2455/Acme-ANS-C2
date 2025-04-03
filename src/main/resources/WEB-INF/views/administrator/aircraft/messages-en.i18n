@@ -19,3 +19,7 @@ administrator.aircraft.list.button.create = Create
 administrator.aircraft.form.button.create = Create
 
 administrator.aircraft.form.label.confirmation = Confirm
+
+administrator.aircraft.form.button.update = Update
+
+administrator.aircraft.form.button.disable = Disable
