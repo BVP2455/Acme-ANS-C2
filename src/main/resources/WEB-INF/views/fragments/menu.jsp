@@ -21,8 +21,8 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
     		<acme:menu-suboption code="4596*****: Galea, Carlos" action="https://www.wolframalpha.com/"/>
     		<acme:menu-suboption code="7787*****: Martos, Francisco Javier" action="https://as.com/"/>
-    		<acme:menu-suboption code="8022*****: Cegrí, José Luis" action="https://ev.us.es/"/>
-    		<acme:menu-suboption code="4596*****: García, Miguel Yan" action="https://www.realmadrid.com/es-ES"/>
+    		<acme:menu-suboption code="8022*****: CegrÃ­, JosÃ© Luis" action="https://ev.us.es/"/>
+    		<acme:menu-suboption code="4596*****: GarcÃ­a, Miguel Yan" action="https://www.realmadrid.com/es-ES"/>
     		<acme:menu-suboption code="4734*****: Gago, Francisco" action="https://www.amazon.es/"/>
 		</acme:menu-option>
 		
@@ -43,10 +43,22 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.assistance-agent" access="hasRealm('AssistanceAgent')">
-  			<acme:menu-suboption code="master.menu.assistanceAgent.list-resolved-claims" action="/assistance-agent/claim/list"/>
- 			<acme:menu-suboption code="master.menu.assistanceAgent.list-pending-claims" action="/assistance-agent/claim/pending"/>	
- 		</acme:menu-option>
+ 			<acme:menu-suboption code="master.menu.assistanceAgent.list-resolved-claims" action="/assistance-agent/claim/list"/>
+			<acme:menu-suboption code="master.menu.assistanceAgent.list-pending-claims" action="/assistance-agent/claim/pending"/>	
+		</acme:menu-option>
+
+		<acme:menu-option code="Customer Lists" access="hasRealm('Customer')">
+			<acme:menu-suboption code="Booking List" action="/customer/booking/list"/>
+			<acme:menu-suboption code="Passenger List" action="/customer/passenger/list"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.flightcrewmember.flightassignments" access="hasRealm('FlightCrewMember')">
+			<acme:menu-suboption code="master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed" action="/flight-crew-member/flight-assignment/list-completed"/>
+			<acme:menu-suboption code="master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned" action="/flight-crew-member/flight-assignment/list-planned"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>		

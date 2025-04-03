@@ -32,10 +32,10 @@ master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.assistance-agent ##########################################################
- 
- master.menu.assistance-agent = AssistanceAgent
- master.menu.assistanceAgent.list-resolved-claims = List Resolved Claims
- master.menu.assistanceAgent.list-pending-claims = List Pending Claims
+
+master.menu.assistance-agent = AssistanceAgent
+master.menu.assistanceAgent.list-resolved-claims = List Resolved Claims
+master.menu.assistanceAgent.list-pending-claims = List Pending Claims
 
 # master.menu.user-account ####################################################
 
@@ -45,3 +45,10 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.provider-profile = Provider profile
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
+
+# master.menu.flightcrewmember ########################################################
+master.menu.flightcrewmember = Flight Crew Member
+master.menu.flightcrewmember.flightassignments = Member
+master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed = Completed Flight Assignment List
+master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = Planned Flight Assignment List
+

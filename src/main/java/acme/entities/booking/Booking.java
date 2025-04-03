@@ -1,6 +1,7 @@
 
 package acme.entities.booking;
 
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,9 +17,9 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidBooking;
 import acme.entities.flights.Flight;
 import acme.realms.customer.Customer;
@@ -51,15 +52,14 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	private TravelClass			travelClass;
 
-	@Mandatory
-	@ValidMoney(min = 0)
-	@Automapped
-	private Money				price;
-
 	@Optional
 	@ValidNumber(integer = 4)
 	@Automapped
 	private Integer				lastCardNibble;
+
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
@@ -72,4 +72,19 @@ public class Booking extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Flight				flight;
+
+	// Derivated atributes ------------------------------
+
+
+	@Transient
+	public Money getPrice() {
+		Money flightCost = this.getFlight().getCost();
+		BookingRepository bookingRepository = SpringHelper.getBean(BookingRepository.class);
+		Integer numberOfPassengers = bookingRepository.findNumberOfBookingPassengers(this.getId());
+		Money price = new Money();
+		price.setCurrency(flightCost.getCurrency());
+		price.setAmount(flightCost.getAmount() * numberOfPassengers);
+		return price;
+	}
+
 }
