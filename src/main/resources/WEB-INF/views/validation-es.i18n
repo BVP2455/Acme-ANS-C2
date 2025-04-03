@@ -43,3 +43,9 @@ acme.validation.airport.duplicated-iataCode.message = Código IATA incorrecto, y
 acme.validation.iataCode.message = Código IATA incorrecto, debe estar compuesto por 3 letras mayúsculas.
 
 acme.validation.maintenanceRecord.incorrect-dates.message = Error en las fechas. La fecha de la próxima inspección debe ser posterior a la fecha del mantenimiento actual.
+
+acme.validation.flightassignment.flightcrewmember.available.message = Solo se pueden asignar miembros disponibles
+acme.validation.flightassignment.leg.completed.message = No puedes asignar la tarea a un tramo completado
+acme.validation.flightassignment.leg.overlap.message = Los tramos no se pueden solapar
+acme.validation.flightassignment.duty.pilot.message = Cada tramo solo puede tener un piloto
+acme.validation.flightassignment.duty.copilot.message = Cada tramo solo puede tener un copiloto
