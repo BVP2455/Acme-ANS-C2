@@ -70,8 +70,8 @@ public class Claim extends AbstractEntity {
 		TrackingLogRepository repository = SpringHelper.getBean(TrackingLogRepository.class);
 		List<TrackingLog> trackingLogs = repository.findTrackingLogsByClaimId(this.getId());
 		if (trackingLogs.isEmpty())
-			return null;
-		return trackingLogs.stream().sorted(Comparator.comparing(TrackingLog::getLastUpdateMoment).reversed()).findFirst().map(TrackingLog::getStatus).orElse(null);
+			return TrackingLogStatus.PENDING;
+		return trackingLogs.stream().sorted(Comparator.comparing(TrackingLog::getLastUpdateMoment).reversed()).findFirst().map(TrackingLog::getStatus).orElse(TrackingLogStatus.PENDING);
 	}
 
 	// Relaciones

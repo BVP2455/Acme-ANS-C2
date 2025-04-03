@@ -17,22 +17,22 @@ public class AssistanceAgentClaimController extends AbstractGuiController<Assist
 	private AssistanceAgentClaimResolvedListService	listService;
 
 	@Autowired
-	private AssistanceAgentClaimPendingListService		listPendingService;
+	private AssistanceAgentClaimPendingListService	listPendingService;
 
 	@Autowired
 	private AssistanceAgentClaimShowService			showService;
 
 	@Autowired
-	private AssistanceAgentClaimCreateService			createService;
+	private AssistanceAgentClaimCreateService		createService;
 
 	@Autowired
-	private AssistanceAgentClaimPublishService			publishService;
+	private AssistanceAgentClaimPublishService		publishService;
 
 	@Autowired
-	private AssistanceAgentClaimUpdateService			updateService;
+	private AssistanceAgentClaimUpdateService		updateService;
 
 	@Autowired
-	private AssistanceAgentClaimDeleteService			deleteService;
+	private AssistanceAgentClaimDeleteService		deleteService;
 
 
 	// Constructors -----------------------------------------------------------
