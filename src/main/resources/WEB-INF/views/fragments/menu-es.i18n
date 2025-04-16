@@ -24,6 +24,7 @@ master.menu.administrator.shut-system-down = Parar el sistema
 
 master.menu.administrator.aircraft = Aviones
 master.menu.administrator.aircraft.aircraft-list = Lista de aviones
+master.menu.administrator.aircraft.airline-list = Lista de aerolineas
 
 # master.menu.provider ########################################################
 

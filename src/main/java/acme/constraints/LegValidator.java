@@ -35,7 +35,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 		Airline airline = leg.getAirline();
 
-		String airlineCode = airline.getCode();
+		String airlineCode = airline.getIataCode();
 
 		boolean result;
 

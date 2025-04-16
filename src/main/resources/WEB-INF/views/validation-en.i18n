@@ -1,6 +1,6 @@
 #validation-en.i18n
 
-acme.validation.airline.duplicated-code.message = Invalid IATA code, it is already in use.
+acme.validation.airline.duplicated-code.message = Invalid IATA code, it is already in use
 
 acme.validation.phoneNumber.message = Invalid phone number. It must optionally start with a "+" followed by between 6 and 15 digits.
 acme.validation.shortText.message = Must have from 1 to 50 characters
@@ -40,7 +40,7 @@ acme.validation.trackinglog.incorrect-status.message = Incorrect status. If the 
 
 acme.validation.airport.duplicated-iataCode.message = Invalid IATA code. This code is already in use by another airport.
 
-acme.validation.iataCode.message = Invalid IATA code. It must be made up of 3 uppercase letters.
+acme.validation.iataCode.message = Invalid IATA code. It must be made up of 3 uppercase letters
 
 acme.validation.maintenanceRecord.incorrect-dates.message = Date error. The next inspection due date must be later than the current maintenance date.
 
