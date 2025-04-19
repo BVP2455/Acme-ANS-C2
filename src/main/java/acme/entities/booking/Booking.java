@@ -21,7 +21,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidBooking;
-import acme.entities.flights.Flight;
+import acme.entities.flight.Flight;
 import acme.realms.customer.Customer;
 import lombok.Getter;
 import lombok.Setter;

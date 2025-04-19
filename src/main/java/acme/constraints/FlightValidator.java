@@ -9,9 +9,9 @@ import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
 import acme.client.helpers.SpringHelper;
-import acme.entities.flights.Flight;
-import acme.entities.legs.Leg;
-import acme.entities.legs.LegRepository;
+import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
+import acme.features.manager.leg.LegRepository;
 
 @Validator
 public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {

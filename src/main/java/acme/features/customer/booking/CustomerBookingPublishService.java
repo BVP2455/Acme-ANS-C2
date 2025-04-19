@@ -77,7 +77,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 		travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
-		Collection<acme.entities.flights.Flight> flights = this.repository.findAllFlights();
+		Collection<acme.entities.flight.Flight> flights = this.repository.findAllFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastCardNibble", "draftMode", "id");

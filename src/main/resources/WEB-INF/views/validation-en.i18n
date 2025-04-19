@@ -2,6 +2,8 @@
 
 acme.validation.airline.duplicated-code.message = Invalid IATA code, it is already in use
 
+acme.validation.length = You have exceeded the maximum number of characters
+
 acme.validation.phoneNumber.message = Invalid phone number. It must optionally start with a "+" followed by between 6 and 15 digits.
 acme.validation.shortText.message = Must have from 1 to 50 characters
 acme.validation.identifier.message = Invalid identifier. Must start with between 2 and 3 letters followed by 6 digits.
@@ -12,6 +14,9 @@ acme.validation.leg.wrong-scheduled-arrival.message = The scheduled arrival is e
 acme.validation.leg.NotNull.message = Leg or airline may not be null
 acme.validation.leg.wrong-flight-number.message = The flight number must begin with the airline's IATA code
 acme.validation.flight.legs.negative-layovers = There has to be at least one leg
+acme.validation.flight.draftMode.updated.message = This flight has been published and it can not be updated
+acme.validation.flight.draftMode.deleted.message = This flight has been published and it can not be deleted
+acme.validation.flight.draftMode.published.message = This flight has been already published
 
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment

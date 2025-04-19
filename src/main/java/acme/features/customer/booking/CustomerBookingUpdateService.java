@@ -12,7 +12,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.booking.Booking;
 import acme.entities.booking.TravelClass;
-import acme.entities.flights.Flight;
+import acme.entities.flight.Flight;
 import acme.realms.customer.Customer;
 
 @GuiService

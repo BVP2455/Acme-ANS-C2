@@ -61,7 +61,7 @@ public class AirlineUpdateService extends AbstractGuiService<Administrator, Airl
 
 	@Override
 	public void perform(final Airline airport) {
-		this.repository.save(airport);
+		this.repository.delete(airport);
 	}
 
 	@Override

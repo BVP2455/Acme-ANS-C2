@@ -1,0 +1,19 @@
+manager.flight.list.button.create = Crear vuelo
+manager.flight.form.button.create = Crear
+manager.flight.list.title = Lista de vuelos
+manager.flight.form.title = Detalles del vuelo
+manager.flight.form.button.update = Actualizar vuelo
+manager.flight.form.button.delete = Borrar vuelo
+manager.flight.form.button.publish = Publicar vuelo
+manager.flight.form.button.legs = Lista de tramos
+
+
+manager.flight.list.label.tag = Etiqueta
+manager.flight.list.label.description = Descripción
+manager.flight.list.label.selfTransfer = Requiere transbordo
+
+manager.flight.form.label.tag = Etiqueta
+manager.flight.form.label.selfTransfer = Requiere transbordo
+manager.flight.form.label.cost = Precio
+manager.flight.form.label.description = Descripción: (Opcional)
+manager.flight.form.label.confirmation = Confirmo haber verificado los datos antes de continuar

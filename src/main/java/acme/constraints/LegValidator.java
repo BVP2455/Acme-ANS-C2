@@ -10,8 +10,9 @@ import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
 import acme.client.helpers.StringHelper;
 import acme.entities.airline.Airline;
-import acme.entities.legs.Leg;
-import acme.entities.legs.LegRepository;
+import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
+import acme.features.manager.leg.LegRepository;
 
 @Validator
 public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
@@ -33,13 +34,15 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 	public boolean isValid(final Leg leg, final ConstraintValidatorContext context) {
 		assert context != null;
 
-		Airline airline = leg.getAirline();
+		Flight flight = leg.getFlight();
+
+		Airline airline = flight.getAirline();
 
 		String airlineCode = airline.getIataCode();
 
 		boolean result;
 
-		if (leg == null || airline == null || airlineCode == null)
+		if (leg == null || flight == null || airline == null || airlineCode == null)
 			super.state(context, false, "*", "acme.validation.leg.NotNull.message");
 		else {
 			// R1: hay que hacer una validacion custom para que el momento de llegada sea posterior al momento de salida sin usar el reloj real

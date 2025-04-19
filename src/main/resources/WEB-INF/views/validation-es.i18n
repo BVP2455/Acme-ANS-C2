@@ -10,6 +10,10 @@ acme.validation.leg.wrong-scheduled-arrival.message = La hora de llegada es ante
 acme.validation.leg.NotNull.message = El tramo o la aerolinea no pueden ser nulos
 acme.validation.leg.wrong-flight-number.message = El número de vuelo debe comenzar con el código IATA de la aerolinea
 acme.validation.flight.legs.negative-layovers = El vuelo debe contener al menos un tramo
+acme.validation.flight.draftMode.updated.message = Este vuelo ha sido publicado y no se puede actualizar
+acme.validation.flight.draftMode.deleted.message = Este vuelo ha sido publicado y no se puede borrar
+acme.validation.flight.draftMode.published.message = Este vuelo ya ha sido publicado
+
 
 acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
 

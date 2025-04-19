@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.flightassignment.FlightAssignment;
 import acme.entities.flightassignment.FlightCrewDuty;
-import acme.entities.legs.Leg;
+import acme.entities.leg.Leg;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @Repository
