@@ -1,5 +1,5 @@
 
-package acme.entities.legs;
+package acme.entities.leg;
 
 import java.time.Duration;
 import java.util.Date;
@@ -18,18 +18,15 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.MomentHelper;
-import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
-import acme.entities.airline.Airline;
 import acme.entities.airport.Airport;
-import acme.entities.flights.Flight;
+import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidLeg
 public class Leg extends AbstractEntity {
 
 	//Serialisation version -------------------------
@@ -66,11 +63,6 @@ public class Leg extends AbstractEntity {
 	private LegStatus	status;
 
 	// Relationships ----------------------------------------------------------
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Airline		airline;
 
 	@Mandatory
 	@Valid

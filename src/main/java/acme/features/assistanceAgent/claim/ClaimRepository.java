@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.claim.Claim;
-import acme.entities.legs.Leg;
+import acme.entities.leg.Leg;
 import acme.entities.trackingLog.TrackingLog;
 
 @Repository
