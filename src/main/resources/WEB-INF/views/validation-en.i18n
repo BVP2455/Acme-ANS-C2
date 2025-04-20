@@ -1,6 +1,8 @@
 #validation-en.i18n
 
 acme.validation.airline.duplicated-code.message = Invalid IATA code, it is already in use
+acme.validation.leg.duplicated-code.message = Invalid flight number, it is already in use
+acme.validation.leg.same-airports.message = Arrival and departure airports can not be the same
 
 acme.validation.length = You have exceeded the maximum number of characters
 
@@ -13,10 +15,17 @@ acme.validation.flightcrewmember.identifier.message = Invalid identifier
 acme.validation.leg.wrong-scheduled-arrival.message = The scheduled arrival is earlier than the scheduled departure
 acme.validation.leg.NotNull.message = Leg or airline may not be null
 acme.validation.leg.wrong-flight-number.message = The flight number must begin with the airline's IATA code
+acme.validation.leg.draftMode.updated.message = This leg has been published and it can not be updated
+acme.validation.leg.draftMode.deleted.message = This leg has been published and it can not be deleted
+acme.validation.leg.draftMode.published.message = This leg has been already published
 acme.validation.flight.legs.negative-layovers = There has to be at least one leg
 acme.validation.flight.draftMode.updated.message = This flight has been published and it can not be updated
 acme.validation.flight.draftMode.deleted.message = This flight has been published and it can not be deleted
 acme.validation.flight.draftMode.published.message = This flight has been already published
+acme.validation.flight.no-legs.message = For a flight to be published, it must have at least one leg
+acme.validation.flight.legs-not-published.message = For a flight to be published, all legs must be published too
+acme.validation.flight.legs-overlap.message = For a flight to be published, legs can not overlap
+acme.validation.flight.legs-not-consecutive.message = Arrival and departure airports must be consecutive
 
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment

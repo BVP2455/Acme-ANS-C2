@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
 
 @Repository
 public interface FlightRepository extends AbstractRepository {
@@ -17,5 +18,8 @@ public interface FlightRepository extends AbstractRepository {
 
 	@Query("SELECT f FROM Flight f WHERE f.id = :flightId")
 	Flight getFlightById(int flightId);
+
+	@Query("select l from Leg l where l.flight.id = :flightId order by l.scheduledDeparture asc")
+	Collection<Leg> findLegsByFlightId(int flightId);
 
 }

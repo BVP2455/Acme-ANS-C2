@@ -45,6 +45,7 @@ public class FlightListService extends AbstractGuiService<Manager, Flight> {
 		Dataset dataset;
 
 		dataset = super.unbindObject(flight, "tag", "description", "selfTransfer");
+		dataset.put("layovers", flight.getNumberLayovers());
 		super.addPayload(dataset, flight, "cost");
 
 		super.getResponse().addData(dataset);

@@ -14,5 +14,5 @@
 </acme:list>
 
 <jstl:if test="${flightDraftMode == true}">
-	<acme:button code="manager.leg.list.button.create" action="/manager/leg/create"/>
+	<acme:button code="manager.leg.list.button.create" action="/manager/leg/create?flightId=${flightId}"/>
 </jstl:if>
