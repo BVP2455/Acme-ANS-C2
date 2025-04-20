@@ -11,9 +11,15 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
+import acme.entities.claim.Claim;
 import acme.entities.flight.Flight;
+import acme.entities.flightassignment.FlightAssignment;
 import acme.entities.leg.Leg;
 import acme.entities.leg.LegStatus;
+import acme.entities.trackingLog.TrackingLog;
+import acme.entities.trackingLog.TrackingLogRepository;
+import acme.features.assistanceAgent.claim.ClaimRepository;
+import acme.features.flightcrewmember.flightassignment.FlightAssignmentRepository;
 import acme.features.manager.flight.FlightRepository;
 import acme.realms.manager.Manager;
 
@@ -21,10 +27,19 @@ import acme.realms.manager.Manager;
 public class LegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Autowired
-	private LegRepository		repository;
+	private LegRepository				repository;
 
 	@Autowired
-	private FlightRepository	flightRepository;
+	private FlightRepository			flightRepository;
+
+	@Autowired
+	private ClaimRepository				claimRepository;
+
+	@Autowired
+	private FlightAssignmentRepository	flightAssignmentRepository;
+
+	@Autowired
+	private TrackingLogRepository		trackingLogRepository;
 
 
 	@Override
@@ -76,6 +91,15 @@ public class LegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void perform(final Leg leg) {
+		Collection<Claim> claims = this.claimRepository.findClaimsByLegId(leg.getId());
+		for (Claim claim : claims) {
+			Collection<TrackingLog> trackingLogs = this.trackingLogRepository.findTrackingLogsByClaimId(claim.getId());
+			this.trackingLogRepository.deleteAll(trackingLogs);
+		}
+		Collection<FlightAssignment> flightAssignments = this.flightAssignmentRepository.findFlightAssignmentByLegId(leg.getId());
+		this.claimRepository.deleteAll(claims);
+		this.flightAssignmentRepository.deleteAll(flightAssignments);
+
 		this.repository.delete(leg);
 	}
 
