@@ -48,6 +48,7 @@ public class LegListService extends AbstractGuiService<Manager, Leg> {
 		Collection<Leg> legs = this.repository.findLegsByFlightId(flightId);
 		super.getBuffer().addData(legs);
 		super.getResponse().addGlobal("flightDraftMode", flightDraftMode);
+		super.getResponse().addGlobal("flightId", flightId);
 	}
 
 	@Override

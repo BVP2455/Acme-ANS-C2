@@ -1,6 +1,8 @@
 #validation-es.i18n
 
-acme.validation.airline.duplicated-code.message = Código IATA incorrecto, ya está en uso.
+acme.validation.airline.duplicated-code.message = Código IATA incorrecto, ya está en uso
+acme.validation.leg.duplicated-code.message = Número de vuelo incorrecto, ya está en uso
+acme.validation.leg.same-airports.message = Los aeropuertos de salida y llegada no pueden ser los mismos
 
 acme.validation.phoneNumber.message = Número de teléfono incorrecto. Debe tener un "+" opcional seguido de entre 6 y 15 dígitos.
 acme.validation.shortText.message = Debe contener entre 1 y 50 caracteres
@@ -9,10 +11,17 @@ acme.validation.identifier.message = Identificador incorrecto. Debe comenzar con
 acme.validation.leg.wrong-scheduled-arrival.message = La hora de llegada es anterior a la hora de salida
 acme.validation.leg.NotNull.message = El tramo o la aerolinea no pueden ser nulos
 acme.validation.leg.wrong-flight-number.message = El número de vuelo debe comenzar con el código IATA de la aerolinea
+acme.validation.leg.draftMode.updated.message = Este tramo ya ha sido publicado y no se puede actualizar
+acme.validation.leg.draftMode.deleted.message = Este tramo ya ha sido publicado y no se puede borrar
+acme.validation.leg.draftMode.published.message = Este tramo ya ha sido publicado
 acme.validation.flight.legs.negative-layovers = El vuelo debe contener al menos un tramo
 acme.validation.flight.draftMode.updated.message = Este vuelo ha sido publicado y no se puede actualizar
 acme.validation.flight.draftMode.deleted.message = Este vuelo ha sido publicado y no se puede borrar
 acme.validation.flight.draftMode.published.message = Este vuelo ya ha sido publicado
+acme.validation.flight.no-legs.message = Para que un vuelo sea publicado, debe tener al menos un tramo
+acme.validation.flight.legs-not-published.message = Todos los tramos del vuelo deben estar publicados
+acme.validation.flight.legs-overlap.message = Para que un vuelo sea publicado, los tramos no se pueden solapar
+acme.validation.flight.legs-not-consecutive.message = Los aeropuertos de llegada y salida de los tramos deben ser consecutivos
 
 
 acme.validation.flightcrewmember.identifier.message = Identificador incorrecto

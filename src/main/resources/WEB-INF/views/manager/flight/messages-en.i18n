@@ -10,6 +10,7 @@ manager.flight.form.button.legs = Legs list
 manager.flight.list.label.tag = Tag
 manager.flight.list.label.description = Description
 manager.flight.list.label.selfTransfer = Self Transfer
+manager.flight.list.label.layovers = Number of layovers
 
 manager.flight.form.label.tag = Tag
 manager.flight.form.label.selfTransfer = Self Transfer

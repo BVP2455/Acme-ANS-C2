@@ -1,12 +1,16 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
 import acme.realms.manager.Manager;
 
 @GuiService
@@ -43,16 +47,49 @@ public class FlightPublishService extends AbstractGuiService<Manager, Flight> {
 
 	@Override
 	public void validate(final Flight flight) {
-		//TODO: For a flight to be published, it must have at least one leg, and all its legs must have been published.
-		boolean isDraftMode;
-		boolean status;
-		boolean confirmation;
+		Collection<Leg> legs = this.repository.findLegsByFlightId(flight.getId());
+		boolean hasLegs = !legs.isEmpty();
 
-		isDraftMode = flight.getDraftMode();
-		status = isDraftMode == true;
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
+		// R1: No dejar publicar si no hay tramos
+		super.state(hasLegs, "*", "acme.validation.flight.no-legs.message");
 
+		// R2: No dejar publicar si algún tramo está en draftMode
+		boolean allLegsPublished = legs.stream().allMatch(leg -> !leg.getDraftMode());
+		super.state(allLegsPublished, "*", "acme.validation.flight.legs-not-published.message");
+
+		// R3: No dejar publicar si los tramos se solapan
+		boolean noOverlap = true;
+		Leg previous = null;
+		for (Leg current : legs) {
+			if (previous != null)
+				if (!MomentHelper.isAfter(current.getScheduledDeparture(), previous.getScheduledArrival())) {
+					noOverlap = false;
+					break;
+				}
+			previous = current;
+		}
+		super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
+
+		// R4: Los aeropuertos deben ser consecutivos
+		boolean airportsAreConsecutive = true;
+		previous = null;
+		for (Leg current : legs) {
+			if (previous != null)
+				if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
+					airportsAreConsecutive = false;
+					break;
+				}
+			previous = current;
+		}
+		super.state(airportsAreConsecutive, "*", "acme.validation.flight.legs-not-consecutive.message");
+
+		// R5: El vuelo solo puede publicarse si está en draftMode (ajusta si tu lógica es diferente)
+		boolean isDraftMode = flight.getDraftMode();
+		boolean status = isDraftMode == true;
 		super.state(status, "*", "acme.validation.flight.draftMode.published.message");
+
+		// R6: Confirmación del usuario
+		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 	}
 

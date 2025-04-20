@@ -30,10 +30,16 @@ public interface LegRepository extends AbstractRepository {
 	@Query("select a from Aircraft a where a.airline.id = :airlineId")
 	Collection<Aircraft> findAircraftsByAirlineId(int airlineId);
 
-	@Query("select l from Leg l where l.id = :legId")
-	Leg findLegByLegId(int legId);
+	@Query("select a from Aircraft a where a.id = :aircraftId")
+	Aircraft findAircraftByAircraftId(int aircraftId);
 
-	@Query("select a from Aircraft a")
-	public Collection<Aircraft> findAllAircrafts();
+	@Query("select a from Airport a where a.id = :airportId")
+	Airport findAirportByAirportId(int airportId);
+
+	@Query("SELECT COUNT(l) > 0 FROM Leg l WHERE l.flightNumber = :flightNumber")
+	boolean existsByFlightNumber(String flightNumber);
+
+	@Query("SELECT COUNT(l) > 0 FROM Leg l WHERE l.flightNumber = :flightNumber AND l.id <> :id")
+	boolean existsByFlightNumberAndIdNot(String flightNumber, int id);
 
 }

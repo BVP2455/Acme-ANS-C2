@@ -44,6 +44,8 @@ public class FlightShowService extends AbstractGuiService<Manager, Flight> {
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.getFlightById(flightId);
 
+		super.getResponse().addGlobal("flightDraftMode", flight.getDraftMode());
+
 		super.getBuffer().addData(flight);
 	}
 

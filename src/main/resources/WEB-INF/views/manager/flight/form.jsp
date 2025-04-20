@@ -12,9 +12,11 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+		<jstl:if test="${flightDraftMode == true}">
 			<acme:submit code="manager.flight.form.button.update" action="/manager/flight/update"/>
 			<acme:submit code="manager.flight.form.button.delete" action="/manager/flight/delete"/>
 			<acme:submit code="manager.flight.form.button.publish" action="/manager/flight/publish"/>
+		</jstl:if>
 			<acme:button code="manager.flight.form.button.legs" action="/manager/leg/list?flightId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
