@@ -1,0 +1,36 @@
+technician.maintenance-record.form.title = Maintenance Record Details
+technician.maintenance-record.list.title = Maintenance Records List
+
+technician.maintenance-record.form.label.maintenance-moment = Moment
+technician.maintenance-record.form.label.status = Status
+technician.maintenance-record.form.label.next-inspection-due = Next Inspection Due
+technician.maintenance-record.form.label.aircraft = Aircraft
+technician.maintenance-record.form.label.estimated-cost = Estimated Cost
+technician.maintenance-record.form.label.notes = Notes 
+
+technician.maintenance-record.form.placeholder.next-inspection-due = YYYY/MM/DD HH:MM
+technician.maintenance-record.form.placeholder.estimated-cost = EUR 500.00
+
+technician.maintenance-record.form.button.create = Create		
+technician.maintenance-record.form.button.update = Update
+technician.maintenance-record.form.button.maintenance-tasks = View linked tasks
+technician.maintenance-record.form.button.publish = Publish
+technician.maintenance-record.form.button.confirmation = Confirm
+technician.maintenance-record.form.button.delete = Delete
+
+technician.maintenance-record.form.text.can-not-be-published = This maintenance record can not be published because it has not tasks or it has unpublished tasks
+technician.maintenance-record.form.text.already-published = This maintenance record is already published! Published maintenance records can not be updated or deleted.
+
+technician.maintenance-record.form.label.draft-mode = Draft mode
+technician.maintenance-record.list.label.maintenance-moment = Moment
+technician.maintenance-record.list.label.status = Status
+technician.maintenance-record.list.label.next-inspection-due = Next Inspection Due
+technician.maintenance-record.list.label.aircraft = Aircraft
+technician.maintenance-record.list.label.draft-mode = Draft mode
+technician.maintenance-record.list.button.create = Create
+
+
+
+
+
+

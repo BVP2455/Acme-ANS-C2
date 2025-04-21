@@ -51,7 +51,7 @@
 		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
 			<acme:menu-suboption code="master.menu.customer.list-bookings" action="/customer/booking/list"/>
 			<acme:menu-suboption code="master.menu.customer.list-passengers" action="/customer/passenger/list"/>
-    </acme:menu-option>
+    	</acme:menu-option>
 
 		<acme:menu-option code="master.menu.assistance-agent" access="hasRealm('AssistanceAgent')">
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-resolved-claims" action="/assistance-agent/claim/list"/>
@@ -61,6 +61,11 @@
 		<acme:menu-option code="master.menu.flightcrewmember.flightassignments" access="hasRealm('FlightCrewMember')">
 			<acme:menu-suboption code="master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed" action="/flight-crew-member/flight-assignment/list-completed"/>
 			<acme:menu-suboption code="master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned" action="/flight-crew-member/flight-assignment/list-planned"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.technician" access="hasRealm('Technician')">
+			<acme:menu-suboption code="master.menu.technician.list-maintenance-records" action="/technician/maintenance-record/list"/>
+			<acme:menu-separator/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

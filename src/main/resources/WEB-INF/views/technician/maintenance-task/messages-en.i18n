@@ -1,0 +1,24 @@
+technician.maintenance-task.form.title = Maintenance Task Details
+technician.maintenance-task.list.title = Maintenance Tasks Involved
+
+technician.maintenance-task.form.label.task = Task description
+technician.maintenance-task.form.label.priority = Priority
+technician.maintenance-task.form.label.type = Task type
+technician.maintenance-task.form.label.technician = Technician's license number
+technician.maintenance-task.form.label.maintenance-record = Maintenance Record Id
+technician.maintenance-task.form.label.aircraft = Aircraft
+
+technician.maintenance-task.form.button.create = Link task		
+technician.maintenance-task.form.button.delete = Detach task from this maintenance record
+
+technician.maintenance-task.list.label.priority = Priority
+technician.maintenance-task.list.label.description = Description
+technician.maintenance-task.list.label.type = Task type
+technician.maintenance-task.list.label.task-draft-mode = Task draft mode
+
+technician.maintenance-task.list.button.create = Link a new task
+
+
+
+
+

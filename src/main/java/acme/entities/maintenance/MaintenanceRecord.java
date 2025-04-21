@@ -60,6 +60,10 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Automapped
 	private String				notes;
 
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
+
 	// Relationships -------------------------------------------------------------
 
 	@Mandatory

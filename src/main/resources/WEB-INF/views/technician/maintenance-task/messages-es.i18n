@@ -1,0 +1,24 @@
+technician.maintenance-task.form.title = Detalles del registro de mantenimiento
+technician.maintenance-task.list.title = Tareas de mantenimiento relacionadas
+
+technician.maintenance-task.form.label.task = Descripción de la tarea
+technician.maintenance-task.form.label.priority = Prioridad
+technician.maintenance-task.form.label.type = Tipo de tarea
+technician.maintenance-task.form.label.technician = Número de licencia del técnico
+technician.maintenance-task.form.label.maintenance-record = Id del registro de mantenimiento
+technician.maintenance-task.form.label.aircraft = Aeronave
+
+technician.maintenance-task.form.button.create = Vincular tarea		
+technician.maintenance-task.form.button.delete = Desvincular tarea del registro de mantenimiento
+
+technician.maintenance-task.list.label.priority = Prioridad
+technician.maintenance-task.list.label.description = Descripción
+technician.maintenance-task.list.label.type = Tipo
+technician.maintenance-task.list.label.task-draft-mode = Borrador
+
+technician.maintenance-task.list.button.create = Vincular una nueva tarea
+
+
+
+
+

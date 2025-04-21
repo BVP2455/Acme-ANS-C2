@@ -60,3 +60,7 @@ master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = 
 master.menu.customer = Customer
 master.menu.customer.list-bookings = Booking List
 master.menu.customer.list-passengers = Passenger List
+
+# master.menu.technician ########################################################
+master.menu.technician = Technician
+master.menu.technician.list-maintenance-records = Maintenance Records List

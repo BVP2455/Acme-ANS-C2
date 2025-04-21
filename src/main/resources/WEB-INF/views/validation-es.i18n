@@ -43,6 +43,7 @@ acme.validation.airport.duplicated-iataCode.message = Código IATA incorrecto, y
 acme.validation.iataCode.message = Código IATA incorrecto, debe estar compuesto por 3 letras mayúsculas.
 
 acme.validation.maintenanceRecord.incorrect-dates.message = Error en las fechas. La fecha de la próxima inspección debe ser posterior a la fecha del mantenimiento actual.
+acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. Para poder publicar el registro de mantenimiento, debe incluir al menos una tarea publicada y no debe contener tareas sin publicar.
 
 acme.validation.flightassignment.flightcrewmember.available.message = Solo se pueden asignar miembros disponibles
 acme.validation.flightassignment.leg.completed.message = No puedes asignar la tarea a un tramo completado
