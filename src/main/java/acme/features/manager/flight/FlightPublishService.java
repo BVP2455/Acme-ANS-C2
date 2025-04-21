@@ -53,7 +53,7 @@ public class FlightPublishService extends AbstractGuiService<Manager, Flight> {
 		// R1: No dejar publicar si no hay tramos
 		super.state(hasLegs, "*", "acme.validation.flight.no-legs.message");
 
-		// R2: No dejar publicar si algún tramo está en draftMode
+		// R2: No dejar publicar si algún tramo está en borrador
 		boolean allLegsPublished = legs.stream().allMatch(leg -> !leg.getDraftMode());
 		super.state(allLegsPublished, "*", "acme.validation.flight.legs-not-published.message");
 
@@ -70,7 +70,7 @@ public class FlightPublishService extends AbstractGuiService<Manager, Flight> {
 		}
 		super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
 
-		// R4: Los aeropuertos deben ser consecutivos
+		// R4: aeropuertos deben ser consecutivos
 		boolean airportsAreConsecutive = true;
 		previous = null;
 		for (Leg current : legs) {
@@ -83,12 +83,12 @@ public class FlightPublishService extends AbstractGuiService<Manager, Flight> {
 		}
 		super.state(airportsAreConsecutive, "*", "acme.validation.flight.legs-not-consecutive.message");
 
-		// R5: El vuelo solo puede publicarse si está en draftMode (ajusta si tu lógica es diferente)
+		// R5: El vuelo solo puede publicarse si está en borrador
 		boolean isDraftMode = flight.getDraftMode();
 		boolean status = isDraftMode == true;
 		super.state(status, "*", "acme.validation.flight.draftMode.published.message");
 
-		// R6: Confirmación del usuario
+		// R6: casilla de confirmación
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 	}
