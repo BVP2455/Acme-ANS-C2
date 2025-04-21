@@ -1,11 +1,12 @@
 
-package acme.entities.flights;
+package acme.entities.flight;
 
 import java.beans.Transient;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -16,8 +17,9 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
-import acme.entities.legs.Leg;
-import acme.entities.legs.LegRepository;
+import acme.entities.airline.Airline;
+import acme.entities.leg.Leg;
+import acme.features.manager.leg.LegRepository;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -56,6 +58,13 @@ public class Flight extends AbstractEntity {
 	@ValidString(max = 255)
 	@Automapped
 	private String				description;
+
+	// Relationships ----------------------------------------------------------
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 	// Derivated atributes ------------------------------
 

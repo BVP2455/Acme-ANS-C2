@@ -24,6 +24,7 @@ master.menu.administrator.shut-system-down = Shut system down
 
 master.menu.administrator.aircraft = Aircrafts
 master.menu.administrator.aircraft.aircraft-list = Aircrafts List
+master.menu.administrator.aircraft.airline-list = Airline List
 
 # master.menu.provider ########################################################
 
@@ -61,6 +62,11 @@ master.menu.customer = Customer
 master.menu.customer.list-bookings = Booking List
 master.menu.customer.list-passengers = Passenger List
 
-# master.menu.technician ########################################################
+# master.menu.technician ##########################################################
 master.menu.technician = Technician
 master.menu.technician.list-maintenance-records = Maintenance Records List
+
+# master.menu.manager ##########################################################
+master.menu.manager = Manager
+master.menu.manager.list-flights = Flights List
+

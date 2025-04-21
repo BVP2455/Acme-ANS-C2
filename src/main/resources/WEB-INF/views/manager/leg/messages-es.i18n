@@ -1,0 +1,26 @@
+manager.leg.list.title = Lista de tramos
+manager.leg.form.title = Detalles del tramo
+manager.leg.form.button.create = Crear
+manager.leg.form.button.delete = Borrar
+manager.leg.form.button.update = Actualizar
+manager.leg.form.button.publish = Publicar
+manager.leg.form.button.actualizar = Actualizar
+
+
+manager.leg.list.label.flightNumber = Número de vuelo
+manager.leg.list.label.scheduledDeparture = Salida estimada
+manager.leg.list.label.scheduledArrival = Llegada estimada
+manager.leg.list.label.status = Estado
+manager.leg.list.label.airportDeparture = Origen
+manager.leg.list.label.airportArrival = Destino
+manager.leg.list.label.aircraft = Aeronave
+manager.leg.list.button.create = Crear tramo
+
+manager.leg.form.label.flightNumber = Número de vuelo
+manager.leg.form.label.scheduledDeparture =  Salida estimada
+manager.leg.form.label.scheduledArrival = Llegada estimada
+manager.leg.form.label.status = Estado
+manager.leg.form.label.originAirport = Aeropuerto de origen
+manager.leg.form.label.destinationAirport = Aeropuerto de destino
+manager.leg.form.label.aircraft = Aeronave
+manager.leg.form.label.confirmation = Confirmo haber verificado los datos antes de continuar

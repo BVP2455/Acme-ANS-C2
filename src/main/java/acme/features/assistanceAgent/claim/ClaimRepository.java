@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.claim.Claim;
-import acme.entities.legs.Leg;
+import acme.entities.leg.Leg;
 import acme.entities.trackingLog.TrackingLog;
 
 @Repository
@@ -29,5 +29,8 @@ public interface ClaimRepository extends AbstractRepository {
 
 	@Query("select tl FROM TrackingLog tl where tl.claim.id = :claimId")
 	Collection<TrackingLog> findTrackingLogsByClaimId(int claimId);
+
+	@Query("SELECT c from Claim c where c.leg.id = :id")
+	Collection<Claim> findClaimsByLegId(int id);
 
 }

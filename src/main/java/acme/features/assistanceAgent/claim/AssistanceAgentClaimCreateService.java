@@ -12,7 +12,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claim.Claim;
 import acme.entities.claim.ClaimType;
-import acme.entities.legs.Leg;
+import acme.entities.leg.Leg;
 import acme.realms.assistanceAgents.AssistanceAgent;
 
 @GuiService

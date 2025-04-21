@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.Passenger;
 import acme.entities.booking.Booking;
-import acme.entities.flights.Flight;
+import acme.entities.flight.Flight;
 
 @Repository
 public interface CustomerBookingRepository extends AbstractRepository {

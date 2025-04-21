@@ -20,7 +20,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidClaim;
-import acme.entities.legs.Leg;
+import acme.entities.leg.Leg;
 import acme.entities.trackingLog.TrackingLog;
 import acme.entities.trackingLog.TrackingLogRepository;
 import acme.entities.trackingLog.TrackingLogStatus;

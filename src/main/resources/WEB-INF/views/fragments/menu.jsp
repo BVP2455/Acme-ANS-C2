@@ -21,22 +21,22 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
     		<acme:menu-suboption code="4596*****: Galea, Carlos" action="https://www.wolframalpha.com/"/>
     		<acme:menu-suboption code="7787*****: Martos, Francisco Javier" action="https://as.com/"/>
-    		<acme:menu-suboption code="8022*****: Cegrí, José Luis" action="https://ev.us.es/"/>
-    		<acme:menu-suboption code="4596*****: García, Miguel Yan" action="https://www.realmadrid.com/es-ES"/>
+    		<acme:menu-suboption code="8022*****: Cegri, Jose Luis" action="https://ev.us.es/"/>
+    		<acme:menu-suboption code="4596*****: Garcia, Miguel Yan" action="https://www.realmadrid.com/es-ES"/>
     		<acme:menu-suboption code="4734*****: Gago, Francisco" action="https://www.amazon.es/"/>
 		</acme:menu-option>
 		
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
-			<acme:menu-separator/>
-      <acme:menu-suboption code="master.menu.administrator.aircraft.aircraft-list" action="/administrator/aircraft/list"/>
-			<acme:menu-separator/>
+		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.administrator.aircraft.aircraft-list" action="/administrator/aircraft/list"/>
+      		<acme:menu-suboption code="master.menu.administrator.aircraft.airline-list" action="/administrator/airline/list"/>
 			<acme:menu-suboption code="master.menu.administrator.list-airports" action="/administrator/airport/list"/>
-      <acme:menu-separator/>
+      	<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-initial" action="/administrator/system/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>			
-			<acme:menu-separator/>
+		<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
 
@@ -53,6 +53,10 @@
 			<acme:menu-suboption code="master.menu.customer.list-passengers" action="/customer/passenger/list"/>
     	</acme:menu-option>
 
+		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
+			<acme:menu-suboption code="master.menu.manager.list-flights" action="/manager/flight/list"/>
+    	</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.assistance-agent" access="hasRealm('AssistanceAgent')">
  			<acme:menu-suboption code="master.menu.assistanceAgent.list-resolved-claims" action="/assistance-agent/claim/list"/>
 			<acme:menu-suboption code="master.menu.assistanceAgent.list-pending-claims" action="/assistance-agent/claim/pending"/>	

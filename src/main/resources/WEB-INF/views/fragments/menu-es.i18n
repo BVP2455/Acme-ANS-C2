@@ -24,6 +24,7 @@ master.menu.administrator.shut-system-down = Parar el sistema
 
 master.menu.administrator.aircraft = Aviones
 master.menu.administrator.aircraft.aircraft-list = Lista de aviones
+master.menu.administrator.aircraft.airline-list = Lista de aerolineas
 
 # master.menu.provider ########################################################
 
@@ -64,3 +65,7 @@ master.menu.customer.list-passengers = Listado de Pasajeros
 # master.menu.technician ########################################################
 master.menu.technician = Técnico
 master.menu.technician.list-maintenance-records = Lista de registros de mantenimiento
+
+# master.menu.manager ##########################################################
+master.menu.manager = Manager
+master.menu.manager.list-flights = Listado de vuelos
