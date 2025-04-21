@@ -76,7 +76,7 @@ public class LegCreateService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void validate(final Leg leg) {
 
-		// R1: hay que hacer una validacion custom para que el momento de llegada sea posterior al momento de salida sin usar el reloj real
+		// R1: el momento de llegada sea posterior al momento de salida sin usar el reloj real
 		if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
 			boolean correctDepatureArrivalDate = MomentHelper.isAfter(leg.getScheduledArrival(), leg.getScheduledDeparture());
 			super.state(correctDepatureArrivalDate, "scheduledArrival", "acme.validation.leg.wrong-scheduled-arrival.message");
@@ -114,7 +114,7 @@ public class LegCreateService extends AbstractGuiService<Manager, Leg> {
 		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 		int airlineId = manager.getAirline().getId();
 
-		Collection<Aircraft> aircrafts = this.repository.findAircraftsByAirlineId(airlineId); // Podrías filtrar por airlineId
+		Collection<Aircraft> aircrafts = this.repository.findAircraftsByAirlineId(airlineId);
 		Collection<Airport> airports = this.repository.findAllAirports();
 
 		SelectChoices statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
