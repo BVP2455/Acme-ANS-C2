@@ -1,51 +1,5 @@
 key,key:userAccount,licenseNumber,phoneNumber,specialisation,annualHealthTest,yearsOfExperience,certifications
-# base entity
-technician-00,user-account-technician-01,AZ012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-# licenseNumber - standard variations
-technician-01,user-account-technician-01,BC987654,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-02,user-account-technician-01,AZP012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-# licenseNumber - no singular values
-# phoneNumber - standard variations
-technician-03,user-account-technician-01,AB012345,123456,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-04,user-account-technician-01,AC012345,1234567,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-05,user-account-technician-01,AD012345,12345678901234,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-06,user-account-technician-01,AE012345,123456789012345,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-07,user-account-technician-01,AF012345,+123456,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-08,user-account-technician-01,AG012345,+1234567,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-09,user-account-technician-01,AH012345,+12345678901234,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-10,user-account-technician-01,AI012345,+123456789012345,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-# phoneNumber - no singular values
-# specialisation - standard variations
-technician-11,user-account-technician-01,BA012345,+340123456789,L,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-12,user-account-technician-01,BB012345,+340123456789,Lo,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-13,user-account-technician-01,BC012345,+340123456789,Lorem ipsum dolor sit amet consectetur adipiscing,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-14,user-account-technician-01,BD012345,+340123456789,Lorem ipsum dolor sit amet consectetur adipiscin,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-15,user-account-technician-01,BE012345,+340123456789,โลเร็ม อิปซัม,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-16,user-account-technician-01,BF012345,+340123456789,لوريم إيبسوم,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-17,user-account-technician-01,BG012345,+340123456789,洛伦·伊普森,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-18,user-account-technician-01,BH012345,+340123456789,<marquee>Hacked</marquee>,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-19,user-account-technician-01,BI012345,+340123456789,<script>alert(‘Hacked!’);</script>,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-20,user-account-technician-01,BJ012345,+340123456789,' or 'A' = 'A,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-# specialisation - no singular values
-# annualHealthTest - standard variations
-technician-21,user-account-technician-02,CA012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-22,user-account-technician-02,CB012345,+340123456789,Lorem ipsum dolor sit,FALSE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-# annualHealthTest - no singular values
-# yearsOfExperience - standard variations
-technician-23,user-account-technician-02,DA012345,+340123456789,Lorem ipsum dolor sit,TRUE,0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-24,user-account-technician-02,DB012345,+340123456789,Lorem ipsum dolor sit,TRUE,1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-25,user-account-technician-02,DC012345,+340123456789,Lorem ipsum dolor sit,TRUE,119,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-technician-26,user-account-technician-02,DD012345,+340123456789,Lorem ipsum dolor sit,TRUE,120,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-# yearsOfExperience - no singular values
-# certifications - standard variations
-technician-27,user-account-technician-02,EA012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,L
-technician-28,user-account-technician-02,EB012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lo
-technician-29,user-account-technician-02,EC012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-technician-30,user-account-technician-02,ED012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*
-technician-31,user-account-technician-02,EE012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,โลเร็ม อิปซัม
-technician-32,user-account-technician-02,EF012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,لوريم إيبسوم
-technician-33,user-account-technician-02,EG012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,洛伦·伊普森
-technician-34,user-account-technician-02,EH012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,<marquee>Hacked</marquee>
-technician-35,user-account-technician-02,EI012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,<script>alert(‘Hacked!’);</script>
-technician-36,user-account-technician-02,EJ012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,'' or 'A' = 'A
-# certifications - no singular values
+technician-01,user-account-technician-01,AZ012345,+340123456789,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
+technician-02,user-account-technician-02,BB234567,+34012345678,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
+technician-03,user-account-technician-03,AZ456789,+3401234567,Lorem ipsum dolor sit,TRUE,60,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
+
