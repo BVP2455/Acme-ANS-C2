@@ -10,6 +10,7 @@ technician.maintenance-task.form.label.aircraft = Aeronave
 
 technician.maintenance-task.form.button.create = Vincular tarea		
 technician.maintenance-task.form.button.delete = Desvincular tarea del registro de mantenimiento
+technician.maintenance-task.form.button.view-task = Ver tarea
 
 technician.maintenance-task.list.label.priority = Prioridad
 technician.maintenance-task.list.label.description = Descripción

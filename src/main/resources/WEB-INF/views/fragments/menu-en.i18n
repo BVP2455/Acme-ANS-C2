@@ -65,6 +65,7 @@ master.menu.customer.list-passengers = Passenger List
 # master.menu.technician ##########################################################
 master.menu.technician = Technician
 master.menu.technician.list-maintenance-records = Maintenance Records List
+master.menu.technician.list-tasks = Tasks List
 
 # master.menu.manager ##########################################################
 master.menu.manager = Manager

@@ -1,0 +1,26 @@
+technician.task.form.title = Task Details
+technician.task.list.title = Tasks List
+
+technician.task.form.placeholder.priority = Elige un valor numérico desde 0 hasta 10
+technician.task.form.placeholder.estimated-duration = Elige un valor numérico desde 0 hasta 1000
+
+technician.task.form.button.create = Crear	
+technician.task.form.button.update = Editar
+technician.task.form.button.publish = Publicar
+technician.task.form.button.confirmation = Confirmar
+technician.task.form.button.delete = Eliminar
+
+technician.task.form.text.already-published = ¡La tarea ya ha sido publicada! Las tareas publicadas no pueden eliminarse ni editarse.
+
+technician.task.form.label.type = Tipo
+technician.task.form.label.description = Descripción
+technician.task.form.label.priority = Prioridad
+technician.task.form.label.estimated-duration = DUración estimada
+
+technician.task.list.label.draft-mode = Modo borrador
+technician.task.list.label.type = Tipo
+technician.task.list.label.description = Descripción
+technician.task.list.label.estimated-duration = Duración estimada
+technician.task.list.label.priority = Prioridad
+
+technician.task.list.button.create = Crear

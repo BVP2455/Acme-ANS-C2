@@ -69,8 +69,12 @@ public class TechnicianMaintenanceTaskShowService extends AbstractGuiService<Tec
 
 		boolean draftMode;
 		draftMode = mr.isDraftMode();
-
 		super.getResponse().addGlobal("draftMode", draftMode);
+
+		int taskId;
+		taskId = task.getId();
+		super.getResponse().addGlobal("taskId", taskId);
+
 	}
 
 }
