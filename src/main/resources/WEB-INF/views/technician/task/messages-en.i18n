@@ -1,0 +1,29 @@
+technician.task.form.title = Task Details
+technician.task.list.title = Tasks List
+
+technician.task.form.placeholder.priority = 0 to 10
+technician.task.form.placeholder.estimated-duration = 0 to 1000
+
+technician.task.form.button.create = Create		
+technician.task.form.button.update = Update
+technician.task.form.button.publish = Publish
+technician.task.form.button.confirmation = Confirm
+technician.task.form.button.delete = Delete
+
+technician.task.form.text.already-published = This task is already published! Published tasks can not be updated or deleted.
+
+technician.task.form.label.type = Type
+technician.task.form.label.description = Description
+technician.task.form.label.priority = Priority
+technician.task.form.label.estimated-duration = Estimated Duration 
+
+technician.task.list.label.draft-mode = Draft mode
+technician.task.list.label.type = Type
+technician.task.list.label.description = Description
+technician.task.list.label.estimated-duration =Estimated Duration
+technician.task.list.label.priority = Priority
+
+technician.task.list.button.create = Create
+
+
+

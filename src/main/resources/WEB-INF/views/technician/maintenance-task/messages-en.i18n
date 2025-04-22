@@ -10,6 +10,7 @@ technician.maintenance-task.form.label.aircraft = Aircraft
 
 technician.maintenance-task.form.button.create = Link task		
 technician.maintenance-task.form.button.delete = Detach task from this maintenance record
+technician.maintenance-task.form.button.view-task = View task
 
 technician.maintenance-task.list.label.priority = Priority
 technician.maintenance-task.list.label.description = Description
