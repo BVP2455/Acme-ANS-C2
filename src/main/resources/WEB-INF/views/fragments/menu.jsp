@@ -72,7 +72,7 @@
 			<acme:menu-suboption code="master.menu.technician.list-published-maintenance-records" action="/technician/maintenance-record/list-published"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.technician.list-tasks" action="/technician/task/list"/>
-<%-- 			<acme:menu-suboption code="master.menu.technician.list-published-tasks" action="/technician/task/list-published"/> --%>
+			<acme:menu-suboption code="master.menu.technician.list-published-tasks" action="/technician/task/list-published"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>
