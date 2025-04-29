@@ -13,12 +13,12 @@ Service-09,<marquee>Hacked</marquee>,http://lorem.com/ipsum,30.00,ABCL-25,40.00
 Service-10,<script>alert(‘Hacked!’);</script>,http://lorem.com/ipsum,30.00,ABCM-25,40.00
 Service-11,' or 'A' = 'A,http://lorem.com/ipsum,30.00,ABCN-25,40.00
 #picture,"","","","",""
-Service-12,Lorem ipsum dolor sit ame,ftp://a,30.00,ABCO-25,40.00
-Service-13,Lorem ipsum dolor sit ame,ftp://a.b,30.00,ABCP-25,40.00
+Service-12,Lorem ipsum dolor sit ame,http://a,30.00,ABCO-25,40.00
+Service-13,Lorem ipsum dolor sit ame,http://a.b,30.00,ABCP-25,40.00
 Service-14,Lorem ipsum dolor sit ame,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",30.00,ABCQ-25,40.00
 Service-15,Lorem ipsum dolor sit ame,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",30.00,ABCR-25,40.00
 Service-16,Lorem ipsum dolor sit ame,https://www.lorem-ipsum.org,30.00,ABCS-25,40.00
-Service-17,Lorem ipsum dolor sit ame,ftp://www.lorem-ipsum.org,30.00,ABCT-25,40.00
+Service-17,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org,30.00,ABCT-25,40.00
 Service-18,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit.html,30.00,ABCU-25,40.00
 Service-19,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit.html#dolor,30.00,ABCV-25,40.00
 Service-20,Lorem ipsum dolor sit ame,http://example.org?a=1&b=2,30.00,ABCW-25,40.00

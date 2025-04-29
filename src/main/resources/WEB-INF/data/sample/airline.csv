@@ -20,7 +20,7 @@ airline-13,Ryanair,ZZZ,https://www.ryanair.com/es/es,STANDARD,2010/01/01 10:00,a
 # code - no singular values
 # website - standard variations
 airline-14,Ryanair,FKX,http://lorem.com/ipsum,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
-airline-15,Ryanair,FLX,ftp://a.b,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
+airline-15,Ryanair,FLX,https://a.b,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 airline-16,Ryanair,FMX,https://www.lorem-ipsum.org,STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 airline-17,Ryanair,FNX,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
 airline-18,Ryanair,FOX,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",STANDARD,2010/01/01 10:00,acme@lorem-ipsum.org,872552447
