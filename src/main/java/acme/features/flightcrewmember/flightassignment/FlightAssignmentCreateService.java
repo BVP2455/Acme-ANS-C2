@@ -75,8 +75,6 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 		SelectChoices legChoice;
 
-		SelectChoices flightCrewMemberChoice;
-
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
 
