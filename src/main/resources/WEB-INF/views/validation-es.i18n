@@ -63,3 +63,6 @@ acme.validation.flightassignment.leg.completed.message = No puedes asignar la ta
 acme.validation.flightassignment.leg.overlap.message = Los tramos no se pueden solapar
 acme.validation.flightassignment.duty.pilot.message = Cada tramo solo puede tener un piloto
 acme.validation.flightassignment.duty.copilot.message = Cada tramo solo puede tener un copiloto
+
+acme.validation.locatorCodePattern.message = Codigo de localizacion incorrecto. Debe tener una longitud entre 6 y 8 caracteres, y cada carácter debe ser una letra mayúscula de la A a la Z o un dígito del 0 al 9 (AAA999)
+acme.validation.passportNumberPattern.message = Numero de pasaporte incorrecto. Debe tener una longitud entre 6 y 9 caracteres, y cada carácter debe ser una letra mayúscula de la A a la Z o un dígito del 0 al 9 (AAA9999)

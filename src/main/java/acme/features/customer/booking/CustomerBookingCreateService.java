@@ -45,13 +45,17 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void bind(final Booking booking) {
-		super.bindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastCardNibble");
+		super.bindObject(booking, "flight", "locatorCode", "travelClass", "lastCardNibble");
 	}
 
 	@Override
 	public void validate(final Booking booking) {
-		boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
-		super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
+
+		if (booking.getFlight() != null) {
+			boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
+			super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
+
+		}
 	}
 
 	@Override
@@ -67,7 +71,9 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
 		Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
-		SelectChoices flightChoices = SelectChoices.from(flights, "label", booking.getFlight());
+		Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
+
+		SelectChoices flightChoices = SelectChoices.from(flightsAvaiables, "label", booking.getFlight());
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "lastCardNibble", "draftMode", "id");
 		dataset.put("travelClasses", travelClasses);
