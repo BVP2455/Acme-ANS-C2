@@ -10,7 +10,7 @@
 # they accept any liabilities with respect to them.
 
 customer.passenger.list.title = Lista de pasajeros
-customer.passenger.list.label.Name=Nombre 
+customer.passenger.list.label.name=Nombre 
 customer.passenger.list.label.passportNumber=Número de pasaporte
 customer.passenger.list.label.dateOfBirth=Fecha de nacimiento
 customer.passenger.list.label.draftMode=Modo borrador
