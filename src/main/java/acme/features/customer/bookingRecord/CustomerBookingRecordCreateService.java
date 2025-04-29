@@ -42,7 +42,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void bind(final BookingRecord bookingRecord) {
-		super.bindObject(bookingRecord, "passenger", "booking");
+		super.bindObject(bookingRecord, "passenger");
 	}
 
 	@Override
