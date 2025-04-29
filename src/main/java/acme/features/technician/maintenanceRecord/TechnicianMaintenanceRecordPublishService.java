@@ -49,7 +49,7 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 	public void bind(final MaintenanceRecord mr) {
 		Aircraft aircraft;
 		aircraft = super.getRequest().getData("aircraft", Aircraft.class);
-		super.bindObject(mr, "maintenanceMoment", "status", "nextInspectionDue", "estimatedCost", "notes");
+		super.bindObject(mr, "status", "nextInspectionDue", "estimatedCost", "notes");
 		mr.setAircraft(aircraft);
 	}
 
