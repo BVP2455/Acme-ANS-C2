@@ -58,8 +58,9 @@ public class Booking extends AbstractEntity {
 	private Integer				lastCardNibble;
 
 	@Mandatory
+	@Valid
 	@Automapped
-	private boolean				draftMode;
+	private Boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
