@@ -34,7 +34,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 			Flight flight = super.getRequest().getData("flight", Flight.class);
 
 			Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
-			Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
+			Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
 
 			if (flightId != 0 && !flightsAvaiables.contains(flight))
 				status = false;
@@ -93,7 +93,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
 		Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
-		Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
+		Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
 
 		SelectChoices flightChoices = SelectChoices.from(flightsAvaiables, "label", booking.getFlight());
 
