@@ -32,3 +32,5 @@ customer.booking.form.error.flightNotPublished = The flight is not published yet
 customer.booking.form.error.passengersNotPublished = The passenger is not published
 customer.booking.form.error.emptyPassengers = There are no passengers associated
 customer.booking.form.error.flightBeforeBooking = The flight must be after the booking time
+
+customer.booking.form.error.unpublishedPassengers = Th passengers are not published

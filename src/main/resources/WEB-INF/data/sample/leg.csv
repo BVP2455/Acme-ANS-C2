@@ -1,11 +1,11 @@
 key,flightNumber,scheduledDeparture,scheduledArrival,status,draftMode,key:flight,key:departureAirport,key:arrivalAirport,key:aircraft
 # base entity
-leg-00,FAX1001,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-01,airport-00,airport-01,aircraft-01
+leg-00,FAX1001,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-02,airport-00,airport-01,aircraft-01
 # flight-number - standard variations
-leg-01,FAX0000,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-01,airport-00,airport-01,aircraft-01
-leg-02,FAX0001,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-01,airport-00,airport-01,aircraft-01
-leg-03,FAX9998,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-01,airport-00,airport-01,aircraft-01
-leg-04,FAX9999,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-01,airport-00,airport-01,aircraft-01
+leg-01,FAX0000,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-02,airport-00,airport-01,aircraft-01
+leg-02,FAX0001,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-02,airport-00,airport-01,aircraft-01
+leg-03,FAX9998,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-02,airport-00,airport-01,aircraft-01
+leg-04,FAX9999,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-02,airport-00,airport-01,aircraft-01
 # flight-number - no singular values
 # scheduled-departure - standard variations
 leg-05,FAX0002,2030/08/08 08:08,2030/12/31 15:00,ON_TIME,FALSE,flight-01,airport-00,airport-01,aircraft-01

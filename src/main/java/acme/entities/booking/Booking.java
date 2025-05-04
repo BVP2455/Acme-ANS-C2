@@ -58,8 +58,9 @@ public class Booking extends AbstractEntity {
 	private Integer				lastCardNibble;
 
 	@Mandatory
+	@Valid
 	@Automapped
-	private boolean				draftMode;
+	private Boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
@@ -78,12 +79,17 @@ public class Booking extends AbstractEntity {
 
 	@Transient
 	public Money getPrice() {
-		Money flightCost = this.getFlight().getCost();
+		if (this.flight == null || this.flight.getCost() == null)
+			return null;
+
+		Money flightCost = this.flight.getCost();
 		BookingRepository bookingRepository = SpringHelper.getBean(BookingRepository.class);
 		Integer numberOfPassengers = bookingRepository.findNumberOfBookingPassengers(this.getId());
+
 		Money price = new Money();
 		price.setCurrency(flightCost.getCurrency());
 		price.setAmount(flightCost.getAmount() * numberOfPassengers);
+
 		return price;
 	}
 

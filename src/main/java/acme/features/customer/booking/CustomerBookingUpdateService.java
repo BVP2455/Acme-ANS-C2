@@ -2,6 +2,7 @@
 package acme.features.customer.booking;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,14 +26,34 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 	@Override
 	public void authorise() {
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
-
 		super.getResponse().setAuthorised(status);
 
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int bookingId = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.findBookingById(bookingId);
+		if (status) {
+			int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			int bookingId = super.getRequest().getData("id", int.class);
+			Booking booking = this.repository.findBookingById(bookingId);
+			status = customerId == booking.getCustomer().getId();
+			super.getResponse().setAuthorised(status);
+		}
 
-		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+		if (status && super.getRequest().getMethod().equals("POST")) {
+
+			Integer flightId = super.getRequest().getData("flight", Integer.class);
+			Flight flight = super.getRequest().getData("flight", Flight.class);
+
+			Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
+			Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
+
+			if (flightId != 0 && !flightsAvaiables.contains(flight))
+				status = false;
+
+			if (flight != null && flight.getDraftMode())
+				status = false;
+
+			super.getResponse().setAuthorised(status);
+
+		}
+
 	}
 
 	@Override
@@ -51,8 +72,12 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void validate(final Booking booking) {
-		boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
-		super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
+
+		if (booking.getFlight() != null) {
+			boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
+			super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
+
+		}
 	}
 
 	@Override

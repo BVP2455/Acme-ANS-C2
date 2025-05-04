@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.client.components.datatypes.Money;
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
@@ -26,6 +27,27 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 	@Override
 	public void authorise() {
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+
+		if (status && super.getRequest().getMethod().equals("POST")) {
+
+			Integer flightId = super.getRequest().getData("flight", Integer.class);
+			Flight flight = super.getRequest().getData("flight", Flight.class);
+
+			Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
+			Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
+
+			if (flightId != 0 && !flightsAvaiables.contains(flight))
+				status = false;
+
+			if (flight != null && flight.getDraftMode())
+				status = false;
+
+			Money price = super.getRequest().getData("price", Money.class);
+
+			if (price != null)
+				status = false;
+
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -71,7 +93,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
 		Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
-		Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment())).collect(Collectors.toList());
+		Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
 
 		SelectChoices flightChoices = SelectChoices.from(flightsAvaiables, "label", booking.getFlight());
 
