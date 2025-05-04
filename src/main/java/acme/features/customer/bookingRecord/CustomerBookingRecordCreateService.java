@@ -23,11 +23,24 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void authorise() {
+		boolean status = true;
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		int bookingId = super.getRequest().getData("bookingId", int.class);
 		Booking booking = this.repository.findBookingById(bookingId);
 
 		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+
+		if (super.getRequest().getMethod().equals("POST")) {
+
+			Passenger passenger = super.getRequest().getData("passenger", Passenger.class);
+			Collection<Passenger> avaiablePassengers = this.repository.findAllPassengersOfCustomer(customerId);
+
+			if (!avaiablePassengers.contains(passenger))
+				status = false;
+
+			super.getResponse().setAuthorised(status);
+
+		}
 
 	}
 
@@ -69,6 +82,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		Collection<Passenger> passengers = this.repository.findAllPassengersOfCustomer(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
 		SelectChoices passengerChoices = SelectChoices.from(passengers, "name", bookingRecord.getPassenger());
 		dataset.put("passengers", passengerChoices);
+		dataset.put("locatorCode", bookingRecord.getBooking().getLocatorCode());
 
 		super.getResponse().addData(dataset);
 

@@ -9,7 +9,8 @@
 # they accept any liabilities with respect to them.
 
 customer.bookingRecord.list.label.passenger = Passenger
-customer.bookingRecord.list.label.booking = Booking
+customer.bookingRecord.list.label.booking = Booking 
+customer.booking.list.label.locatorCode = Booking LocatorCode
 
 customer.booking-record.form.title = Add new passenger to booking
 
