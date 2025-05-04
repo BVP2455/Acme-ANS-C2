@@ -69,6 +69,7 @@ public class Flight extends AbstractEntity {
 	// Derivated atributes ------------------------------
 
 
+	@Transient()
 	public Date getScheduledDeparture() {
 		Date result;
 		Leg wrapper;
@@ -81,6 +82,7 @@ public class Flight extends AbstractEntity {
 		return result;
 	}
 
+	@Transient()
 	public Date getScheduledArrival() {
 		Date result;
 		Leg wrapper;
@@ -93,6 +95,7 @@ public class Flight extends AbstractEntity {
 		return result;
 	}
 
+	@Transient()
 	public String getOriginCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
 		List<Leg> legs = repository.findLegsByFlightOrderedByDeparture(this.getId());
@@ -108,6 +111,7 @@ public class Flight extends AbstractEntity {
 		return lastLeg.getArrivalAirport().getCity();
 	}
 
+	@Transient()
 	public String getDestinationCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
 		List<Leg> legs = repository.findLegsByFlightOrderedByDeparture(this.getId());
@@ -123,6 +127,7 @@ public class Flight extends AbstractEntity {
 		return firstLeg.getArrivalAirport().getCity();
 	}
 
+	@Transient()
 	public Integer getNumberLayovers() {
 		Integer result;
 		LegRepository repository;
@@ -134,6 +139,7 @@ public class Flight extends AbstractEntity {
 
 	}
 
+	@Transient()
 	public Integer getNumberLegs() {
 		Integer result;
 		LegRepository repository;
