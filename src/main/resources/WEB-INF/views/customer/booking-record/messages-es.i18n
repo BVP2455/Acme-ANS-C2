@@ -11,6 +11,7 @@
 
 customer.bookingRecord.list.label.passenger = Pasajero
 customer.bookingRecord.list.label.booking = Reserva
+customer.booking.list.label.locatorCode = Código de localización de la reserva
 
 customer.booking-record.form.title = Añadir nuevo pasajero a la reserva
 
