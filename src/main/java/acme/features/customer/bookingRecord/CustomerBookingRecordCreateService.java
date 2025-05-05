@@ -33,9 +33,11 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		if (super.getRequest().getMethod().equals("POST")) {
 
 			Passenger passenger = super.getRequest().getData("passenger", Passenger.class);
+			Integer passengerId = super.getRequest().getData("passenger", Integer.class);
+
 			Collection<Passenger> avaiablePassengers = this.repository.findAllPassengersOfCustomer(customerId);
 
-			if (!avaiablePassengers.contains(passenger))
+			if (passengerId != 0 && !avaiablePassengers.contains(passenger))
 				status = false;
 
 			super.getResponse().setAuthorised(status);
