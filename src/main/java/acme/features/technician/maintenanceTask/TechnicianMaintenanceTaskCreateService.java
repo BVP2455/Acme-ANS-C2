@@ -23,13 +23,25 @@ public class TechnicianMaintenanceTaskCreateService extends AbstractGuiService<T
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int mrId;
-		MaintenanceRecord mr;
+		boolean status = false;
+		boolean taskValid = true;
+		int mrId = super.getRequest().getData("mrId", int.class);
+		MaintenanceRecord mr = this.repository.findMaintenanceRecordById(mrId);
 
-		mrId = super.getRequest().getData("mrId", int.class);
-		mr = this.repository.findMaintenanceRecordById(mrId);
-		status = mr != null && super.getRequest().getPrincipal().hasRealm(mr.getTechnician());
+		if (mr != null && super.getRequest().getPrincipal().hasRealm(mr.getTechnician()))
+			status = true;
+
+		if (super.getRequest().getMethod().equals("POST")) {
+			int taskId = super.getRequest().getData("task", int.class);
+			if (taskId == 0)
+				taskValid = true;
+			else {
+				Task existingTask = this.repository.findTaskById(taskId);
+				taskValid = existingTask != null;
+			}
+
+			status = status && taskValid;
+		}
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -8,8 +8,8 @@ technician.maintenance-record.form.label.aircraft = Aeronave
 technician.maintenance-record.form.label.estimated-cost = Coste estimado
 technician.maintenance-record.form.label.notes = Anotaciones 
 
-technician.maintenance-record.form.placeholder.next-inspection-due = AAAA/MM/DD HH:MM
-technician.maintenance-record.form.placeholder.estimated-cost = EUR 500.00
+technician.maintenance-record.form.placeholder.next-inspection-due = DD/MM/AAAA HH:MM
+technician.maintenance-record.form.placeholder.estimated-cost = EUR 500,00
 
 technician.maintenance-record.form.button.create = Crear		
 technician.maintenance-record.form.button.update = Editar
