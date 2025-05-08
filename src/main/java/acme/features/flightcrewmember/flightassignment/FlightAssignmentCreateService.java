@@ -67,8 +67,6 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset;
 
-		Collection<Leg> legs;
-
 		SelectChoices dutyChoice;
 		SelectChoices currentStatusChoice;
 
@@ -76,6 +74,7 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 		Collection<FlightCrewMember> flightCrewMembers;
 
 		SelectChoices legChoice;
+		Collection<Leg> legs;
 
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());

@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.activitylog.ActivityLog;
 import acme.entities.flightassignment.FlightAssignment;
 import acme.entities.flightassignment.FlightCrewDuty;
 import acme.entities.leg.Leg;
@@ -55,5 +56,8 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.id = :id")
 	Collection<FlightAssignment> findFlightAssignmentByLegId(int id);
+
+	@Query("select al from ActivityLog al where al.activityLogAssignment.id = :activityLogAssignmentId")
+	Collection<ActivityLog> findAllLogsByAssignmentId(int activityLogAssignmentId);
 
 }
