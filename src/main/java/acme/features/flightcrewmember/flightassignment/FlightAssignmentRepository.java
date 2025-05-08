@@ -18,10 +18,10 @@ import acme.realms.flightcrewmember.FlightCrewMember;
 @Repository
 public interface FlightAssignmentRepository extends AbstractRepository {
 
-	@Query("select fa from FlightAssignment fa where fa.leg.scheduledArrival < CURRENT_TIMESTAMP")
+	@Query("select fa from FlightAssignment fa WHERE fa.leg.scheduledArrival < CURRENT_TIMESTAMP")
 	Collection<FlightAssignment> findCompletedFlightAssignments();
 
-	@Query("select fa from FlightAssignment fa where fa.leg.scheduledDeparture > CURRENT_TIMESTAMP")
+	@Query("select fa from FlightAssignment fa WHERE fa.leg.scheduledDeparture > CURRENT_TIMESTAMP")
 	Collection<FlightAssignment> findPlannedFlightAssignments();
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :flightCrewMemberId AND fa.leg.scheduledArrival < CURRENT_TIMESTAMP")
@@ -48,16 +48,16 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fa.leg FROM FlightAssignment fa WHERE fa.flightCrewMember.id = :flightCrewMemberId ORDER BY fa.leg.scheduledDeparture ASC")
 	List<Leg> findLegsByMemberId(int flightCrewMemberId);
 
-	@Query("SELECT fa.leg FROM FlightAssignment fa WHERE (fa.leg.scheduledDeparture < :scheduledArrival AND fa.leg.scheduledArrival > :scheduledDeparture) AND fa.leg.id <> :legId AND fa.flightCrewMember.id = :flightCrewMemberId")
-	List<Leg> findSimultaneousLegsByMemberId(Date scheduledDeparture, Date scheduledArrival, int legId, int flightCrewMemberId);
+	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.scheduledDeparture < :scheduledArrival AND fa.leg.scheduledArrival > :scheduledDeparture AND fa.flightCrewMember.id = :flightCrewMemberId AND fa.draftMode = false")
+	List<FlightAssignment> findflightAssignmentsWithOverlappedLegsByMemberId(Date scheduledDeparture, Date scheduledArrival, int flightCrewMemberId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg = :leg and fa.duty = :duty")
-	Collection<FlightAssignment> findFlightAssignmentByLegAndDuty(Leg leg, FlightCrewDuty duty);
+	@Query("SELECT count(fa) from FlightAssignment fa WHERE fa.leg.id = :legId and fa.duty = :duty and fa.id != :id and fa.draftMode = false")
+	int hasDutyAssigned(int legId, FlightCrewDuty duty, int id);
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.id = :id")
 	Collection<FlightAssignment> findFlightAssignmentByLegId(int id);
 
-	@Query("select al from ActivityLog al where al.activityLogAssignment.id = :activityLogAssignmentId")
+	@Query("select al from ActivityLog al WHERE al.activityLogAssignment.id = :activityLogAssignmentId")
 	Collection<ActivityLog> findAllLogsByAssignmentId(int activityLogAssignmentId);
 
 }
