@@ -11,7 +11,6 @@ assignment-07,COPILOT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-01
 assignment-08,LEAD_ATTENDANT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-01
 assignment-09,CABIN_ATTENDANT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-01
 # lastUpdateMoment - standard variations
-# base
 assignment-10,PILOT,2012/07/02 00:00,CONFIRMED,"",false,member-01,leg-01
 assignment-11,PILOT,2000/01/01 00:00,CONFIRMED,"",false,member-01,leg-01
 assignment-12,PILOT,2000/01/01 00:01,CONFIRMED,"",false,member-01,leg-01

@@ -67,27 +67,29 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset;
 
-		Collection<Leg> legs;
-		Collection<FlightCrewMember> flightCrewMembers;
-
 		SelectChoices dutyChoice;
 		SelectChoices currentStatusChoice;
 
+		SelectChoices flightCrewMemberChoice;
+		Collection<FlightCrewMember> flightCrewMembers;
+
 		SelectChoices legChoice;
+		Collection<Leg> legs;
 
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
 
 		legs = this.repository.findAllLegs();
-		legChoice = SelectChoices.from(legs, "id", flightAssignment.getLeg());
+		legChoice = SelectChoices.from(legs, "flightNumber", flightAssignment.getLeg());
 
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
+		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
 		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "flightCrewMember");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);
-		dataset.put("flightCrewMemberChoice", flightAssignment.getFlightCrewMember());
+		dataset.put("flightCrewMemberChoice", flightCrewMemberChoice);
 
 		super.getResponse().addData(dataset);
 	}

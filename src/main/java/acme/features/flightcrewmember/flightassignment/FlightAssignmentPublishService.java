@@ -107,7 +107,7 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 		if (flightAssignment.getDuty().equals(FlightCrewDuty.COPILOT) && copilotAssignments.size() + 1 >= 2)
 			hasCopilot = false;
 
-		if (!this.getBuffer().getErrors().hasErrors("publish")) {
+		if (!this.getBuffer().getErrors().hasErrors("draftMode")) {
 			super.state(!completedLeg, "leg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
 			super.state(availableMember, "flightCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
 			super.state(hasSimultaneousLegs, "leg", "acme.validation.flightassignment.leg.overlap.message", flightAssignment);
@@ -131,21 +131,23 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 		SelectChoices legChoice;
 		Collection<Leg> legs;
 
+		SelectChoices flightCrewMemberChoice;
 		Collection<FlightCrewMember> flightCrewMembers;
 
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
 
 		legs = this.repository.findAllLegs();
-		legChoice = SelectChoices.from(legs, "id", flightAssignment.getLeg());
+		legChoice = SelectChoices.from(legs, "flightNumber", flightAssignment.getLeg());
 
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
+		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "draftMode", "leg", "flightCrewMember");
+		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "flightCrewMember", "draftMode");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);
-		dataset.put("flightCrewMemberChoice", flightAssignment.getFlightCrewMember());
+		dataset.put("flightCrewMemberChoice", flightCrewMemberChoice);
 
 		super.getResponse().addData(dataset);
 	}
