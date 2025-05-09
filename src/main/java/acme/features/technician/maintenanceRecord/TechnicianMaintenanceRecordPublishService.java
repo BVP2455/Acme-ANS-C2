@@ -75,6 +75,16 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 
 		Collection<Task> tasksOfMr = this.repository.findTasksInMaintenanceRecord(mr.getId());
 
+		if (mr.getEstimatedCost() != null) {
+			boolean validCurrency = mr.getEstimatedCost().getCurrency().equals("EUR") || mr.getEstimatedCost().getCurrency().equals("USD") || mr.getEstimatedCost().getCurrency().equals("GBP");
+			super.state(validCurrency, "estimatedCost", "acme.validation.validCurrency.message");
+		}
+
+		boolean isDraft = mr.isDraftMode();
+
+		if (!isDraft)
+			super.state(isDraft, "*", "acme.validation.maintenanceRecord.published.message");
+
 		boolean valid = !tasksOfMr.isEmpty() && tasksOfMr.stream().allMatch(task -> !task.isDraftMode());
 
 		if (!valid)
