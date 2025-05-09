@@ -58,7 +58,9 @@ acme.validation.iataCode.message = Invalid IATA code. It must be made up of 3 up
 
 acme.validation.maintenanceRecord.incorrect-dates.message = Date error. The next inspection due date must be later than the current maintenance date.
 acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. To publish the maintenance record, it must include at least one published task and must not contain any unpublished tasks.
- 
+
+acme.validation.task.alreadyPublished.message = This task is already published
+
 acme.validation.flightassignment.flightcrewmember.available.message = Only available members can be assigned
 acme.validation.flightassignment.leg.completed.message = The assignment cannot be linked to a completed leg
 acme.validation.flightassignment.leg.overlap.message = Legs cannot be overlapped

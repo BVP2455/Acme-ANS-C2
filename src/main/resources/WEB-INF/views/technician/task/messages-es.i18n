@@ -15,7 +15,7 @@ technician.task.form.text.already-published = ¡La tarea ya ha sido publicada! L
 technician.task.form.label.type = Tipo
 technician.task.form.label.description = Descripción
 technician.task.form.label.priority = Prioridad
-technician.task.form.label.estimated-duration = DUración estimada
+technician.task.form.label.estimated-duration = Duración estimada
 
 technician.task.list.label.draft-mode = Modo borrador
 technician.task.list.label.type = Tipo
