@@ -7,6 +7,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activitylog.ActivityLog;
+import acme.entities.flightassignment.FlightAssignment;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
@@ -26,11 +27,13 @@ public class ActivityLogPublishService extends AbstractGuiService<FlightCrewMemb
 		boolean status;
 		int acitivityLogId;
 		ActivityLog activityLog;
+		int flightCrewMemberId;
 
 		acitivityLogId = super.getRequest().getData("id", int.class);
 		activityLog = this.repository.findActivityLogById(acitivityLogId);
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		status = activityLog != null && activityLog.isDraftMode() && activityLog.getActivityLogAssignment() != null && !activityLog.getActivityLogAssignment().isDraftMode();
+		status = activityLog != null && activityLog.isDraftMode() && activityLog.getActivityLogAssignment() != null && activityLog.getActivityLogAssignment().getFlightCrewMember().getId() == flightCrewMemberId;
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -54,7 +57,13 @@ public class ActivityLogPublishService extends AbstractGuiService<FlightCrewMemb
 
 	@Override
 	public void validate(final ActivityLog activityLog) {
-		;
+
+		FlightAssignment flightAssignment;
+
+		flightAssignment = activityLog.getActivityLogAssignment();
+
+		if (flightAssignment.isDraftMode())
+			super.state(false, "*", "acme.validation.activitylog.flightassignment.publish.message");
 	}
 
 	@Override
@@ -68,7 +77,7 @@ public class ActivityLogPublishService extends AbstractGuiService<FlightCrewMemb
 
 		Dataset dataset;
 
-		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "activityLogAssignment");
+		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode", "activityLogAssignment");
 
 		dataset.put("flightAssignment", activityLog.getActivityLogAssignment());
 		dataset.put("masterId", activityLog.getActivityLogAssignment().getId());
