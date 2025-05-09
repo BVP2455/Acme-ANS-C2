@@ -16,3 +16,5 @@ administrator.airport.form.label.phoneNumber = Número de teléfono
 administrator.airport.form.label.confirmation = Confirmación
 administrator.airport.form.button.update = Actualizar
 administrator.airport.form.button.create = Crear
+
+administrator.airport.form.placeholder.phoneNumber = +3448493

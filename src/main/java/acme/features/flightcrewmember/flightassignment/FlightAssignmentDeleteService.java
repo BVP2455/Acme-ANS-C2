@@ -9,6 +9,7 @@ import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.activitylog.ActivityLog;
 import acme.entities.flightassignment.CurrentStatus;
 import acme.entities.flightassignment.FlightAssignment;
 import acme.entities.flightassignment.FlightCrewDuty;
@@ -63,6 +64,13 @@ public class FlightAssignmentDeleteService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void perform(final FlightAssignment flightAssignment) {
+
+		Collection<ActivityLog> assignmentLogs;
+
+		assignmentLogs = this.repository.findAllLogsByAssignmentId(flightAssignment.getId());
+
+		this.repository.deleteAll(assignmentLogs);
+
 		this.repository.delete(flightAssignment);
 	}
 
@@ -75,21 +83,23 @@ public class FlightAssignmentDeleteService extends AbstractGuiService<FlightCrew
 		SelectChoices legChoice;
 		Collection<Leg> legs;
 
+		SelectChoices flightCrewMemberChoice;
 		Collection<FlightCrewMember> flightCrewMembers;
 
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
 
 		legs = this.repository.findAllLegs();
-		legChoice = SelectChoices.from(legs, "id", flightAssignment.getLeg());
+		legChoice = SelectChoices.from(legs, "flightNumber", flightAssignment.getLeg());
 
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
+		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
 		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "flightCrewMember");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);
-		dataset.put("flightCrewMemberChoice", flightAssignment.getFlightCrewMember());
+		dataset.put("flightCrewMemberChoice", flightCrewMemberChoice);
 
 		super.getResponse().addData(dataset);
 	}
