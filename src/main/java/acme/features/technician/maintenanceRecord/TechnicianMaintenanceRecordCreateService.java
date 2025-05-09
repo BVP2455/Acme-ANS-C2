@@ -26,37 +26,39 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 	@Override
 	public void authorise() {
 		boolean status = false;
-		boolean aircraftValid;
-		boolean maintenanceStatusValid;
 
-		if (super.getRequest().getPrincipal().hasRealmOfType(Technician.class))
+		if (super.getRequest().getPrincipal().hasRealmOfType(Technician.class)) {
 			status = true;
 
-		if (super.getRequest().getMethod().equals("POST")) {
-			Aircraft aircraft = super.getRequest().getData("aircraft", Aircraft.class);
-			String statusInput = super.getRequest().getData("status", String.class);
+			if (super.getRequest().getMethod().equals("POST")) {
+				boolean aircraftValid;
+				boolean maintenanceStatusValid;
 
-			if (aircraft == null)
-				aircraftValid = false;
-			else if (aircraft.getId() == 0)
-				aircraftValid = true;
-			else {
-				Aircraft existingAircraft = this.repository.findAircraftById(aircraft.getId());
-				aircraftValid = existingAircraft != null;
+				Aircraft aircraft = super.getRequest().getData("aircraft", Aircraft.class);
+				String statusInput = super.getRequest().getData("status", String.class);
+
+				if (aircraft == null)
+					aircraftValid = false;
+				else if (aircraft.getId() == 0)
+					aircraftValid = true;
+				else {
+					Aircraft existingAircraft = this.repository.findAircraftById(aircraft.getId());
+					aircraftValid = existingAircraft != null;
+				}
+
+				if (statusInput != null && statusInput.trim().equals("0"))
+					maintenanceStatusValid = true;
+				else {
+					maintenanceStatusValid = false;
+					for (MaintenanceStatus ms : MaintenanceStatus.values())
+						if (ms.name().equalsIgnoreCase(statusInput)) {
+							maintenanceStatusValid = true;
+							break;
+						}
+				}
+
+				status = status && aircraftValid && maintenanceStatusValid;
 			}
-
-			if (statusInput == null || "0".equals(statusInput.trim()))
-				maintenanceStatusValid = true;
-			else {
-				maintenanceStatusValid = false;
-				for (MaintenanceStatus ms : MaintenanceStatus.values())
-					if (ms.name().equalsIgnoreCase(statusInput)) {
-						maintenanceStatusValid = true;
-						break;
-					}
-			}
-
-			status = status && aircraftValid && maintenanceStatusValid;
 		}
 
 		super.getResponse().setAuthorised(status);
