@@ -40,3 +40,6 @@ leg-20,FAX0017,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-12,airport
 # aircraft - standard variations
 leg-21,FAX0018,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-28,airport-00,airport-01,aircraft-11
 # aircraft - no singular values
+# draftMode - standard variations
+leg-22,FAX0019,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,TRUE,flight-17,airport-00,airport-01,aircraft-11
+# draftMode - no singular values
