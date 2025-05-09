@@ -60,6 +60,9 @@ acme.validation.iataCode.message = Invalid IATA code. It must be made up of 3 up
 acme.validation.maintenanceRecord.incorrect-dates.message = Date error. The next inspection due date must be later than the current maintenance date.
 acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. To publish the maintenance record, it must include at least one published task and must not contain any unpublished tasks.
 acme.validation.maintenanceRecord.next-inspection-null.message = Error. The next inspection due date can not be null
+acme.validation.maintenanceRecord.draftMode.message = Published maintenance records can not be updated or deleted.
+
+acme.validation.validCurrency.message = Error. You have to use a valid currency (EUR, GBP, USD)
 
 acme.validation.task.alreadyPublished.message = This task is already published
 

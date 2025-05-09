@@ -73,6 +73,17 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 	@Override
 	public void validate(final MaintenanceRecord mr) {
 		boolean confirmation;
+
+		if (mr.getEstimatedCost() != null) {
+			boolean validCurrency = mr.getEstimatedCost().getCurrency().equals("EUR") || mr.getEstimatedCost().getCurrency().equals("USD") || mr.getEstimatedCost().getCurrency().equals("GBP");
+			super.state(validCurrency, "estimatedCost", "acme.validation.validCurrency.message");
+		}
+
+		boolean isDraft = mr.isDraftMode();
+
+		if (!isDraft)
+			super.state(isDraft, "*", "acme.validation.maintenanceRecord.published.message");
+
 		confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 	}
