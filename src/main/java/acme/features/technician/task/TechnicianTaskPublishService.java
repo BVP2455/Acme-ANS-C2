@@ -3,8 +3,6 @@ package acme.features.technician.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
-import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.maintenance.Task;
@@ -20,14 +18,30 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int id;
 		Task task;
 		Technician technician;
 		id = super.getRequest().getData("id", int.class);
 		task = this.repository.findTaskById(id);
 		technician = task == null ? null : task.getTechnician();
-		status = super.getRequest().getPrincipal().hasRealm(technician) && task != null && task.isDraftMode();
+		if (super.getRequest().getPrincipal().hasRealm(technician) && task != null && task.isDraftMode())
+			status = true;
+
+		if (super.getRequest().getMethod().equals("POST")) {
+			String taskTypeInput = super.getRequest().getData("type", String.class);
+			boolean taskTypeValid = false;
+
+			if (taskTypeInput != null)
+				for (TaskType tt : TaskType.values())
+					if (tt.name().equalsIgnoreCase(taskTypeInput.trim())) {
+						taskTypeValid = true;
+						break;
+					}
+
+			status = status && taskTypeValid;
+		}
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -43,11 +57,13 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 
 	@Override
 	public void bind(final Task task) {
-		super.bindObject(task, "type", "description", "priority", "estimatedDuration");
 	}
 
 	@Override
 	public void validate(final Task task) {
+		boolean valid = task.isDraftMode();
+		if (!valid)
+			super.state(valid, "*", "acme.validation.task.canNotBePublished.message");
 		;
 	}
 
@@ -59,14 +75,7 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 
 	@Override
 	public void unbind(final Task task) {
-		Dataset dataset;
-		SelectChoices taskChoices;
-		taskChoices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
-		dataset.put("type", taskChoices.getSelected().getKey());
-		dataset.put("types", taskChoices);
-		super.getResponse().addData(dataset);
 	}
 
 }
