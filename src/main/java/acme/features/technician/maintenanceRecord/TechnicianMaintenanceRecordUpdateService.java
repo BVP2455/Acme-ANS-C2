@@ -12,7 +12,6 @@ import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenance.MaintenanceRecord;
 import acme.entities.maintenance.MaintenanceStatus;
-import acme.entities.maintenance.TaskType;
 import acme.realms.technician.Technician;
 
 @GuiService
@@ -39,15 +38,18 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 
 				String statusInput = super.getRequest().getData("status", String.class);
 				boolean statusValid = false;
-				if (statusInput != null)
-					for (TaskType tt : TaskType.values())
-						if (tt.name().equalsIgnoreCase(statusInput.trim())) {
+				if (statusInput.trim().equals("0"))
+					statusValid = true;
+				else {
+					statusValid = false;
+					for (MaintenanceStatus ms : MaintenanceStatus.values())
+						if (ms.name().equalsIgnoreCase(statusInput)) {
 							statusValid = true;
 							break;
 						}
+				}
 				status = status && statusValid && aircraftValid;
 			}
-
 		}
 
 		super.getResponse().setAuthorised(status);
