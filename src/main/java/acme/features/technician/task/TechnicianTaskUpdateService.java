@@ -29,23 +29,24 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 		task = this.repository.findTaskById(id);
 		technician = task == null ? null : task.getTechnician();
 
-		if (task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician))
+		if (task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician)) {
+
 			status = true;
 
-		if (super.getRequest().getMethod().equals("POST")) {
-			String taskTypeInput = super.getRequest().getData("type", String.class);
-			boolean taskTypeValid = false;
+			if (super.getRequest().getMethod().equals("POST")) {
+				String taskTypeInput = super.getRequest().getData("type", String.class);
+				boolean taskTypeValid = false;
 
-			if (taskTypeInput != null)
-				for (TaskType tt : TaskType.values())
-					if (tt.name().equalsIgnoreCase(taskTypeInput.trim())) {
-						taskTypeValid = true;
-						break;
-					}
+				if (taskTypeInput != null)
+					for (TaskType tt : TaskType.values())
+						if (tt.name().equalsIgnoreCase(taskTypeInput.trim())) {
+							taskTypeValid = true;
+							break;
+						}
 
-			status = status && taskTypeValid;
+				status = status && taskTypeValid;
+			}
 		}
-
 		super.getResponse().setAuthorised(status);
 	}
 
