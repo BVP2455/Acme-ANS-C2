@@ -1,5 +1,7 @@
 #validation-es.i18n
 
+
+
 acme.validation.airline.duplicated-code.message = Código IATA incorrecto, ya está en uso
 acme.validation.leg.duplicated-code.message = Número de vuelo incorrecto, ya está en uso
 acme.validation.leg.same-airports.message = Los aeropuertos de salida y llegada no pueden ser los mismos
@@ -28,6 +30,7 @@ acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
 
 acme.validation.activitylog.message = Registro de actividades inválido
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
+acme.validation.activitylog.flightassignment.publish.message = La asignación del vuelo debe estar publicada
 
 acme.validation.customer.identifier.message = Identificador incorrecto
 acme.validation.customer.duplicated-identifier.message = Identificador incorrecto, ya está en uso

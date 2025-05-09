@@ -29,6 +29,7 @@ acme.validation.flight.legs-not-consecutive.message = Arrival and departure airp
 
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
+acme.validation.activitylog.flightassignment.publish.message = The flight assignment must be published
 
 acme.validation.customer.identifier.message = Invalid identifier
 acme.validation.customer.duplicated-identifier.message = Invalid identifier, it is already used
