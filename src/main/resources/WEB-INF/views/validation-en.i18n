@@ -44,7 +44,7 @@ acme.validation.technician.duplicated-licenseNumber.message = Invalid license nu
 
 acme.validation.booking.duplicated-locatorCode.message = Invalid locatorCode, already used
 
-acme.validation.flightcrewmember.duplicated-employeeCode.message = Invalid employeeCode, alredy used
+acme.validation.flightcrewmember.duplicated-employeeCode.message = Invalid employeeCode, already used
 
 acme.validation.claim.resolutionPercentage.message = Incorrect resolution percentage. The resolution percentage must be greater than or equal to the previous one.
 
@@ -58,6 +58,7 @@ acme.validation.iataCode.message = Invalid IATA code. It must be made up of 3 up
 
 acme.validation.maintenanceRecord.incorrect-dates.message = Date error. The next inspection due date must be later than the current maintenance date.
 acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. To publish the maintenance record, it must include at least one published task and must not contain any unpublished tasks.
+acme.validation.maintenanceRecord.next-inspection-null.message = Error. The next inspection due date can not be null
 
 acme.validation.task.alreadyPublished.message = This task is already published
 

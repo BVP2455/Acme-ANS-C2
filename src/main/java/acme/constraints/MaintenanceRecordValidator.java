@@ -25,6 +25,8 @@ public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenan
 
 		if (maintenanceRecord == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+		else if (maintenanceRecord.getNextInspectionDue() == null)
+			super.state(context, false, "nextInspectionDue", "acme.validation.maintenanceRecord.next-inspection-null.message");
 		else {
 			Date minimumNextInspectionDue;
 			boolean correctNextInspectionDue;
@@ -32,7 +34,7 @@ public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenan
 			minimumNextInspectionDue = MomentHelper.deltaFromMoment(maintenanceRecord.getMaintenanceMoment(), 1, ChronoUnit.MINUTES);
 			correctNextInspectionDue = MomentHelper.isAfterOrEqual(maintenanceRecord.getNextInspectionDue(), minimumNextInspectionDue);
 
-			super.state(context, correctNextInspectionDue, "*", "acme.validation.maintenanceRecord.incorrect-dates.message");
+			super.state(context, correctNextInspectionDue, "nextInspectionDue", "acme.validation.maintenanceRecord.incorrect-dates.message");
 		}
 		result = !super.hasErrors(context);
 

@@ -34,19 +34,17 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 				boolean aircraftValid;
 				boolean maintenanceStatusValid;
 
-				Aircraft aircraft = super.getRequest().getData("aircraft", Aircraft.class);
+				int aircraftId = super.getRequest().getData("aircraft", int.class);
 				String statusInput = super.getRequest().getData("status", String.class);
 
-				if (aircraft == null)
-					aircraftValid = false;
-				else if (aircraft.getId() == 0)
+				if (aircraftId == 0)
 					aircraftValid = true;
 				else {
-					Aircraft existingAircraft = this.repository.findAircraftById(aircraft.getId());
+					Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
 					aircraftValid = existingAircraft != null;
 				}
 
-				if (statusInput != null && statusInput.trim().equals("0"))
+				if (statusInput.trim().equals("0"))
 					maintenanceStatusValid = true;
 				else {
 					maintenanceStatusValid = false;
