@@ -34,12 +34,13 @@ public class TechnicianMaintenanceTaskCreateService extends AbstractGuiService<T
 			if (super.getRequest().getMethod().equals("POST")) {
 				boolean taskValid = true;
 				int taskId = super.getRequest().getData("task", int.class);
-
 				if (taskId == 0)
 					taskValid = true;
 				else {
 					Task existingTask = this.repository.findTaskById(taskId);
-					taskValid = existingTask != null && (!existingTask.isDraftMode() || existingTask.getTechnician().equals(mr.getTechnician()));
+					Collection<Task> tasksOfMaintenanceRecord = this.repository.findTasksByMaintenanceRecord(mrId);
+					boolean alreadySelected = tasksOfMaintenanceRecord.contains(existingTask);
+					taskValid = existingTask != null && !alreadySelected && (!existingTask.isDraftMode() || existingTask.getTechnician().equals(mr.getTechnician()));
 				}
 
 				status = status && taskValid;

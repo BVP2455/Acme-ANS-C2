@@ -32,4 +32,7 @@ public interface TechnicianMaintenanceTaskRepository extends AbstractRepository 
 	@Query("select mt from MaintenanceTask mt where mt.maintenanceRecord.id = :mrId")
 	Collection<MaintenanceTask> findMaintenanceTasksByMaintenanceRecord(int mrId);
 
+	@Query("select mt.task from MaintenanceTask mt where mt.maintenanceRecord.id = :mrId")
+	Collection<Task> findTasksByMaintenanceRecord(int mrId);
+
 }
