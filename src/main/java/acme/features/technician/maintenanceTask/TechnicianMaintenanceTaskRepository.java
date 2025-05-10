@@ -26,8 +26,8 @@ public interface TechnicianMaintenanceTaskRepository extends AbstractRepository 
 	@Query("select t from Task t")
 	Collection<Task> findAllTasks();
 
-	@Query("select t from Task t where t not in (select mt.task from MaintenanceTask mt where mt.maintenanceRecord.id = :id)")
-	Collection<Task> findAllTasksNotInvolvedInMaintenanceRecord(int id);
+	@Query("select t from Task t where t not in (select mt.task from MaintenanceTask mt where mt.maintenanceRecord.id = :mrId) and (t.draftMode = false or t.technician.id = :technicianId)")
+	Collection<Task> findAllAvailableTasks(int mrId, int technicianId);
 
 	@Query("select mt from MaintenanceTask mt where mt.maintenanceRecord.id = :mrId")
 	Collection<MaintenanceTask> findMaintenanceTasksByMaintenanceRecord(int mrId);
