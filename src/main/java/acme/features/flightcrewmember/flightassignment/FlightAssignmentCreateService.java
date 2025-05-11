@@ -29,7 +29,9 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		boolean status = true;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -44,11 +46,10 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 		super.getBuffer().addData(flightAssignment);
 	}
 
-	//transfiere los datos
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
 
-		super.bindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightCrewMember", "leg");
+		super.bindObject(flightAssignment, "duty", "currentStatus", "remarks", "leg");
 	}
 
 	@Override
@@ -85,7 +86,8 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
 		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "flightCrewMember");
+		dataset = super.unbindObject(flightAssignment, "duty", "currentStatus", "remarks", "draftMode", "leg");
+		dataset.put("lastUpdateMoment", flightAssignment.getLastUpdateMoment());
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);

@@ -31,9 +31,11 @@ public class FlightAssignmentShowService extends AbstractGuiService<FlightCrewMe
 
 		FlightAssignment flightAssignment;
 		int flightAssignmentId;
+		int flightCrewMemberId;
 
 		flightAssignmentId = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
 
 		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
 
