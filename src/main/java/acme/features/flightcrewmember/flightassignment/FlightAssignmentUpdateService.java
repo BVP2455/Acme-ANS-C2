@@ -54,7 +54,8 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
-		super.bindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightCrewMember", "leg");
+
+		super.bindObject(flightAssignment, "duty", "currentStatus", "remarks", "leg");
 	}
 
 	@Override
@@ -90,7 +91,7 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
 		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "flightCrewMember", "draftMode");
+		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "draftMode");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);

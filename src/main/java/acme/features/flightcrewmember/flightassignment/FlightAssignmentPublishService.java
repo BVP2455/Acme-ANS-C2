@@ -32,12 +32,14 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 		boolean status;
 		int masterId;
+		int flightCrewMemberId;
 		FlightAssignment flightAssignment;
 
 		masterId = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(masterId);
+		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		status = flightAssignment.isDraftMode();
+		status = flightAssignment != null && flightAssignment.getFlightCrewMember().getId() == flightCrewMemberId && flightAssignment.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -53,7 +55,7 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
-		super.bindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightCrewMember", "leg");
+		super.bindObject(flightAssignment, "duty", "currentStatus", "remarks", "leg");
 	}
 
 	@Override
@@ -139,7 +141,7 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
 		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "draftMode", "leg", "flightCrewMember");
+		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "draftMode");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);
