@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -29,7 +30,28 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(FlightCrewMember.class);
+
+		super.getResponse().setAuthorised(status);
+
+		if (status && super.getRequest().getMethod().equals("POST")) {
+
+			Integer legId = super.getRequest().getData("leg", Integer.class);
+			Leg leg = super.getRequest().getData("leg", Leg.class);
+
+			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
+			Collection<Leg> legsAvaiables = legs.stream().filter(l -> !l.getDraftMode()).collect(Collectors.toList());
+
+			if (legId != 0 && !legsAvaiables.contains(leg))
+				status = false;
+
+			if (leg != null && leg.getDraftMode())
+				status = false;
+
+			super.getResponse().setAuthorised(status);
+		}
+
 	}
 
 	@Override
@@ -44,11 +66,10 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 		super.getBuffer().addData(flightAssignment);
 	}
 
-	//transfiere los datos
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
 
-		super.bindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightCrewMember", "leg");
+		super.bindObject(flightAssignment, "duty", "currentStatus", "remarks", "leg");
 	}
 
 	@Override
@@ -85,7 +106,8 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
 		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "leg", "flightCrewMember");
+		dataset = super.unbindObject(flightAssignment, "duty", "currentStatus", "remarks", "draftMode", "leg");
+		dataset.put("lastUpdateMoment", flightAssignment.getLastUpdateMoment());
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);

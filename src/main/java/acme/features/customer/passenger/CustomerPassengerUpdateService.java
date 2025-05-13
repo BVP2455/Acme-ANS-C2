@@ -27,6 +27,9 @@ public class CustomerPassengerUpdateService extends AbstractGuiService<Customer,
 		Passenger passenger = this.repository.findPassengerById(passengerId);
 
 		super.getResponse().setAuthorised(customerId == passenger.getCustomer().getId());
+
+		boolean isPublished = passenger.getDraftMode();
+		super.getResponse().setAuthorised(isPublished);
 	}
 
 	@Override

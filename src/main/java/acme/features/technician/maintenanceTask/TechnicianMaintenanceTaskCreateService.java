@@ -34,12 +34,13 @@ public class TechnicianMaintenanceTaskCreateService extends AbstractGuiService<T
 			if (super.getRequest().getMethod().equals("POST")) {
 				boolean taskValid = true;
 				int taskId = super.getRequest().getData("task", int.class);
-
 				if (taskId == 0)
 					taskValid = true;
 				else {
 					Task existingTask = this.repository.findTaskById(taskId);
-					taskValid = existingTask != null;
+					Collection<Task> tasksOfMaintenanceRecord = this.repository.findTasksByMaintenanceRecord(mrId);
+					boolean alreadySelected = tasksOfMaintenanceRecord.contains(existingTask);
+					taskValid = existingTask != null && !alreadySelected && (!existingTask.isDraftMode() || existingTask.getTechnician().equals(mr.getTechnician()));
 				}
 
 				status = status && taskValid;
@@ -93,8 +94,10 @@ public class TechnicianMaintenanceTaskCreateService extends AbstractGuiService<T
 		SelectChoices choices;
 		Dataset dataset;
 
+		int technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
 		mrId = mt.getMaintenanceRecord().getId();
-		availableTasks = this.repository.findAllTasksNotInvolvedInMaintenanceRecord(mrId);
+		availableTasks = this.repository.findAllAvailableTasks(mrId, technicianId);
 		choices = SelectChoices.from(availableTasks, "description", mt.getTask());
 
 		dataset = super.unbindObject(mt);

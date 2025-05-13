@@ -52,7 +52,11 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 
 	@Override
 	public void validate(final MaintenanceRecord mr) {
-		;
+
+		boolean valid = mr.isDraftMode();
+
+		if (!valid)
+			super.state(valid, "*", "acme.validation.maintenanceRecord.published.message");
 	}
 
 	@Override
