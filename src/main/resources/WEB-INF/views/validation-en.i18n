@@ -62,6 +62,8 @@ acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. To
 acme.validation.maintenanceRecord.next-inspection-null.message = Error. The next inspection due date can not be null
 acme.validation.maintenanceRecord.draftMode.message = Published maintenance records can not be updated or deleted.
 
+acme.validation.maintenanceTask.duplicated-combination.message=This Maintenance Record is already linked to the selected Task
+
 acme.validation.validCurrency.message = Error. You have to use a valid currency (EUR, GBP, USD)
 
 acme.validation.task.alreadyPublished.message = This task is already published

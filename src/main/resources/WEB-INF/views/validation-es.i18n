@@ -63,6 +63,7 @@ acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. Pa
 acme.validation.maintenanceRecord.next-inspection-null.message = Error. La fecha de la próxima inspección no puede ser nula
 acme.validation.maintenanceRecord.draftMode.message = Los registros publicados no pueden eliminarse ni modificarse.
 
+acme.validation.maintenanceTask.duplicated-combination.message= Este registro ya está relacionado con la tarea seleccionada.
 acme.validation.validCurrency.message = Error. Tienes que usar una divisa válida (EUR, GBP, USD)
 
 acme.validation.task.alreadyPublished.message = Esta tarea ya ha sido publicada.
