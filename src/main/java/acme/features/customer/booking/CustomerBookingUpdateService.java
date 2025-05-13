@@ -36,6 +36,11 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 			super.getResponse().setAuthorised(status);
 		}
 
+		int bookingId = super.getRequest().getData("id", int.class);
+		Booking booking = this.repository.findBookingById(bookingId);
+		boolean isPublished = booking.getDraftMode();
+		super.getResponse().setAuthorised(isPublished);
+
 		if (status && super.getRequest().getMethod().equals("POST")) {
 
 			Integer flightId = super.getRequest().getData("flight", Integer.class);
