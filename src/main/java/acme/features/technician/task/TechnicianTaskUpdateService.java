@@ -37,12 +37,17 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 				String taskTypeInput = super.getRequest().getData("type", String.class);
 				boolean taskTypeValid = false;
 
-				if (taskTypeInput != null)
-					for (TaskType tt : TaskType.values())
-						if (tt.name().equalsIgnoreCase(taskTypeInput.trim())) {
-							taskTypeValid = true;
-							break;
-						}
+				if (taskTypeInput != null) {
+					String trimmedInput = taskTypeInput.trim();
+					if (trimmedInput.equals("0"))
+						taskTypeValid = true;
+					else
+						for (TaskType tt : TaskType.values())
+							if (tt.name().equalsIgnoreCase(trimmedInput)) {
+								taskTypeValid = true;
+								break;
+							}
+				}
 
 				status = status && taskTypeValid;
 			}
