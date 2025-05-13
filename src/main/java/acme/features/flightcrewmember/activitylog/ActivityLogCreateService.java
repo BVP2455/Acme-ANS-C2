@@ -50,7 +50,6 @@ public class ActivityLogCreateService extends AbstractGuiService<FlightCrewMembe
 
 		activityLog = new ActivityLog();
 		activityLog.setRegistrationMoment(MomentHelper.getCurrentMoment());
-		activityLog.setActivityLogAssignment(flightAssignment);
 		activityLog.setDraftMode(true);
 
 		super.getBuffer().addData(activityLog);
@@ -76,8 +75,7 @@ public class ActivityLogCreateService extends AbstractGuiService<FlightCrewMembe
 
 		Dataset dataset;
 
-		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode", "activityLogAssignment");
-		dataset.put("flightAssignment", activityLog.getActivityLogAssignment());
+		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
 
 		super.getResponse().addData(dataset);
