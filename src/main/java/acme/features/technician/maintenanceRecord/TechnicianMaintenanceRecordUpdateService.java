@@ -32,23 +32,31 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 			status = true;
 
 			if (super.getRequest().getMethod().equals("POST")) {
-				Aircraft aircraft = super.getRequest().getData("aircraft", Aircraft.class);
-				Aircraft existingAircraft = aircraft != null ? this.repository.findAircraftById(aircraft.getId()) : null;
-				boolean aircraftValid = existingAircraft != null && aircraft.getId() != 0;
+				boolean aircraftValid;
+				boolean maintenanceStatusValid;
 
+				int aircraftId = super.getRequest().getData("aircraft", int.class);
 				String statusInput = super.getRequest().getData("status", String.class);
-				boolean statusValid = false;
-				if (statusInput.trim().equals("0"))
-					statusValid = true;
+
+				if (aircraftId == 0)
+					aircraftValid = true;
 				else {
-					statusValid = false;
+					Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
+					aircraftValid = existingAircraft != null;
+				}
+
+				if (statusInput.trim().equals("0"))
+					maintenanceStatusValid = true;
+				else {
+					maintenanceStatusValid = false;
 					for (MaintenanceStatus ms : MaintenanceStatus.values())
 						if (ms.name().equalsIgnoreCase(statusInput)) {
-							statusValid = true;
+							maintenanceStatusValid = true;
 							break;
 						}
 				}
-				status = status && statusValid && aircraftValid;
+
+				status = status && aircraftValid && maintenanceStatusValid;
 			}
 		}
 
@@ -102,7 +110,7 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 		Collection<Aircraft> aircrafts;
 		aircrafts = this.repository.findAllAircrafts();
 		aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", mr.getAircraft());
-		dataset = super.unbindObject(mr, "nextInspectionDue", "estimatedCost", "notes");
+		dataset = super.unbindObject(mr, "maintenanceMoment", "nextInspectionDue", "estimatedCost", "notes");
 		dataset.put("statuses", statusChoices);
 		dataset.put("aircrafts", aircraftChoices);
 		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
