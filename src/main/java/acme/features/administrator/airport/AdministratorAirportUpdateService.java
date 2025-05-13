@@ -20,7 +20,28 @@ public class AdministratorAirportUpdateService extends AbstractGuiService<Admini
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class);
+		boolean status = false;
+		if (super.getRequest().getPrincipal().hasRealmOfType(Administrator.class)) {
+			status = true;
+			if (super.getRequest().getMethod().equals("POST")) {
+				String operationalScopeInput = super.getRequest().getData("operationalScope", String.class);
+				boolean operationalScopeValid = false;
+
+				if (operationalScopeInput != null) {
+					String trimmedInput = operationalScopeInput.trim();
+					if (trimmedInput.equals("0"))
+						operationalScopeValid = true;
+					else
+						for (OperationalType ot : OperationalType.values())
+							if (ot.name().equalsIgnoreCase(trimmedInput)) {
+								operationalScopeValid = true;
+								break;
+							}
+				}
+
+				status = status && operationalScopeValid;
+			}
+		}
 		super.getResponse().setAuthorised(status);
 	}
 
