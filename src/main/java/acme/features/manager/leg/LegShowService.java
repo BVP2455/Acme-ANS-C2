@@ -38,7 +38,7 @@ public class LegShowService extends AbstractGuiService<Manager, Leg> {
 		leg = (Leg) this.repository.findById(legId).get();
 		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId())
+		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId() || !leg.getFlight().getDraftMode())
 			authorise = true;
 		super.getResponse().setAuthorised(authorise);
 	}
@@ -52,8 +52,10 @@ public class LegShowService extends AbstractGuiService<Manager, Leg> {
 		leg = (Leg) this.repository.findById(id).get();
 
 		Flight flight = (Flight) this.flightRepository.findById(leg.getFlight().getId()).get();
-		boolean draftMode = flight.getDraftMode();
-		super.getResponse().addGlobal("flightDraftMode", draftMode);
+		boolean flightDraftMode = flight.getDraftMode();
+		boolean legDraftMode = leg.getDraftMode();
+		super.getResponse().addGlobal("flightDraftMode", flightDraftMode);
+		super.getResponse().addGlobal("legDraftMode", legDraftMode);
 
 		super.getBuffer().addData(leg);
 	}
@@ -72,6 +74,9 @@ public class LegShowService extends AbstractGuiService<Manager, Leg> {
 		airlineId = manager.getAirline().getId();
 
 		Collection<Aircraft> aircrafts = this.repository.findAircraftsByAirlineId(airlineId);
+		// Si el tramo lo está visitando un manager al que no le pertenece, se añaden las aeronaves de esa aerolinea
+		if (airlineId != leg.getFlight().getAirline().getId())
+			aircrafts.addAll(this.repository.findAircraftsByAirlineId(leg.getFlight().getAirline().getId()));
 		Collection<Airport> airports = this.repository.findAllAirports();
 
 		statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());

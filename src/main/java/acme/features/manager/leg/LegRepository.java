@@ -11,6 +11,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
 import acme.entities.leg.Leg;
+import acme.entities.leg.LegStatus;
 
 @Repository
 public interface LegRepository extends AbstractRepository {
@@ -41,5 +42,17 @@ public interface LegRepository extends AbstractRepository {
 
 	@Query("SELECT COUNT(l) > 0 FROM Leg l WHERE l.flightNumber = :flightNumber AND l.id <> :id")
 	boolean existsByFlightNumberAndIdNot(String flightNumber, int id);
+
+	@Query("SELECT a.id FROM Airport a")
+	List<Integer> getAllAirportIds();
+
+	@Query("SELECT a.id FROM Aircraft a")
+	List<Integer> getAllAircraftIds();
+
+	@Query("SELECT a FROM Aircraft a WHERE a.id = :aircraftId AND a.airline.id = :airlineId")
+	Aircraft findAircraftByAirlineId(int airlineId, int aircraftId);
+
+	@Query("SELECT l.status FROM Leg l WHERE l.status = :status")
+	LegStatus findLegStatusByStatusValue(String status);
 
 }

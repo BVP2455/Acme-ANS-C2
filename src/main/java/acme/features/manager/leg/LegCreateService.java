@@ -42,6 +42,30 @@ public class LegCreateService extends AbstractGuiService<Manager, Leg> {
 
 		if (manager.getAirline().getId() == flight.getAirline().getId())
 			authorise = true;
+
+		if (authorise) {
+			String method;
+			int arrivalAirportId, departureAirportId, aircraftId, airlineId;
+			Aircraft aircraft;
+			Airport arrivalAirport;
+			Airport departureAirport;
+
+			method = super.getRequest().getMethod();
+
+			if (method.equals("GET"))
+				authorise = true;
+			else {
+				airlineId = manager.getAirline().getId();
+				aircraftId = super.getRequest().getData("aircraft", int.class);
+				arrivalAirportId = super.getRequest().getData("airportArrival", int.class);
+				departureAirportId = super.getRequest().getData("airportDeparture", int.class);
+				aircraft = this.repository.findAircraftByAirlineId(airlineId, aircraftId);
+				arrivalAirport = this.repository.findAirportByAirportId(arrivalAirportId);
+				departureAirport = this.repository.findAirportByAirportId(departureAirportId);
+				authorise = aircraft != null && arrivalAirport != null && departureAirport != null;
+			}
+		}
+
 		super.getResponse().setAuthorised(authorise);
 	}
 

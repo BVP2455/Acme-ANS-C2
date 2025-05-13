@@ -34,7 +34,7 @@ public class LegListService extends AbstractGuiService<Manager, Leg> {
 		flight = this.flightRepository.getFlightById(flightId);
 		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		if (manager.getAirline().getId() == flight.getAirline().getId())
+		if (manager.getAirline().getId() == flight.getAirline().getId() || !flight.getDraftMode())
 			authorise = true;
 		super.getResponse().setAuthorised(authorise);
 	}
@@ -53,7 +53,7 @@ public class LegListService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void unbind(final Leg leg) {
-		Dataset dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
+		Dataset dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode");
 		dataset.put("airportDeparture", leg.getDepartureAirport().getCity());
 		dataset.put("airportArrival", leg.getArrivalAirport().getCity());
 		dataset.put("aircraft", leg.getAircraft().getModel());

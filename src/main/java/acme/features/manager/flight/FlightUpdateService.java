@@ -22,7 +22,18 @@ public class FlightUpdateService extends AbstractGuiService<Manager, Flight> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int flightId;
+		Flight flight;
+		Manager manager;
+		boolean authorise = false;
+
+		flightId = super.getRequest().getData("id", int.class);
+		flight = this.repository.getFlightById(flightId);
+		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
+
+		if (manager.getAirline().getId() == flight.getAirline().getId() && flight.getDraftMode())
+			authorise = true;
+		super.getResponse().setAuthorised(authorise);
 	}
 
 	@Override
@@ -34,6 +45,9 @@ public class FlightUpdateService extends AbstractGuiService<Manager, Flight> {
 		flight = (Flight) this.repository.findById(flightId).get();
 
 		super.getBuffer().addData(flight);
+
+		boolean draftMode = flight.getDraftMode();
+		super.getResponse().addGlobal("flightDraftMode", draftMode);
 	}
 
 	@Override

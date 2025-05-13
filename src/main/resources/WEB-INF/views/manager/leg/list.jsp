@@ -11,8 +11,9 @@
 	<acme:list-column code="manager.leg.list.label.airportDeparture" path="airportDeparture" width="10%" sortable="false"/>
 	<acme:list-column code="manager.leg.list.label.airportArrival" path="airportArrival" width="10%" sortable="false"/>
 	<acme:list-column code="manager.leg.list.label.aircraft" path="aircraft" width="20%" sortable="false"/>
+	<acme:list-column code="manager.leg.list.label.draftMode" path="draftMode" width="20%" sortable="false"/>
 </acme:list>
 
-<jstl:if test="${flightDraftMode == true}">
+<jstl:if test="${flightDraftMode}">
 	<acme:button code="manager.leg.list.button.create" action="/manager/leg/create?flightId=${flightId}"/>
 </jstl:if>

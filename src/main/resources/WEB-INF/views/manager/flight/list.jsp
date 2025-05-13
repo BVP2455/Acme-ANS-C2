@@ -8,6 +8,7 @@
 	<acme:list-column code="manager.flight.list.label.description" path="description" width="30%"/>
 	<acme:list-column code="manager.flight.list.label.selfTransfer" path="selfTransfer" width="20%"/>
 	<acme:list-column code="manager.flight.list.label.layovers" path="layovers" width="20%"/>
+	<acme:list-column code="manager.flight.list.label.draftMode" path="draftMode" width="20%"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
 

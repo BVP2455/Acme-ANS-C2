@@ -11,17 +11,18 @@
 	<acme:input-select path="airportDeparture" code="manager.leg.form.label.originAirport" choices="${airportDepartures}"/>
 	<acme:input-select path="airportArrival" code="manager.leg.form.label.destinationAirport" choices="${airportArrivals}"/>
 	<acme:input-select path="aircraft" code="manager.leg.form.label.aircraft" choices="${aircrafts}"/>
-	<acme:input-checkbox path="confirmation" code="manager.leg.form.label.confirmation"/>
 	
 	<jstl:choose>
 	<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
-		<jstl:if test="${flightDraftMode == true}">
+		<jstl:if test="${legDraftMode}">
+			<acme:input-checkbox path="confirmation" code="manager.leg.form.label.confirmation"/>
 			<acme:submit code="manager.leg.form.button.publish" action="/manager/leg/publish"/>
 			<acme:submit code="manager.leg.form.button.delete" action="/manager/leg/delete"/>
 			<acme:submit code="manager.leg.form.button.update" action="/manager/leg/update"/>
 		</jstl:if>
 	</jstl:when>
 	<jstl:when test="${_command == 'create'}">
+		<acme:input-checkbox path="confirmation" code="manager.leg.form.label.confirmation"/>
 		<acme:submit code="manager.leg.form.button.create" action="/manager/leg/create?flightId=${flightId}"/>
 	</jstl:when>
 </jstl:choose>
