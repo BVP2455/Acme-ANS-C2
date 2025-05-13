@@ -36,6 +36,9 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT l FROM Leg l")
 	Collection<Leg> findAllLegs();
 
+	@Query("SELECT l FROM Leg l WHERE l.scheduledDeparture > :date AND l.scheduledArrival > :date")
+	Collection<Leg> findAllFutureLegs(Date date);
+
 	@Query("SELECT fcm FROM FlightCrewMember fcm")
 	Collection<FlightCrewMember> findAllFlightCrewMembers();
 
