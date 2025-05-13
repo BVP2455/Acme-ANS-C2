@@ -10,7 +10,6 @@ flight-crew-member.activity-log.form.label.registrationMoment = Momento de regis
 flight-crew-member.activity-log.form.label.incidentType = Tipo de incidente
 flight-crew-member.activity-log.form.label.description = Descripción
 flight-crew-member.activity-log.form.label.severityLevel = Nivel de severidad
-flight-crew-member.activity-log.form.label.activityLogAssignment = Asignación del vuelo
 
 flight-crew-member.activity-log.list.button.create = Crear
 flight-crew-member.activity-log.form.button.create = Crear
