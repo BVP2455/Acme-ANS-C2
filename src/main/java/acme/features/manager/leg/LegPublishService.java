@@ -106,12 +106,12 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		boolean isDraftMode = leg.getDraftMode();
 		Collection<Leg> legs = this.repository.findLegsByFlightId(leg.getFlight().getId());
 
-		//R0: no puede estar en borrador
+		//R1: no puede estar en borrador
 		boolean status = isDraftMode == true;
 
 		super.state(status, "*", "acme.validation.leg.draftMode.published.message");
 
-		// R1: el momento de llegada sea posterior al momento de salida sin usar el reloj real y deben ser posteriores a la fecha actual
+		// R2: el momento de llegada sea posterior al momento de salida sin usar el reloj real y deben ser posteriores a la fecha actual
 		if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
 			boolean correctDepatureArrivalDate = MomentHelper.isAfter(leg.getScheduledArrival(), leg.getScheduledDeparture());
 			boolean futureDepartureDate = MomentHelper.isFuture(leg.getScheduledDeparture());
@@ -119,38 +119,38 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 			super.state(futureDepartureDate, "scheduledDeparture", "acme.validation.leg.scheduled-departure-not-future.message");
 		}
 
-		// R2: a unique flight number composed of the airline's IATA code followed by four digits, unique
+		// R3: a unique flight number composed of the airline's IATA code followed by four digits, unique
 		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 		String airlineCode = manager.getAirline().getIataCode();
 		Boolean correctFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineCode, false);
 		super.state(correctFlightNumber, "flightNumber", "acme.validation.leg.wrong-flight-number.message");
 
-		//R3: no puede existir otro leg con el mismo flight number
+		//R4: no puede existir otro leg con el mismo flight number
 		String flightNumber = leg.getFlightNumber();
-		boolean isUnique = !this.repository.existsByFlightNumber(flightNumber);
+		boolean isUnique = !this.repository.existsByFlightNumberAndIdNot(flightNumber, leg.getId());
 		super.state(isUnique, "flightNumber", "acme.validation.leg.duplicated-code.message");
 
-		//R4: no puede ser el mismo aeropuerto de llegada que el de salida
+		//R5: no puede ser el mismo aeropuerto de llegada que el de salida
 		if (leg.getArrivalAirport() != null && leg.getDepartureAirport() != null) {
 			boolean isDifferent = !leg.getArrivalAirport().equals(leg.getDepartureAirport());
 			super.state(isDifferent, "*", "acme.validation.leg.same-airports.message");
 		}
 
-		//R5: requisito de confirmacion
+		//R6: requisito de confirmacion
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 
-		//R6: los aeropuertos de llegada y salida no pueden ser nulos
+		//R7: los aeropuertos de llegada y salida no pueden ser nulos
 		if (leg.getDepartureAirport() == null)
 			super.state(false, "airportDeparture", "acme.validation.leg.departure-airport-not-null.message");
 		if (leg.getArrivalAirport() == null)
 			super.state(false, "airportArrival", "acme.validation.leg.arrival-airport-not-null.message");
 
-		//R7: la aeronave debe estar en estado ACTIVE
+		//R8: la aeronave debe estar en estado ACTIVE
 		if (leg.getAircraft().getStatus() != Status.ACTIVE)
 			super.state(false, "aircraft", "acme.validation.leg.aircraft-not-active.message");
 
-		// R8: No dejar publicar si los tramos se solapan
+		//R9: No dejar publicar si los tramos se solapan
 		boolean noOverlap = true;
 		Leg previous = null;
 		for (Leg current : legs) {
@@ -163,7 +163,7 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		}
 		super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
 
-		// R9: aeropuertos deben ser consecutivos
+		//R10: aeropuertos deben ser consecutivos
 		boolean airportsAreConsecutive = true;
 		previous = null;
 		for (Leg current : legs) {
