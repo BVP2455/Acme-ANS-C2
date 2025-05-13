@@ -14,6 +14,7 @@ manager.leg.list.label.status = Estado
 manager.leg.list.label.airportDeparture = Origen
 manager.leg.list.label.airportArrival = Destino
 manager.leg.list.label.aircraft = Aeronave
+manager.leg.list.label.draftMode = Borrador
 manager.leg.list.button.create = Crear tramo
 
 manager.leg.form.label.flightNumber = Número de vuelo

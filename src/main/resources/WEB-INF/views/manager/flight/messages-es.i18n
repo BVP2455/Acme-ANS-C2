@@ -12,6 +12,7 @@ manager.flight.list.label.tag = Etiqueta
 manager.flight.list.label.description = Descripción
 manager.flight.list.label.selfTransfer = Requiere transbordo
 manager.flight.list.label.layovers = Número de escalas
+manager.flight.list.label.draftMode = Borrador
 
 manager.flight.form.label.tag = Etiqueta
 manager.flight.form.label.selfTransfer = Requiere transbordo

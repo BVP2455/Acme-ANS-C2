@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -29,13 +30,42 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void authorise() {
-		int legId = super.getRequest().getData("id", int.class);
-		Leg leg = (Leg) this.repository.findById(legId).get();
-		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
+		int legId;
+		Leg leg;
+		Manager manager;
+		boolean authorise = false;
 
-		boolean authorised = manager.getAirline().getId() == leg.getFlight().getAirline().getId();
+		legId = super.getRequest().getData("id", int.class);
+		leg = (Leg) this.repository.findById(legId).get();
+		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		super.getResponse().setAuthorised(authorised);
+		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId() && leg.getDraftMode())
+			authorise = true;
+
+		if (authorise) {
+			String method;
+			int arrivalAirportId, departureAirportId, aircraftId, airlineId;
+			Aircraft aircraft;
+			Airport arrivalAirport;
+			Airport departureAirport;
+
+			method = super.getRequest().getMethod();
+
+			if (method.equals("GET"))
+				authorise = true;
+			else {
+				airlineId = manager.getAirline().getId();
+				aircraftId = super.getRequest().getData("aircraft", int.class);
+				arrivalAirportId = super.getRequest().getData("airportArrival", int.class);
+				departureAirportId = super.getRequest().getData("airportDeparture", int.class);
+				aircraft = this.repository.findAircraftByAirlineId(airlineId, aircraftId);
+				arrivalAirport = this.repository.findAirportByAirportId(arrivalAirportId);
+				departureAirport = this.repository.findAirportByAirportId(departureAirportId);
+				authorise = aircraft != null && arrivalAirport != null && departureAirport != null;
+			}
+		}
+
+		super.getResponse().setAuthorised(authorise);
 	}
 
 	@Override
@@ -46,6 +76,8 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		Flight flight = (Flight) this.flightRepository.findById(leg.getFlight().getId()).get();
 		boolean draftMode = flight.getDraftMode();
 		super.getResponse().addGlobal("flightDraftMode", draftMode);
+		super.getResponse().addGlobal("legDraftMode", leg.getDraftMode());
+
 	}
 
 	@Override
@@ -68,10 +100,37 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void validate(final Leg leg) {
 		boolean isDraftMode = leg.getDraftMode();
+		Collection<Leg> legs = this.repository.findLegsByFlightId(leg.getFlight().getId());
 
 		boolean status = isDraftMode == true;
 
 		super.state(status, "*", "acme.validation.leg.draftMode.published.message");
+
+		// R1: No dejar publicar si los tramos se solapan
+		boolean noOverlap = true;
+		Leg previous = null;
+		for (Leg current : legs) {
+			if (previous != null)
+				if (!MomentHelper.isAfter(current.getScheduledDeparture(), previous.getScheduledArrival())) {
+					noOverlap = false;
+					break;
+				}
+			previous = current;
+		}
+		super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
+
+		// R2: aeropuertos deben ser consecutivos
+		boolean airportsAreConsecutive = true;
+		previous = null;
+		for (Leg current : legs) {
+			if (previous != null)
+				if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
+					airportsAreConsecutive = false;
+					break;
+				}
+			previous = current;
+		}
+		super.state(airportsAreConsecutive, "*", "acme.validation.flight.legs-not-consecutive.message");
 
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");

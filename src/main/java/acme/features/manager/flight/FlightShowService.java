@@ -31,7 +31,7 @@ public class FlightShowService extends AbstractGuiService<Manager, Flight> {
 		flight = this.repository.getFlightById(flightId);
 		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		if (manager.getAirline().getId() == flight.getAirline().getId())
+		if (manager.getAirline().getId() == flight.getAirline().getId() || !flight.getDraftMode())
 			authorise = true;
 		super.getResponse().setAuthorised(authorise);
 	}

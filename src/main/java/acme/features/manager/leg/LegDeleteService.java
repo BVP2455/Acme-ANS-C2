@@ -44,13 +44,18 @@ public class LegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void authorise() {
-		int legId = super.getRequest().getData("id", int.class);
-		Leg leg = (Leg) this.repository.findById(legId).get();
-		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
+		int legId;
+		Leg leg;
+		Manager manager;
+		boolean authorise = false;
 
-		boolean authorised = manager.getAirline().getId() == leg.getFlight().getAirline().getId();
+		legId = super.getRequest().getData("id", int.class);
+		leg = (Leg) this.repository.findById(legId).get();
+		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		super.getResponse().setAuthorised(authorised);
+		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId() && leg.getDraftMode())
+			authorise = true;
+		super.getResponse().setAuthorised(authorise);
 	}
 
 	@Override
@@ -61,6 +66,8 @@ public class LegDeleteService extends AbstractGuiService<Manager, Leg> {
 		Flight flight = (Flight) this.flightRepository.findById(leg.getFlight().getId()).get();
 		boolean draftMode = flight.getDraftMode();
 		super.getResponse().addGlobal("flightDraftMode", draftMode);
+		super.getResponse().addGlobal("legDraftMode", leg.getDraftMode());
+
 	}
 
 	@Override
