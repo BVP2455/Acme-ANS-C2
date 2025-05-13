@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.datatypes.Money;
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
@@ -41,12 +40,6 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 			if (flight != null && flight.getDraftMode())
 				status = false;
-
-			Money price = super.getRequest().getData("price", Money.class);
-
-			if (price != null)
-				status = false;
-
 		}
 
 		super.getResponse().setAuthorised(status);
