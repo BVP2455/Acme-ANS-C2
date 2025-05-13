@@ -46,16 +46,16 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 			Leg leg = super.getRequest().getData("leg", Leg.class);
 
 			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
-			Collection<Leg> legsAvaiables = legs.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
+			Collection<Leg> legsAvaiables = legs.stream().filter(l -> !l.getDraftMode()).collect(Collectors.toList());
 
 			if (legId != 0 && !legsAvaiables.contains(leg))
 				status = false;
 
 			if (leg != null && leg.getDraftMode())
 				status = false;
-		}
 
-		super.getResponse().setAuthorised(status);
+			super.getResponse().setAuthorised(status);
+		}
 
 	}
 
