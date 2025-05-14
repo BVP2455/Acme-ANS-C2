@@ -41,7 +41,7 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 			Leg leg = super.getRequest().getData("leg", Leg.class);
 
 			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
-			Collection<Leg> legsAvaiables = legs.stream().filter(l -> !l.getDraftMode()).collect(Collectors.toList());
+			Collection<Leg> legsAvaiables = legs.stream().filter(l -> l.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !l.getDraftMode()).collect(Collectors.toList());
 
 			if (legId != 0 && !legsAvaiables.contains(leg))
 				status = false;
@@ -100,7 +100,7 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 		dutyChoice = SelectChoices.from(FlightCrewDuty.class, flightAssignment.getDuty());
 		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
 
-		legs = this.repository.findAllLegs();
+		legs = this.repository.findAllFutureLegs(MomentHelper.getCurrentMoment());
 		legChoice = SelectChoices.from(legs, "flightNumber", flightAssignment.getLeg());
 
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
