@@ -50,6 +50,7 @@ public class ActivityLogCreateService extends AbstractGuiService<FlightCrewMembe
 
 		activityLog = new ActivityLog();
 		activityLog.setRegistrationMoment(MomentHelper.getCurrentMoment());
+		activityLog.setActivityLogAssignment(flightAssignment);
 		activityLog.setDraftMode(true);
 
 		super.getBuffer().addData(activityLog);
