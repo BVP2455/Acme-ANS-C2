@@ -64,7 +64,7 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 			boolean flightStillValid = avaiableFlights.contains(booking.getFlight());
 
 			if (!flightStillValid) {
-				SelectChoices choices = SelectChoices.from(avaiableFlights, "label", booking.getFlight());
+				SelectChoices choices = SelectChoices.from(avaiableFlights, "label", avaiableFlights.stream().findFirst().get());
 				dataset.put("flight", choices.getSelected() != null ? choices.getSelected().getKey() : "0");
 				dataset.put("flights", choices);
 			} else {
