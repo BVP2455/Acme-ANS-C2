@@ -75,17 +75,19 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		if (booking.getLastCardNibble() == null || booking.getLastCardNibble().toString().isBlank())
 			super.state(false, "lastCardNibble", "acme.validation.lastCardNibble.message");
 
-		boolean flightPublished = booking.getFlight().getDraftMode() == false;
-		super.state(flightPublished, "flight", "customer.booking.form.error.flightNotPublished");
+		if (booking.getFlight() != null) {
+			boolean flightPublished = booking.getFlight().getDraftMode() == false;
+			super.state(flightPublished, "flight", "customer.booking.form.error.flightNotPublished");
+
+			boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
+			super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
+		}
 
 		boolean emptyPassengers = !this.repository.findPassengersByBookingId(booking.getId()).isEmpty();
 		super.state(emptyPassengers, "price", "customer.booking.form.error.emptyPassengers");
 
 		boolean publishedPassengers = this.repository.findPassengersByBookingId(booking.getId()).stream().allMatch(p -> p.getDraftMode() == false);
 		super.state(publishedPassengers, "price", "customer.booking.form.error.unpublishedPassengers");
-
-		boolean laterFlight = MomentHelper.isAfter(booking.getFlight().getScheduledDeparture(), MomentHelper.getCurrentMoment());
-		super.state(laterFlight, "flight", "customer.booking.form.error.flightBeforeBooking");
 	}
 
 	@Override
@@ -98,12 +100,12 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	@Override
 	public void unbind(final Booking booking) {
 		Dataset dataset;
-		SelectChoices travelClasses;
+		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
-		travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
+		Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
+		Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
 
-		Collection<Flight> flights = this.repository.findAllFlights();
-		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
+		SelectChoices flightChoices = SelectChoices.from(flightsAvaiables, "label", booking.getFlight());
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastCardNibble", "draftMode", "id");
 		dataset.put("travelClasses", travelClasses);
