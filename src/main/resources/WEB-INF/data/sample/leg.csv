@@ -14,11 +14,11 @@ leg-07,FAX0004,2000/01/01 00:00,2010/01/01 15:00,ON_TIME,FALSE,flight-07,airport
 leg-08,FAX0005,2000/01/01 00:01,2010/01/01 15:00,ON_TIME,FALSE,flight-08,airport-00,airport-01,aircraft-01
 # scheduled-departure - no singular values
 # scheduled-arrival - standard variations
-leg-09,FAX0006,2010/01/01 20:00,2200/12/31 23:58,ON_TIME,FALSE,flight-09,airport-00,airport-01,aircraft-01
-leg-10,FAX0007,2010/01/01 20:00,2200/12/31 23:59,ON_TIME,FALSE,flight-10,airport-00,airport-01,aircraft-01
+leg-09,FAX0006,2010/01/01 12:00,2200/12/31 23:58,ON_TIME,FALSE,flight-09,airport-00,airport-01,aircraft-01
+leg-10,FAX0007,2010/01/01 12:00,2200/12/31 23:59,ON_TIME,FALSE,flight-10,airport-00,airport-01,aircraft-01
 leg-11,FAX0008,2000/01/01 00:00,2000/01/01 00:00,ON_TIME,FALSE,flight-11,airport-00,airport-01,aircraft-01
 leg-12,FAX0009,2000/01/01 00:00,2000/01/01 00:01,ON_TIME,FALSE,flight-12,airport-00,airport-01,aircraft-01
-# scheduled-arrival - no singular values
+# scheduled-arrival - no singular values,"",""
 # status - standard variations
 leg-13,FAX0010,2010/01/01 12:00,2010/01/01 15:00,DELAYED,FALSE,flight-13,airport-00,airport-01,aircraft-01
 leg-14,FAX0011,2010/01/01 12:00,2010/01/01 15:00,CANCELLED,FALSE,flight-14,airport-00,airport-01,aircraft-01
@@ -43,7 +43,7 @@ leg-24,FAX0021,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-24,airport
 leg-25,FAX0022,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-25,airport-00,airport-37,aircraft-01
 # arrival-airport - no singular values
 # aircraft - standard variations
-leg-26,FAX0023,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-26,airport-00,airport-01,aircraft-02
-leg-27,FAX0024,2010/01/01 15:01,2010/01/01 18:00,ON_TIME,FALSE,flight-27,airport-00,airport-01,aircraft-49
-leg-28,FBX0025,2010/01/01 15:01,2010/01/01 18:00,ON_TIME,FALSE,flight-28,airport-00,airport-01,aircraft-50
+leg-26,FAX0023,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-26,airport-00,airport-01,aircraft-03
+leg-27,FAX0024,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-27,airport-00,airport-01,aircraft-49
+leg-28,FBX0025,2010/01/01 12:00,2010/01/01 15:00,ON_TIME,FALSE,flight-28,airport-00,airport-01,aircraft-50
 # aircraft - no singular values

@@ -24,4 +24,7 @@ public interface AirlineRepository extends AbstractRepository {
 	@Query("SELECT COUNT(a) > 0 FROM Airline a WHERE a.iataCode = :iataCode AND a.id <> :id")
 	boolean existsByIataCodeAndIdNot(String iataCode, int id);
 
+	@Query("SELECT a FROM Airline a WHERE a.iataCode = :iataCode")
+	Airline findAirlineIataCode(String iataCode);
+
 }
