@@ -20,7 +20,7 @@ user-account-member-01,true,"UserIdentity{name: 'Manuel', surname: 'Perez', emai
 user-account-member-02,true,"UserIdentity{name: 'Carlos', surname: 'Gomez', email: 'carlos@acme.com'}",member2,member2
 user-account-member-03,true,"UserIdentity{name: 'Sonia', surname: 'Sanchez', email: 'sonia@acme.com'}",member3,member3
 user-account-member-04,true,"UserIdentity{name: 'Rodrigo', surname: 'Moreno', email: 'rodrigo@acme.com'}",member4,member4
-user-account-member-05,true,"UserIdentity{name: 'Pablo', surname: 'Valverde', email: 'pablo@acme.com'}",member5,member5
+user-account-member-05,true,"UserIdentity{name: 'Pablo', surname: 'Valverde', email: 'pablo@acme.com'}",member,member
 user-account-technician-01,true,"UserIdentity{name: 'Jorge', surname: 'Molina', email: 'jorge@acme.com'}",technician1,technician1
 user-account-technician-02,true,"UserIdentity{name: 'Pedro', surname: 'Benito', email: 'pedro@acme.com'}",technician2,technician2
 user-account-technician-03,true,"UserIdentity{name: 'Arturo', surname: 'Coello', email: 'arturo@acme.com'}",technician3,technician3
