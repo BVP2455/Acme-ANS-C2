@@ -50,7 +50,7 @@ public class AirlineUpdateService extends AbstractGuiService<Administrator, Airl
 		boolean confirmation;
 
 		iataCode = airline.getIataCode();
-		isUnique = !this.repository.existsByIataCodeAndIdNot(airline.getIataCode(), airline.getId());
+		isUnique = !this.repository.existsByIataCodeAndIdNot(iataCode, airline.getId());
 
 		super.state(isUnique, "iataCode", "acme.validation.airline.duplicated-code.message");
 

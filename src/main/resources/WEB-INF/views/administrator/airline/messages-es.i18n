@@ -1,5 +1,6 @@
 administrator.airline.list.title = Listado de aerolíneas
 administrator.airline.form.title = Detalles de la aerolínea
+administrator.airline.list.button.create = Crear aerolínea
 administrator.airline.form.button.create = Crear aerolínea
 administrator.airline.form.button.update = Modificar datos
 

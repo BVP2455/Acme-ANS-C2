@@ -8,11 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
-import acme.client.helpers.StringHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
-import acme.entities.aircraft.Status;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
 import acme.entities.leg.Leg;
@@ -63,9 +61,7 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 				aircraft = this.repository.findAircraftByAirlineId(airlineId, aircraftId);
 				arrivalAirport = this.repository.findAirportByAirportId(arrivalAirportId);
 				departureAirport = this.repository.findAirportByAirportId(departureAirportId);
-				authorise = aircraftId == 0 || aircraft != null;
-				authorise = arrivalAirportId == 0 || arrivalAirport != null;
-				authorise = departureAirportId == 0 || departureAirport != null;
+				authorise = (aircraftId == 0 || aircraft != null) && (arrivalAirportId == 0 || arrivalAirport != null) && (departureAirportId == 0 || departureAirport != null);
 			}
 		}
 
@@ -106,39 +102,26 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		boolean isDraftMode = leg.getDraftMode();
 		Collection<Leg> legs = this.repository.findLegsByFlightId(leg.getFlight().getId());
 
-		//R1: no puede estar en borrador
+		//R1: no puede estar ya publicado
 		boolean status = isDraftMode == true;
-
 		super.state(status, "*", "acme.validation.leg.draftMode.published.message");
 
-		// R2: el momento de llegada sea posterior al momento de salida sin usar el reloj real y deben ser posteriores a la fecha actual
-		if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
-			boolean correctDepatureArrivalDate = MomentHelper.isAfter(leg.getScheduledArrival(), leg.getScheduledDeparture());
+		// R2: momento de salida debe ser posterior a la fecha actual
+		if (leg.getScheduledDeparture() != null) {
 			boolean futureDepartureDate = MomentHelper.isFuture(leg.getScheduledDeparture());
-			super.state(correctDepatureArrivalDate, "scheduledArrival", "acme.validation.leg.wrong-scheduled-arrival.message");
 			super.state(futureDepartureDate, "scheduledDeparture", "acme.validation.leg.scheduled-departure-not-future.message");
 		}
-
-		// R3: a unique flight number composed of the airline's IATA code followed by four digits, unique
-		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
-		String airlineCode = manager.getAirline().getIataCode();
-		Boolean correctFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineCode, false);
-		super.state(correctFlightNumber, "flightNumber", "acme.validation.leg.wrong-flight-number.message");
 
 		//R4: no puede existir otro leg con el mismo flight number
 		String flightNumber = leg.getFlightNumber();
 		boolean isUnique = !this.repository.existsByFlightNumberAndIdNot(flightNumber, leg.getId());
 		super.state(isUnique, "flightNumber", "acme.validation.leg.duplicated-code.message");
 
-		//R5: no puede ser el mismo aeropuerto de llegada que el de salida
+		//R3: no puede ser el mismo aeropuerto de llegada que el de salida
 		if (leg.getArrivalAirport() != null && leg.getDepartureAirport() != null) {
 			boolean isDifferent = !leg.getArrivalAirport().equals(leg.getDepartureAirport());
-			super.state(isDifferent, "*", "acme.validation.leg.same-airports.message");
+			super.state(isDifferent, "airportArrival", "acme.validation.leg.same-airports.message");
 		}
-
-		//R6: requisito de confirmacion
-		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 
 		//R7: los aeropuertos de llegada y salida no pueden ser nulos
 		if (leg.getDepartureAirport() == null)
@@ -146,16 +129,16 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		if (leg.getArrivalAirport() == null)
 			super.state(false, "airportArrival", "acme.validation.leg.arrival-airport-not-null.message");
 
-		//R8: la aeronave debe estar en estado ACTIVE
-		if (leg.getAircraft().getStatus() != Status.ACTIVE)
-			super.state(false, "aircraft", "acme.validation.leg.aircraft-not-active.message");
+		//R6: requisito de confirmacion
+		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 
 		//R9: No dejar publicar si los tramos se solapan
 		boolean noOverlap = true;
 		Leg previous = null;
 		for (Leg current : legs) {
 			if (previous != null)
-				if (!MomentHelper.isAfter(current.getScheduledDeparture(), previous.getScheduledArrival())) {
+				if (!MomentHelper.isAfterOrEqual(current.getScheduledDeparture(), previous.getScheduledArrival())) {
 					noOverlap = false;
 					break;
 				}
