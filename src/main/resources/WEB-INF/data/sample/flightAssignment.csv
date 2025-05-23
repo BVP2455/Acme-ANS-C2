@@ -1,7 +1,7 @@
 key,duty,lastUpdateMoment,currentStatus,remarks,draftMode,key:flightCrewMember,key:leg
 assignment-01,PILOT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-01
 assignment-02,COPILOT,2021/02/16 19:35,CONFIRMED,"",false,member-02,leg-02
-assignment-03,LEAD_ATTENDANT,2022/02/10 10:00,PENDING,"",true,member-01,leg-05
+assignment-03,LEAD_ATTENDANT,2022/02/10 10:00,PENDING,"",true,member-03,leg-03
 assignment-04,CABIN_ATTENDANT,2023/01/06 17:15,CANCELLED,"",false,member-04,leg-04
 # base entity
 assignment-05,PILOT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-01
@@ -39,3 +39,5 @@ assignment-31,PILOT,2022/03/03 00:30,CONFIRMED,'' or 'A' = 'A,false,member-01,le
 # draftMode - standar variations
 assignment-32,PILOT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-01
 assignment-33,PILOT,2022/03/03 00:30,CONFIRMED,"",true,member-01,leg-01
+# leg - standar variations
+assignment-34,PILOT,2022/03/03 00:30,CONFIRMED,"",false,member-01,leg-05
