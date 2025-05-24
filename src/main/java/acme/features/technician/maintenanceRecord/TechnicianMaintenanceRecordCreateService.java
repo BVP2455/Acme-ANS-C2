@@ -29,8 +29,13 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 
 		if (super.getRequest().getPrincipal().hasRealmOfType(Technician.class)) {
 			status = true;
+			if (super.getRequest().getMethod().equals("GET"))
+				status = !super.getRequest().hasData("id", Integer.class);
 
 			if (super.getRequest().getMethod().equals("POST")) {
+				int id = super.getRequest().getData("id", int.class);
+				boolean validId = id == 0;
+
 				boolean aircraftValid;
 				boolean maintenanceStatusValid;
 
@@ -55,7 +60,7 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 						}
 				}
 
-				status = status && aircraftValid && maintenanceStatusValid;
+				status = status && aircraftValid && maintenanceStatusValid && validId;
 			}
 		}
 
