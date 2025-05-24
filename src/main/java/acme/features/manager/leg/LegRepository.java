@@ -55,4 +55,7 @@ public interface LegRepository extends AbstractRepository {
 	@Query("SELECT l.status FROM Leg l WHERE l.status = :status")
 	LegStatus findLegStatusByStatusValue(String status);
 
+	@Query("SELECT l FROM Leg l WHERE l.draftMode = false AND l.flight.id = :flightId ORDER BY l.scheduledDeparture ASC")
+	Collection<Leg> findPublishedLegsByFlightId(int flightId);
+
 }

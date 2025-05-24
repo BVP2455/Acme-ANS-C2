@@ -2,6 +2,7 @@
 package acme.features.manager.leg;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -100,7 +101,9 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void validate(final Leg leg) {
 		boolean isDraftMode = leg.getDraftMode();
-		Collection<Leg> legs = this.repository.findLegsByFlightId(leg.getFlight().getId());
+		Collection<Leg> legs = this.repository.findPublishedLegsByFlightId(leg.getFlight().getId());
+		legs = legs.stream().filter(l -> l.getId() != leg.getId()).collect(Collectors.toList());
+		legs.add(leg);
 
 		//R1: no puede estar ya publicado
 		boolean status = isDraftMode == true;
@@ -134,30 +137,34 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 
 		//R9: No dejar publicar si los tramos se solapan
-		boolean noOverlap = true;
-		Leg previous = null;
-		for (Leg current : legs) {
-			if (previous != null)
-				if (!MomentHelper.isAfterOrEqual(current.getScheduledDeparture(), previous.getScheduledArrival())) {
-					noOverlap = false;
-					break;
-				}
-			previous = current;
+		if (legs.size() > 1) {
+			boolean noOverlap = true;
+			Leg previous = null;
+			for (Leg current : legs) {
+				if (previous != null)
+					if (!MomentHelper.isAfterOrEqual(current.getScheduledDeparture(), previous.getScheduledArrival())) {
+						noOverlap = false;
+						break;
+					}
+				previous = current;
+			}
+			super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
 		}
-		super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
 
-		//R10: aeropuertos deben ser consecutivos
-		boolean airportsAreConsecutive = true;
-		previous = null;
-		for (Leg current : legs) {
-			if (previous != null)
-				if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
-					airportsAreConsecutive = false;
-					break;
-				}
-			previous = current;
+		//R10: aeropuertos deben ser consecutivos si el vuelo no está en trasbordo
+		if (!leg.getFlight().getSelfTransfer() && legs.size() > 1) {
+			boolean airportsAreConsecutive = true;
+			Leg previous = null;
+			for (Leg current : legs) {
+				if (previous != null)
+					if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
+						airportsAreConsecutive = false;
+						break;
+					}
+				previous = current;
+			}
+			super.state(airportsAreConsecutive, "*", "acme.validation.flight.legs-not-consecutive.message");
 		}
-		super.state(airportsAreConsecutive, "*", "acme.validation.flight.legs-not-consecutive.message");
 
 	}
 
@@ -177,8 +184,8 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 
 		SelectChoices statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 		SelectChoices aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
-		SelectChoices departureChoices = SelectChoices.from(airports, "name", leg.getDepartureAirport());
-		SelectChoices arrivalChoices = SelectChoices.from(airports, "name", leg.getArrivalAirport());
+		SelectChoices departureChoices = SelectChoices.from(airports, "iataCode", leg.getDepartureAirport());
+		SelectChoices arrivalChoices = SelectChoices.from(airports, "iataCode", leg.getArrivalAirport());
 
 		Dataset dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
 
