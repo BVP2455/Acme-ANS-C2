@@ -24,6 +24,8 @@ public class AssistanceAgentClaimPendingListService extends AbstractGuiService<A
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgent.class);
 
 		super.getResponse().setAuthorised(status);
+		if (!super.getRequest().getMethod().equals("GET"))
+			super.getResponse().setAuthorised(false);
 	}
 
 	@Override
@@ -43,7 +45,7 @@ public class AssistanceAgentClaimPendingListService extends AbstractGuiService<A
 		TrackingLogStatus status;
 
 		status = claim.getStatus();
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "status");
+		dataset = super.unbindObject(claim, "passengerEmail", "type");
 		dataset.put("status", status);
 		super.addPayload(dataset, claim, "registrationMoment", "description", "leg.flightNumber");
 

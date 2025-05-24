@@ -24,12 +24,20 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 
 	@Override
 	public void authorise() {
-
-		int agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int claimId = super.getRequest().getData("id", int.class);
-		Claim claim = this.repository.findClaimById(claimId);
-
-		super.getResponse().setAuthorised(agentId == claim.getAssistanceAgent().getId());
+		boolean status;
+		if (super.getRequest().getMethod().equals("GET")) {
+			status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgent.class);
+			super.getResponse().setAuthorised(status);
+			Integer agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			Integer claimId = super.getRequest().getData("id", Integer.class);
+			if (claimId == null)
+				super.getResponse().setAuthorised(false);
+			else {
+				Claim claim = this.repository.findClaimById(claimId);
+				super.getResponse().setAuthorised(agentId == claim.getAssistanceAgent().getId());
+			}
+		} else
+			super.getResponse().setAuthorised(false);
 	}
 
 	@Override
@@ -53,7 +61,7 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 
 		status = claim.getStatus();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		legs = this.repository.findAllLeg();
+		legs = this.repository.findAllLegPublish();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "draftMode", "id");

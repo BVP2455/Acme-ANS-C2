@@ -2,6 +2,8 @@
 package acme.features.assistanceAgent.claim;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,7 +26,26 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgent.class);
+
+		super.getResponse().setAuthorised(status);
+
+		if (status && super.getRequest().getMethod().equals("POST")) {
+
+			Integer legId = super.getRequest().getData("leg", Integer.class);
+			Leg leg = super.getRequest().getData("leg", Leg.class);
+
+			Collection<Leg> legs = this.repository.findAllLeg().stream().collect(Collectors.toList());
+			Collection<Leg> legsAvaiables = legs.stream().filter(l -> l.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !l.getDraftMode()).collect(Collectors.toList());
+
+			if (legId != 0 && !legsAvaiables.contains(leg))
+				status = false;
+
+			if (leg != null && leg.getDraftMode())
+				status = false;
+
+			super.getResponse().setAuthorised(status);
+		}
 	}
 
 	@Override
@@ -50,7 +71,10 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void validate(final Claim claim) {
-
+		if (claim.getLeg() == null || claim.getRegistrationMoment() == null)
+			return;
+		boolean isRegistrationAfterArrival = claim.getRegistrationMoment().after(claim.getLeg().getScheduledArrival());
+		super.state(isRegistrationAfterArrival, "leg", "assistanceAgent.claim.form.error.registrationAfterArrival");
 	}
 
 	@Override
@@ -63,13 +87,12 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void unbind(final Claim claim) {
-		Collection<Leg> legs;
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
 
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		legs = this.repository.findAllLeg();
+		List<Leg> legs = this.repository.findAllLegPublish().stream().filter(leg -> leg.getScheduledArrival().before(claim.getRegistrationMoment())).toList();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "id", "leg");

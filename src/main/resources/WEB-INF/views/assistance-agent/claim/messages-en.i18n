@@ -31,3 +31,6 @@ assistanceAgent.claim.list.label.status = Status
 
 assistanceAgent.claim.list.button.create = Create
 assistanceAgent.claim.form.show.trackingLogs = Show Tracking Logs
+
+assistanceAgent.claim.form.error.registrationAfterArrival = The registration moment must be after the flight's scheduled arrival.
+assistanceAgent.claim.form.error.empty = The claim cannot be modified because it already has tracking logs.
