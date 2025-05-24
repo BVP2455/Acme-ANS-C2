@@ -40,6 +40,11 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 			if (passengerId != 0 && !avaiablePassengers.contains(passenger))
 				status = false;
 
+			Collection<Passenger> includedPassengers = this.repository.findPassengersOfBooking(bookingId);
+
+			if (includedPassengers.contains(passenger))
+				status = false;
+
 			super.getResponse().setAuthorised(status);
 
 		}
