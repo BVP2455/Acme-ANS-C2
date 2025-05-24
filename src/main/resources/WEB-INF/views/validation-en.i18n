@@ -66,8 +66,11 @@ acme.validation.maintenanceRecord.incorrect-dates.message = Date error. The next
 acme.validation.maintenanceRecord.incorrect-maintenanceTasks.message = Error. To publish the maintenance record, it must include at least one published task and must not contain any unpublished tasks.
 acme.validation.maintenanceRecord.next-inspection-null.message = Error. The next inspection due date can not be null
 acme.validation.maintenanceRecord.draftMode.message = Published maintenance records can not be updated or deleted.
+acme.validation.maintenanceRecord.not-completed.message = Status must be COMPLETED to publish the maintenance record
 
 acme.validation.maintenanceTask.duplicated-combination.message=This Maintenance Record is already linked to the selected Task
+acme.validation.maintenanceTask.task-in-draft-in-published-record.message = You can not add a draft task in a public maintenance record
+acme.validation.maintenanceTask.different-technicians.message = This maintenance record and this task does not belong to the same technician and they are not published
 
 acme.validation.validCurrency.message = Error. You have to use a valid currency (EUR, GBP, USD)
 

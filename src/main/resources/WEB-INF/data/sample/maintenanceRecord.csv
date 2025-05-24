@@ -18,30 +18,30 @@ maintenanceRecord-09,2000/01/01 00:01,COMPLETED,2000/01/01 00:02,EUR 500000,Lore
 maintenanceRecord-10,2012/07/02 00:00,COMPLETED,2024/12/31 23:59,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,aircraft-01
 maintenanceRecord-11,2012/07/02 00:00,COMPLETED,2025/01/01 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,aircraft-01
 # nextInspectionDue - no singular values
+# draftMode - standard variations
+maintenanceRecord-12,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01,aircraft-01
+maintenanceRecord-13,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01,aircraft-01
+# draftMode - no singular values
 # estimatedCost - standard variations
-maintenanceRecord-12,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 0.00,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,aircraft-01
-maintenanceRecord-13,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 0.01,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,aircraft-01
-maintenanceRecord-14,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 999999.99,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,aircraft-01
-maintenanceRecord-15,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 1000000.00,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,aircraft-01
+maintenanceRecord-14,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 0.00,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01,aircraft-01
+maintenanceRecord-15,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 0.01,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01,aircraft-01
+maintenanceRecord-16,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 999999.99,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01,aircraft-01
+maintenanceRecord-17,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 1000000.00,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01,aircraft-01
 # estimatedCost - no singular values
 #key:technician
-maintenanceRecord-16,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-02,aircraft-01
+maintenanceRecord-18,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-02,aircraft-01
 # notes - standard variations
-maintenanceRecord-17,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,L,true,technician-02,aircraft-01
-maintenanceRecord-18,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lo,true,technician-02,aircraft-01
-maintenanceRecord-19,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,true,technician-02,aircraft-01
-maintenanceRecord-20,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,true,technician-02,aircraft-01
-maintenanceRecord-21,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,โลเร็ม อิปซัม,true,technician-02,aircraft-01
-maintenanceRecord-22,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,لوريم إيبسوم,true,technician-02,aircraft-01
-maintenanceRecord-23,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,洛伦·伊普森,true,technician-02,aircraft-01
-maintenanceRecord-24,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,<marquee>Hacked</marquee>,true,technician-02,aircraft-01
-maintenanceRecord-25,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,<script>alert(‘Hacked!’);</script>,true,technician-02,aircraft-01
-maintenanceRecord-26,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,'' or 'A' = 'A,true,technician-02,aircraft-01
+maintenanceRecord-19,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,L,false,technician-02,aircraft-01
+maintenanceRecord-20,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lo,false,technician-02,aircraft-01
+maintenanceRecord-21,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,false,technician-02,aircraft-01
+maintenanceRecord-22,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,false,technician-02,aircraft-01
+maintenanceRecord-23,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,โลเร็ม อิปซัม,false,technician-02,aircraft-01
+maintenanceRecord-24,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,لوريم إيبسوم,false,technician-02,aircraft-01
+maintenanceRecord-25,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,洛伦·伊普森,false,technician-02,aircraft-01
+maintenanceRecord-26,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,<marquee>Hacked</marquee>,false,technician-02,aircraft-01
+maintenanceRecord-27,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,<script>alert(‘Hacked!’);</script>,false,technician-02,aircraft-01
+maintenanceRecord-28,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,'' or 'A' = 'A,false,technician-02,aircraft-01
 # notes - no singular values
-# draftMode - standard variations
-maintenanceRecord-27,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-02,aircraft-01
-maintenanceRecord-28,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-02,aircraft-01
-# draftMode - no singular values
 #key:aircraft
 maintenanceRecord-29,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-02,aircraft-02
 maintenanceRecord-30,2012/07/02 00:00,COMPLETED,2012/07/12 00:00,EUR 500000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-02,aircraft-03

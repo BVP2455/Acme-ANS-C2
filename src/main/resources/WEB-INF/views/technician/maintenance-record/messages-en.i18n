@@ -18,7 +18,7 @@ technician.maintenance-record.form.button.publish = Publish
 technician.maintenance-record.form.button.confirmation = Confirm
 technician.maintenance-record.form.button.delete = Delete
 
-technician.maintenance-record.form.text.can-not-be-published = This maintenance record can not be published because it has not tasks or it has unpublished tasks
+technician.maintenance-record.form.text.can-not-be-published = This maintenance record can not be published because it is not completed, it has not tasks or it has unpublished tasks
 technician.maintenance-record.form.text.already-published = This maintenance record is already published! Published maintenance records can not be updated or deleted.
 
 technician.maintenance-record.form.label.draft-mode = Draft mode
@@ -28,9 +28,3 @@ technician.maintenance-record.list.label.next-inspection-due = Next Inspection D
 technician.maintenance-record.list.label.aircraft = Aircraft
 technician.maintenance-record.list.label.draft-mode = Draft mode
 technician.maintenance-record.list.button.create = Create
-
-
-
-
-
-

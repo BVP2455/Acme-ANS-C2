@@ -34,11 +34,25 @@ public class MaintenanceTaskValidator extends AbstractValidator<ValidMaintenance
 
 		if (maintenanceTask == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+
 		else {
 			long count = this.repository.countByTaskIdAndMaintenanceRecordId(maintenanceTask.getTask().getId(), maintenanceTask.getMaintenanceRecord().getId());
 
 			boolean unique = count == 0 || count == 1;
 			super.state(context, unique, "*", "acme.validation.maintenanceTask.duplicated-combination.message");
+
+			boolean mrDraft = maintenanceTask.getMaintenanceRecord().isDraftMode();
+			boolean taskDraft = maintenanceTask.getTask().isDraftMode();
+
+			boolean invalidCombination = !mrDraft && taskDraft;
+			super.state(context, !invalidCombination, "*", "acme.validation.maintenanceTask.task-in-draft-in-published-record.message");
+
+			if (mrDraft && taskDraft) {
+				int technicianMR = maintenanceTask.getMaintenanceRecord().getTechnician().getId();
+				int technicianTask = maintenanceTask.getTask().getTechnician().getId();
+				boolean sameTechnician = technicianMR == technicianTask;
+				super.state(context, sameTechnician, "*", "acme.validation.maintenanceTask.different-technicians.message");
+			}
 		}
 
 		result = !super.hasErrors(context);

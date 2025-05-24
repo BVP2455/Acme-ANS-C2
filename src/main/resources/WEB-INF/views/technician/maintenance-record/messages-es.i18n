@@ -20,7 +20,7 @@ technician.maintenance-record.form.button.delete = Eliminar
 
 
 
-technician.maintenance-record.form.text.can-not-be-published = No puedes publicar este registro de mantenimiento porque no tiene tareas publicadas o tiene alguna tarea sin publicar
+technician.maintenance-record.form.text.can-not-be-published = No puedes publicar este registro de mantenimiento porque no está completado, no tiene tareas publicadas o tiene alguna tarea sin publicar
 technician.maintenance-record.form.text.already-published = ¡Este registro ya ha sido publicado! No puede ser borrado ni editado. 
 
 technician.maintenance-record.form.label.draft-mode = Modo borrador

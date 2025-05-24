@@ -1,9 +1,15 @@
 key,key:task,key:maintenanceRecord
-maintenanceTask-01,task-23,maintenanceRecord-01
-maintenanceTask-02,task-24,maintenanceRecord-01
-maintenanceTask-03,task-01,maintenanceRecord-02
-maintenanceTask-04,task-24,maintenanceRecord-02
-maintenanceTask-05,task-23,maintenanceRecord-26
-maintenanceTask-06,task-24,maintenanceRecord-26
-maintenanceTask-07,task-23,maintenanceRecord-27
-maintenanceTask-08,task-24,maintenanceRecord-27
+# public task - public record
+maintenanceTask-01,task-05,maintenanceRecord-14
+maintenanceTask-02,task-05,maintenanceRecord-24
+maintenanceTask-03,task-18,maintenanceRecord-14
+maintenanceTask-04,task-18,maintenanceRecord-24
+# public task - draft record
+maintenanceTask-05,task-05,maintenanceRecord-03
+maintenanceTask-06,task-05,maintenanceRecord-29
+maintenanceTask-07,task-18,maintenanceRecord-03
+maintenanceTask-08,task-18,maintenanceRecord-29
+# draft task technician01 - draft record technician01
+maintenanceTask-09,task-03,maintenanceRecord-03
+# draft task technician02 - draft record technician02
+maintenanceTask-10,task-22,maintenanceRecord-29
