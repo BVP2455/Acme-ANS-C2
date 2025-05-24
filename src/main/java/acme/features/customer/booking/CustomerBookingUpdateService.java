@@ -38,7 +38,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 		if (status && super.getRequest().getMethod().equals("POST")) {
 
 			Integer flightId = super.getRequest().getData("flight", Integer.class);
-			Flight flight = super.getRequest().getData("flight", Flight.class);
+			Flight flight = this.repository.findFlightById(flightId);
 
 			Collection<Flight> flights = this.repository.findAllFlights().stream().filter(f -> f.getNumberLegs() != 0).collect(Collectors.toList());
 			Collection<Flight> flightsAvaiables = flights.stream().filter(f -> f.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !f.getDraftMode()).collect(Collectors.toList());
