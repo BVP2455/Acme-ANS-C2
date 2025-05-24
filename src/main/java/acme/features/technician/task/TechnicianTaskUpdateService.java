@@ -23,35 +23,35 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 		boolean status = false;
 		int id;
 		Task task;
-		Technician technician;
+		int technicianId;
 
-		id = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(id);
-		technician = task == null ? null : task.getTechnician();
+		if (super.getRequest().hasData("id", Integer.class) && super.getRequest().getMethod().equals("POST")) {
+			id = super.getRequest().getData("id", int.class);
+			task = this.repository.findTaskById(id);
+			if (task != null) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				if (task.isDraftMode()) {
+					status = technicianId == task.getTechnician().getId();
+					String taskTypeInput = super.getRequest().getData("type", String.class);
+					boolean taskTypeValid = false;
 
-		if (task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician)) {
+					if (taskTypeInput != null) {
+						String trimmedInput = taskTypeInput.trim();
+						if (trimmedInput.equals("0"))
+							taskTypeValid = true;
+						else
+							for (TaskType tt : TaskType.values())
+								if (tt.name().equalsIgnoreCase(trimmedInput)) {
+									taskTypeValid = true;
+									break;
+								}
+					}
+					status = status && taskTypeValid;
 
-			status = true;
-
-			if (super.getRequest().getMethod().equals("POST")) {
-				String taskTypeInput = super.getRequest().getData("type", String.class);
-				boolean taskTypeValid = false;
-
-				if (taskTypeInput != null) {
-					String trimmedInput = taskTypeInput.trim();
-					if (trimmedInput.equals("0"))
-						taskTypeValid = true;
-					else
-						for (TaskType tt : TaskType.values())
-							if (tt.name().equalsIgnoreCase(trimmedInput)) {
-								taskTypeValid = true;
-								break;
-							}
 				}
-
-				status = status && taskTypeValid;
 			}
 		}
+
 		super.getResponse().setAuthorised(status);
 	}
 
