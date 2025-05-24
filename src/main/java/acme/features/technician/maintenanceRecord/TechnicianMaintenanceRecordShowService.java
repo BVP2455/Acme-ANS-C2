@@ -67,7 +67,7 @@ public class TechnicianMaintenanceRecordShowService extends AbstractGuiService<T
 
 		boolean canBePublished;
 		Collection<Task> tasksOfMr = this.repository.findTasksInMaintenanceRecord(mr.getId());
-		canBePublished = mr.isDraftMode() && !tasksOfMr.isEmpty() && tasksOfMr.stream().allMatch(task -> !task.isDraftMode());
+		canBePublished = mr.getStatus().equals(MaintenanceStatus.COMPLETED) && mr.isDraftMode() && !tasksOfMr.isEmpty() && tasksOfMr.stream().allMatch(task -> !task.isDraftMode());
 		super.getResponse().addGlobal("canBePublished", canBePublished);
 
 	}

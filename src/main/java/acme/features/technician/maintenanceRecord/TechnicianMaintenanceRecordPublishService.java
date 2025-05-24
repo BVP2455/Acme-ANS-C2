@@ -91,6 +91,11 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		if (!isDraft)
 			super.state(isDraft, "*", "acme.validation.maintenanceRecord.published.message");
 
+		boolean statusIsCompleted = mr.getStatus() == MaintenanceStatus.COMPLETED;
+
+		if (!statusIsCompleted)
+			super.state(statusIsCompleted, "status", "acme.validation.maintenanceRecord.not-completed.message");
+
 		boolean valid = !tasksOfMr.isEmpty() && tasksOfMr.stream().allMatch(task -> !task.isDraftMode());
 
 		if (!valid)
