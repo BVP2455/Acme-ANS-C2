@@ -21,16 +21,21 @@ public class TechnicianTaskDeleteService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int id;
 		Task task;
-		Technician technician;
+		int technicianId;
 
-		id = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(id);
-		technician = task == null ? null : task.getTechnician();
-		status = task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+		if (!super.getRequest().getMethod().equals("GET")) {
+			id = super.getRequest().getData("id", int.class);
+			task = this.repository.findTaskById(id);
+			if (task != null) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				if (task.isDraftMode())
+					status = technicianId == task.getTechnician().getId();
 
+			}
+		}
 		super.getResponse().setAuthorised(status);
 	}
 

@@ -24,8 +24,12 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 
 		if (super.getRequest().getPrincipal().hasRealmOfType(Technician.class)) {
 			status = true;
-
+			if (super.getRequest().getMethod().equals("GET"))
+				status = !super.getRequest().hasData("id", Integer.class);
 			if (super.getRequest().getMethod().equals("POST")) {
+				int id = super.getRequest().getData("id", int.class);
+				boolean validId = id == 0;
+
 				String taskTypeInput = super.getRequest().getData("type", String.class);
 				boolean taskTypeValid = false;
 
@@ -41,7 +45,7 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 							}
 				}
 
-				status = status && taskTypeValid;
+				status = status && taskTypeValid && validId;
 			}
 		}
 		super.getResponse().setAuthorised(status);

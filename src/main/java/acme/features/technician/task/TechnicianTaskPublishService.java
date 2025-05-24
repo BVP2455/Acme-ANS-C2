@@ -21,32 +21,35 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 		boolean status = false;
 		int id;
 		Task task;
-		Technician technician;
-		id = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(id);
-		technician = task == null ? null : task.getTechnician();
-		if (super.getRequest().getPrincipal().hasRealm(technician) && task != null && task.isDraftMode()) {
-			status = true;
+		int technicianId;
 
-			if (super.getRequest().getMethod().equals("POST")) {
-				String taskTypeInput = super.getRequest().getData("type", String.class);
-				boolean taskTypeValid = false;
+		if (super.getRequest().hasData("id", Integer.class) && super.getRequest().getMethod().equals("POST")) {
+			id = super.getRequest().getData("id", int.class);
+			task = this.repository.findTaskById(id);
+			if (task != null) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				if (task.isDraftMode()) {
+					status = technicianId == task.getTechnician().getId();
+					String taskTypeInput = super.getRequest().getData("type", String.class);
+					boolean taskTypeValid = false;
 
-				if (taskTypeInput != null) {
-					String trimmedInput = taskTypeInput.trim();
-					if (trimmedInput.equals("0"))
-						taskTypeValid = true;
-					else
-						for (TaskType tt : TaskType.values())
-							if (tt.name().equalsIgnoreCase(trimmedInput)) {
-								taskTypeValid = true;
-								break;
-							}
+					if (taskTypeInput != null) {
+						String trimmedInput = taskTypeInput.trim();
+						if (trimmedInput.equals("0"))
+							taskTypeValid = true;
+						else
+							for (TaskType tt : TaskType.values())
+								if (tt.name().equalsIgnoreCase(trimmedInput)) {
+									taskTypeValid = true;
+									break;
+								}
+					}
+					status = status && taskTypeValid;
+
 				}
-
-				status = status && taskTypeValid;
 			}
 		}
+
 		super.getResponse().setAuthorised(status);
 	}
 
