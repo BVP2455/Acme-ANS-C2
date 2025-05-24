@@ -33,6 +33,7 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 			int bookingId = super.getRequest().getData("id", int.class);
 			Booking booking = this.repository.findBookingById(bookingId);
 			status = customerId == booking.getCustomer().getId();
+			status = status && booking.getDraftMode();
 			super.getResponse().setAuthorised(status);
 		}
 
