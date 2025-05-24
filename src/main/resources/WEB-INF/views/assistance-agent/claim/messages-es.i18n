@@ -31,3 +31,6 @@ assistanceAgent.claim.list.label.status = Estado
 
 assistanceAgent.claim.list.button.create = Crear
 assistanceAgent.claim.form.show.trackingLogs = Ver Registros
+
+assistanceAgent.claim.form.error.registrationAfterArrival = El momento de registro debe ser posterior a la llegada del vuelo.
+assistanceAgent.claim.form.error.empty = El reclamo no puede modificarse si ya tiene seguimiento registrado.
