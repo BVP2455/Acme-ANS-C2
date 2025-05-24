@@ -18,19 +18,39 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 	@Autowired
 	private TechnicianMaintenanceRecordRepository repository;
 
+	//	@Override
+	//	public void authorise() {
+	//		boolean status;
+	//		int id;
+	//		MaintenanceRecord mr;
+	//		Technician technician;
+	//
+	//		id = super.getRequest().getData("id", int.class);
+	//		mr = this.repository.findMaintenanceRecordById(id);
+	//		technician = mr == null ? null : mr.getTechnician();
+	//		status = mr != null && mr.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+	//
+	//		super.getResponse().setAuthorised(status);
+	//	}
+
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int id;
 		MaintenanceRecord mr;
-		Technician technician;
+		int technicianId;
 
-		id = super.getRequest().getData("id", int.class);
-		mr = this.repository.findMaintenanceRecordById(id);
-		technician = mr == null ? null : mr.getTechnician();
-		status = mr != null && mr.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+		if (!super.getRequest().getMethod().equals("GET")) {
+			id = super.getRequest().getData("id", int.class);
+			mr = this.repository.findMaintenanceRecordById(id);
+			if (mr != null) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				if (mr.isDraftMode())
+					status = technicianId == mr.getTechnician().getId();
 
+			}
+		}
 		super.getResponse().setAuthorised(status);
 	}
 

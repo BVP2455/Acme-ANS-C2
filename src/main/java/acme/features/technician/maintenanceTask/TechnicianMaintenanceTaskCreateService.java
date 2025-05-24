@@ -25,13 +25,18 @@ public class TechnicianMaintenanceTaskCreateService extends AbstractGuiService<T
 	public void authorise() {
 		boolean status = false;
 
-		int mrId = super.getRequest().getData("mrId", int.class);
-		MaintenanceRecord mr = this.repository.findMaintenanceRecordById(mrId);
+		int technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		if (super.getRequest().getMethod().equals("GET"))
+			status = !super.getRequest().hasData("id", Integer.class);
+		else if (super.getRequest().getMethod().equals("POST")) {
+			int mrId = super.getRequest().getData("mrId", int.class);
+			MaintenanceRecord mr = this.repository.findMaintenanceRecordById(mrId);
+			if (mr != null && mr.getTechnician().getId() == technicianId && mr.isDraftMode()) {
+				status = true;
 
-		if (mr != null && super.getRequest().getPrincipal().hasRealm(mr.getTechnician())) {
-			status = true;
+				int id = super.getRequest().getData("id", int.class);
+				boolean validId = id == 0;
 
-			if (super.getRequest().getMethod().equals("POST")) {
 				boolean taskValid = true;
 				int taskId = super.getRequest().getData("task", int.class);
 				if (taskId == 0)
@@ -43,11 +48,12 @@ public class TechnicianMaintenanceTaskCreateService extends AbstractGuiService<T
 					taskValid = existingTask != null && !alreadySelected && (!existingTask.isDraftMode() || existingTask.getTechnician().equals(mr.getTechnician()));
 				}
 
-				status = status && taskValid;
+				status = status && taskValid && validId;
 			}
-		}
 
+		}
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override

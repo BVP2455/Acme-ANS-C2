@@ -25,43 +25,41 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		boolean status = false;
 		int id;
 		MaintenanceRecord mr;
-		Technician technician;
-		id = super.getRequest().getData("id", int.class);
-		mr = this.repository.findMaintenanceRecordById(id);
-		technician = mr == null ? null : mr.getTechnician();
-		if (super.getRequest().getPrincipal().hasRealm(technician) && mr != null && mr.isDraftMode()) {
-			status = true;
+		int technicianId;
 
-			if (super.getRequest().getMethod().equals("POST")) {
-				boolean aircraftValid;
-				boolean maintenanceStatusValid;
+		if (super.getRequest().hasData("id", Integer.class) && super.getRequest().getMethod().equals("POST")) {
+			id = super.getRequest().getData("id", int.class);
+			mr = this.repository.findMaintenanceRecordById(id);
+			if (mr != null) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				if (mr.isDraftMode()) {
+					status = technicianId == mr.getTechnician().getId();
+					boolean aircraftValid;
+					boolean maintenanceStatusValid;
+					int aircraftId = super.getRequest().getData("aircraft", int.class);
+					String statusInput = super.getRequest().getData("status", String.class);
+					if (aircraftId == 0)
+						aircraftValid = true;
+					else {
+						Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
+						aircraftValid = existingAircraft != null;
+					}
 
-				int aircraftId = super.getRequest().getData("aircraft", int.class);
-				String statusInput = super.getRequest().getData("status", String.class);
-
-				if (aircraftId == 0)
-					aircraftValid = true;
-				else {
-					Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
-					aircraftValid = existingAircraft != null;
+					if (statusInput.trim().equals("0"))
+						maintenanceStatusValid = true;
+					else {
+						maintenanceStatusValid = false;
+						for (MaintenanceStatus ms : MaintenanceStatus.values())
+							if (ms.name().equalsIgnoreCase(statusInput)) {
+								maintenanceStatusValid = true;
+								break;
+							}
+					}
+					status = status && aircraftValid && maintenanceStatusValid;
 				}
-
-				if (statusInput.trim().equals("0"))
-					maintenanceStatusValid = true;
-				else {
-					maintenanceStatusValid = false;
-					for (MaintenanceStatus ms : MaintenanceStatus.values())
-						if (ms.name().equalsIgnoreCase(statusInput)) {
-							maintenanceStatusValid = true;
-							break;
-						}
-				}
-
-				status = status && aircraftValid && maintenanceStatusValid;
 			}
 		}
 		super.getResponse().setAuthorised(status);
-
 	}
 
 	@Override

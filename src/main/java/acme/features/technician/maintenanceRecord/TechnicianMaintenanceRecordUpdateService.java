@@ -24,42 +24,42 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 	@Override
 	public void authorise() {
 		boolean status = false;
-		int mrId = super.getRequest().getData("id", int.class);
-		MaintenanceRecord mr = this.repository.findMaintenanceRecordById(mrId);
-		Technician technician = mr != null ? mr.getTechnician() : null;
+		int id;
+		MaintenanceRecord mr;
+		int technicianId;
 
-		if (mr != null && mr.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician)) {
-			status = true;
+		if (super.getRequest().hasData("id", Integer.class) && super.getRequest().getMethod().equals("POST")) {
+			id = super.getRequest().getData("id", int.class);
+			mr = this.repository.findMaintenanceRecordById(id);
+			if (mr != null) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				if (mr.isDraftMode()) {
+					status = technicianId == mr.getTechnician().getId();
+					boolean aircraftValid;
+					boolean maintenanceStatusValid;
+					int aircraftId = super.getRequest().getData("aircraft", int.class);
+					String statusInput = super.getRequest().getData("status", String.class);
+					if (aircraftId == 0)
+						aircraftValid = true;
+					else {
+						Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
+						aircraftValid = existingAircraft != null;
+					}
 
-			if (super.getRequest().getMethod().equals("POST")) {
-				boolean aircraftValid;
-				boolean maintenanceStatusValid;
-
-				int aircraftId = super.getRequest().getData("aircraft", int.class);
-				String statusInput = super.getRequest().getData("status", String.class);
-
-				if (aircraftId == 0)
-					aircraftValid = true;
-				else {
-					Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
-					aircraftValid = existingAircraft != null;
+					if (statusInput.trim().equals("0"))
+						maintenanceStatusValid = true;
+					else {
+						maintenanceStatusValid = false;
+						for (MaintenanceStatus ms : MaintenanceStatus.values())
+							if (ms.name().equalsIgnoreCase(statusInput)) {
+								maintenanceStatusValid = true;
+								break;
+							}
+					}
+					status = status && aircraftValid && maintenanceStatusValid;
 				}
-
-				if (statusInput.trim().equals("0"))
-					maintenanceStatusValid = true;
-				else {
-					maintenanceStatusValid = false;
-					for (MaintenanceStatus ms : MaintenanceStatus.values())
-						if (ms.name().equalsIgnoreCase(statusInput)) {
-							maintenanceStatusValid = true;
-							break;
-						}
-				}
-
-				status = status && aircraftValid && maintenanceStatusValid;
 			}
 		}
-
 		super.getResponse().setAuthorised(status);
 	}
 
