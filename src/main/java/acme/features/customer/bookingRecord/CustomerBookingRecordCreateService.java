@@ -28,9 +28,9 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		int bookingId = super.getRequest().getData("bookingId", int.class);
 		Booking booking = this.repository.findBookingById(bookingId);
 
-		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+		status = customerId == booking.getCustomer().getId();
 
-		if (super.getRequest().getMethod().equals("POST")) {
+		if (status && super.getRequest().getMethod().equals("POST")) {
 
 			Passenger passenger = super.getRequest().getData("passenger", Passenger.class);
 			Integer passengerId = super.getRequest().getData("passenger", Integer.class);
@@ -40,9 +40,13 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 			if (passengerId != 0 && !avaiablePassengers.contains(passenger))
 				status = false;
 
-			super.getResponse().setAuthorised(status);
+			Collection<Passenger> includedPassengers = this.repository.findPassengersOfBooking(bookingId);
 
+			if (includedPassengers.contains(passenger))
+				status = false;
 		}
+
+		super.getResponse().setAuthorised(status);
 
 	}
 
