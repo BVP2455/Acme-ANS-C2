@@ -1,3 +1,4 @@
 key,key:userAccount,identifier,yearsExperience,birthDate,picture,key:airline
-manager-01,user-account-manager-01,DR111111,3,2001/01/01 00:00,https://www.acme.com,airline-01
-manager-02,user-account-manager-02,JDD000000,1,2000/01/01 00:00,https://www.google.es,airline-02
+manager-01,user-account-manager-01,DR111111,1,2001/01/01 00:00,https://www.acme.com,airline-01
+manager-02,user-account-manager-02,JDD000000,2,2000/01/01 00:00,https://www.google.es,airline-02
+manager-03,user-account-manager-03,AL000000,3,2000/01/01 00:00,https://www.twitter.com,airline-03

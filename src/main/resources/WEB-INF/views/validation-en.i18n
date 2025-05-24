@@ -29,10 +29,11 @@ acme.validation.flight.draftMode.published.message = This flight has been alread
 acme.validation.flight.no-legs.message = For a flight to be published, it must have at least one leg
 acme.validation.flight.legs-not-published.message = For a flight to be published, all legs must be published too
 acme.validation.flight.legs-overlap.message = For a flight to be published, legs can not overlap
-acme.validation.flight.legs-not-consecutive.message = Arrival and departure airports must be consecutive
+acme.validation.flight.legs-not-consecutive.message = When a flight not requires self transfer, arrival and departure airports must be consecutive
+acme.validation.flight.selfTransfer-legs-not-consecutive.message = To change if a flight not requires self transfer, arrival and departure airports must be consecutive on published legs
 
 acme.validation.activitylog.message = Invalid activity log
-acme.validation.activitylog.registrationmoment.message = Invalid registration moment
+acme.validation.activitylog.registrationmoment.message = Invalid registration moment, it must be in the past and after the arrival date of the leg
 acme.validation.activitylog.flightassignment.publish.message = The flight assignment must be published
 
 acme.validation.customer.identifier.message = Invalid identifier

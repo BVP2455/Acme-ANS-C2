@@ -149,8 +149,8 @@ public class LegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 		SelectChoices statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
 		SelectChoices aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
-		SelectChoices departureChoices = SelectChoices.from(airports, "name", leg.getDepartureAirport());
-		SelectChoices arrivalChoices = SelectChoices.from(airports, "name", leg.getArrivalAirport());
+		SelectChoices departureChoices = SelectChoices.from(airports, "iataCode", leg.getDepartureAirport());
+		SelectChoices arrivalChoices = SelectChoices.from(airports, "iataCode", leg.getArrivalAirport());
 
 		Dataset dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
 
