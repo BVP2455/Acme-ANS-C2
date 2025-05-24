@@ -54,7 +54,7 @@ public class AircraftShowService extends AbstractGuiService<Administrator, Aircr
 		Dataset dataset;
 
 		airlines = this.repository.findAllAirlines();
-		choicesAirline = SelectChoices.from(airlines, "code", aircraft.getAirline());
+		choicesAirline = SelectChoices.from(airlines, "iataCode", aircraft.getAirline());
 
 		choiceStatus = SelectChoices.from(Status.class, aircraft.getStatus());
 

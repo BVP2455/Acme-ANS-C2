@@ -83,7 +83,7 @@ public class AircraftDisableService extends AbstractGuiService<Administrator, Ai
 
 		choicesStatus = SelectChoices.from(Status.class, aircraft.getStatus());
 		airlines = this.repository.findAllAirlines();
-		choicesAirline = SelectChoices.from(airlines, "name", aircraft.getAirline());
+		choicesAirline = SelectChoices.from(airlines, "iataCode", aircraft.getAirline());
 
 		dataset = super.unbindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "status", "details");
 		dataset.put("statusChoice", choicesStatus);
