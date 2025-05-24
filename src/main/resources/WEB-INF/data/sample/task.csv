@@ -7,34 +7,33 @@ task-02,INSPECTION,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed 
 task-03,REPAIR,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,true,technician-01
 task-04,SYSTEM_CHECK,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,true,technician-01
 # type - no singular values
+# draftMode - standard variations
+task-05,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,false,technician-01
+task-06,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,false,technician-01
+# draftMode - no singular values
 # description - standard variations
-task-05,MAINTENANCE,L,5,500,true,technician-01
-task-06,MAINTENANCE,Lo,5,500,true,technician-01
-task-07,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,5,500,true,technician-01
-task-08,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,5,500,true,technician-01
-task-09,MAINTENANCE,โลเร็ม อิปซัม,5,500,true,technician-01
-task-10,MAINTENANCE,لوريم إيبسوم,5,500,true,technician-01
-task-11,MAINTENANCE,洛伦·伊普森,5,500,true,technician-01
-task-12,MAINTENANCE,<marquee>Hacked</marquee>,5,500,true,technician-01
-task-13,MAINTENANCE,<script>alert(‘Hacked!’);</script>,5,500,true,technician-01
-task-14,MAINTENANCE,'' or 'A' = 'A,5,500,true,technician-01
+task-07,MAINTENANCE,L,5,500,false,technician-01
+task-08,MAINTENANCE,Lo,5,500,false,technician-01
+task-09,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,5,500,false,technician-01
+task-10,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,5,500,false,technician-01
+task-11,MAINTENANCE,โลเร็ม อิปซัม,5,500,false,technician-01
+task-12,MAINTENANCE,لوريم إيبسوم,5,500,false,technician-01
+task-13,MAINTENANCE,洛伦·伊普森,5,500,false,technician-01
+task-14,MAINTENANCE,<marquee>Hacked</marquee>,5,500,false,technician-01
+task-15,MAINTENANCE,<script>alert(‘Hacked!’);</script>,5,500,false,technician-01
+task-16,MAINTENANCE,'' or 'A' = 'A,5,500,false,technician-01
 # description - no singular values
-# key:technician
-task-15,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,true,technician-02
+# key:technician,"","","","",""
+task-17,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,false,technician-02
 # priority - standard variations
-task-16,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,0,500,true,technician-02
-task-17,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,1,500,true,technician-02
-task-18,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,9,500,true,technician-02
-task-19,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,10,500,true,technician-02
+task-18,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,0,500,false,technician-02
+task-19,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,1,500,false,technician-02
+task-20,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,9,500,false,technician-02
+task-21,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,10,500,false,technician-02
 # priority - no singular values
 # estimatedDuration - standard variations
-task-20,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,0,true,technician-02
-task-21,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,1,true,technician-02
-task-22,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,999,true,technician-02
-task-23,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,1000,true,technician-02
+task-22,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,0,true,technician-02
+task-23,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,1,true,technician-02
+task-24,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,999,true,technician-02
+task-25,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,1000,true,technician-02
 # estimatedDuration - no singular values
-# draftMode - standard variations
-task-24,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,false,technician-02
-task-25,MAINTENANCE,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,500,false,technician-02
-# draftMode - no singular values
-
