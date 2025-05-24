@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.maintenance.MaintenanceRecord;
 import acme.entities.maintenance.MaintenanceTask;
 import acme.realms.technician.Technician;
 
@@ -18,16 +19,26 @@ public class TechnicianMaintenanceTaskDeleteService extends AbstractGuiService<T
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int id;
 		MaintenanceTask mt;
+		int technicianId;
 
-		id = super.getRequest().getData("id", int.class);
-		mt = this.repository.findMaintenanceTaskById(id);
-		status = mt != null && super.getRequest().getPrincipal().hasRealm(mt.getMaintenanceRecord().getTechnician());
+		if (!super.getRequest().getMethod().equals("GET")) {
+			id = super.getRequest().getData("id", int.class);
+			mt = this.repository.findMaintenanceTaskById(id);
+			if (mt != null) {
+				MaintenanceRecord mr = mt.getMaintenanceRecord();
+				if (mr.isDraftMode()) {
+					technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+					status = technicianId == mr.getTechnician().getId();
+				}
+			}
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
+
 	@Override
 	public void load() {
 		MaintenanceTask mt;
