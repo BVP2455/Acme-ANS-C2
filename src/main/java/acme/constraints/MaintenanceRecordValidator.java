@@ -9,6 +9,7 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.MomentHelper;
 import acme.entities.maintenance.MaintenanceRecord;
+import acme.entities.maintenance.MaintenanceStatus;
 
 public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenanceRecord, MaintenanceRecord> {
 
@@ -28,17 +29,17 @@ public class MaintenanceRecordValidator extends AbstractValidator<ValidMaintenan
 		else if (maintenanceRecord.getNextInspectionDue() == null)
 			super.state(context, false, "nextInspectionDue", "acme.validation.maintenanceRecord.next-inspection-null.message");
 		else {
-			Date minimumNextInspectionDue;
-			boolean correctNextInspectionDue;
-
-			minimumNextInspectionDue = MomentHelper.deltaFromMoment(maintenanceRecord.getMaintenanceMoment(), 1, ChronoUnit.MINUTES);
-			correctNextInspectionDue = MomentHelper.isAfterOrEqual(maintenanceRecord.getNextInspectionDue(), minimumNextInspectionDue);
-
+			Date minimumNextInspectionDue = MomentHelper.deltaFromMoment(maintenanceRecord.getMaintenanceMoment(), 1, ChronoUnit.MINUTES);
+			boolean correctNextInspectionDue = MomentHelper.isAfterOrEqual(maintenanceRecord.getNextInspectionDue(), minimumNextInspectionDue);
 			super.state(context, correctNextInspectionDue, "nextInspectionDue", "acme.validation.maintenanceRecord.incorrect-dates.message");
-		}
-		result = !super.hasErrors(context);
 
+			if (!maintenanceRecord.isDraftMode()) {
+				boolean statusIsCompleted = maintenanceRecord.getStatus() == MaintenanceStatus.COMPLETED;
+				super.state(context, statusIsCompleted, "status", "acme.validation.maintenanceRecord.not-completed.message");
+			}
+		}
+
+		result = !super.hasErrors(context);
 		return result;
 	}
-
 }
