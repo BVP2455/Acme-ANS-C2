@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>550</y>
+      <w>610</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft
+--
++ model: String {Mandatory, ValidString(min=1, max=50), Column(unique=true)}
++ registrationNumber: String {Mandatory, ValidString(min=1, max=50), Column(unique=true)}
++ capacity: Integer {Mandatory, ValidNumber(min=1, max=255), Automapped}
++ cargoWeight: Integer {Mandatory, ValidNumber(min=2000, max=50000), Automapped}
++ status: Status {Mandatory, Valid, Automapped}
++ details: String {Optional, ValidString. Automapped}
+bg=green
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>300</y>
+      <w>570</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Task
+--
++ type: TaskType {Mandatory, Valid, Automapped}
++ description: String {Mandatory, ValidString(min=1, max=255), Automapped}
++ priority: int {Mandatory, ValidNumber(min=0, max=10), Automapped}
++ estimatedDuration: Integer {Mandatory, ValidNumber(min=0, max=100), Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>300</y>
+      <w>520</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MaintenanceRecord {ValidMaintenanceRecord}
+--
++ maintenanceMoment: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)} 
++ status: MaintenanceStatus {Mandatory, Valid, Automapped}
++ nextInspectionDue: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)} 
++ estimatedCost: Money {Mandatory, ValidMoney, Automapped}
++ notes: String {Optional, ValidString, Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>190</y>
+      <w>300</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MaintenanceTask {ValidMaintenanceTask}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>200</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+involves v
+m1= 1
+m2= *</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>200</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+involved in v
+m1= 1
+m2= *</panel_attributes>
+    <additional_attributes>200.0;100.0;200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1300</x>
+      <y>450</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+is applied to v
+m1= 1
+m2= *</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>430</y>
+      <w>130</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+registered by v
+m1= 1
+m2= *
+</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>370</y>
+      <w>150</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+is performed by &gt;
+m1= 1
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>150</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TaskType
+--
++ MAINTENANCE
++ INSPECTION
++ REPAIR
++ SYSTEM_CHECK
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>310</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MaintenanceStatus
+--
++ PENDING
++ IN_PROGRESS
++ COMPLETED
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>730</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Status
+--
++ ACTIVE
++ MAINTENANCE
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>540</y>
+      <w>630</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician {ValidTechnician}
+--
++ licenseNumber: String {Mandatory, ValidLicenseNumber, Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidPhoneNumber, Automapped}
++ specialization: String {Mandatory, ValidShortText, Automapped}
++ annualHealthTest: Boolean {Mandatory, Valid, Automapped}
++ yearsOfExperience: Integer {Mandatory, ValidNumber, Automapped}
++ certifications: String {Optional, ValidString, Automapped}
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>190</y>
+      <w>420</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidMaintenanceRecord
+--
++ nextInspectionDue must be after maintenanceMoment
++ status must be COMPLETED to publish a maintenanceRecord 
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>720</y>
+      <w>290</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLicenseNumber
+--
++ NotBlank
++ Pattern(regexp = "^[A-Z]{2,3}\\d{6}$")
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>730</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidTechnician
+--
++ licenseNumber must be unique
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>730</y>
+      <w>350</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPhoneNumber
+--
++ phoneNumber must match pattern "^\\+?\\d{6,15}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>580</y>
+      <w>190</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidShortText
+--
++ NotBlank
++ Length(min = 1, max = 50)
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>50</y>
+      <w>440</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidMaintenanceTask
+--
++ task and maintenanceRecord combination must be unique
++ if maintenanceRecord is published, task must not be in draft mode
++ if both are in draft mode, they must be from the same technician
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
