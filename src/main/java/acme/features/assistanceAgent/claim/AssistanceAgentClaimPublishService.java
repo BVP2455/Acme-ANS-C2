@@ -1,7 +1,7 @@
 
 package acme.features.assistanceAgent.claim;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -58,7 +58,7 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 
 	@Override
 	public void bind(final Claim claim) {
-		super.bindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg", "id");
+		super.bindObject(claim, "passengerEmail", "description", "type", "leg", "id");
 	}
 
 	@Override
@@ -77,17 +77,35 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 
 	@Override
 	public void unbind(final Claim claim) {
-		SelectChoices choices;
-		SelectChoices choices2;
+		assert claim != null;
 		Dataset dataset;
 
-		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		List<Leg> legs = this.repository.findAllLegPublish().stream().filter(leg -> leg.getScheduledArrival().before(claim.getRegistrationMoment())).toList();
-		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
+		SelectChoices types = SelectChoices.from(ClaimType.class, claim.getType());
+		Collection<Leg> allLegs = this.repository.findAllLegPublish();
+		Collection<Leg> availableLegs = allLegs.stream().filter(leg -> leg.getScheduledArrival().before(claim.getRegistrationMoment())).toList();
 
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg", "draftMode", "id");
-		dataset.put("types", choices);
-		dataset.put("legs", choices2);
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "id", "leg");
+
+		if (!claim.isDraftMode()) {
+			SelectChoices legChoices = SelectChoices.from(allLegs, "flightNumber", claim.getLeg());
+			dataset.put("leg", legChoices.getSelected() != null ? legChoices.getSelected().getKey() : "0");
+			dataset.put("legs", legChoices);
+		} else {
+			boolean legStillValid = availableLegs.contains(claim.getLeg());
+
+			if (!legStillValid) {
+				SelectChoices choices = SelectChoices.from(availableLegs, "flightNumber", availableLegs.stream().findFirst().orElse(null));
+				dataset.put("leg", choices.getSelected() != null ? choices.getSelected().getKey() : "0");
+				dataset.put("legs", choices);
+			} else {
+				SelectChoices choices = SelectChoices.from(availableLegs, "flightNumber", claim.getLeg());
+				dataset.put("leg", choices.getSelected() != null ? choices.getSelected().getKey() : "0");
+				dataset.put("legs", choices);
+			}
+		}
+
+		dataset.put("types", types);
+		dataset.put("readonly", false);
 
 		super.getResponse().addData(dataset);
 	}

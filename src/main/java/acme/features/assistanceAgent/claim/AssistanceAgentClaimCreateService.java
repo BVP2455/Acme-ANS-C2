@@ -1,9 +1,7 @@
 
 package acme.features.assistanceAgent.claim;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,37 +13,32 @@ import acme.client.services.GuiService;
 import acme.entities.claim.Claim;
 import acme.entities.claim.ClaimType;
 import acme.entities.leg.Leg;
+import acme.entities.trackingLog.TrackingLog;
+import acme.entities.trackingLog.TrackingLogStatus;
+import acme.features.assistanceAgent.trackingLog.AssistanceAgentTrackingLogRepository;
 import acme.realms.assistanceAgents.AssistanceAgent;
 
 @GuiService
 public class AssistanceAgentClaimCreateService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	@Autowired
-	private ClaimRepository repository;
+	private ClaimRepository							repository;
+
+	@Autowired
+	private AssistanceAgentTrackingLogRepository	repositoryTrackingLogs;
 
 
 	@Override
 	public void authorise() {
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgent.class);
-
-		super.getResponse().setAuthorised(status);
-
-		if (status && super.getRequest().getMethod().equals("POST")) {
-
+		if (super.getRequest().hasData("id")) {
 			Integer legId = super.getRequest().getData("leg", Integer.class);
-			Leg leg = super.getRequest().getData("leg", Leg.class);
-
-			Collection<Leg> legs = this.repository.findAllLeg().stream().collect(Collectors.toList());
-			Collection<Leg> legsAvaiables = legs.stream().filter(l -> l.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !l.getDraftMode()).collect(Collectors.toList());
-
-			if (legId != 0 && !legsAvaiables.contains(leg))
-				status = false;
-
-			if (leg != null && leg.getDraftMode())
-				status = false;
-
-			super.getResponse().setAuthorised(status);
+			if (legId == null || legId != 0) {
+				Leg leg = this.repository.findLegByLegId(legId);
+				status = status && leg != null && !leg.getDraftMode();
+			}
 		}
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -65,7 +58,7 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 
 	@Override
 	public void bind(final Claim claim) {
-		super.bindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "id", "leg");
+		super.bindObject(claim, "passengerEmail", "description", "type", "id", "leg");
 
 	}
 
@@ -81,8 +74,16 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 	public void perform(final Claim claim) {
 		claim.setRegistrationMoment(MomentHelper.getCurrentMoment());
 		claim.setDraftMode(true);
-
 		this.repository.save(claim);
+		TrackingLog initialLog = new TrackingLog();
+		initialLog.setClaim(claim);
+		initialLog.setRegistrationMoment(MomentHelper.getCurrentMoment());
+		initialLog.setLastUpdateMoment(MomentHelper.getCurrentMoment());
+		initialLog.setStep("Claim registered");
+		initialLog.setResolutionPercentage(0.0);
+		initialLog.setStatus(TrackingLogStatus.PENDING);
+		initialLog.setDraftMode(false);
+		this.repositoryTrackingLogs.save(initialLog);
 	}
 
 	@Override
