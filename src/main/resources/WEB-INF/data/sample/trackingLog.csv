@@ -31,12 +31,12 @@ trackingLog-23,2000/01/01 0:19,2012/07/02 0:14,Lorem ipsum dolor sit ame,100.00,
 trackingLog-24,2000/01/01 0:20,2012/07/02 0:15,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua!",true,Claim-06
 trackingLog-25,2000/01/01 0:21,2012/07/02 0:16,Lorem ipsum dolor sit ame,100.00,REJECTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua!",true,Claim-07
 #resolution,,,,,,,,
-trackingLog-26,2000/01/01 0:22,2012/07/02 0:17,Lorem ipsum dolor sit ame,100.00,ACCEPTED,L,true,Claim-08
-trackingLog-27,2000/01/01 0:23,2012/07/02 0:18,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lo,true,Claim-09
+trackingLog-26,2000/01/01 0:22,2012/07/02 0:17,Lorem ipsum dolor sit ame,100.00,ACCEPTED,L,false,Claim-08
+trackingLog-27,2000/01/01 0:23,2012/07/02 0:18,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lo,false,Claim-09
 trackingLog-28,2000/01/01 0:24,2012/07/02 0:19,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",true,Claim-10
 trackingLog-29,2000/01/01 0:25,2012/07/02 0:20,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",true,Claim-11
-trackingLog-30,2000/01/01 0:26,2012/07/02 0:21,Lorem ipsum dolor sit ame,100.00,ACCEPTED,โลเร็ม อิปซัม,true,Claim-12
-trackingLog-31,2000/01/01 0:27,2012/07/02 0:22,Lorem ipsum dolor sit ame,100.00,ACCEPTED,لوريم إيبسوم,true,Claim-13
+trackingLog-30,2000/01/01 0:26,2012/07/02 0:21,Lorem ipsum dolor sit ame,100.00,ACCEPTED,โลเร็ม อิปซัม,false,Claim-12
+trackingLog-31,2000/01/01 0:27,2012/07/02 0:22,Lorem ipsum dolor sit ame,100.00,ACCEPTED,لوريم إيبسوم,false,Claim-13
 trackingLog-32,2000/01/01 0:28,2012/07/02 0:23,Lorem ipsum dolor sit ame,100.00,ACCEPTED,洛伦·伊普森,true,Claim-14
 trackingLog-33,2000/01/01 0:29,2012/07/02 0:24,Lorem ipsum dolor sit ame,100.00,ACCEPTED,<marquee>Hacked</marquee>,true,Claim-15
 trackingLog-34,2000/01/01 0:30,2012/07/02 0:25,Lorem ipsum dolor sit ame,100.00,ACCEPTED,<script>alert(‘Hacked!’);</script>,true,Claim-16

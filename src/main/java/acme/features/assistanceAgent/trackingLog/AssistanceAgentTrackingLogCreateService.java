@@ -42,6 +42,7 @@ public class AssistanceAgentTrackingLogCreateService extends AbstractGuiService<
 		trackingLog = new TrackingLog();
 		trackingLog.setDraftMode(true);
 		trackingLog.setLastUpdateMoment(MomentHelper.getCurrentMoment());
+		trackingLog.setRegistrationMoment(MomentHelper.getCurrentMoment());
 		trackingLog.setClaim(claim);
 		trackingLog.setStatus(TrackingLogStatus.PENDING);
 
