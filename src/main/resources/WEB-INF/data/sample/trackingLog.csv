@@ -1,46 +1,46 @@
 key,registrationMoment,lastUpdateMoment,step,resolutionPercentage,status,resolution,draftMode,key:claim
 #base-entity,,,,,,,,
-trackingLog-01,2000/01/01 0:50,2012/07/02 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
+trackingLog-01,2000/01/01 0:50,2012/07/02 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
 #registrationMoment,,,,,,,,
-trackingLog-02,2000/01/01 0:00,2000/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-03,2000/01/01 0:01,2000/01/01 0:01,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-04,2024/12/31 23:59,2024/12/31 23:59,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-05,2025/01/01 0:00,2025/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
+trackingLog-02,2000/01/01 0:00,2000/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
+trackingLog-03,2000/01/01 0:01,2000/01/01 0:01,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
+trackingLog-04,2024/12/31 23:59,2024/12/31 23:59,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
+trackingLog-05,2025/01/01 0:00,2025/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
 #lastUpdateMoment,,,,,,,,
-trackingLog-06,2000/01/01 0:00,2000/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-07,2000/01/01 0:01,2000/01/01 0:01,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-08,2000/01/01 0:04,2024/12/31 23:59,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-09,2000/01/01 0:05,2025/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
+trackingLog-06,2000/01/01 0:00,2000/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
+trackingLog-07,2000/01/01 0:01,2000/01/01 0:01,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
+trackingLog-08,2000/01/01 0:04,2024/12/31 23:59,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
+trackingLog-09,2000/01/01 0:05,2025/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
 #step,,,,,,,,
-trackingLog-10,2000/01/01 0:06,2012/07/02 0:06,L,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-11,2000/01/01 0:07,2012/07/02 0:04,Lo,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-12,2000/01/01 0:08,2012/07/02 0:03,"Lorem ipsum dolor sit amet, consectetur adipiscin",50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut,true,Claim-01
-trackingLog-13,2000/01/01 0:09,2012/07/02 0:04,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-14,2000/01/01 0:10,2012/07/02 0:05,โลเร็ม อิปซัม,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-15,2000/01/01 0:11,2012/07/02 0:06,لوريم إيبسوم,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-16,2000/01/01 0:12,2012/07/02 0:07,洛伦·伊普森,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-17,2000/01/01 0:13,2012/07/02 0:08,<marquee>Hacked</marquee>,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-18,2000/01/01 0:14,2012/07/02 0:09,<script>alert(‘Hacked!’);</script>,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
-trackingLog-19,2000/01/01 0:15,2012/07/02 0:10,' or 'A' = 'A ,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-01
+trackingLog-10,2000/01/01 0:06,2012/07/02 0:06,L,50.00,PENDING,null,true,Claim-01
+trackingLog-11,2000/01/01 0:07,2012/07/02 0:04,Lo,50.00,PENDING,null,true,Claim-01
+trackingLog-12,2000/01/01 0:08,2012/07/02 0:03,"Lorem ipsum dolor sit amet, consectetur adipiscin",50.00,PENDING,null,true,Claim-01
+trackingLog-13,2000/01/01 0:09,2012/07/02 0:04,"Lorem ipsum dolor sit amet, consectetur adipiscing",50.00,PENDING,null,true,Claim-01
+trackingLog-14,2000/01/01 0:10,2012/07/02 0:05,โลเร็ม อิปซัม,50.00,PENDING,null,true,Claim-01
+trackingLog-15,2000/01/01 0:11,2012/07/02 0:06,لوريم إيبسوم,50.00,PENDING,null,true,Claim-01
+trackingLog-16,2000/01/01 0:12,2012/07/02 0:07,洛伦·伊普森,50.00,PENDING,null,true,Claim-01
+trackingLog-17,2000/01/01 0:13,2012/07/02 0:08,<marquee>Hacked</marquee>,50.00,PENDING,null,true,Claim-01
+trackingLog-18,2000/01/01 0:14,2012/07/02 0:09,<script>alert(‘Hacked!’);</script>,50.00,PENDING,null,true,Claim-01
+trackingLog-19,2000/01/01 0:15,2012/07/02 0:10,' or 'A' = 'A ,50.00,PENDING,null,true,Claim-01
 #resolutionPercentage,,,,,,,,
-trackingLog-20,2000/01/01 0:16,2012/07/02 0:11,Lorem ipsum dolor sit ame,00.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-02
-trackingLog-21,2000/01/01 0:17,2012/07/02 0:12,Lorem ipsum dolor sit ame,00.01,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-03
-trackingLog-22,2000/01/01 0:18,2012/07/02 0:13,Lorem ipsum dolor sit ame,99.99,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-04
-trackingLog-23,2000/01/01 0:19,2012/07/02 0:14,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-05
+trackingLog-20,2000/01/01 0:16,2012/07/02 0:11,Lorem ipsum dolor sit ame,00.00,PENDING,null,true,Claim-02
+trackingLog-21,2000/01/01 0:17,2012/07/02 0:12,Lorem ipsum dolor sit ame,00.01,PENDING,null,true,Claim-03
+trackingLog-22,2000/01/01 0:18,2012/07/02 0:13,Lorem ipsum dolor sit ame,99.99,PENDING,null,true,Claim-04
+trackingLog-23,2000/01/01 0:19,2012/07/02 0:14,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua!",true,Claim-05
 #status,,,,,,,,
-trackingLog-24,2000/01/01 0:20,2012/07/02 0:15,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-06
-trackingLog-25,2000/01/01 0:21,2012/07/02 0:16,Lorem ipsum dolor sit ame,100.00,REJECTED,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-07
+trackingLog-24,2000/01/01 0:20,2012/07/02 0:15,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua!",true,Claim-06
+trackingLog-25,2000/01/01 0:21,2012/07/02 0:16,Lorem ipsum dolor sit ame,100.00,REJECTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua!",true,Claim-07
 #resolution,,,,,,,,
-trackingLog-26,2000/01/01 0:22,2012/07/02 0:17,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-01
-trackingLog-27,2000/01/01 0:23,2012/07/02 0:18,Lorem ipsum dolor sit ame,50.00,PENDING,L,true,Claim-01
-trackingLog-28,2000/01/01 0:24,2012/07/02 0:19,Lorem ipsum dolor sit ame,50.00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",true,Claim-01
-trackingLog-29,2000/01/01 0:25,2012/07/02 0:20,Lorem ipsum dolor sit ame,50.00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",true,Claim-01
-trackingLog-30,2000/01/01 0:26,2012/07/02 0:21,Lorem ipsum dolor sit ame,50.00,PENDING,โลเร็ม อิปซัม,true,Claim-01
-trackingLog-31,2000/01/01 0:27,2012/07/02 0:22,Lorem ipsum dolor sit ame,50.00,PENDING,لوريم إيبسوم,true,Claim-01
-trackingLog-32,2000/01/01 0:28,2012/07/02 0:23,Lorem ipsum dolor sit ame,50.00,PENDING,洛伦·伊普森,true,Claim-01
-trackingLog-33,2000/01/01 0:29,2012/07/02 0:24,Lorem ipsum dolor sit ame,50.00,PENDING,<marquee>Hacked</marquee>,true,Claim-01
-trackingLog-34,2000/01/01 0:30,2012/07/02 0:25,Lorem ipsum dolor sit ame,50.00,PENDING,<script>alert(‘Hacked!’);</script>,true,Claim-01
-trackingLog-35,2000/01/01 0:31,2012/07/02 0:26,Lorem ipsum dolor sit ame,50.00,PENDING,' or 'A' = 'A ,true,Claim-01
+trackingLog-26,2000/01/01 0:22,2012/07/02 0:17,Lorem ipsum dolor sit ame,100.00,ACCEPTED,L,false,Claim-08
+trackingLog-27,2000/01/01 0:23,2012/07/02 0:18,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lo,false,Claim-09
+trackingLog-28,2000/01/01 0:24,2012/07/02 0:19,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",true,Claim-10
+trackingLog-29,2000/01/01 0:25,2012/07/02 0:20,Lorem ipsum dolor sit ame,100.00,ACCEPTED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",true,Claim-11
+trackingLog-30,2000/01/01 0:26,2012/07/02 0:21,Lorem ipsum dolor sit ame,100.00,ACCEPTED,โลเร็ม อิปซัม,false,Claim-12
+trackingLog-31,2000/01/01 0:27,2012/07/02 0:22,Lorem ipsum dolor sit ame,100.00,ACCEPTED,لوريم إيبسوم,false,Claim-13
+trackingLog-32,2000/01/01 0:28,2012/07/02 0:23,Lorem ipsum dolor sit ame,100.00,ACCEPTED,洛伦·伊普森,true,Claim-14
+trackingLog-33,2000/01/01 0:29,2012/07/02 0:24,Lorem ipsum dolor sit ame,100.00,ACCEPTED,<marquee>Hacked</marquee>,true,Claim-15
+trackingLog-34,2000/01/01 0:30,2012/07/02 0:25,Lorem ipsum dolor sit ame,100.00,ACCEPTED,<script>alert(‘Hacked!’);</script>,true,Claim-16
+trackingLog-35,2000/01/01 0:31,2012/07/02 0:26,Lorem ipsum dolor sit ame,100.00,ACCEPTED,' or 'A' = 'A ,true,Claim-17
 #key:claim,,,,,,,,
-trackingLog-36,2000/01/01 0:32,2012/07/02 0:27,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-18
-trackingLog-37,2000/01/01 0:33,2012/07/02 0:28,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,Claim-29
+trackingLog-36,2000/01/01 0:32,2012/07/02 0:27,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-18
+trackingLog-37,2000/01/01 0:33,2012/07/02 0:28,Lorem ipsum dolor sit ame,50.00,PENDING,null,true,Claim-29

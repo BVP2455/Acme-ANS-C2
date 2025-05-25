@@ -37,3 +37,6 @@ assistanceAgent.trackingLog.form.error.incorrect-status-pending = El estado pend
 assistanceAgent.trackingLog.form.error.incorrect-status = El estado debe ser ACCEPTED o REJECTED cuando el porcentaje sea 100
 assistanceAgent.trackingLog.form.error.incorrect-number-logs = Cuando el porcentaje sea 100, no puede haber más de un registro de seguimiento
 assistanceAgent.trackingLog.form.error.incorrect-percentage = El porcentaje de resolución debe ser mayor que el porcentaje de resolución del registro de seguimiento anterior
+assistanceAgent.trackingLog.form.error.incorrect-resolution-pending = La resolución debe estar vacía cuando el estado es PENDING
+assistanceAgent.trackingLog.form.error.incorrect-resolution = La resolución es obligatoria cuando el estado no es PENDING
+assistanceAgent.trackingLog.form.error.claimNotPublished = La queja debe estar publicada

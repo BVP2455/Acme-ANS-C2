@@ -37,3 +37,6 @@ assistanceAgent.trackingLog.form.error.incorrect-status-pending = Pending status
 assistanceAgent.trackingLog.form.error.incorrect-status = The status must be ACCEPTED or REJECTED when the percentage is 100
 assistanceAgent.trackingLog.form.error.incorrect-number-logs = When the percentage is 100, it can't be more than one tracking log
 assistanceAgent.trackingLog.form.error.incorrect-percentage = The resolution percentage must be greater than the previous tracking log's resolution percentage
+assistanceAgent.trackingLog.form.error.incorrect-resolution-pending = Resolution must be empty when the status is PENDING
+assistanceAgent.trackingLog.form.error.incorrect-resolution = Resolution is required when the status is not PENDING
+assistanceAgent.trackingLog.form.error.claimNotPublished = Claim must be published

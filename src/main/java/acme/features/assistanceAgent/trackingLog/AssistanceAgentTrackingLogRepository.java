@@ -14,6 +14,12 @@ import acme.entities.trackingLog.TrackingLog;
 @Repository
 public interface AssistanceAgentTrackingLogRepository extends AbstractRepository {
 
+	@Query("Select c from Claim c where c.id=:claimId")
+	Claim findClaimById(int claimId);
+
+	@Query("select t.claim from TrackingLog t where t.id = :trackingLogId")
+	Claim findClaimByTrackingLogId(int trackingLogId);
+
 	@Query("SELECT t FROM TrackingLog t WHERE t.claim.id = :claimId")
 	Collection<TrackingLog> findTrackingLogsByClaimId(int claimId);
 

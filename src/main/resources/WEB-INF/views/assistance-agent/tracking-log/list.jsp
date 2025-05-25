@@ -25,4 +25,4 @@
 	<acme:list-payload path="payload"/>
 </acme:list>
 
-<acme:button code="assistanceAgent.trackingLog.list.button.create" action="/assistance-agent/tracking-log/create"/>
+<acme:button code="assistanceAgent.trackingLog.list.button.create" action="/assistance-agent/tracking-log/create?claimId=${claimId}"/>
