@@ -21,9 +21,12 @@
 	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.resolutionPercentage" path="resolutionPercentage"/>	
 	<acme:input-select code="assistanceAgent.trackingLog.form.label.status" path="status" choices="${statusChoices}"/>
 	<acme:input-textbox code="assistanceAgent.trackingLog.form.label.resolution" path="resolution"/>
-	<acme:input-select code="assistanceAgent.trackingLog.form.label.claim" path="claim" choices="${claimChoices}"/>	
 
-	
+	<jstl:if test="${_command != 'create'}">
+    <acme:input-integer code="assistanceAgent.trackingLog.form.label.claim" path="claimId" readonly="true"/>	
+	</jstl:if>
+	<jstl:if test="${_command == 'create'}">
+	</jstl:if>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
@@ -36,7 +39,7 @@
 
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="assistanceAgent.trackingLog.form.button.create" action="/assistance-agent/tracking-log/create"/>
+			<acme:submit code="assistanceAgent.trackingLog.form.button.create" action="/assistance-agent/tracking-log/create?claimId=${claimId}"/>
 		</jstl:when>		
 	</jstl:choose>	
 </acme:form>
