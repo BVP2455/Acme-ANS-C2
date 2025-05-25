@@ -38,12 +38,10 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
 		status = flightAssignment != null && flightAssignment.getFlightCrewMember().getId() == flightCrewMemberId && flightAssignment.isDraftMode();
 
-		super.getResponse().setAuthorised(status);
-
 		if (status && super.getRequest().getMethod().equals("POST")) {
 
 			Integer legId = super.getRequest().getData("leg", Integer.class);
-			Leg leg = super.getRequest().getData("leg", Leg.class);
+			Leg leg = this.repository.findPublishedLegById(legId);
 
 			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
 			Collection<Leg> legsAvaiables = legs.stream().filter(l -> !l.getDraftMode()).collect(Collectors.toList());
@@ -54,9 +52,8 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 			if (leg != null && leg.getDraftMode())
 				status = false;
 
-			super.getResponse().setAuthorised(status);
 		}
-
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
