@@ -7,7 +7,7 @@
 	<acme:input-textbox path="tag" code="manager.flight.form.label.tag"/>
 	<acme:input-checkbox path="selfTransfer" code="manager.flight.form.label.selfTransfer"/>
 	<acme:input-money path="cost" code="manager.flight.form.label.cost"/>
-	<acme:input-textbox path="description" code="manager.flight.form.label.description"/>
+	<acme:input-textarea path="description" code="manager.flight.form.label.description"/>
 	
 	
 	<jstl:choose>
