@@ -66,3 +66,4 @@ aircraft-48,"Airbus A123","ABC149",150,20000,ACTIVE,"<script>alert(‘Hacked!’
 aircraft-49,"Airbus A123","ABC150",150,20000,ACTIVE,"' or 'A' = 'A ",airline-01
 # airline - standard variations
 aircraft-50,"Airbus A123","ABC151",150,20000,ACTIVE,"Used for short-haul international routes",airline-02
+aircraft-51,"Airbus A123","ABC152",150,20000,ACTIVE,"Used for short-haul international routes",airline-03
