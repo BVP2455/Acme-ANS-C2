@@ -28,6 +28,10 @@
 	<jstl:if test="${_command == 'create'}">
 	</jstl:if>
 	
+	<jstl:if test="${_command == 'create'}">
+    <input type="hidden" name="claimId" value="${claimId}" />
+</jstl:if>
+	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
 		<jstl:if test="${draftMode}">
