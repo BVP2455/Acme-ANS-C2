@@ -2,7 +2,6 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -40,13 +39,9 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 			Integer legId = super.getRequest().getData("leg", Integer.class);
 			Leg leg = this.repository.findPublishedLegById(legId);
 
-			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
-			Collection<Leg> legsAvaiables = legs.stream().filter(l -> l.getScheduledDeparture().after(MomentHelper.getCurrentMoment()) && !l.getDraftMode()).collect(Collectors.toList());
+			Collection<Leg> legsAvaiables = this.repository.findAllFutureLegs(MomentHelper.getCurrentMoment()).stream().toList();
 
 			if (legId != 0 && !legsAvaiables.contains(leg))
-				status = false;
-
-			if (leg != null && leg.getDraftMode())
 				status = false;
 
 			super.getResponse().setAuthorised(status);
