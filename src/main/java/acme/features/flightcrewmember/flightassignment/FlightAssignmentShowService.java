@@ -30,15 +30,16 @@ public class FlightAssignmentShowService extends AbstractGuiService<FlightCrewMe
 	public void authorise() {
 
 		FlightAssignment flightAssignment;
+		boolean status;
 		int flightAssignmentId;
+		int flightCrewMemberId;
 
 		flightAssignmentId = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = flightAssignment != null && flightAssignment.getFlightCrewMember().getId() == flightCrewMemberId;
 
-		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
-
-		if (flightCrewMember.equals(flightAssignment.getFlightCrewMember()))
-			super.getResponse().setAuthorised(true);
+		super.getResponse().setAuthorised(status);
 
 	}
 
