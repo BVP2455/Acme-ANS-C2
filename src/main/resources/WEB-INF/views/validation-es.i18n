@@ -71,6 +71,8 @@ acme.validation.maintenanceRecord.not-completed.message = El registro debe ser c
 acme.validation.maintenanceTask.duplicated-combination.message= Este registro ya está relacionado con la tarea seleccionada.
 acme.validation.maintenanceTask.task-in-draft-in-published-record.message = No puedes añadir una tarea en modo borrador a un registro público.
 acme.validation.maintenanceTask.different-technicians.message = La tarea y el registro no pertenecen al mismo técnico ni están públicas.
+acme.validation.maintenanceTask.null-maintenanceRecord.message = El registro no puede ser nulo
+acme.validation.maintenanceTask.null-task.message = La tarea no puede ser nula
 
 acme.validation.validCurrency.message = Error. Tienes que usar una divisa válida (EUR, GBP, USD)
 
