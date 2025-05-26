@@ -34,7 +34,10 @@ public class MaintenanceTaskValidator extends AbstractValidator<ValidMaintenance
 
 		if (maintenanceTask == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-
+		else if (maintenanceTask.getMaintenanceRecord() == null)
+			super.state(context, false, "maintenanceRecord", "acme.validation.maintenanceTask.null-maintenanceRecord.message");
+		else if (maintenanceTask.getTask() == null)
+			super.state(context, false, "task", "acme.validation.maintenanceTask.null-task.message");
 		else {
 			long count = this.repository.countByTaskIdAndMaintenanceRecordId(maintenanceTask.getTask().getId(), maintenanceTask.getMaintenanceRecord().getId());
 

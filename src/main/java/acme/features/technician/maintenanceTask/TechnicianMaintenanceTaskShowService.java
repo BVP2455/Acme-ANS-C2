@@ -31,13 +31,15 @@ public class TechnicianMaintenanceTaskShowService extends AbstractGuiService<Tec
 
 		id = super.getRequest().getData("id", int.class);
 		mt = this.repository.findMaintenanceTaskById(id);
+		if (mt != null) {
+			mr = mt.getMaintenanceRecord();
+			if (mr.isDraftMode()) {
+				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				status = technicianId == mr.getTechnician().getId();
 
-		mr = mt.getMaintenanceRecord();
-		if (mr.isDraftMode()) {
-			technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
-			status = technicianId == mr.getTechnician().getId();
-		} else
-			status = super.getRequest().getPrincipal().hasRealmOfType(Technician.class) && mr != null && mt != null;
+			} else
+				status = super.getRequest().getPrincipal().hasRealmOfType(Technician.class) && mr != null && mt != null;
+		}
 		super.getResponse().setAuthorised(status);
 	}
 

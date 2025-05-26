@@ -30,14 +30,26 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		if (super.getRequest().hasData("id", Integer.class) && super.getRequest().getMethod().equals("POST")) {
 			id = super.getRequest().getData("id", int.class);
 			mr = this.repository.findMaintenanceRecordById(id);
+
 			if (mr != null) {
 				technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
-				if (mr.isDraftMode()) {
-					status = technicianId == mr.getTechnician().getId();
+
+				boolean technicianOwnsRecord = technicianId == mr.getTechnician().getId();
+				boolean isDraft = mr.isDraftMode();
+				boolean statusCompleted = mr.getStatus() == MaintenanceStatus.COMPLETED;
+
+				Collection<Task> tasksOfMr = this.repository.findTasksInMaintenanceRecord(mr.getId());
+				boolean allTasksPublished = !tasksOfMr.isEmpty() && tasksOfMr.stream().allMatch(task -> !task.isDraftMode());
+
+				status = isDraft && technicianOwnsRecord && statusCompleted && allTasksPublished;
+
+				if (status) {
 					boolean aircraftValid;
 					boolean maintenanceStatusValid;
+
 					int aircraftId = super.getRequest().getData("aircraft", int.class);
 					String statusInput = super.getRequest().getData("status", String.class);
+
 					if (aircraftId == 0)
 						aircraftValid = true;
 					else {
@@ -55,10 +67,12 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 								break;
 							}
 					}
+
 					status = status && aircraftValid && maintenanceStatusValid;
 				}
 			}
 		}
+
 		super.getResponse().setAuthorised(status);
 	}
 

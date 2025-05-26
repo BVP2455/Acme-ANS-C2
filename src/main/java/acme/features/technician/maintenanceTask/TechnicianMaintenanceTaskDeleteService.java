@@ -52,18 +52,9 @@ public class TechnicianMaintenanceTaskDeleteService extends AbstractGuiService<T
 
 	@Override
 	public void bind(final MaintenanceTask mt) {
-		//		int taskId;
-		//		Task task;
-		//		MaintenanceRecord maintenanceRecord;
-		//		int masterId;
-		//		masterId = super.getRequest().getData("masterId", int.class);
-		//		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-		//		taskId = super.getRequest().getData("task", int.class);
-		//		task = this.repository.findTaskById(taskId);
 
 		super.bindObject(mt);
-		//		mt.setTask(task);
-		//		mt.setMaintenanceRecord(maintenanceRecord);
+
 	}
 
 	@Override

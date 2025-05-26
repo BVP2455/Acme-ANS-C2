@@ -18,21 +18,6 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 	@Autowired
 	private TechnicianMaintenanceRecordRepository repository;
 
-	//	@Override
-	//	public void authorise() {
-	//		boolean status;
-	//		int id;
-	//		MaintenanceRecord mr;
-	//		Technician technician;
-	//
-	//		id = super.getRequest().getData("id", int.class);
-	//		mr = this.repository.findMaintenanceRecordById(id);
-	//		technician = mr == null ? null : mr.getTechnician();
-	//		status = mr != null && mr.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
-	//
-	//		super.getResponse().setAuthorised(status);
-	//	}
-
 
 	@Override
 	public void authorise() {
