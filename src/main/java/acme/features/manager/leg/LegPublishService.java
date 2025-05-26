@@ -44,26 +44,19 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 			authorise = true;
 
 		if (authorise) {
-			String method;
 			int arrivalAirportId, departureAirportId, aircraftId, airlineId;
 			Aircraft aircraft;
 			Airport arrivalAirport;
 			Airport departureAirport;
 
-			method = super.getRequest().getMethod();
-
-			if (method.equals("GET"))
-				authorise = true;
-			else {
-				airlineId = manager.getAirline().getId();
-				aircraftId = super.getRequest().getData("aircraft", int.class);
-				arrivalAirportId = super.getRequest().getData("airportArrival", int.class);
-				departureAirportId = super.getRequest().getData("airportDeparture", int.class);
-				aircraft = this.repository.findAircraftByAirlineId(airlineId, aircraftId);
-				arrivalAirport = this.repository.findAirportByAirportId(arrivalAirportId);
-				departureAirport = this.repository.findAirportByAirportId(departureAirportId);
-				authorise = (aircraftId == 0 || aircraft != null) && (arrivalAirportId == 0 || arrivalAirport != null) && (departureAirportId == 0 || departureAirport != null);
-			}
+			airlineId = manager.getAirline().getId();
+			aircraftId = super.getRequest().getData("aircraft", int.class);
+			arrivalAirportId = super.getRequest().getData("airportArrival", int.class);
+			departureAirportId = super.getRequest().getData("airportDeparture", int.class);
+			aircraft = this.repository.findAircraftByAirlineId(airlineId, aircraftId);
+			arrivalAirport = this.repository.findAirportByAirportId(arrivalAirportId);
+			departureAirport = this.repository.findAirportByAirportId(departureAirportId);
+			authorise = (aircraftId == 0 || aircraft != null) && (arrivalAirportId == 0 || arrivalAirport != null) && (departureAirportId == 0 || departureAirport != null);
 		}
 
 		super.getResponse().setAuthorised(authorise);
@@ -100,19 +93,18 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void validate(final Leg leg) {
-		boolean isDraftMode = leg.getDraftMode();
 		Collection<Leg> legs = this.repository.findPublishedLegsByFlightId(leg.getFlight().getId());
 		legs = legs.stream().filter(l -> l.getId() != leg.getId()).collect(Collectors.toList());
 		legs.add(leg);
 
-		//R1: no puede estar ya publicado
-		boolean status = isDraftMode == true;
-		super.state(status, "*", "acme.validation.leg.draftMode.published.message");
-
-		// R2: momento de salida debe ser posterior a la fecha actual
+		// R1: momento de salida y de llegada deben se posterior a la fecha actual
 		if (leg.getScheduledDeparture() != null) {
 			boolean futureDepartureDate = MomentHelper.isFuture(leg.getScheduledDeparture());
 			super.state(futureDepartureDate, "scheduledDeparture", "acme.validation.leg.scheduled-departure-not-future.message");
+		}
+		if (leg.getScheduledArrival() != null) {
+			boolean futureArrivalDate = MomentHelper.isFuture(leg.getScheduledArrival());
+			super.state(futureArrivalDate, "scheduledArrival", "acme.validation.leg.scheduled-arrival-not-future.message");
 		}
 
 		//R4: no puede existir otro leg con el mismo flight number

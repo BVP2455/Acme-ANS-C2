@@ -100,10 +100,14 @@ public class LegCreateService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void validate(final Leg leg) {
 
-		// R1: momento de salida deben se posterior a la fecha actual
+		// R1: momento de salida y de llegada deben se posterior a la fecha actual
 		if (leg.getScheduledDeparture() != null) {
 			boolean futureDepartureDate = MomentHelper.isFuture(leg.getScheduledDeparture());
 			super.state(futureDepartureDate, "scheduledDeparture", "acme.validation.leg.scheduled-departure-not-future.message");
+		}
+		if (leg.getScheduledArrival() != null) {
+			boolean futureArrivalDate = MomentHelper.isFuture(leg.getScheduledArrival());
+			super.state(futureArrivalDate, "scheduledArrival", "acme.validation.leg.scheduled-arrival-not-future.message");
 		}
 		//R3: no puede existir otro leg con el mismo flight number
 		String flightNumber = leg.getFlightNumber();

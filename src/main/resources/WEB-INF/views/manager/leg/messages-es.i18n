@@ -4,8 +4,6 @@ manager.leg.form.button.create = Crear
 manager.leg.form.button.delete = Borrar
 manager.leg.form.button.update = Actualizar
 manager.leg.form.button.publish = Publicar
-manager.leg.form.button.actualizar = Actualizar
-
 
 manager.leg.list.label.flightNumber = Número de vuelo
 manager.leg.list.label.scheduledDeparture = Salida estimada
