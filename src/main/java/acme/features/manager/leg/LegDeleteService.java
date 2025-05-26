@@ -1,25 +1,14 @@
 
 package acme.features.manager.leg;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
-import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
-import acme.entities.claim.Claim;
 import acme.entities.flight.Flight;
-import acme.entities.flightassignment.FlightAssignment;
 import acme.entities.leg.Leg;
-import acme.entities.leg.LegStatus;
-import acme.entities.trackingLog.TrackingLog;
-import acme.entities.trackingLog.TrackingLogRepository;
-import acme.features.assistanceAgent.claim.ClaimRepository;
-import acme.features.flightcrewmember.flightassignment.FlightAssignmentRepository;
 import acme.features.manager.flight.FlightRepository;
 import acme.realms.manager.Manager;
 
@@ -27,19 +16,10 @@ import acme.realms.manager.Manager;
 public class LegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Autowired
-	private LegRepository				repository;
+	private LegRepository		repository;
 
 	@Autowired
-	private FlightRepository			flightRepository;
-
-	@Autowired
-	private ClaimRepository				claimRepository;
-
-	@Autowired
-	private FlightAssignmentRepository	flightAssignmentRepository;
-
-	@Autowired
-	private TrackingLogRepository		trackingLogRepository;
+	private FlightRepository	flightRepository;
 
 
 	@Override
@@ -98,42 +78,6 @@ public class LegDeleteService extends AbstractGuiService<Manager, Leg> {
 
 	@Override
 	public void perform(final Leg leg) {
-		Collection<Claim> claims = this.claimRepository.findClaimsByLegId(leg.getId());
-		for (Claim claim : claims) {
-			Collection<TrackingLog> trackingLogs = this.trackingLogRepository.findTrackingLogsByClaimId(claim.getId());
-			this.trackingLogRepository.deleteAll(trackingLogs);
-		}
-		Collection<FlightAssignment> flightAssignments = this.flightAssignmentRepository.findFlightAssignmentByLegId(leg.getId());
-		this.claimRepository.deleteAll(claims);
-		this.flightAssignmentRepository.deleteAll(flightAssignments);
-
 		this.repository.delete(leg);
-	}
-
-	@Override
-	public void unbind(final Leg leg) {
-		Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
-		int airlineId = manager.getAirline().getId();
-
-		Collection<Aircraft> aircrafts = this.repository.findAircraftsByAirlineId(airlineId);
-		Collection<Airport> airports = this.repository.findAllAirports();
-
-		SelectChoices statusChoices = SelectChoices.from(LegStatus.class, leg.getStatus());
-		SelectChoices aircraftChoices = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
-		SelectChoices departureChoices = SelectChoices.from(airports, "name", leg.getDepartureAirport());
-		SelectChoices arrivalChoices = SelectChoices.from(airports, "name", leg.getArrivalAirport());
-
-		Dataset dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
-
-		dataset.put("statuses", statusChoices);
-		dataset.put("aircraft", aircraftChoices.getSelected().getKey());
-		dataset.put("aircrafts", aircraftChoices);
-		dataset.put("airportDeparture", departureChoices.getSelected().getKey());
-		dataset.put("airportDepartures", departureChoices);
-		dataset.put("airportArrival", arrivalChoices.getSelected().getKey());
-		dataset.put("airportArrivals", arrivalChoices);
-		dataset.put("flightId", leg.getFlight().getId());
-
-		super.getResponse().addData(dataset);
 	}
 }

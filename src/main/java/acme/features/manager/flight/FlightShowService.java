@@ -50,11 +50,6 @@ public class FlightShowService extends AbstractGuiService<Manager, Flight> {
 	}
 
 	@Override
-	public void validate(final Flight flight) {
-		;
-	}
-
-	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 

@@ -5,7 +5,6 @@ manager.leg.form.button.delete = Delete
 manager.leg.form.button.publish = Publish
 manager.leg.form.button.update = Update
 
-
 manager.leg.list.label.flightNumber = Flight Number
 manager.leg.list.label.scheduledDeparture = Scheduled Departure
 manager.leg.list.label.scheduledArrival = Scheduled Arrival

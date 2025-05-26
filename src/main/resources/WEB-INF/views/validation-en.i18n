@@ -22,6 +22,7 @@ acme.validation.leg.departure-airport-not-null.message = May not be null
 acme.validation.leg.arrival-airport-not-null.message = May not be null
 acme.validation.leg.aircraft-not-active.message = This aircraft is in maintenance
 acme.validation.leg.scheduled-departure-not-future.message = Scheduled departure must be in the future
+acme.validation.leg.scheduled-arrival-not-future.message = Scheduled arrival must be in the future
 acme.validation.flight.legs.negative-layovers = There has to be at least one leg
 acme.validation.flight.draftMode.updated.message = This flight has been published and it can not be updated
 acme.validation.flight.draftMode.deleted.message = This flight has been published and it can not be deleted

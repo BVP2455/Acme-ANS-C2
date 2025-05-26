@@ -74,11 +74,6 @@ public class FlightPublishService extends AbstractGuiService<Manager, Flight> {
 		boolean allLegsPublished = legs.stream().allMatch(leg -> !leg.getDraftMode());
 		super.state(allLegsPublished, "*", "acme.validation.flight.legs-not-published.message");
 
-		// R3: El vuelo solo puede publicarse si está en borrador
-		boolean isDraftMode = flight.getDraftMode();
-		boolean status = isDraftMode == true;
-		super.state(status, "*", "acme.validation.flight.draftMode.published.message");
-
 		// R4: casilla de confirmación
 		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
