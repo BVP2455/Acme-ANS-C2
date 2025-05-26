@@ -3,7 +3,6 @@ package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -38,24 +37,27 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 		masterId = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(masterId);
-		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
 		status = flightAssignment != null && flightAssignment.getFlightCrewMember().getId() == flightCrewMemberId && flightAssignment.isDraftMode();
 
-		if (status && super.getRequest().getMethod().equals("POST")) {
+		if (status) {
+			String method;
 
-			Integer legId = super.getRequest().getData("leg", Integer.class);
-			Leg leg = this.repository.findPublishedLegById(legId);
+			method = super.getRequest().getMethod();
 
-			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
-			Collection<Leg> legsAvaiables = legs.stream().filter(l -> !l.getDraftMode()).collect(Collectors.toList());
+			if (method.equals("GET"))
+				status = true;
+			else {
 
-			if (legId != 0 && !legsAvaiables.contains(leg))
-				status = false;
+				Integer legId = super.getRequest().getData("leg", Integer.class);
+				Leg leg = this.repository.findPublishedLegById(legId);
 
-			if (leg != null && leg.getDraftMode())
-				status = false;
+				Collection<Leg> legsAvaiables = this.repository.findAllLegs().stream().toList();
 
+				if (legId != 0 && !legsAvaiables.contains(leg))
+					status = false;
+			}
 		}
 		super.getResponse().setAuthorised(status);
 	}
@@ -81,6 +83,10 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 		int flightCrewMemberId;
 
+		Leg leg;
+
+		leg = flightAssignment.getLeg();
+
 		boolean completedLeg;
 
 		boolean availableMember;
@@ -97,8 +103,12 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 		//validation1: el leg ya ha ocurrido
 
-		completedLeg = MomentHelper.isBefore(flightAssignment.getLeg().getScheduledArrival(), MomentHelper.getCurrentMoment());
-		super.state(!completedLeg, "*", "acme.validation.flightassignment.leg.completed.message");
+		if (leg != null) {
+
+			completedLeg = MomentHelper.isBefore(flightAssignment.getLeg().getScheduledArrival(), MomentHelper.getCurrentMoment());
+			super.state(!completedLeg, "*", "acme.validation.flightassignment.leg.completed.message");
+
+		}
 
 		//validation 2: member available
 
@@ -107,16 +117,19 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 		//validation 3: overlapped legs
 
-		overlappedLeg = false;
-		departure = flightAssignment.getLeg().getScheduledDeparture();
-		arrival = flightAssignment.getLeg().getScheduledArrival();
+		if (leg != null) {
+			overlappedLeg = false;
+			departure = flightAssignment.getLeg().getScheduledDeparture();
+			arrival = flightAssignment.getLeg().getScheduledArrival();
 
-		overlappedLegs = this.repository.findflightAssignmentsWithOverlappedLegsByMemberId(departure, arrival, flightCrewMemberId);
+			overlappedLegs = this.repository.findflightAssignmentsWithOverlappedLegsByMemberId(departure, arrival, flightCrewMemberId);
 
-		if (overlappedLegs.isEmpty())
-			overlappedLeg = true;
+			if (overlappedLegs.isEmpty())
+				overlappedLeg = true;
 
-		super.state(overlappedLeg, "*", "acme.validation.flightassignment.leg.overlap.message");
+			super.state(overlappedLeg, "*", "acme.validation.flightassignment.leg.overlap.message");
+
+		}
 
 		//validation 4: maximum 1 pilot and 1 copilot each leg
 

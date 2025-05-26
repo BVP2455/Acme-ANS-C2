@@ -2,7 +2,6 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,23 +34,26 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 
 		flightAssignmentId = super.getRequest().getData("id", int.class);
 		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
-		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		status = flightAssignment != null && flightAssignment.getFlightCrewMember().getId() == flightCrewMemberId && flightAssignment.isDraftMode();
 
-		if (status && super.getRequest().getMethod().equals("POST")) {
+		if (status) {
+			String method;
 
-			Integer legId = super.getRequest().getData("leg", Integer.class);
-			Leg leg = this.repository.findPublishedLegById(legId);
+			method = super.getRequest().getMethod();
 
-			Collection<Leg> legs = this.repository.findAllLegs().stream().collect(Collectors.toList());
-			Collection<Leg> legsAvaiables = legs.stream().filter(l -> !l.getDraftMode()).collect(Collectors.toList());
+			if (method.equals("GET"))
+				status = true;
+			else {
 
-			if (legId != 0 && !legsAvaiables.contains(leg))
-				status = false;
+				Integer legId = super.getRequest().getData("leg", Integer.class);
+				Leg leg = this.repository.findPublishedLegById(legId);
 
-			if (leg != null && leg.getDraftMode())
-				status = false;
+				Collection<Leg> legsAvaiables = this.repository.findAllLegs().stream().toList();
 
+				if (legId != 0 && !legsAvaiables.contains(leg))
+					status = false;
+			}
 		}
 		super.getResponse().setAuthorised(status);
 	}
@@ -80,7 +82,7 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void perform(final FlightAssignment flightAssignment) {
-		assert flightAssignment != null;
+
 		flightAssignment.setLastUpdateMoment(MomentHelper.getCurrentMoment());
 		this.repository.save(flightAssignment);
 	}
