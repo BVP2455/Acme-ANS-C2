@@ -18,7 +18,7 @@ import lombok.Setter;
 @Entity
 @ValidMaintenanceTask
 @Table(indexes = {
-	@Index(columnList = "task_id"), @Index(columnList = "maintenanceRecord_id")
+	@Index(columnList = "task_id"), @Index(columnList = "maintenance_record_id")
 })
 
 public class MaintenanceTask extends AbstractEntity {
