@@ -49,9 +49,6 @@ public class FlightCreateService extends AbstractGuiService<Manager, Flight> {
 
 	@Override
 	public void validate(final Flight flight) {
-		boolean confirmation;
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 	}
 
 	@Override
