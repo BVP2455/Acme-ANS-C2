@@ -121,10 +121,6 @@ public class LegUpdateService extends AbstractGuiService<Manager, Leg> {
 		if (leg.getArrivalAirport() == null)
 			super.state(false, "airportArrival", "acme.validation.leg.arrival-airport-not-null.message");
 
-		//R5: requisito de confirmacion
-		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
-
 	}
 
 	@Override

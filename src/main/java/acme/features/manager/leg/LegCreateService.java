@@ -39,7 +39,7 @@ public class LegCreateService extends AbstractGuiService<Manager, Leg> {
 		flight = (Flight) this.flightRepository.findById(flightId).get();
 		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		if (manager.getAirline().getId() == flight.getAirline().getId())
+		if (manager.getAirline().getId() == flight.getAirline().getId() && flight.getDraftMode())
 			authorise = true;
 
 		if (authorise) {
@@ -125,10 +125,6 @@ public class LegCreateService extends AbstractGuiService<Manager, Leg> {
 			super.state(false, "airportDeparture", "acme.validation.leg.departure-airport-not-null.message");
 		if (leg.getArrivalAirport() == null)
 			super.state(false, "airportArrival", "acme.validation.leg.arrival-airport-not-null.message");
-
-		//R5: requisito de confirmacion
-		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 
 	}
 
