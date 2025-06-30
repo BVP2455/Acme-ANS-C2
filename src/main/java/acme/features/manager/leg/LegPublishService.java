@@ -124,10 +124,6 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		if (leg.getArrivalAirport() == null)
 			super.state(false, "airportArrival", "acme.validation.leg.arrival-airport-not-null.message");
 
-		//R6: requisito de confirmacion
-		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
-
 		//R9: No dejar publicar si los tramos se solapan
 		if (legs.size() > 1) {
 			boolean noOverlap = true;
@@ -141,21 +137,6 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 				previous = current;
 			}
 			super.state(noOverlap, "*", "acme.validation.flight.legs-overlap.message");
-		}
-
-		//R10: aeropuertos deben ser consecutivos si el vuelo no está en trasbordo
-		if (!leg.getFlight().getSelfTransfer() && legs.size() > 1) {
-			boolean airportsAreConsecutive = true;
-			Leg previous = null;
-			for (Leg current : legs) {
-				if (previous != null)
-					if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
-						airportsAreConsecutive = false;
-						break;
-					}
-				previous = current;
-			}
-			super.state(airportsAreConsecutive, "*", "acme.validation.flight.legs-not-consecutive.message");
 		}
 
 	}
