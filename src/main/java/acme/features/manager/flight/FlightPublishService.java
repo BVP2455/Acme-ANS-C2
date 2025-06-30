@@ -74,25 +74,6 @@ public class FlightPublishService extends AbstractGuiService<Manager, Flight> {
 		boolean allLegsPublished = legs.stream().allMatch(leg -> !leg.getDraftMode());
 		super.state(allLegsPublished, "*", "acme.validation.flight.legs-not-published.message");
 
-		// R4: casilla de confirmación
-		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
-
-		//R5: si hay legs publicados y los aeropuertos no son consecutivos, no se puede modificar el atributo selfTransfer
-		Collection<Leg> publishedLegs = this.legRepository.findPublishedLegsByFlightId(flight.getId());
-		if (!flight.getSelfTransfer() && publishedLegs.size() > 1) {
-			boolean airportsAreConsecutive = true;
-			Leg previous = null;
-			for (Leg current : publishedLegs) {
-				if (previous != null)
-					if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
-						airportsAreConsecutive = false;
-						break;
-					}
-				previous = current;
-			}
-			super.state(airportsAreConsecutive, "*", "acme.validation.flight.selfTransfer-legs-not-consecutive.message");
-		}
 	}
 
 	@Override

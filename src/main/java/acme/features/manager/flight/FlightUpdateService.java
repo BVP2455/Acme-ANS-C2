@@ -1,15 +1,12 @@
 
 package acme.features.manager.flight;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
-import acme.entities.leg.Leg;
 import acme.features.manager.leg.LegRepository;
 import acme.realms.manager.Manager;
 
@@ -65,29 +62,10 @@ public class FlightUpdateService extends AbstractGuiService<Manager, Flight> {
 	@Override
 	public void validate(final Flight flight) {
 		boolean isDraftMode;
-		boolean confirmation;
 
 		isDraftMode = flight.getDraftMode();
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-
-		//R5: si hay legs publicados y los aeropuertos no son consecutivos, no se puede modificar el atributo selfTransfer
-		Collection<Leg> publishedLegs = this.legRepository.findPublishedLegsByFlightId(flight.getId());
-		if (!flight.getSelfTransfer() && publishedLegs.size() > 1) {
-			boolean airportsAreConsecutive = true;
-			Leg previous = null;
-			for (Leg current : publishedLegs) {
-				if (previous != null)
-					if (!previous.getArrivalAirport().equals(current.getDepartureAirport())) {
-						airportsAreConsecutive = false;
-						break;
-					}
-				previous = current;
-			}
-			super.state(airportsAreConsecutive, "*", "acme.validation.flight.selfTransfer-legs-not-consecutive.message");
-		}
 
 		super.state(isDraftMode, "*", "acme.validation.flight.draftMode.updated.message");
-		super.state(confirmation, "confirmation", "acme.validation.confirmation.message");
 	}
 
 	@Override
