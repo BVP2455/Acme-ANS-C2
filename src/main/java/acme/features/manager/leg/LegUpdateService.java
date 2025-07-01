@@ -39,7 +39,7 @@ public class LegUpdateService extends AbstractGuiService<Manager, Leg> {
 		leg = (Leg) this.repository.findById(legId).get();
 		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId())
+		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId() && leg.getDraftMode())
 			authorise = true;
 
 		if (authorise) {
