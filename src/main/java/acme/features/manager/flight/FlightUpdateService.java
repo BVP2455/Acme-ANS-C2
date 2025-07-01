@@ -7,7 +7,6 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
-import acme.features.manager.leg.LegRepository;
 import acme.realms.manager.Manager;
 
 @GuiService
@@ -16,10 +15,7 @@ public class FlightUpdateService extends AbstractGuiService<Manager, Flight> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private FlightRepository	repository;
-
-	@Autowired
-	private LegRepository		legRepository;
+	private FlightRepository repository;
 
 	// AbstractGuiService interface -------------------------------------------
 

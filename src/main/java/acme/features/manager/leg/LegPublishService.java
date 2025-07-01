@@ -2,7 +2,6 @@
 package acme.features.manager.leg;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -40,7 +39,7 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 		leg = (Leg) this.repository.findById(legId).get();
 		manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
 
-		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId() && leg.getDraftMode())
+		if (manager.getAirline().getId() == leg.getFlight().getAirline().getId())
 			authorise = true;
 
 		if (authorise) {
@@ -94,7 +93,6 @@ public class LegPublishService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void validate(final Leg leg) {
 		Collection<Leg> legs = this.repository.findPublishedLegsByFlightId(leg.getFlight().getId());
-		legs = legs.stream().filter(l -> l.getId() != leg.getId()).collect(Collectors.toList());
 		legs.add(leg);
 
 		// R1: momento de salida y de llegada deben se posterior a la fecha actual
