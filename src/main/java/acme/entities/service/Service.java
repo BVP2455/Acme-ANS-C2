@@ -42,7 +42,7 @@ public class Service extends AbstractEntity {
 	private Double				avgDwellTime;
 
 	@Optional
-	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
+	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$", message = "Invalid promotion code")
 	@Column(unique = true)
 	private String				promotionCode;
 
