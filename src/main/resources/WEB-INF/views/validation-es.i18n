@@ -27,7 +27,7 @@ acme.validation.flight.draftMode.deleted.message = Este vuelo ha sido publicado 
 acme.validation.flight.draftMode.published.message = Este vuelo ya ha sido publicado
 acme.validation.flight.no-legs.message = Para que un vuelo sea publicado, debe tener al menos un tramo
 acme.validation.flight.legs-not-published.message = Todos los tramos del vuelo deben estar publicados
-acme.validation.flight.legs-overlap.message = Para que un vuelo sea publicado, los tramos no se pueden solapar
+acme.validation.flight.legs-overlap.message = Para que un tramo sea publicado, los tramos no se pueden solapar
 acme.validation.flight.legs-not-consecutive.message = Cuando un vuelo no requiere trasbordo, los aeropuertos de llegada y salida de los tramos deben ser consecutivos
 acme.validation.flight.selfTransfer-legs-not-consecutive.message = Para cambiar que un vuelo no requiere trasbordo, los aeropuertos de llegada y salida deben ser consecutivos en los vuelos publicados
 
